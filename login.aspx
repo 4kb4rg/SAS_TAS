@@ -6,7 +6,7 @@
 
 	<head id="Head1" runat="server">
 
-		<title>GPS - Login AKBAT</title>
+		<title>GPS - Login</title>
 		<link rel="shortcut icon" href="images/gopalm_ico.png">
 		<link href="en/include/css/gopalms.css" rel="stylesheet" type="text/css" />
 
@@ -116,7 +116,7 @@
 										<tr>
 											<td class="cell-center">
 												&nbsp;<a class="lb-mt" href="forgetpassword.aspx?referer=login.aspx"
-													style="color:black">Forget password?</a>
+													style="color:black">Forget password?AKBAR</a>
 											</td>
 										</tr>
 
