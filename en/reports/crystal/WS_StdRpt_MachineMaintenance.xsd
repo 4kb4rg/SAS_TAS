@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IN_Rpt_StockItem" targetNamespace="http://tempuri.org/IN_Rpt_StockItem.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_Rpt_StockItem.xsd" xmlns:mstns="http://tempuri.org/IN_Rpt_StockItem.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WS_MAINTENANCE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RunHourID" type="xs:string" />
+        <xs:element name="RunHourLnID" type="xs:string" />
+        <xs:element name="TransactDate" type="xs:date" />
+        <xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+        <xs:element name="BlkDesc" type="xs:string" minOccurs="0" />
+        <xs:element name="SubBlkCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="RunHour" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RunHourFrom" type="xs:decimal" />
+        <xs:element name="RunHourTo" type="xs:decimal" />
+        <xs:element name="CreateDate" type="xs:date" />
+        <xs:element name="UpdateDate" type="xs:date" />
+        <xs:element name="UpdateId" type="xs:date" />
+        <xs:element name="AccMonth" type="xs:decimal" />
+        <xs:element name="AccYear" type="xs:decimal" />
+        <xs:element name="Status" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

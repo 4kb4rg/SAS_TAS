@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AR_StdRpt_ReceiptVoucher" targetNamespace="http://tempuri.org/AR_StdRpt_ReceiptVoucher.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AR_StdRpt_ReceiptVoucher.xsd" xmlns:mstns="http://tempuri.org/AR_StdRpt_ReceiptVoucher.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_RECEIPT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReceiptId" type="xs:string" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="BillPartyAccCode" type="xs:string" />
+				<xs:element name="BankCode" type="xs:string" />
+				<xs:element name="BankName" type="xs:string" />
+				<xs:element name="ChequeNo" type="xs:string" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="PrintDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="ReceiptLnId" type="xs:string" />
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="DocTypeDesc" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="PPNAmount" type="xs:decimal" />
+				<xs:element name="PPHAmount" type="xs:decimal" />
+				<xs:element name="NetAmount" type="xs:decimal" />
+				<xs:element name="Terbilang" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

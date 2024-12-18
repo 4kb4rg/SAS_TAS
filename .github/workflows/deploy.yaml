@@ -1,0 +1,26 @@
+name: TAS_DEPLOY
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name : Checkout current code
+        uses: actions/checkout@v2
+      
+      - name: Deploy to server for AHAL production
+        env: 
+          SSH_HOST: 8.215.28.46
+          SSH_USER: Administrator
+          SSH_PASSWORD : Server2019
+        run: |
+          sudo apt-get update && sudo apt-get install -y sshpass
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no -p 2071 $SSH_USER@$SSH_HOST << EOF
+          D:
+          cd AMS_TAS\Web
+          git pull origin main
+          exit
+          EOF

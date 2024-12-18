@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_BlockLedgerByAct" targetNamespace="http://tempuri.org/GL_StdRpt_BlockLedgerByAct.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_BlockLedgerByAct.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_BlockLedgerByAct.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BLOCKLEDGERACT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="DocLnId" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="DocDate" type="xs:dateTime" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ModuleCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="ActCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="MTD" type="xs:decimal" />
+				<xs:element name="YTD" type="xs:decimal" />
+				<xs:element name="RefDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="AccDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="ActDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="TotalArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AreaUOM" type="xs:string" minOccurs="0" />
+				<xs:element name="BgtMTD" type="xs:decimal" />
+				<xs:element name="BgtYTD" type="xs:decimal" />
+				<xs:element name="AddVote" type="xs:decimal" />
+				<xs:element name="VarMTD" type="xs:decimal" />
+				<xs:element name="VarYTD" type="xs:decimal" />
+				<xs:element name="MTDWgt" type="xs:decimal" />
+				<xs:element name="YTDWgt" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+				<xs:element name="ReportType" type="xs:string" minOccurs="0" />
+				<xs:element name="RptStatus" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

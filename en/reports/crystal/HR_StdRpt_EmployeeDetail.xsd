@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="HR_StdRpt_EmployeeDetail" targetNamespace="http://tempuri.org/HR_StdRpt_EmployeeDetail.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_EmployeeDetail.xsd"
+	xmlns:mstns="http://tempuri.org/HR_StdRpt_EmployeeDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_EmployeeDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="Gender" type="xs:string" minOccurs="0" />
+				<xs:element name="MaritalStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="DOB" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="BloodType" type="xs:string" minOccurs="0" />
+				<xs:element name="Nation" type="xs:string" minOccurs="0" />
+				<xs:element name="Race" type="xs:string" minOccurs="0" />
+				<xs:element name="Religion" type="xs:string" minOccurs="0" />
+				<xs:element name="Bumi" type="xs:string" minOccurs="0" />
+				<xs:element name="State" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICType" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICType" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="PassportNo" type="xs:string" minOccurs="0" />
+				<xs:element name="PassportExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="WorkPassNo" type="xs:string" minOccurs="0" />
+				<xs:element name="WorkPassExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="DriveCls" type="xs:string" minOccurs="0" />
+				<xs:element name="DriveExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="OpClass" type="xs:string" minOccurs="0" />
+				<xs:element name="OpExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="BatchNo" type="xs:string" minOccurs="0" />
+				<xs:element name="MedicalExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="LabLicenseNo" type="xs:string" minOccurs="0" />
+				<xs:element name="LabLicenseExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="InsPolicyNo" type="xs:string" minOccurs="0" />
+				<xs:element name="InsPolicyExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="BankGuaNo" type="xs:string" minOccurs="0" />
+				<xs:element name="BankGuaExpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="ResAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="ICAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="PostAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="ResTel" type="xs:string" minOccurs="0" />
+				<xs:element name="MobileTel" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

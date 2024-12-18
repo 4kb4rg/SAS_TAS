@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_VI2_LC" targetNamespace="http://tempuri.org/GL_ESTATE_MR_VI2_LC.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_VI2_LC.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_VI2_LC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_VI2_LC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="BlkgrpCode" type="xs:string"  />
+				<xs:element name="BlkCode" type="xs:string"  />
+				
+	
+	<xs:element name="TotalArea" type="xs:decimal"  />
+	<xs:element name="StandAwlT" type="xs:decimal"  />
+	<xs:element name="SPHAwlT" type="xs:decimal"  />
+	
+	<xs:element name="RncSisip" type="xs:decimal"  />
+	<xs:element name="ToBI" type="xs:decimal"  />
+	<xs:element name="ToSBI" type="xs:decimal"  />
+	<xs:element name="ToSTI" type="xs:decimal"  />
+	
+	<xs:element name="SpBI" type="xs:decimal"  />
+	<xs:element name="SpSBI" type="xs:decimal"  />
+	<xs:element name="SpSTI" type="xs:decimal"  />
+	
+	<xs:element name="KrnSisip" type="xs:decimal"  />
+	<xs:element name="StandAhrT" type="xs:decimal"  />
+	
+	<xs:element name="SPHAhrT" type="xs:decimal"  />
+	
+	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

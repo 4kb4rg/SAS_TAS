@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_IV1A_PRODUKSI" targetNamespace="http://tempuri.org/GL_ESTATE_MR_IV1A_PRODUKSI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_IV1A_PRODUKSI.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_IV1A_PRODUKSI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GL_ESTATE_MR_IV1A_PRODUKSI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" />
+        <xs:element name="AccYear" type="xs:string" />
+        <xs:element name="BlkgrpCode" type="xs:string" />
+        <xs:element name="BlkCode" type="xs:string" />
+        <xs:element name="SubBlkCode" type="xs:string" />
+        <xs:element name="TotalArea" type="xs:decimal" minOccurs="0" />
+        <xs:element name="TotalStand" type="xs:decimal" minOccurs="0" />
+        <xs:element name="HkBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="JjgBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="JjgPkkBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="KgBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="BjrBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="HaBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="TonHaBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="HkSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="JjgSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="JjgPKKSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="KgSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="BjrSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="HaSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="TonHaSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RotActBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RotBgtBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RotActSBI" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RotBgtSBI" type="xs:decimal" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

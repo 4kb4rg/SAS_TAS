@@ -1,0 +1,291 @@
+var _s6 = 1;
+var _6 = 1;
+var _s1 = 1;
+var _s2 = 1;
+
+function checkKey() {
+	var h = 500;
+	var w = 635
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	if (event.keyCode == 94)
+		_s6 = 0;
+	if (event.keyCode == 54)
+		_6 = 0;
+
+	if (event.keyCode == 33)
+		_s1 = 0;
+	if (event.keyCode == 64)
+		_s2 = 0;
+		
+	if ((_s6 == 0) && (_6 == 0)) {
+		_s6 = 1;
+		_6 = 1;
+		winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars=no';
+		win = window.open('/en/images/team/itech.gif', '_iTechTeam', winprops);
+		if (parseInt(navigator.appVersion) >= 4) { win.window.focus();}
+	}
+
+	if ((_s1 == 0) && (_s2 == 0)) {
+		_s1 = 1;
+		_s2 = 1;
+		winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars=no';
+		win = window.open('/en/images/team/thgroup.gif', '_iTechTeam', winprops);
+		if (parseInt(navigator.appVersion) >= 4) { win.window.focus();}
+	}
+}
+
+function togglebox(z) {
+	if (z.style.visibility == 'hidden') {
+		z.style.position = 'relative';
+		z.style.visibility = 'visible';
+	} else {
+		z.style.position = 'absolute';
+		z.style.visibility = 'hidden';
+	}
+}
+
+function togglebox2(x, xlevel) {
+	var z 
+	if (x.style.visibility == 'hidden') {
+		x.style.position = 'relative';
+		x.style.visibility = 'visible';
+	} else {
+		z = document.getElementById(eval(x))
+		z.style.position = 'absolute';
+		z.style.visibility = 'hidden';
+	}
+}
+
+function right(e) {
+	if (navigator.appName == 'Netscape' && 	(e.which == 3 || e.which == 2))
+		return false;
+	else if (navigator.appName == 'Microsoft Internet Explorer' && 
+		(event.button == 2 || event.button == 3)) {
+			alert("No right click.");
+			return false;
+		}
+	return true;
+}
+
+function PopCal(dateField) {
+	calendar_window=window.open('/en/include/Util/popUpWincalendar.aspx?formname=frmMain.'+dateField,'calendar_window','width=200,height=152,top=200,left=250',resizable=1);calendar_window.focus() 
+}	
+
+
+function PopBank(dateField) {
+	bank_window=window.open('/en/include/Util/popUpFindBank.aspx?formname=frmMain.'+dateField,'bank_window','width=500,height=350,top=200,left=250',resizable=1);bank_window.focus() 
+}	
+
+function ConfirmAction(Action) {
+	switch (Action) {
+			case "deleteall" :
+				return confirm('All the costing details for this transaction will be deleted. Are you sure you want to DELETE ?');
+			case "deletegangmember" :
+				return confirm('Gang member who is also gang member of another active gang will be deleted. Are you sure you want to UNDELETE?.');
+
+			}
+	return confirm('Are you sure you want to ' + Action + '?');
+}
+
+function findcode(strForm, strFormAction, strAcc, strAccType, strBlk, strSubBlk, strVeh, strVehExp, strEmp, strINType, strINItem, strCTItem, strWSItem, strDCItem, strAD, strADType, strBlockCharge, strChargeLocCode) {
+	var accval = '';
+	var blkval = '';
+	var subblkval = '';
+	var vehval = '';
+	var vehexpval = '';
+	var empval = '';
+	var itemval = '';
+	var adval = '';
+	var h = 200;
+	var w = 400;
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	if (strAcc != '') accval = eval("document." + strForm + "." + strAcc + ".value")
+	if (strBlk != '') blkval = eval("document." + strForm + "." + strBlk + ".value")
+	if (strSubBlk != '') subblkval = eval("document." + strForm + "." + strSubBlk + ".value")
+	if (strVeh != '') vehval = eval("document." + strForm + "." + strVeh + ".value")
+	if (strVehExp != '') vehexpval = eval("document." + strForm + "." + strVehExp + ".value")
+	if (strEmp != '') empval = eval("document." + strForm + "." + strEmp + ".value")
+	if (strINItem != '') itemval = eval("document." + strForm + "." + strINItem + ".value")
+	if (strCTItem != '') itemval = eval("document." + strForm + "." + strCTItem + ".value")
+	if (strWSItem != '') itemval = eval("document." + strForm + "." + strWSItem + ".value")
+	if (strDCItem != '') itemval = eval("document." + strForm + "." + strDCItem + ".value")
+	if (strAD != '') adval = eval("document." + strForm + "." + strAD + ".value")
+	var winpath = "/en/include/util/popUpFind.aspx?fname=" + strForm +"&faction=" + strFormAction + "&acc=" + strAcc + "&accval=" + accval + "&acctype=" + strAccType + "&blk=" + strBlk + "&blkval=" + blkval + "&subblk=" + strSubBlk + "&subblkval=" + subblkval + "&veh=" + strVeh + "&vehval=" + vehval + "&vehexp=" + strVehExp + "&vehexpval=" + vehexpval + "&emp=" + strEmp + "&empval=" + empval + "&intype=" + strINType+ "&initem=" + strINItem + "&ctitem=" + strCTItem + "&wsitem=" + strWSItem + "&dcitem=" + strDCItem + "&itemval=" + itemval + "&ad=" + strAD + "&adval=" + adval + "&adtype=" + strADType + "&blockcharge=" + strBlockCharge + "&chargeloccode=" + strChargeLocCode;
+	window.open(winpath, '_find' ,'height='+h+', width='+w+', top='+wint+', left='+winl+', status=yes, resizable=yes, scrollbars=yes, toolbar=no, location=no');
+}
+
+function FindDropDownList(strForm, strProperty, strValue) {			
+	var objOption = new Option();
+	var elnum = parseInt(-1)
+	var k = parseInt(-1);
+	var docProperty = eval("document." + strForm + "." + strProperty);
+	objOption.value = strValue;
+	docProperty.options[0] = objOption;
+	docProperty.options[0].selected = true;
+}
+
+
+function findcodeNew(strForm, strFormAction, strAcc, strAccType, strBlk, strSubBlk, strVeh, strVehExp, strEmp, strINType, strINItem, strCTItem, strWSItem, strDCItem, strAD, strADType, strBlockCharge, strChargeLocCode) {
+	var accval = '';
+	var blkval = '';
+	var subblkval = '';
+	var vehval = '';
+	var vehexpval = '';
+	var empval = '';
+	var itemval = '';
+	var adval = '';
+	var h = 200;
+	var w = 400;
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	if (strAcc != '') accval = eval("document." + strForm + "." + strAcc + ".value")
+	if (strBlk != '') blkval = eval("document." + strForm + "." + strBlk + ".value")
+	if (strSubBlk != '') subblkval = eval("document." + strForm + "." + strSubBlk + ".value")
+	if (strVeh != '') vehval = eval("document." + strForm + "." + strVeh + ".value")
+	if (strVehExp != '') vehexpval = eval("document." + strForm + "." + strVehExp + ".value")
+	if (strEmp != '') empval = eval("document." + strForm + "." + strEmp + ".value")
+	if (strINItem != '') itemval = eval("document." + strForm + "." + strINItem + ".value")
+	if (strCTItem != '') itemval = eval("document." + strForm + "." + strCTItem + ".value")
+	if (strWSItem != '') itemval = eval("document." + strForm + "." + strWSItem + ".value")
+	if (strDCItem != '') itemval = eval("document." + strForm + "." + strDCItem + ".value")
+	if (strAD != '') adval = eval("document." + strForm + "." + strAD + ".value")
+	var winpath = "/en/include/util/popUpFindNew.aspx?fname=" + strForm +"&faction=" + strFormAction + "&acc=" + strAcc + "&accval=" + accval + "&acctype=" + strAccType + "&blk=" + strBlk + "&blkval=" + blkval + "&subblk=" + strSubBlk + "&subblkval=" + subblkval + "&veh=" + strVeh + "&vehval=" + vehval + "&vehexp=" + strVehExp + "&vehexpval=" + vehexpval + "&emp=" + strEmp + "&empval=" + empval + "&intype=" + strINType+ "&initem=" + strINItem + "&ctitem=" + strCTItem + "&wsitem=" + strWSItem + "&dcitem=" + strDCItem + "&itemval=" + itemval + "&ad=" + strAD + "&adval=" + adval + "&adtype=" + strADType + "&blockcharge=" + strBlockCharge + "&chargeloccode=" + strChargeLocCode;
+	window.open(winpath, '_find' ,'height='+h+', width='+w+', top='+wint+', left='+winl+', status=yes, resizable=yes, scrollbars=yes, toolbar=no, location=no');
+}
+
+function FindTextBox(strForm, strProperty, strValue) {			
+	var elnum = parseInt(-1)
+	var k = parseInt(-1);
+	var docProperty = eval("document." + strForm + "." + strProperty);
+	docProperty.value = strValue;
+}
+
+
+
+function popwin(_h, _w, _url) {
+	var h, w;
+	if (_h == 0) {
+		h = 200;
+		w = 400;
+	}
+	else {
+		h = _h;
+		w = _w;
+	}
+	var winl = (screen.width - w) / 2;
+	var wint = (screen.height - h) / 2;
+	window.open(_url, 'newwin' ,'height='+h+', width='+w+', top='+wint+', left='+winl+', status=yes, resizable=yes, scrollbars=yes, toolbar=no, location=no');
+}
+
+function FormSubmit(strForm) {	
+	eval("document." + strForm + ".submit();")
+}			
+
+function round(number, X) {
+	// rounds number to X decimal places, defaults to 2
+	X = (!X ? 2 : X);
+	return Math.round(number*Math.pow(10,X))/Math.pow(10,X);
+}
+
+function trim(strInput) {
+	return fnString(strInput, " ", true, false, true);
+}
+
+function fnString(strInput, strChar, blnTrimLeading, blnTrimDouble, blnTrimTrailing) {
+	var strOutput = strInput;
+	var ch;
+	
+	if (typeof strInput != "string") { 
+		return strInput; 
+	}
+	else {
+		if (blnTrimLeading == true) {
+			ch = strOutput.substring(0, 1);
+			while (ch == strChar) { 
+				strOutput = strOutput.substring(1, strOutput.length);
+				ch = strOutput.substring(0, 1);
+			}
+		}
+		if (blnTrimTrailing == true) {
+			ch = strOutput.substring(strOutput.length - 1, strOutput.length);
+			while (ch == strChar) {
+				strOutput = strOutput.substring(0, strOutput.length - 1);
+				ch = strOutput.substring(strOutput.length - 1, strOutput.length);
+			}
+		}
+		if (blnTrimDouble == true) {
+			while (strOutput.indexOf(strChar + strChar) != -1) {
+				strOutput = strOutput.replace(strChar + strChar, strChar);
+			}
+		}
+		return strOutput; 
+	}
+}
+
+function DisplayIDDecimalSeparator(n , type){
+	var c ;
+	var d = ',';
+	var t = '.';
+	
+	if (type == '1')
+		c = 5;	//	quantity
+	else if (type == '2')
+		c = 0;	//	currency
+	
+	
+	if (n < 1000){
+		n = round(n , c);
+		return n.toString().replace( '.', d );
+	}
+	
+	//var m = ( c = Math.abs( c ) + 1 ? c : 2, d = d || ",", t = t || ".", /(\d+)(?:(\.\d+)|)/.exec( n + "" ) ), x = m[1].length % 3;				
+	var m = ( c = Math.abs( c ) + 1 ? c : 2, d = d || ",", t = t || ".", /(\d+)(?:(\.\d+)|)/.exec( round(n, c) + "" ) ), x = m[1].length % 3;				
+	return ( x ? m[1].substr( 0, x ) + t : "" ) + m[1].substr( x ).replace( /(\d{3})(?=\d)/g, "$1" + t ) + ( c ? d + ( +m[2] ).toFixed( c ).substr( 2 ) : "" );
+
+}
+
+function DBDecimalFormat(pv_Decimal){
+	pv_Decimal = pv_Decimal.replace(/\./g, '');
+	return pv_Decimal.replace(',', '.');
+}
+
+
+function PopItem(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindItem.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=500,height=350,top=200,left=250', resizable=1);
+}
+
+function PopStockItem(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindStockItem.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=500,height=350,top=200,left=250', resizable=1);
+}
+
+
+
+function PopCOA(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindCOA.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=500,height=350,top=200,left=250', resizable=1);
+}
+
+function PopSupplier(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindSupplier.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=500,height=350,top=200,left=250', resizable=1);
+}
+
+function PopPO(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindPO.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=700,height=350,top=200,left=150', resizable=1);
+}
+
+
+function PopFA(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindFA.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=800,height=350,top=200,left=250', resizable=1);
+}
+
+function PopVehAct(strForm, strFormAction, strINItem, blnPostBack) {
+var winpath = "/en/include/util/popUpFindVehAct.aspx?fname=" + strForm +"&faction=" + strFormAction + "&initem=" + strINItem + "&ispostback=" + blnPostBack;
+window.open(winpath, '_find' ,'width=700,height=350,top=200,left=150', resizable=1);
+}

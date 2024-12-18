@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_NurseryActivity" targetNamespace="http://tempuri.org/BD_StdRpt_DS_NurseryActivity.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_NurseryActivity.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_NurseryActivity.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_FORMAT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NurseryActID" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="Acc" type="xs:string" />
+				<xs:element name="Item" type="xs:string" />
+				<xs:element name="ItemDisplayType" type="xs:string" />
+				<xs:element name="ItemDisplayCol" type="xs:string" />
+				<xs:element name="Frequency" type="xs:decimal" />
+				<xs:element name="Unit" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnitCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LabourCost" type="xs:decimal" />
+				<xs:element name="MaterialCost" type="xs:decimal" />
+				<xs:element name="OtherCost" type="xs:decimal" />
+				<xs:element name="AddVote" type="xs:decimal" />
+				<xs:element name="CostPerSeed" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_TOTALSEED">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="TotalSeed" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

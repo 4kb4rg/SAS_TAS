@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AP_RPT_CJDet" targetNamespace="http://tempuri.org/AP_RPT_CJDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_RPT_CJDet.xsd" xmlns:mstns="http://tempuri.org/AP_RPT_CJDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CJ_MASTER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CJID" type="xs:string" />
+				<xs:element name="Supplier" type="xs:string" />
+				<xs:element name="SuppAddress" type="xs:string" />
+				<xs:element name="Remarks" type="xs:string" />
+				<xs:element name="Date" type="xs:date" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="Other1" type="xs:string" />
+				<xs:element name="Other2" type="xs:string" />
+				<xs:element name="Other3" type="xs:string" />
+				<xs:element name="Other4" type="xs:string" />
+				<xs:element name="Other5" type="xs:string" />
+				<xs:element name="TotalPinjaman" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CJ_WEIGHING">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CJID" type="xs:string" />
+				<xs:element name="Tanggal" type="xs:string" />
+				<xs:element name="Tonase" type="xs:decimal" />
+				<xs:element name="Harga" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CJ_ADVANCE_PAYMENT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CJID" type="xs:string" />
+				<xs:element name="Tanggal" type="xs:date" />
+				<xs:element name="PaymentID" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Remarks" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

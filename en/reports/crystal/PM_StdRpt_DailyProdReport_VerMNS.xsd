@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PM_StdRpt_Daily_Prod_Rpt" targetNamespace="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:mstns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PM_StdRpt_Daily_Prod_Rpt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="TransDate" type="xs:dateTime" />
+				<xs:element name="MKS_Stock_PKS" type="xs:decimal" minOccurs="0" />
+				<xs:element name="IKS_Stock_PKS" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Sum_TBS_Internal" type="xs:decimal" />
+				<xs:element name="Sum_TBS_External" type="xs:decimal" />
+				<xs:element name="Sum_TBS_Afiliasi" type="xs:decimal" />
+				<xs:element name="Internal_MKS_Rit" type="xs:decimal" />
+				<xs:element name="Internal_MKS_Unit" type="xs:decimal" />
+				<xs:element name="Internal_MKS_Tonase" type="xs:decimal" />
+				<xs:element name="Internal_IKS_Rit" type="xs:decimal" />
+				<xs:element name="Internal_IKS_Unit" type="xs:decimal" />
+				<xs:element name="Internal_IKS_Tonase" type="xs:decimal" />
+				<xs:element name="External_MKS_Rit" type="xs:decimal" />
+				<xs:element name="External_MKS_Unit" type="xs:decimal" />
+				<xs:element name="External_MKS_Tonase" type="xs:decimal" />
+				<xs:element name="External_IKS_Rit" type="xs:decimal" />
+				<xs:element name="External_IKS_Unit" type="xs:decimal" />
+				<xs:element name="External_IKS_Tonase" type="xs:decimal" />
+				<xs:element name="BacklogBunches" type="xs:decimal" />
+				<xs:element name="Sum_FFBReceived" type="xs:decimal" />
+				<xs:element name="FFBProcessed_KG" type="xs:decimal" />
+				<xs:element name="FFBSemiUnProcess_KG" type="xs:decimal" />
+				<xs:element name="Duration" type="xs:decimal" />
+				<xs:element name="Kapasitas_Olah" type="xs:decimal" />
+				<xs:element name="ProcessStart" type="xs:dateTime" />
+				<xs:element name="ProcessEnd" type="xs:dateTime" />
+				<xs:element name="CPOProduced" type="xs:decimal" />
+				<xs:element name="EXTRASI_MKS" type="xs:decimal" />
+				<xs:element name="PKProduced" type="xs:decimal" />
+				<xs:element name="EXTRASI_IKS" type="xs:decimal" />
+				<xs:element name="CPODispatched" type="xs:decimal" />
+				<xs:element name="PKDispatched" type="xs:decimal" />
+				<xs:element name="EBTodayProduction" type="xs:decimal" />
+				<xs:element name="EBSent" type="xs:decimal" />
+				<xs:element name="EBTodayRestan" type="xs:decimal" />
+				<xs:element name="EBBackLog" type="xs:decimal" />
+				<xs:element name="OilFFBEmptyBunch" type="xs:decimal" />
+				<xs:element name="OilFFBUSB" type="xs:decimal" />
+				<xs:element name="OilFFBFruitLoss" type="xs:decimal" />
+				<xs:element name="OilFFBPressCakeFibre" type="xs:decimal" />
+				<xs:element name="OilFFBNuts" type="xs:decimal" />
+				<xs:element name="OilFFBFinalEffluent" type="xs:decimal" />
+				<xs:element name="OilFFBTotal" type="xs:decimal" />
+				<xs:element name="KernelFFBFruitLoss" type="xs:decimal" />
+				<xs:element name="KernelFFBUSB" type="xs:decimal" />
+				<xs:element name="KernelFFBCycloneFibre" type="xs:decimal" />
+				<xs:element name="KernelFFBLTDS" type="xs:decimal" />
+				<xs:element name="KernelFFBHydroShell" type="xs:decimal" />
+				<xs:element name="KernelFFBTotal" type="xs:decimal" />
+				<xs:element name="Sum_FFBReceived_HI" type="xs:decimal" />
+				<xs:element name="FFBProcessed_KG_HI" type="xs:decimal" />
+				<xs:element name="DurationHI" type="xs:decimal" />
+				<xs:element name="Kapasitas_Olah_HI" type="xs:decimal" />
+				<xs:element name="CPOProducedHI" type="xs:decimal" />
+				<xs:element name="EXTRASI_MKS_HI" type="xs:decimal" />
+				<xs:element name="PKProducedHI" type="xs:decimal" />
+				<xs:element name="EXTRASI_IKS_HI" type="xs:decimal" />
+				<xs:element name="CPODispatchedHI" type="xs:decimal" />
+				<xs:element name="PKDispatchedHI" type="xs:decimal" />
+				<xs:element name="EBTodayProductionHI" type="xs:decimal" />
+				<xs:element name="EBSentHI" type="xs:decimal" />
+				<xs:element name="Internal_MKS_Rit_HI" type="xs:decimal" />
+				<xs:element name="Internal_MKS_Unit_HI" type="xs:decimal" />
+				<xs:element name="Internal_MKS_Tonase_HI" type="xs:decimal" />
+				<xs:element name="Internal_IKS_Rit_HI" type="xs:decimal" />
+				<xs:element name="Internal_IKS_Unit_HI" type="xs:decimal" />
+				<xs:element name="Internal_IKS_Tonase_HI" type="xs:decimal" />
+				<xs:element name="External_MKS_Rit_HI" type="xs:decimal" />
+				<xs:element name="External_MKS_Unit_HI" type="xs:decimal" />
+				<xs:element name="External_MKS_Tonase_HI" type="xs:decimal" />
+				<xs:element name="External_IKS_Rit_HI" type="xs:decimal" />
+				<xs:element name="External_IKS_Unit_HI" type="xs:decimal" />
+				<xs:element name="External_IKS_Tonase_HI" type="xs:decimal" />
+				<xs:element name="Sum_TBS_Internal_HI" type="xs:decimal" />
+				<xs:element name="Sum_TBS_External_HI" type="xs:decimal" />
+				<xs:element name="Sum_TBS_Afiliasi_HI" type="xs:decimal" />
+				<xs:element name="Sum_FFBReceived_BI" type="xs:decimal" />
+				<xs:element name="FFBProcessed_KG_BI" type="xs:decimal" />
+				<xs:element name="DurationBI" type="xs:decimal" />
+				<xs:element name="Kapasitas_Olah_BI" type="xs:decimal" />
+				<xs:element name="CPOProducedBI" type="xs:decimal" />
+				<xs:element name="EXTRASI_MKS_BI" type="xs:decimal" />
+				<xs:element name="PKProducedBI" type="xs:decimal" />
+				<xs:element name="EXTRASI_IKS_BI" type="xs:decimal" />
+				<xs:element name="CPODispatchedBI" type="xs:decimal" />
+				<xs:element name="PKDispatchedBI" type="xs:decimal" />
+				<xs:element name="EBTodayProductionBI" type="xs:decimal" />
+				<xs:element name="EBSentBI" type="xs:decimal" />
+				<xs:element name="Sum_TBS_Internal_BI" type="xs:decimal" />
+				<xs:element name="Sum_TBS_External_BI" type="xs:decimal" />
+				<xs:element name="Sum_TBS_Afiliasi_BI" type="xs:decimal" />
+				<xs:element name="RestanFFBSemiProcessed" type="xs:decimal" />
+				<xs:element name="RestanFFBUnProcessed" type="xs:decimal" />
+				<xs:element name="WaterDam" type="xs:decimal" />
+				<xs:element name="WaterRiver" type="xs:decimal" />
+				<xs:element name="WaterBoiler" type="xs:decimal" />
+				<xs:element name="WaterRainFall" type="xs:decimal" />
+				<xs:element name="EAFlatBat" type="xs:decimal" />
+				<xs:element name="EAEffluent" type="xs:decimal" />
+				<xs:element name="EAJamApp" type="xs:decimal" />
+				<xs:element name="KernelYesterdayGoni" type="xs:decimal" />
+				<xs:element name="KernelTodayRestan" type="xs:decimal" />
+				<xs:element name="KernelTodayGoni" type="xs:decimal" />
+				<xs:element name="KernelSent" type="xs:decimal" />
+				<xs:element name="KernelYesterdayGoniKG" type="xs:decimal" />
+				<xs:element name="KernelTodayRestanKG" type="xs:decimal" />
+				<xs:element name="KernelTodayGoniKG" type="xs:decimal" />
+				<xs:element name="KernelSentKG" type="xs:decimal" />
+				<xs:element name="StockGoniKosong" type="xs:decimal" />
+				<xs:element name="_0to1" type="xs:decimal" />
+				<xs:element name="_1to2" type="xs:decimal" />
+				<xs:element name="_2to3" type="xs:decimal" />
+				<xs:element name="_3to4" type="xs:decimal" />
+				<xs:element name="_4to5" type="xs:decimal" />
+				<xs:element name="_5to6" type="xs:decimal" />
+				<xs:element name="_6to7" type="xs:decimal" />
+				<xs:element name="_7to8" type="xs:decimal" />
+				<xs:element name="_8to9" type="xs:decimal" />
+				<xs:element name="_9to10" type="xs:decimal" />
+				<xs:element name="_10to11" type="xs:decimal" />
+				<xs:element name="_11to12" type="xs:decimal" />
+				<xs:element name="_12to13" type="xs:decimal" />
+				<xs:element name="_13to14" type="xs:decimal" />
+				<xs:element name="_14to15" type="xs:decimal" />
+				<xs:element name="_15to16" type="xs:decimal" />
+				<xs:element name="_16to17" type="xs:decimal" />
+				<xs:element name="_17to18" type="xs:decimal" />
+				<xs:element name="_18to19" type="xs:decimal" />
+				<xs:element name="_19to20" type="xs:decimal" />
+				<xs:element name="_20to21" type="xs:decimal" />
+				<xs:element name="_21to22" type="xs:decimal" />
+				<xs:element name="_22to23" type="xs:decimal" />
+				<xs:element name="_23to24" type="xs:decimal" />
+				<xs:element name="TtlWeight" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PM_StdRpt_Daily_Prod_Rpt1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SuppType" type="xs:string" />
+				<xs:element name="CustomerCode" type="xs:string" />
+				<xs:element name="Tonase_TBS" type="xs:decimal" />
+				<xs:element name="Tonase_HI" type="xs:decimal" />
+				<xs:element name="Tonase_BI" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PM_StdRpt_Daily_Prod_Rpt2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="No" type="xs:integer" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="CPOTankFFA" type="xs:decimal" />
+				<xs:element name="CPOTankMoist" type="xs:decimal" />
+				<xs:element name="CPOTankDirt" type="xs:decimal" />
+				<xs:element name="CPOTankDOBI" type="xs:decimal" />
+				<xs:element name="CPOWeight" type="xs:decimal" />
+				<xs:element name="PKWeight" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

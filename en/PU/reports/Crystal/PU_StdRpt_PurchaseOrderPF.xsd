@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PU_StdRpt_PurchaseOrderPF" targetNamespace="http://tempuri.org/PU_StdRpt_PurchaseOrderPF.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_StdRpt_PurchaseOrderPF.xsd" xmlns:mstns="http://tempuri.org/PU_StdRpt_PurchaseOrderPF.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="PUPOPF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CompCode" type="xs:string" minOccurs="0" />
+        <xs:element name="CompNPWP" type="xs:string" minOccurs="0" />
+        <xs:element name="CompName" type="xs:string" minOccurs="0" />
+        <xs:element name="Address" type="xs:string" minOccurs="0" />
+        <xs:element name="PostCode" type="xs:string" minOccurs="0" />
+        <xs:element name="City" type="xs:string" minOccurs="0" />
+        <xs:element name="TelNo" type="xs:string" minOccurs="0" />
+        <xs:element name="FaxNo" type="xs:string" minOccurs="0" />
+        <xs:element name="LocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="NPWP" type="xs:string" minOccurs="0" />
+        <xs:element name="EstName" type="xs:string" minOccurs="0" />
+        <xs:element name="LocAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="LocCity" type="xs:string" minOccurs="0" />
+        <xs:element name="LocState" type="xs:string" minOccurs="0" />
+        <xs:element name="LocPostCode" type="xs:string" minOccurs="0" />
+        <xs:element name="LocTelNo" type="xs:string" minOccurs="0" />
+        <xs:element name="LocFaxNo" type="xs:string" minOccurs="0" />
+        <xs:element name="POID" type="xs:string" minOccurs="0" />
+        <xs:element name="POType" type="xs:string" minOccurs="0" />
+        <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="supplierCode" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppName" type="xs:string" minOccurs="0" />
+        <xs:element name="ContactPerson" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppAddress" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppCity" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppState" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppPostCode" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppTelNo" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppFaxNo" type="xs:string" minOccurs="0" />
+        <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+        <xs:element name="QtyOrder" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+        <xs:element name="NetAmount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="ItemName" type="xs:string" minOccurs="0" />
+        <xs:element name="PRID" type="xs:string" minOccurs="0" />
+        <xs:element name="UOMCode" type="xs:string" minOccurs="0" />
+        <xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Terbilang" type="xs:string" minOccurs="0" />
+        <xs:element name="PPNAmount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="CreditTerm" type="xs:string" minOccurs="0" />
+        <xs:element name="NetAmountToDisplay" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNAmountToDisplay" type="xs:decimal" minOccurs="0" />
+        <xs:element name="CostToDisplay" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AmountToDisplay" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AdditionalNote" type="xs:string" minOccurs="0" />
+        <xs:element name="CurrencyCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Transporter" type="xs:string" minOccurs="0" />
+        <xs:element name="Discount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Remark" type="xs:string" minOccurs="0" />
+        <xs:element name="PBBKB" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AmtTransportFee" type="xs:decimal" minOccurs="0" />
+        <xs:element name="TotalAmountCurrency" type="xs:decimal" minOccurs="0" />
+        <xs:element name="TotalAmountToReport" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPN22" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AddDiscount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="polnid" type="xs:string" />
+        <xs:element name="catatan" type="xs:string" />
+        <xs:element name="PBBKBRate" type="xs:decimal" minOccurs="0" />
+        <xs:element name="TtlAmtDiscount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="PrIDGroup" type="xs:string" />
+        <xs:element name="PPNRate" type="xs:decimal" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

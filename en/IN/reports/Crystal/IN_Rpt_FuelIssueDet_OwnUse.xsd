@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_Rpt_FuelIssueDet_OwnUse" targetNamespace="http://tempuri.org/IN_Rpt_FuelIssueDet_OwnUse.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_Rpt_FuelIssueDet_OwnUse.xsd" xmlns:mstns="http://tempuri.org/IN_Rpt_FuelIssueDet_OwnUse.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FuelIssue">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FuelIssueID" type="xs:string" />
+				<xs:element name="DNID" type="xs:string" minOccurs="0" />
+				<xs:element name="BillPartyCode" type="xs:string" minOccurs="0" />
+				<xs:element name="IssueType" type="xs:string" minOccurs="0" />
+				<xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="PrintStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="PayrollPosted" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FuelIssueLn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FuelIssueID" type="xs:string" />
+				<xs:element name="FuelIssueLNID" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PsEmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

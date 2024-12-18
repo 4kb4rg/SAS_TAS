@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_WPList" targetNamespace="http://tempuri.org/PR_StdRpt_WPList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_WPList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_WPList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_WPList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="Descr" type="xs:string" />
+				<xs:element name="UOMBlk" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="EmpWP" type="xs:decimal" />
+				<xs:element name="EmpManday" type="xs:decimal" />
+				<xs:element name="EmpHK" type="xs:decimal" />
+				<xs:element name="ConWP" type="xs:decimal" />
+				<xs:element name="ConManday" type="xs:decimal" />
+				<xs:element name="ConHK" type="xs:decimal" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="UOMItem" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_StdRpt_WPAttdList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Type" type="xs:string" />
+				<xs:element name="AttCode" type="xs:string" />
+				<xs:element name="Tot_HI" type="xs:decimal" />
+				<xs:element name="Tot_SDHI" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

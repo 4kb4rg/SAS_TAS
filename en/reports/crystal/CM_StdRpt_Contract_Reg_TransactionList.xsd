@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_PRList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CM_StdRpt_Contract_Reg_TransactionList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ContractNo" type="xs:string" minOccurs="0" />
+				<xs:element name="ContractType" type="xs:string" minOccurs="0" />
+				<xs:element name="ContractDate" type="xs:dateTime" />
+				<xs:element name="ProductCode" type="xs:string" />
+				<xs:element name="SellerOrBillPartyCode" type="xs:string" minOccurs="0" />
+				<xs:element name="SellerOrBillPartyName" type="xs:string" minOccurs="0" />
+				<xs:element name="ContractQty" type="xs:decimal" />
+				<xs:element name="ExtraQty" type="xs:decimal" />
+				<xs:element name="ExtraQtyType" type="xs:string" />
+				<xs:element name="BalQty" type="xs:decimal" />
+				<xs:element name="MatchedQty" type="xs:decimal" />
+				<xs:element name="CurrencyCode" type="xs:string" />
+				<xs:element name="Price" type="xs:decimal" />
+				<xs:element name="PriceBasisCode" type="xs:string" />
+				<xs:element name="DelMonth" type="xs:string" />
+				<xs:element name="DelYear" type="xs:string" />
+				<xs:element name="Remarks" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="Username" type="xs:string" />
+				<xs:element name="ContCategory" type="xs:string" />
+				<xs:element name="TermOfDelivery" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

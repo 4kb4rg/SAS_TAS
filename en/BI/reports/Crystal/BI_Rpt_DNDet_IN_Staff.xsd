@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BI_Rpt_DNDet_IN_Staff" targetNamespace="http://tempuri.org/BI_Rpt_DNDet_IN_Staff.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BI_Rpt_DNDet_IN_Staff.xsd" xmlns:mstns="http://tempuri.org/BI_Rpt_DNDet_IN_Staff.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DebitNote">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DebitNoteID" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="TotalAmount" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="PrintStatus" type="xs:string" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DebitNoteLn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DebitNoteLnId" type="xs:string" />
+				<xs:element name="DebitNoteID" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

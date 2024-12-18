@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PM_StdRpt_Daily_Prod_Rpt" targetNamespace="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:mstns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WM_PROD_STDRPT_PRODUCTION_DAILY_REPORT_GET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DateSounding" type="xs:dateTime" />
+        <xs:element name="DateProd" type="xs:dateTime" />
+        <xs:element name="AccYear" type="xs:string" minOccurs="0" />
+        <xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="BroughtForward" type="xs:decimal" />
+        <xs:element name="TotalReceivedInternal" type="xs:decimal" />
+        <xs:element name="TBSReceivedInternal_TD" type="xs:decimal" />
+        <xs:element name="TBSReceivedInternal_TMonth" type="xs:decimal" />
+        <xs:element name="TotalReceivedExternal" type="xs:decimal" />
+        <xs:element name="TBSReceivedExternal_TD" type="xs:decimal" />
+        <xs:element name="TBSReceivedExternal_TMonth" type="xs:decimal" />
+        <xs:element name="TotalReceivedNetto" type="xs:decimal" />
+        <xs:element name="TotalReceivedNetto_TD" type="xs:decimal" />
+        <xs:element name="TotalReceivedNetto_TMonth" type="xs:decimal" />
+        <xs:element name="SortaseWeight" type="xs:decimal" />
+        <xs:element name="SortaseWeight_TD" type="xs:decimal" />
+        <xs:element name="SortaseWeight_TMonth" type="xs:decimal" />
+        <xs:element name="SortaseWeight_Psn" type="xs:decimal" />
+        <xs:element name="TotalReceivedBruto" type="xs:decimal" />
+        <xs:element name="TotalReceivedBruto_TD" type="xs:decimal" />
+        <xs:element name="TotalReceivedBruto_TMonth" type="xs:decimal" />
+        <xs:element name="AvailableNetto" type="xs:decimal" />
+        <xs:element name="FFBProcesedNetto" type="xs:decimal" />
+        <xs:element name="FFBProcesedNetto_TD" type="xs:decimal" />
+        <xs:element name="FFBProcesedNetto_TMonth" type="xs:decimal" />
+        <xs:element name="FFBProcesed_Restan" type="xs:decimal" />
+        <xs:element name="Procesed_Hour" type="xs:decimal" />
+        <xs:element name="Procesed_Hour_TD" type="xs:decimal" />
+        <xs:element name="Procesed_Hour_TMonth" type="xs:decimal" />
+        <xs:element name="Procesed_Capacity" type="xs:decimal" />
+        <xs:element name="Procesed_Capacity_TD" type="xs:decimal" />
+        <xs:element name="Procesed_Capacity_TMonth" type="xs:decimal" />
+        <xs:element name="Procesed_Date_Fr" type="xs:dateTime" />
+        <xs:element name="Procesed_Date_To" type="xs:dateTime" />
+        <xs:element name="Lorry_RestanProsesed" type="xs:decimal" />
+        <xs:element name="TotalLorryProcesed" type="xs:decimal" />
+        <xs:element name="CapacityLorry" type="xs:decimal" />
+        <xs:element name="CapacityLorry_TD" type="xs:decimal" />
+        <xs:element name="CapacityLorry_TMonth" type="xs:decimal" />
+        <xs:element name="CPO_TotStock" type="xs:decimal" />
+        <xs:element name="PK_TotStock" type="xs:decimal" />
+        <xs:element name="PK_SiapKirim" type="xs:decimal" />
+        <xs:element name="CPO_SAwal" type="xs:decimal" />
+        <xs:element name="CPO_Procesed" type="xs:decimal" />
+        <xs:element name="CPO_Procesed_TD" type="xs:decimal" />
+        <xs:element name="CPO_Procesed_TMonth" type="xs:decimal" />
+        <xs:element name="CPO_Despatch" type="xs:decimal" />
+        <xs:element name="CPO_Despatch_TD" type="xs:decimal" />
+        <xs:element name="CPO_Despatch_TMonth" type="xs:decimal" />
+        <xs:element name="CPO_ExtrakNetto" type="xs:decimal" />
+        <xs:element name="CPO_ExtrakNetto_TD" type="xs:decimal" />
+        <xs:element name="CPO_ExtrakNetto_TMonth" type="xs:decimal" />
+        <xs:element name="PK_SAwal" type="xs:decimal" />
+        <xs:element name="PK_Procesed" type="xs:decimal" />
+        <xs:element name="PK_Procesed_TD" type="xs:decimal" />
+        <xs:element name="PK_Procesed_TMonth" type="xs:decimal" />
+        <xs:element name="PK_ExtrakNetto" type="xs:decimal" />
+        <xs:element name="PK_ExtrakNetto_TD" type="xs:decimal" />
+        <xs:element name="PK_ExtrakNetto_TMonth" type="xs:decimal" />
+        <xs:element name="PK_Despatch" type="xs:decimal" />
+        <xs:element name="PK_Despatch_TD" type="xs:decimal" />
+        <xs:element name="PK_Despatch_TMonth" type="xs:decimal" />
+        <xs:element name="EmptyBunchPsn" type="xs:decimal" />
+        <xs:element name="EmptyBunchProd" type="xs:decimal" />
+        <xs:element name="EmptyBunchProd_TD" type="xs:decimal" />
+        <xs:element name="EmptyBunchProd_TMonth" type="xs:decimal" />
+        <xs:element name="Shell_SAwal" type="xs:decimal" />
+        <xs:element name="ShellPsn" type="xs:decimal" />
+        <xs:element name="ShellProd" type="xs:decimal" />
+        <xs:element name="Shell_Despatch" type="xs:decimal" />
+        <xs:element name="Shell_Stock" type="xs:decimal" />
+        <xs:element name="Shell_Despatch_TD" type="xs:decimal" />
+        <xs:element name="Shell_Despatch_TM" type="xs:decimal" />
+        <xs:element name="Shell_BBakar" type="xs:decimal" />
+        <xs:element name="Shell_BBakar_TD" type="xs:decimal" />
+        <xs:element name="Shell_BBakar_TM" type="xs:decimal" />
+        <xs:element name="ShellProd_TD" type="xs:decimal" />
+        <xs:element name="ShellProd_TMonth" type="xs:decimal" />
+        <xs:element name="FibrePsn" type="xs:decimal" />
+        <xs:element name="Fibre_SAwal" type="xs:decimal" />
+        <xs:element name="FibreProd" type="xs:decimal" />
+        <xs:element name="Fibre_BBakar" type="xs:decimal" />
+        <xs:element name="Fibre_BBakar_TD" type="xs:decimal" />
+        <xs:element name="Fibre_BBakar_TM" type="xs:decimal" />
+        <xs:element name="Fibre_Despatch" type="xs:decimal" />
+        <xs:element name="Fibre_Despatch_TD" type="xs:decimal" />
+        <xs:element name="Fibre_Despatch_TM" type="xs:decimal" />
+        <xs:element name="FibreProd_TD" type="xs:decimal" />
+        <xs:element name="FibreProd_TMonth" type="xs:decimal" />
+        <xs:element name="Fibre_Stock" type="xs:decimal" />
+        <xs:element name="NutDilantai" type="xs:decimal" />
+        <xs:element name="SisaTruk" type="xs:decimal" />
+        <xs:element name="CurahHujan" type="xs:decimal" />
+        <xs:element name="LevelWaduk" type="xs:decimal" />
+        <xs:element name="Catatan" type="xs:string" />
+        <xs:element name="Catatan2" type="xs:string" />
+        <xs:element name="Catatan3" type="xs:string" />
+        <xs:element name="Catatan4" type="xs:string" />
+        <xs:element name="NamaPerusahaan" type="xs:string" />
+        <xs:element name="NamaUnit" type="xs:string" />
+        <xs:element name="Alamat" type="xs:string" />
+        <xs:element name="Kota" type="xs:string" />
+        <xs:element name="Kecamatan" type="xs:string" />
+        <xs:element name="Propinsi" type="xs:string" />
+        <xs:element name="Telp" type="xs:string" />
+        <xs:element name="NmManager" type="xs:string" />
+        <xs:element name="NmKTU" type="xs:string" />
+        <xs:element name="AsistenLab" type="xs:string" />
+        <xs:element name="NmAsstProses" type="xs:string" />
+        <xs:element name="NmPembukuan" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

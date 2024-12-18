@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_FFBProductionDet" targetNamespace="http://tempuri.org/BD_StdRpt_FFBProductionDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_FFBProductionDet.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_FFBProductionDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_StdRpt_FFBProductionDetInt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="JAN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FEB" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MAR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="APR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MAY" type="xs:decimal" minOccurs="0" />
+				<xs:element name="JUN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="JUL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AUG" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SEP" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OCT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="NOV" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DECE" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_StdRpt_FFBProductionDetAss">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="JAN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FEB" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MAR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="APR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MAY" type="xs:decimal" minOccurs="0" />
+				<xs:element name="JUN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="JUL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AUG" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SEP" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OCT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="NOV" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DECE" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_StdRpt_FFBProductionDetExt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="JAN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FEB" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MAR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="APR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MAY" type="xs:decimal" minOccurs="0" />
+				<xs:element name="JUN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="JUL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AUG" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SEP" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OCT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="NOV" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DECE" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

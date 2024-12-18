@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_CapitalExp" targetNamespace="http://tempuri.org/BD_StdRpt_DS_CapitalExp.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_CapitalExp.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_CapitalExp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_StdRpt_DS_CapitalExp">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ExpenditureID" type="xs:string" />
+				<xs:element name="ExpDetails" type="xs:string" />
+				<xs:element name="Acccode" type="xs:string" />
+				<xs:element name="Existing" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Budgeted" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnitCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Justification" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

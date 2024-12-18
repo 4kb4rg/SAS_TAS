@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WS_Rpt_IssueReturn" targetNamespace="http://tempuri.org/WS_Rpt_IssueReturn.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WS_Rpt_IssueReturn.xsd" xmlns:mstns="http://tempuri.org/WS_Rpt_IssueReturn.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="Job">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="JobDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="CoAccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CoBlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CoLocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CoVehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CoVehExpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BillPartyCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PsLocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PsEmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PsVehRegNo" type="xs:string" minOccurs="0" />
+				<xs:element name="BillingType" type="xs:string" />
+				<xs:element name="TotalStockAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalDirectChrg" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DNID" type="xs:string" />
+				<xs:element name="PayrollPosted" type="xs:string" minOccurs="0" />
+				<xs:element name="JobStartDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="JobLine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="JobStockID" type="xs:string" />
+				<xs:element name="TransactionDate" type="xs:dateTime" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDesc" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="QtyReturned" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

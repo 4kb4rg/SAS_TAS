@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_GiroHistoryNotUsed_Report" targetNamespace="http://tempuri.org/CB_StdRpt_GiroHistoryNotUsed_Report.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_GiroHistoryNotUsed_Report.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_GiroHistoryNotUsed_Report.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_StdRpt_GiroHistoryNotUsed_Report">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="NoUrut" type="xs:string" />
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="BankCode" type="xs:string" />
+        <xs:element name="BankAccNo" type="xs:string" />
+        <xs:element name="GiroNo" type="xs:string" />
+        <xs:element name="ChequeNo" type="xs:string" />
+        <xs:element name="BankDescr" type="xs:string" />
+      </xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

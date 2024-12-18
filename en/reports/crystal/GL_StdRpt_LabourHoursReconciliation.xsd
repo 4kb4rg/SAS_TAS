@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_LabourHoursReconciliation" targetNamespace="http://tempuri.org/GL_StdRpt_LabourHoursReconciliation.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_LabourHoursReconciliation.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_LabourHoursReconciliation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_LABOURHRSRECON">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="JobType" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="HourOrig" type="xs:decimal" />
+				<xs:element name="AmtOrig" type="xs:decimal" />
+				<xs:element name="AvgCostOrig" type="xs:decimal" />
+				<xs:element name="HourUpdate" type="xs:decimal" />
+				<xs:element name="AmtUpdate" type="xs:decimal" />
+				<xs:element name="AvgCostUpdate" type="xs:decimal" />
+				<xs:element name="HourToDate" type="xs:decimal" />
+				<xs:element name="AmtToDate" type="xs:decimal" />
+				<xs:element name="AvgCostToDate" type="xs:decimal" />
+				<xs:element name="Adjustment" type="xs:decimal" />
+				<xs:element name="BillPartyEmpCodeDesc" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_FSCOGS_GSJ" targetNamespace="http://tempuri.org/GL_StdRpt_FSPE.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_FSPE.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_FSPE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GL_StdRpt_FSCOGS_GSJ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ReportCode" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" />
+        <xs:element name="AccYear" type="xs:string" />
+        <xs:element name="DispSeq" type="xs:integer" />
+        <xs:element name="RowType" type="xs:string" />
+        <xs:element name="RowId" type="xs:integer" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Description2" type="xs:string" />
+        <xs:element name="RefNo" type="xs:string" />
+        <xs:element name="UrutRefNo" type="xs:string" />
+        <xs:element name="FSpace" type="xs:integer" />
+        <xs:element name="FUnderline" type="xs:integer" />
+        <xs:element name="FBold" type="xs:integer" />
+        <xs:element name="FFont" type="xs:integer" />
+        <xs:element name="FNegSign" type="xs:integer" />
+        <xs:element name="QtyBlnIni" type="xs:decimal" />
+        <xs:element name="AmtBlnIni" type="xs:decimal" />
+        <xs:element name="AvgCostBlnIni" type="xs:decimal" />
+        <xs:element name="QtyBlnLalu" type="xs:decimal" />
+        <xs:element name="AmtBlnLalu" type="xs:decimal" />
+        <xs:element name="AvgCostBlnLalu" type="xs:decimal" />
+        <xs:element name="QtySDBlnIni" type="xs:decimal" />
+        <xs:element name="AmtSDBlnIni" type="xs:decimal" />
+        <xs:element name="AvgCostSDBlnIni" type="xs:decimal" />
+        <xs:element name="QtySDBlnLalu" type="xs:decimal" />
+        <xs:element name="AmtSDBlnLalu" type="xs:decimal" />
+        <xs:element name="AvgSDCostBlnLalu" type="xs:decimal" />
+        <xs:element name="Method" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

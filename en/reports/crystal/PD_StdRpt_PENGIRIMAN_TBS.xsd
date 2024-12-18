@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PD_StdRpt_PENGIRIMAN_TBS" targetNamespace="http://tempuri.org/PD_StdRpt_PENGIRIMAN_TBS.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PD_StdRpt_PENGIRIMAN_TBS.xsd" xmlns:mstns="http://tempuri.org/PD_StdRpt_PENGIRIMAN_TBS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PD_StdRpt_PENGIRIMAN_TBS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="location" type="xs:string" />
+				<xs:element name="SPBCode" type="xs:string" />
+				<xs:element name="refNo" type="xs:string" />
+				<xs:element name="SPBDate" type="xs:dateTime" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="NoPolisi" type="xs:string" />
+				<xs:element name="Supir" type="xs:string" />
+				<xs:element name="WB_Bruto1" type="xs:decimal" />
+				<xs:element name="WB_Tara1" type="xs:decimal" />
+				<xs:element name="WB_Netto1" type="xs:decimal" />
+				<xs:element name="WB_Bruto2" type="xs:decimal" />
+				<xs:element name="WB_Tara2" type="xs:decimal" />
+				<xs:element name="WB_Netto2" type="xs:decimal" />
+				<xs:element name="PotonganKg" type="xs:decimal" />
+				<xs:element name="WB_NettoFinal" type="xs:decimal" />
+				<xs:element name="BuahKecil" type="xs:decimal" />
+				<xs:element name="BuahBesar" type="xs:decimal" />
+				<xs:element name="TotalJJg" type="xs:decimal" />
+				<xs:element name="BJR" type="xs:decimal" />
+				<xs:element name="POT_BM" type="xs:decimal" />
+				<xs:element name="POT_BB" type="xs:decimal" />
+				<xs:element name="POT_SP" type="xs:decimal" />
+				<xs:element name="POT_AR" type="xs:decimal" />
+				<xs:element name="POT_Lain" type="xs:decimal" />
+				<xs:element name="PotonganPsn" type="xs:decimal" />
+				<xs:element name="MillCode" type="xs:string" />
+				<xs:element name="Divisi" type="xs:string" />
+				<xs:element name="Masuk" type="xs:string" />
+				<xs:element name="Keluar" type="xs:string" />
+				<xs:element name="MillDesc" type="xs:string" />
+				<xs:element name="MillType" type="xs:string" />
+				<xs:element name="TotalJJgkbn" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AP_StdRpt_InvRcvListing" targetNamespace="http://tempuri.org/AP_StdRpt_InvRcvListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_StdRpt_InvRcvListing.xsd" xmlns:mstns="http://tempuri.org/AP_StdRpt_InvRcvListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AP_StdRpt_SuppDebitNoteListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DebitNoteID" type="xs:string" />
+				<xs:element name="Supplier" type="xs:string" />
+				<xs:element name="SupplierDocRefNo" type="xs:string" minOccurs="0" />
+				<xs:element name="SupplierDocRefDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="InvoiceRcvRefNo" type="xs:string" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OutstandingAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

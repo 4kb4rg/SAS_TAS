@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_Alokasi_Pekerjaan" targetNamespace="http://tempuri.org/PR_StdRpt_Alokasi_Pekerjaan.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_Alokasi_Pekerjaan.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_Alokasi_Pekerjaan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_Alokasi_Pekerjaan.xsd">
+	<xs:element name="PR_StdRpt_Alokasi_Pekerjaan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RptName" type="xs:string" />
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocName" type="xs:string" />
+				<xs:element name="JobDesc" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="CodeEmp" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="TyEmp" type="xs:string" />
+				<xs:element name="IdDiv" type="xs:string" />
+				<xs:element name="CodeGrbJob" type="xs:string" />
+				<xs:element name="IdCat" type="xs:string" />
+				<xs:element name="IdSubCat" type="xs:string" />
+				<xs:element name="IdSubSubCat" type="xs:string" />
+				<xs:element name="GajiGol" type="xs:decimal" />
+				<xs:element name="Premi" type="xs:decimal" />
+				<xs:element name="Tunj" type="xs:decimal" />
+				<xs:element name="Lembur" type="xs:decimal" />
+				<xs:element name="Ump" type="xs:decimal" />
+				<xs:element name="T3Hk" type="xs:decimal" />
+				<xs:element name="T1Hk" type="xs:decimal" />
+				<xs:element name="T2Hk" type="xs:decimal" />
+				<xs:element name="UpahT3Hk" type="xs:decimal" />
+				<xs:element name="UpahT1Hk" type="xs:decimal" />
+				<xs:element name="T3Kg" type="xs:decimal" />
+				<xs:element name="T1Kg" type="xs:decimal" />
+				<xs:element name="T2Kg" type="xs:decimal" />
+				<xs:element name="UpahT3Kg" type="xs:decimal" />
+				<xs:element name="UpahT1Kg" type="xs:decimal" />
+				<xs:element name="GajiT3Hk" type="xs:decimal" />
+				<xs:element name="GajiT1" type="xs:decimal" />
+				<xs:element name="GajiT2" type="xs:decimal" />
+				<xs:element name="GajiT3Kg" type="xs:decimal" />
+				<xs:element name="GajiT1Kg" type="xs:decimal" />
+				<xs:element name="GajiT2Kg" type="xs:decimal" />
+				<xs:element name="DendaT3" type="xs:decimal" />
+				<xs:element name="DendaT1" type="xs:decimal" />
+				<xs:element name="DendaT2" type="xs:decimal" />
+				<xs:element name="SubGaji" type="xs:decimal" />
+				<xs:element name="SubDenda" type="xs:decimal" />
+				<xs:element name="Gaji" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

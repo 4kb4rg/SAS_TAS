@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Estate_TRANSITALOKASI" targetNamespace="http://tempuri.org/GL_StdRpt_Estate_TRANSITALOKASI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Estate_TRANSITALOKASI.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Estate_TRANSITALOKASI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_Estate_TRANSITALOKASI">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Periode" type="xs:string" />
+				<xs:element name="Header" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Ket" type="xs:string" />
+				<xs:element name="blkcode" type="xs:string" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

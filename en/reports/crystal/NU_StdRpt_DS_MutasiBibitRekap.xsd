@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NU_StdRpt_DS_MutasiBibitRekap" targetNamespace="http://tempuri.org/NU_StdRpt_DS_MutasiBibitRekap.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NU_StdRpt_DS_MutasiBibitRekap.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_DS_MutasiBibitRekap.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="SaldoAwal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="ItemCode" type="xs:string" />
+        <xs:element name="BatchNo" type="xs:string" />
+        <xs:element name="NurseryStage" type="xs:decimal" />
+        <xs:element name="PlantMaterial" type="xs:string" />
+        <xs:element name="UOM" type="xs:string" />
+        <xs:element name="QtyAwal" type="xs:decimal" />
+        <xs:element name="QtyRcv" type="xs:decimal" />
+        <xs:element name="QtyCull" type="xs:decimal" />
+        <xs:element name="QtyDT" type="xs:decimal" />
+        <xs:element name="QtyTP" type="xs:decimal" />
+        <xs:element name="QtyPlant" type="xs:decimal" />
+        <xs:element name="QtyUnplant" type="xs:decimal" />
+        <xs:element name="QtyIssue" type="xs:decimal" />
+        <xs:element name="QtyAkhir" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

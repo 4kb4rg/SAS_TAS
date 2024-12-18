@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WS_Rpt_StockItem" targetNamespace="http://tempuri.org/WS_Rpt_StockItem.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WS_Rpt_StockItem.xsd" xmlns:mstns="http://tempuri.org/WS_Rpt_StockItem.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IN_ITEM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Bin" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemType" type="xs:string" />
+				<xs:element name="ProdTypeCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ProdCatCode" type="xs:string" minOccurs="0" />
+				<xs:element name="FuelTypeInd" type="xs:string" />
+				<xs:element name="ProdBrandCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ProdModelCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ProdMatCode" type="xs:string" minOccurs="0" />
+				<xs:element name="StockAnalysisCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ExpenseCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ActCode" type="xs:string" minOccurs="0" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="PurchaseUOM" type="xs:string" />
+				<xs:element name="FuelMeterReading" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ReOrderLevel" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOnHand" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOnHold" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOnOrder" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyReOrder" type="xs:decimal" minOccurs="0" />
+				<xs:element name="InitialCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HighCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LowCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AverageCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LatestCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DiffAverageCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ClosingBal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ClosingAvrgCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ClosingDiffAvrgCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurchaseAccNo" type="xs:string" minOccurs="0" />
+				<xs:element name="IssueAccNo" type="xs:string" minOccurs="0" />
+				<xs:element name="UsePrice" type="xs:string" minOccurs="0" />
+				<xs:element name="SellFixedPrice" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SellLatestCost" type="xs:string" minOccurs="0" />
+				<xs:element name="SellAverageCost" type="xs:string" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="LastOrderDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="LastIssueDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

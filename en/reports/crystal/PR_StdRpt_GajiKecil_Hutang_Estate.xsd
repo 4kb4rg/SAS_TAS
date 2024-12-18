@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_GajiKecil_Hutang_Estate" targetNamespace="http://tempuri.org/PR_StdRpt_GajiKecil_Hutang_Estate.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_GajiKecil_Hutang_Estate.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_ListSalAndAllw.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_GajiKecil_Hutang_Estate.xsd">
+	<xs:element name="PR_GajiKecil_Hutang_Estate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RptName" type="xs:string" minOccurs="0" />
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="Accyear" type="xs:string" />
+				<xs:element name="Phymonth" type="xs:string" />
+				<xs:element name="Phyyear" type="xs:string" />
+				<xs:element name="DivCode" type="xs:string" />
+				<xs:element name="DivName" type="xs:string" />
+				<xs:element name="MandorCode" type="xs:string" />
+				<xs:element name="MandorName" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="Empname" type="xs:string" />
+				<xs:element name="EmpType" type="xs:string" />
+				<xs:element name="Empcategory" type="xs:string" />
+				<xs:element name="hk" type="xs:decimal" />
+				<xs:element name="gajihk" type="xs:decimal" />
+				<xs:element name="kgb" type="xs:decimal" />
+				<xs:element name="gajikgb" type="xs:decimal" />
+				<xs:element name="kgm" type="xs:decimal" />
+				<xs:element name="gajikgm" type="xs:decimal" />
+				<xs:element name="kgk" type="xs:decimal" />
+				<xs:element name="gajikgk" type="xs:decimal" />
+				<xs:element name="kgl" type="xs:decimal" />
+				<xs:element name="gajikgl" type="xs:decimal" />
+				<xs:element name="lembur" type="xs:decimal" />
+				<xs:element name="premi" type="xs:decimal" />
+				<xs:element name="total" type="xs:decimal" />
+				<xs:element name="premilain" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

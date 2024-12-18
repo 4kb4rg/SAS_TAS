@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_JournalAdjVoucher" targetNamespace="http://tempuri.org/GL_StdRpt_JournalAdjVoucher.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_JournalAdjVoucher.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_JournalAdjVoucher.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_JOURNALADJVOUCHER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocDesc" type="xs:string" />
+				<xs:element name="JournalAdjID" type="xs:string" />
+				<xs:element name="TransactType" type="xs:string" />
+				<xs:element name="JrnDesc" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="AccPeriod" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="JournalAdjLnID" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="LnDesc" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

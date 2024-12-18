@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_AreaStatement" targetNamespace="http://tempuri.org/GL_StdRpt_AreaStatement.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_AreaStatement.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_AreaStatement.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_AreaStatement">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BlkDesc" type="xs:string" />
+				<xs:element name="BlkGrpCode" type="xs:string" />
+				<xs:element name="TotalArea" type="xs:decimal" />
+				<xs:element name="GrpType" type="xs:string" />
+				<xs:element name="RptBlkType" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GL_StdRpt_BlkGrpDesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BlkGrpCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GL_StdRpt_BlkGrpDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BlkGrpCode" type="xs:string" />
+				<xs:element name="GrpType" type="xs:string" />
+				<xs:element name="RptBlkType" type="xs:string" />
+				<xs:element name="Value" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

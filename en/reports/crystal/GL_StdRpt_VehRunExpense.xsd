@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_VehRunExpense" targetNamespace="http://tempuri.org/GL_StdRpt_VehRunExpense.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_VehRunExpense.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_VehRunExpense.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_VEHRUNEXPENSE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehDesc" type="xs:string" />
+				<xs:element name="VehExpGrpCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RunCostInd" type="xs:string" />
+				<xs:element name="BgTotal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgTodate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_12" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_12" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UOMSUMMARY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="UsageInd" type="xs:string" />
+				<xs:element name="UsageUOM" type="xs:string" />
+				<xs:element name="UsageType" type="xs:string" />
+				<xs:element name="UsageDesc" type="xs:string" />
+				<xs:element name="BgTotal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgTodate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_12" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_12" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UOMBYVEH">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="BgTotal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgTodate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_12" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_12" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UOMBYVEH">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="BgTotal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgTodate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_12" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_12" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BUDGET_ROW">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehDesc" type="xs:string" />
+				<xs:element name="BgTotal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BgTodate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MTD_12" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YTD_12" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

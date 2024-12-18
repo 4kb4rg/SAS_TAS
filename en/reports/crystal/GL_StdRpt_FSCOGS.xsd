@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_FS" targetNamespace="http://tempuri.org/GL_StdRpt_FS.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_FS.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_FS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_FS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportCode" type="xs:string" />
+				<xs:element name="DispSeq" type="xs:integer" />
+				<xs:element name="RowType" type="xs:string" />
+				<xs:element name="RowId" type="xs:integer" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="Jml" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GL_StdRpt_FSCOGS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportCode" type="xs:string" />
+				<xs:element name="CPOProduced" type="xs:decimal" />
+				<xs:element name="PKProduced" type="xs:decimal" />
+				<xs:element name="CPOPrice" type="xs:decimal" />
+				<xs:element name="PKPrice" type="xs:decimal" />
+				<xs:element name="HPP" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

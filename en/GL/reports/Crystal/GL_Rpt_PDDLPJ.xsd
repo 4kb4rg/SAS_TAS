@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_Rpt_PDD" targetNamespace="http://tempuri.org/GL_Rpt_PDD.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_Rpt_PDD.xsd" xmlns:mstns="http://tempuri.org/GL_Rpt_PDD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="PDD">
+    <xs:complexType>
+      <xs:sequence>
+	    <xs:element name="TransactionID" type="xs:string" />
+        <xs:element name="PDDID" type="xs:string" />
+        <xs:element name="PDODate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="KetHeader" type="xs:string" />
+        <xs:element name="FromCmpy" type="xs:string" />
+        <xs:element name="ToCmpy" type="xs:string" />
+        <xs:element name="Subject" type="xs:string" />
+        <xs:element name="step" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" />
+        <xs:element name="AccYear" type="xs:string" />
+        <xs:element name="GrandTotal" type="xs:decimal" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="UpdateId" type="xs:string" />
+        <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PdoID" type="xs:string" />
+        <xs:element name="PdoLNID" type="xs:string" />
+        <xs:element name="PDoGroup" type="xs:string" />
+        <xs:element name="PdoType" type="xs:string" />        
+        <xs:element name="TypeEmp" type="xs:string" />
+        <xs:element name="GrpName" type="xs:string" />
+        <xs:element name="DescDetail" type="xs:string" />        
+        <xs:element name="Qty" type="xs:decimal" />
+        <xs:element name="uom" type="xs:string" />
+        <xs:element name="Total" type="xs:decimal" />
+        <xs:element name="NomLPJTmp" type="xs:decimal" />
+        <xs:element name="NomLPJ" type="xs:decimal" />		    
+		    <xs:element name="Selisih" type="xs:decimal" />
+        <xs:element name="GrtSelisih" type="xs:decimal" />
+        <xs:element name="GrtTotalLPJ" type="xs:decimal" />
+        <xs:element name="AdditionalNote" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ 
+</xs:schema>

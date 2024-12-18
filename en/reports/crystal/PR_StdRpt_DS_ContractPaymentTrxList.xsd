@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_DS_ContractPaymentTrxList" targetNamespace="http://tempuri.org/PR_StdRpt_DS_ContractPaymentTrxList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DS_ContractPaymentTrxList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_DS_ContractPaymentTrxList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_CONTRACTPAYMENT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ContractorCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="ContractId" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:date" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="QtyReq" type="xs:string" />
+				<xs:element name="AmountReq" type="xs:decimal" />
+				<xs:element name="QtyComplete" type="xs:string" />
+				<xs:element name="AmountComplete" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

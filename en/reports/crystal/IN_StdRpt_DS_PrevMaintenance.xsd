@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_PrevMaintenance" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PrevMaintenance.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PrevMaintenance.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PrevMaintenance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IN_StdRpt_PrevMaintenance">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PrevCode" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Station" type="xs:string" />
+				<xs:element name="StationDescr" type="xs:string" />
+				<xs:element name="Machine" type="xs:string" />
+				<xs:element name="MachineDescr" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDescr" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="LinesNo" type="xs:string" />
+				<xs:element name="LinesDescr" type="xs:string" />
+				<xs:element name="Lifetime" type="xs:decimal" />
+				<xs:element name="InstallDate" type="xs:date" />
+				<xs:element name="JanHMDay" type="xs:decimal" />
+				<xs:element name="JanHM" type="xs:decimal" />
+				<xs:element name="JanDate" type="xs:date" />
+				<xs:element name="FebHMDay" type="xs:decimal" />
+				<xs:element name="FebHM" type="xs:decimal" />
+				<xs:element name="FebDate" type="xs:date" />
+				<xs:element name="MarHMDay" type="xs:decimal" />
+				<xs:element name="MarHM" type="xs:decimal" />
+				<xs:element name="MarDate" type="xs:date" />
+				<xs:element name="AprHMDay" type="xs:decimal" />
+				<xs:element name="AprHM" type="xs:decimal" />
+				<xs:element name="AprDate" type="xs:date" />
+				<xs:element name="MayHMDay" type="xs:decimal" />
+				<xs:element name="MayHM" type="xs:decimal" />
+				<xs:element name="MayDate" type="xs:date" />
+				<xs:element name="JunHMDay" type="xs:decimal" />
+				<xs:element name="JunHM" type="xs:decimal" />
+				<xs:element name="JunDate" type="xs:date" />
+				<xs:element name="JulHMDay" type="xs:decimal" />
+				<xs:element name="JulHM" type="xs:decimal" />
+				<xs:element name="JulDate" type="xs:date" />
+				<xs:element name="AugHMDay" type="xs:decimal" />
+				<xs:element name="AugHM" type="xs:decimal" />
+				<xs:element name="AugDate" type="xs:date" />
+				<xs:element name="SepHMDay" type="xs:decimal" />
+				<xs:element name="SepHM" type="xs:decimal" />
+				<xs:element name="SepDate" type="xs:date" />
+				<xs:element name="OctHMDay" type="xs:decimal" />
+				<xs:element name="OctHM" type="xs:decimal" />
+				<xs:element name="OctDate" type="xs:date" />
+				<xs:element name="NovHMDay" type="xs:decimal" />
+				<xs:element name="NovHM" type="xs:decimal" />
+				<xs:element name="NovDate" type="xs:date" />
+				<xs:element name="DecHMDay" type="xs:decimal" />
+				<xs:element name="DecHM" type="xs:decimal" />
+				<xs:element name="DecDate" type="xs:date" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

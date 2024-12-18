@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HR_HR_STDRPT_EMP_DETAIL" targetNamespace="http://tempuri.org/HR_HR_STDRPT_EMP_DETAIL.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_HR_STDRPT_EMP_DETAIL.xsd" xmlns:mstns="http://tempuri.org/HR_HR_STDRPT_EMP_DETAIL.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="temp1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="Empname" type="xs:string" />
+				<xs:element name="Sex" type="xs:string" />
+				<xs:element name="Merried" type="xs:string" />
+				<xs:element name="CodeTg" type="xs:string" />
+				<xs:element name="POB" type="xs:string" />
+				<xs:element name="Dob" type="xs:date" />
+				<xs:element name="Usia" type="xs:int" />
+				<xs:element name="Agama" type="xs:string" />
+				<xs:element name="Blood" type="xs:string" />
+				<xs:element name="Ic" type="xs:string" />
+				<xs:element name="Icno" type="xs:string" />
+				<xs:element name="Npwp" type="xs:string" />
+				<xs:element name="DoNpwp" type="xs:date" />
+				<xs:element name="Kpp" type="xs:string" />
+				<xs:element name="iddiv" type="xs:string" />
+				<xs:element name="CodeEmpTy" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="Alamat" type="xs:string" />
+				<xs:element name="Kota" type="xs:string" />
+				<xs:element name="tlp" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp3">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="FamName" type="xs:string" />
+				<xs:element name="Sex" type="xs:string" />
+				<xs:element name="hub" type="xs:string" />
+				<xs:element name="POB" type="xs:string" />
+				<xs:element name="DOB" type="xs:date" />
+				<xs:element name="Usia" type="xs:int" />
+				<xs:element name="Study" type="xs:string" />
+				<xs:element name="Work" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp4">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="Comp" type="xs:string" />
+				<xs:element name="PS" type="xs:string" />
+				<xs:element name="PE" type="xs:string" />
+				<xs:element name="Jbt" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp5">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="TyS" type="xs:string" />
+				<xs:element name="GolS" type="xs:string" />
+				<xs:element name="JbtS" type="xs:string" />
+				<xs:element name="TyB" type="xs:string" />
+				<xs:element name="GolB" type="xs:string" />
+				<xs:element name="JbtB" type="xs:string" />
+				<xs:element name="MDate" type="xs:date" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp7">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="letterNo" type="xs:string" />
+				<xs:element name="letterDate" type="xs:date" />
+				<xs:element name="Notes" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp9">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="Wshop" type="xs:string" />
+				<xs:element name="Lokasi" type="xs:string" />
+				<xs:element name="Acara" type="xs:string" />
+				<xs:element name="TahunAhr" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp6">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="PS" type="xs:string" />
+				<xs:element name="PE" type="xs:string" />
+				<xs:element name="Gol" type="xs:string" />
+				<xs:element name="BasicS" type="xs:decimal" />
+				<xs:element name="PremiS" type="xs:decimal" />
+				<xs:element name="TunjS" type="xs:decimal" />
+				<xs:element name="UpahS" type="xs:decimal" />
+				<xs:element name="MinHk" type="xs:decimal" />
+				<xs:element name="SmallS" type="xs:decimal" />
+				<xs:element name="isGol" type="xs:string" />
+				<xs:element name="isBeras" type="xs:string" />
+				<xs:element name="isAstek" type="xs:string" />
+				<xs:element name="isSPSI" type="xs:string" />
+				<xs:element name="SpsiS" type="xs:decimal" />
+				<xs:element name="isBonus" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="temp8">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="Tingkat" type="xs:string" />
+				<xs:element name="NamaStudy" type="xs:string" />
+				<xs:element name="TahunAwl" type="xs:string" />
+				<xs:element name="TahunAhr" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

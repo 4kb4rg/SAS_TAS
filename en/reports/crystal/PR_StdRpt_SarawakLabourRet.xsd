@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_SarawakLabourRet" targetNamespace="http://tempuri.org/PR_StdRpt_SarawakLabourRet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_SarawakLabourRet.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_SarawakLabourRet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_SARAWAKLABRET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="ResAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="PostAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="ICAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICType" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICType" type="xs:string" minOccurs="0" />
+				<xs:element name="Gender" type="xs:string" minOccurs="0" />
+				<xs:element name="DOB" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="Race" type="xs:string" minOccurs="0" />
+				<xs:element name="Nation" type="xs:string" minOccurs="0" />
+				<xs:element name="AppJoinDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="TerminateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="Occupation" type="xs:string" minOccurs="0" />
+				<xs:element name="Qualification" type="xs:string" minOccurs="0" />
+				<xs:element name="RateOfPay" type="xs:decimal" minOccurs="0" />
+				<xs:element name="strRateOfPay" type="xs:string" minOccurs="0" />
+				<xs:element name="NormalDaysWork" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OvertimeHours" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OvertimeEarnings" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RestDayHoursN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RestDayHoursOT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RestDayEarningsN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RestDayEarningsOT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HolHoursN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HolHoursOT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HolEarningsN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HolEarningsOT" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Allowance" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Total" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AccPeriod" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

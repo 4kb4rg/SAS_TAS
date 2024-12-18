@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WM_StdRpt_FFBAssessSummary" targetNamespace="http://tempuri.org/WM_StdRpt_FFBAssessSummary.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_FFBAssessSummary.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_FFBAssessSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_FFBAssessSummary">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SuppType" type="xs:string" />
+				<xs:element name="CustomerCode" type="xs:string" />
+				<xs:element name="TotalSupplied" type="xs:decimal" />
+				<xs:element name="TotalGraded" type="xs:decimal" />
+				<xs:element name="RipeBunch" type="xs:decimal" />
+				<xs:element name="RipePct" type="xs:decimal" />
+				<xs:element name="OverripeBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OverripePct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnderripeBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnderripePct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnripeBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnripePct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="EmptyBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="EmptyPct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RottenBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RottenPct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PoorBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PoorPct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SmallBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SmallPct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LongStalkBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LongStalkPct" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Total" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

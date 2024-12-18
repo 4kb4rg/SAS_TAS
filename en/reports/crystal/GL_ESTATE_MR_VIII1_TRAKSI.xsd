@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_VIII1_TRAKSI" targetNamespace="http://tempuri.org/GL_ESTATE_MR_VIII1_TRAKSI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_VIII1_TRAKSI.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_VIII1_TRAKSI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="VEH_CODE" type="xs:string" />
+				<xs:element name="VEH_NAME" type="xs:string" />
+				<xs:element name="VEH_TYPE" type="xs:string" />
+				<xs:element name="JNS_MERK" type="xs:string" />
+				<xs:element name="YEAR_MADE" type="xs:decimal" />
+				<xs:element name="YEAR_REPLACE" type="xs:decimal" />
+				
+				<xs:element name="HMAwlBI" type="xs:decimal" />
+				<xs:element name="HMAhrBI" type="xs:decimal" />
+				<xs:element name="HMJmlBI" type="xs:decimal" />
+				<xs:element name="LtrBI" type="xs:decimal" />
+				
+				<xs:element name="HMAwlSBI" type="xs:decimal" />
+				<xs:element name="HMAhrSBI" type="xs:decimal" />
+				<xs:element name="HMJmlSBI" type="xs:decimal" />
+				<xs:element name="LtrSBI" type="xs:decimal" />
+				
+				<xs:element name="BBMBI" type="xs:decimal" />
+				<xs:element name="BBMSBI" type="xs:decimal" />
+				
+				<xs:element name="Bud" type="xs:decimal" />
+				<xs:element name="PsnUtil" type="xs:decimal" />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

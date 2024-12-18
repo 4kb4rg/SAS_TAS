@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_VII2_BIBIT" targetNamespace="http://tempuri.org/GL_ESTATE_MR_VII2_BIBIT.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_VII2_BIBIT.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_VII2_BIBIT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_VII2_BIBIT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />				
+				<xs:element name="BatchNo" type="xs:string"  />
+				<xs:element name="BatchNoMN" type="xs:string"  />
+				<xs:element name="PlantDate" type="xs:dateTime"  />
+				<xs:element name="PlantMaterial" type="xs:string"  />				
+				<xs:element name="QtyRcv" type="xs:decimal"  />
+				<xs:element name="QtyCulAwal" type="xs:decimal"  />
+				<xs:element name="QtyPlant" type="xs:decimal"  />	
+				<xs:element name="QtyCul1PN1_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul2PN1_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul3PN1_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul1PN2_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul2PN2_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul3PN2_BI" type="xs:decimal"  />
+				<xs:element name="QtyPN_BI" type="xs:decimal"  />
+				<xs:element name="QtyPNTP_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul1MN1_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul2MN1_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul3MN1_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul1MN2_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul2MN2_BI" type="xs:decimal"  />
+				<xs:element name="QtyCul3MN2_BI" type="xs:decimal"  />
+				<xs:element name="QtyMN_BI" type="xs:decimal"  />	
+				<xs:element name="QtyCulAwal_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul1PN1_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul2PN1_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul3PN1_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul1PN2_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul2PN2_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul3PN2_SBI" type="xs:decimal"  />
+				<xs:element name="QtyPN_SBI" type="xs:decimal"  />
+				<xs:element name="QtyPNTP_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul1MN1_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul2MN1_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul3MN1_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul1MN2_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul2MN2_SBI" type="xs:decimal"  />
+				<xs:element name="QtyCul3MN2_SBI" type="xs:decimal"  />
+				<xs:element name="QtyMN_SBI" type="xs:decimal"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

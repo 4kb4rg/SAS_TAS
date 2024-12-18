@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AP_Rpt_InvRcv_WM_List" targetNamespace="http://tempuri.org/AP_Rpt_InvRcv_WM_List.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_Rpt_InvRcv_WM_List.xsd" xmlns:mstns="http://tempuri.org/AP_Rpt_InvRcv_WM_List.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="APWM_LIST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TrxID" type="xs:string" />
+        <xs:element name="RefNo" type="xs:string" />
+        <xs:element name="Refdate" type="xs:date" />
+        <xs:element name="SupplierCode" type="xs:string" />
+        <xs:element name="SupplierName" type="xs:string" />
+        <xs:element name="TicketNo" type="xs:string" />
+        <xs:element name="InDate" type="xs:date" />
+        <xs:element name="OutDate" type="xs:date" />
+        <xs:element name="FirstWeight" type="xs:decimal" />
+        <xs:element name="SecondWeight" type="xs:decimal" />
+        <xs:element name="Potongan" type="xs:decimal" />
+        <xs:element name="NetWeight" type="xs:decimal" />
+        <xs:element name="DetWeight" type="xs:decimal" />
+        <xs:element name="HargaPapan" type="xs:decimal" />
+        <xs:element name="HargaFinal" type="xs:decimal" />
+        <xs:element name="TotalAmount" type="xs:decimal" />
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="UserName" type="xs:string" />
+        <xs:element name="CompName" type="xs:string" />
+        <xs:element name="BlkCode" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

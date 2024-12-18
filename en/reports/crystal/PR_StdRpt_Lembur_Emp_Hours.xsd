@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_Lembur_Emp" targetNamespace="http://tempuri.org/PR_StdRpt_Lembur_Emp.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_Lembur_Emp.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_Lembur_Emp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_Lembur_Emp.xsd">
+  <xs:element name="PR_StdRpt_Lembur_Emp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="EmpCode" type="xs:string" />
+        <xs:element name="EmpName" type="xs:string" />
+        <xs:element name="IDDiv" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Ovr1" type="xs:decimal" />
+        <xs:element name="Ovr2" type="xs:decimal" />
+        <xs:element name="Ovr3" type="xs:decimal" />
+        <xs:element name="Ovr4" type="xs:decimal" />
+        <xs:element name="OvrHours" type="xs:decimal" />
+        <xs:element name="TotalHours" type="xs:decimal" />
+        <xs:element name="TotalAmount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

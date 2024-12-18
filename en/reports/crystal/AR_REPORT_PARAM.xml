@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes" ?>
+<NewDataSet>
+	<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xs:element name="NewDataSet" msdata:IsDataSet="true">
+			<xs:complexType>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="ACCOUNTRECEIVABLES_REPORT">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="BankAccNo" type="xs:string" minOccurs="0" />
+								<xs:element name="BankName" type="xs:string" minOccurs="0" />
+								<xs:element name="BankBranch" type="xs:string" minOccurs="0" />
+								<xs:element name="UndersignedName" type="xs:string" minOccurs="0" />
+								<xs:element name="UndersignedPost" type="xs:string" minOccurs="0" />
+								<xs:element name="ToAge1" type="xs:string" minOccurs="0" />
+								<xs:element name="FromAge2" type="xs:string" minOccurs="0" />
+								<xs:element name="ToAge2" type="xs:string" minOccurs="0" />
+								<xs:element name="FromAge3" type="xs:string" minOccurs="0" />
+								<xs:element name="ToAge3" type="xs:string" minOccurs="0" />
+								<xs:element name="FromAge4" type="xs:string" minOccurs="0" />
+								<xs:element name="ToAge4" type="xs:string" minOccurs="0" />
+								<xs:element name="FromAge5" type="xs:string" minOccurs="0" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:complexType>
+		</xs:element>
+	</xs:schema>
+	<ACCOUNTRECEIVABLES_REPORT>
+		<BankAccNo>330.010.003338</BankAccNo>
+		<BankName>Bank NISP</BankName>
+		<BankBranch>Cab. Teluk Betung - Lampung</BankBranch>
+		<UndersignedName>Andhi Faujani</UndersignedName>
+		<UndersignedPost>Direktur</UndersignedPost>
+		<ToAge1>30</ToAge1>
+		<FromAge2>31</FromAge2>
+		<ToAge2>60</ToAge2>
+		<FromAge3>61</FromAge3>
+		<ToAge3>90</ToAge3>
+		<FromAge4>91</FromAge4>
+		<ToAge4>120</ToAge4>
+		<FromAge5>121</FromAge5>
+	</ACCOUNTRECEIVABLES_REPORT>
+</NewDataSet>

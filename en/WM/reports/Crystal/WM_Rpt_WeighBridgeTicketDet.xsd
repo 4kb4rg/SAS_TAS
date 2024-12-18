@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WM_Rpt_WeighBridgeTicketDet" targetNamespace="http://tempuri.org/WM_Rpt_WeighBridgeTicketDet.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/WM_Rpt_WeighBridgeTicketDet.xsd" xmlns:mstns="http://tempuri.org/WM_Rpt_WeighBridgeTicketDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="WM_CLSTRX_WEIGHBRIDGE_TICKET_GET_RPT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TicketNo" type="xs:string" />
+				<xs:element name="InDate" type="xs:dateTime" />
+				<xs:element name="OutDate" type="xs:dateTime" />
+				<xs:element name="TransType" type="xs:string" />
+				<xs:element name="TransTypeDesc" type="xs:string" />
+				<xs:element name="ProductCode" type="xs:string" />
+				<xs:element name="ProductDesc" type="xs:string" />
+				<xs:element name="CustomerDocNo" type="xs:string" />
+				<xs:element name="VehicleCode" type="xs:string" />
+				<xs:element name="PL3No" type="xs:string" />
+				<xs:element name="PlantingYear" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="DeliveryNoteNo" type="xs:string" />
+				<xs:element name="FirstWeight" type="xs:decimal" />
+				<xs:element name="SecondWeight" type="xs:decimal" />
+				<xs:element name="DriverName" type="xs:string" />
+				<xs:element name="DriverIC" type="xs:string" />
+				<xs:element name="Remarks" type="xs:string" />
+				<xs:element name="CustomerDesc" type="xs:string" />
+				<xs:element name="TransporterCode" type="xs:string" />
+				<xs:element name="TransporterDesc" type="xs:string" />
+				<xs:element name="NetWeight" type="xs:decimal" />
+				<xs:element name="TelNo" type="xs:string" />
+				<xs:element name="FaxNo" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

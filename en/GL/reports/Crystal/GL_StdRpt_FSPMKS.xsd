@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_FSPMKS" targetNamespace="http://tempuri.org/GL_StdRpt_FSPMKS.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_FSPMKS.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_FSPMKS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_FSPMKS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="RowId" type="xs:integer" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="PeriodValue" type="xs:decimal" />
+				<xs:element name="RefID" type="xs:string" />
+				<xs:element name="IDNO" type="xs:integer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

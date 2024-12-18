@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_PemupukanOrganikTM" targetNamespace="http://tempuri.org/GL_StdRpt_PemupukanOrganikTM.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_PemupukanOrganikTM.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_PemupukanOrganikTM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_PEMUPUKANORGANIKTM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BlkGrpCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="TotalArea" type="xs:decimal" />
+				<xs:element name="TotalStand" type="xs:decimal" />
+				<xs:element name="StdPerArea" type="xs:decimal" />
+				<xs:element name="JJ" type="xs:decimal" />
+				<xs:element name="MillEff" type="xs:decimal" />
+				<xs:element name="JJDsg" type="xs:decimal" />
+				<xs:element name="MillEffDsg" type="xs:decimal" />
+				<xs:element name="Budget" type="xs:decimal" />
+				<xs:element name="TotCurr" type="xs:decimal" />
+				<xs:element name="SisaJJ" type="xs:decimal" />
+				<xs:element name="SisaMillEff" type="xs:decimal" />
+				<xs:element name="TotSisa" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

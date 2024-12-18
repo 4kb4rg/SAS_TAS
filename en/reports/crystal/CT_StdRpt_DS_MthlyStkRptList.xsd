@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CT_StdRpt_DS_MthlyStkRptList" targetNamespace="http://tempuri.org/CT_StdRpt_DS_MthlyStkRptList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CT_StdRpt_DS_MthlyStkRptList.xsd" xmlns:mstns="http://tempuri.org/CT_StdRpt_DS_MthlyStkRptList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CT_StdRpt_DS_MthlyStkRptList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDesc" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="BalBFQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BalBFCost" type="xs:decimal" minOccurs="0" />	
+				<xs:element name="RcvQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RcvAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SalesQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SalesAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AdjQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AdjAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BalCFQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BalCFCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BalCFAmt" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_DepositListing" targetNamespace="http://tempuri.org/CB_StdRpt_DepositListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_DepositListing.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_DepositListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_BankTransListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="AccountHolder" type="xs:string" minOccurs="0" />
+				<xs:element name="BankAccNo" type="xs:string" minOccurs="0" />
+				<xs:element name="BankCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="TranAmount" type="xs:double" minOccurs="0" />
+				<xs:element name="TransCharge" type="xs:double" minOccurs="0" />
+				<xs:element name="TotalTrans" type="xs:double" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="CompCode" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

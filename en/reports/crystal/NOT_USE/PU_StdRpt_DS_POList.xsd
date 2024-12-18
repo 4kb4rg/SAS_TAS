@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PU_StdRpt_DS_POList" targetNamespace="http://tempuri.org/PU_StdRpt_DS_POList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_StdRpt_DS_POList.xsd" xmlns:mstns="http://tempuri.org/PU_StdRpt_DS_POList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PU_StdRpt_DS_POList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="POID" type="xs:string" minOccurs="0" />
+				<xs:element name="LocLevel" type="xs:string" minOccurs="0" />
+				<xs:element name="PODate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="SupplierName" type="xs:string" minOccurs="0" />
+				<xs:element name="POStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="POType" type="xs:string" minOccurs="0" />
+				<xs:element name="POLnID" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="RefNo" type="xs:string" minOccurs="0" />
+				<xs:element name="RefLocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="POLnStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="QtyOrder" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyReceive" type="xs:decimal" minOccurs="0" />
+				<xs:element name="GRID" type="xs:string" minOccurs="0" />
+				<xs:element name="GRDate" type="xs:string" minOccurs="0" />
+				<xs:element name="QtyInvoice" type="xs:decimal" minOccurs="0" />
+				<xs:element name="InvoiceRefNo" type="xs:string" minOccurs="0" />
+				<xs:element name="APID" type="xs:string" minOccurs="0" />
+				<xs:element name="APDate" type="xs:string" minOccurs="0" />
+				<xs:element name="APAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyCancel" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CBID" type="xs:string" minOccurs="0" />
+				<xs:element name="CBDate" type="xs:string" minOccurs="0" />
+				<xs:element name="CBAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPNAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PBBKB" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AmtTransportFee" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Discount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CurrencyCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ExchangeRate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AdditionalNote" type="xs:string" minOccurs="0" />
+				<xs:element name="PurchaseUOM" type="xs:string" minOccurs="0" />
+				<xs:element name="Catatan" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

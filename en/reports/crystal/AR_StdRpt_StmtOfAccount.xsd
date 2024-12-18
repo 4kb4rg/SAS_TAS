@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AR_StdRpt_StmtOfAccount" targetNamespace="http://tempuri.org/AR_StdRpt_StmtOfAccount.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AR_StdRpt_StmtOfAccount.xsd" xmlns:mstns="http://tempuri.org/AR_StdRpt_StmtOfAccount.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_STMTACC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocName" type="xs:string" />
+				<xs:element name="LocAddress" type="xs:string" />
+				<xs:element name="LocPostCode" type="xs:string" />
+				<xs:element name="LocState" type="xs:string" />
+				<xs:element name="LocCity" type="xs:string" />
+				<xs:element name="LocCountryName" type="xs:string" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="Town" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="PostCode" type="xs:string" />
+				<xs:element name="CountryCode" type="xs:string" />
+				<xs:element name="CountryName" type="xs:string" />
+				<xs:element name="CreditTerm" type="xs:string" />
+				<xs:element name="CreditLimit" type="xs:decimal" />
+				<xs:element name="TransDate" type="xs:dateTime" />
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="JrnType" type="xs:string" />
+				<xs:element name="JrnDocId" type="xs:string" />
+				<xs:element name="TransDesc" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+				<xs:element name="PrevBalance" type="xs:decimal" />
+				<xs:element name="CurrBalance" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AR_STMTACC_AGEING">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="AgeCat1" type="xs:decimal" />
+				<xs:element name="AgeCat2" type="xs:decimal" />
+				<xs:element name="AgeCat3" type="xs:decimal" />
+				<xs:element name="AgeCat4" type="xs:decimal" />
+				<xs:element name="AgeCat5" type="xs:decimal" />
+				<xs:element name="AmountDue" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

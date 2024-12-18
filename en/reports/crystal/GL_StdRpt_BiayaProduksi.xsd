@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_BiayaProduksi" targetNamespace="http://tempuri.org/GL_StdRpt_BiayaProduksi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_BiayaProduksi.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_BiayaProduksi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYAPRODUKSI">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NoUrt" type="xs:double" minOccurs="0" />
+				<xs:element name="Hdr" type="xs:string" />
+				<xs:element name="Header" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkGrpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="DivDescr" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="RThisMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RToMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BThisMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BToMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PDRThisMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PDRToMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PDBThisMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PDBToMonth" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

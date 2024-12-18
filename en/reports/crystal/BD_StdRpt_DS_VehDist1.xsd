@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_VehDist" targetNamespace="http://tempuri.org/BD_StdRpt_DS_VehDist.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_VehDist.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_VehDist.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_ACTVEHPARAM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VehTypeDistSetID" type="xs:string" />
+				<xs:element name="Activity" type="xs:string" />
+				<xs:element name="VehType" type="xs:string" />
+				<xs:element name="Parameter" type="xs:decimal" />
+				<xs:element name="UsgCost" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_USGCOST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VehTypeDistSetID" type="xs:string" />
+				<xs:element name="YearPlanted" type="xs:string" />
+				<xs:element name="VehUsage" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

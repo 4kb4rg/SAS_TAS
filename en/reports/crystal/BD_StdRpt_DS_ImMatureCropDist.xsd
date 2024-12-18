@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_ImMatureCropDist" targetNamespace="http://tempuri.org/BD_StdRpt_DS_ImMatureCropDist.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_ImMatureCropDist.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_ImMatureCropDist.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_IMMATURECROPDIST_FORMAT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UnMatureCropDistID" type="xs:int" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="YrBudgetCost" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_IMMATURECROPDIST_PERIOD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="UnMatureCropDistID" type="xs:int" />
+				<xs:element name="AccMonth" type="xs:int" />
+				<xs:element name="AccYear" type="xs:int" />
+				<xs:element name="AccPeriod" type="xs:string" />
+				<xs:element name="Cost" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_PlantationOH" targetNamespace="http://tempuri.org/BD_StdRpt_DS_PlantationOH.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_PlantationOH.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_PlantationOH.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_OH_FORMAT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OverheadSetID" type="xs:string" />
+				<xs:element name="Acc" type="xs:string" />
+				<xs:element name="Item" type="xs:string" />
+				<xs:element name="ItemDisplayType" type="xs:string" />
+				<xs:element name="ItemDisplayCol" type="xs:string" />
+				<xs:element name="Frequency" type="xs:decimal" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="UnitCost" type="xs:decimal"  />
+				<xs:element name="LabourCost" type="xs:decimal" />
+				<xs:element name="MaterialCost" type="xs:decimal" />
+				<xs:element name="OtherCost" type="xs:decimal" />
+				<xs:element name="AddVote" type="xs:decimal" />
+				<xs:element name="CostPerArea" type="xs:decimal" />
+				<xs:element name="CostPerWeight" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_OH_TOTALAREA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AreaSize" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_OH_TOTALYIELD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Yield" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

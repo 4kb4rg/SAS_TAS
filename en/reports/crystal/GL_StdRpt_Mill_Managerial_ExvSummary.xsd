@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Mill_Managerial" targetNamespace="http://tempuri.org/GL_StdRpt_Mill_Managerial.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Mill_Managerial.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Mill_Managerial.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="GL_PROD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GroupUrut" type="xs:string" minOccurs="0" />
+        <xs:element name="NoUrut" type="xs:string" minOccurs="0" />
+        <xs:element name="Deskripsi" type="xs:string" minOccurs="0" />
+        <xs:element name="RealPrevMonth" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Budget" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RealMonth" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Persen" type="xs:decimal" minOccurs="0" />
+        <xs:element name="BudgetTD" type="xs:decimal" minOccurs="0" />
+        <xs:element name="RealMonthTD" type="xs:decimal" />
+        <xs:element name="PersenTD" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GL_BIAYA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Periode" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

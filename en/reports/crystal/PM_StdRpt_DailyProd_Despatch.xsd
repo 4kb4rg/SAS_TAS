@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PM_StdRpt_Daily_Prod_Rpt" targetNamespace="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:mstns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WM_PROD_STDRPT_PRODUCTION_DAILY_REPORT_GET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DateSounding" type="xs:dateTime" />
+        <xs:element name="NomorKontrak" type="xs:string" />
+        <xs:element name="BillParty" type="xs:string" minOccurs="0" />
+        <xs:element name="QtyContract" type="xs:decimal" minOccurs="0" />
+        <xs:element name="QtyAwal" type="xs:decimal" />
+        <xs:element name="QtyDespatch_CPO" type="xs:decimal" />
+        <xs:element name="Psn_CPO" type="xs:decimal" />
+        <xs:element name="QtyDespatch_PK" type="xs:decimal" />
+        <xs:element name="Psn_PK" type="xs:decimal" />
+        <xs:element name="Balance_CPO" type="xs:decimal" />
+        <xs:element name="Psn_Balance_CPO" type="xs:decimal" />
+        <xs:element name="Balance_PK" type="xs:decimal" />
+        <xs:element name="Psn_Balance_PK" type="xs:decimal" />
+        <xs:element name="QtyDespatch_CPO_td" type="xs:decimal" />
+        <xs:element name="QtyDespatch_PK_Td" type="xs:decimal" />
+        <xs:element name="TglKontrak" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

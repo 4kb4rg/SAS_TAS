@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Estate_Summary_Biaya" targetNamespace="http://tempuri.org/GL_StdRpt_Estate_Summary_Biaya.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Estate_Summary_Biaya.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Estate_Summary_Biaya.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_SUMMARY_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="id" type="xs:string" minOccurs="0" />
+				<xs:element name="idln" type="xs:string" minOccurs="0" />
+				<xs:element name="itemdesc" type="xs:string" minOccurs="0" />
+				<xs:element name="uom" type="xs:string" minOccurs="0" />
+				<xs:element name="Header1" type="xs:string" minOccurs="0" />
+				<xs:element name="Value1BBi" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Value1Bi" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Value1SBi" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AOPValue1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Header2" type="xs:string" minOccurs="0" />
+				<xs:element name="Value2BBi" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Value2Bi" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Value2SBi" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AOPValue2" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

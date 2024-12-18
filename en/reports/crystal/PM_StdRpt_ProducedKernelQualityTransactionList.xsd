@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_PRList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_TransporterMasterList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TransMonthYear" type="xs:string" minOccurs="0" />
+				<xs:element name="TransDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="SiloBK1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloMoist1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloLShell1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloWN1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloBN1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloTotalDirt1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloBK2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloMoist2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloLShell2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloWN2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloBN2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloTotalDirt2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloBK3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloMoist3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloLShell3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloWN3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloBN3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SiloTotalDirt3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdBK" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdMoist" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdLShell" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdWN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdBN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdTotalDirt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdOD" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ProdFFA" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

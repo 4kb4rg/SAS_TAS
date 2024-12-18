@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_FSPE" targetNamespace="http://tempuri.org/GL_StdRpt_FSPE.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_FSPE.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_FSPE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_FSPE">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="ReportCode" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" />
+        <xs:element name="AccYear" type="xs:string" />
+        <xs:element name="DispSeq" type="xs:integer" />
+        <xs:element name="RowType" type="xs:string" />
+        <xs:element name="RowId" type="xs:integer" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="RefNo" type="xs:string" />
+        <xs:element name="Formula" type="xs:string" />
+        <xs:element name="FSpace" type="xs:integer" />
+        <xs:element name="FUnderline" type="xs:integer" />
+        <xs:element name="FBold" type="xs:integer" />
+        <xs:element name="FFont" type="xs:integer" />
+        <xs:element name="FNegSign" type="xs:integer" />
+        <xs:element name="Description2" type="xs:string" />
+        <xs:element name="Description3" type="xs:string" />
+        <xs:element name="UrutRefNo" type="xs:string" />
+        <xs:element name="Method" type="xs:string" />
+				<xs:element name="ModalSaham" type="xs:decimal" />
+        <xs:element name="SetoranModal" type="xs:decimal" />
+        <xs:element name="TrxRestrukturisasi" type="xs:decimal" />
+        <xs:element name="SaldoLaba" type="xs:decimal" />
+        <xs:element name="Total" type="xs:decimal" />
+        <xs:element name="Title1" type="xs:string" />
+        <xs:element name="Title2" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

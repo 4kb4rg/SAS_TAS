@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CT_StdRpt_DS_ItemRetAdvList" targetNamespace="http://tempuri.org/CT_StdRpt_DS_ItemRetAdvList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CT_StdRpt_DS_ItemRetAdvList.xsd" xmlns:mstns="http://tempuri.org/CT_StdRpt_DS_ItemRetAdvList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_Rpt_SaldoBank_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PriceAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AccDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="BankCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

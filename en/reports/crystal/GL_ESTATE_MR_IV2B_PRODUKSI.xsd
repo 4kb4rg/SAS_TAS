@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_IV2B_PRODUKSI" targetNamespace="http://tempuri.org/GL_ESTATE_MR_IV2B_PRODUKSI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_IV2B_PRODUKSI.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_IV2B_PRODUKSI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="Divisi" type="xs:string" />
+				<xs:element name="Luas" type="xs:decimal" />
+				<xs:element name="HKBdgt_Bi" type="xs:decimal" />
+				<xs:element name="KGBdgt_Bi" type="xs:decimal" />
+				<xs:element name="KGHKBdgt_Bi" type="xs:decimal" />
+				<xs:element name="HKAct_Bi" type="xs:decimal" />
+				<xs:element name="KGAct_Bi" type="xs:decimal" />
+				<xs:element name="KGHKAct_Bi" type="xs:decimal" />
+				<xs:element name="HKBdgt_Sbi" type="xs:decimal" />
+				<xs:element name="KGBdgt_Sbi" type="xs:decimal" />
+				<xs:element name="KGHKBdgt_Sbi" type="xs:decimal" />
+				<xs:element name="HKAct_Sbi" type="xs:decimal" />
+				<xs:element name="KGAct_Sbi" type="xs:decimal" />
+				<xs:element name="KGHKAct_Sbi" type="xs:decimal" />
+				<xs:element name="Var_Bi" type="xs:decimal" />
+				<xs:element name="Var_Sbi" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

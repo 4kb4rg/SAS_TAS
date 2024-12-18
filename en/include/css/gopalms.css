@@ -1,0 +1,522 @@
+﻿/* Global Rules */
+body {
+	font-family: Tahoma;
+	font-weight: normal;
+}
+.font7 {
+	font-size: 7pt;
+}
+.font8 {
+	font-size: 8pt;
+}
+.font9 {
+	font-size: 9pt;
+}
+.font10 {
+	font-size: 10pt;
+}
+.font14 {
+	font-size: 14pt;
+}
+.font16 {
+	font-size: 16pt;
+}
+.font18 {
+	font-size: 18pt;
+}
+.mb-c 
+{
+    color: black;
+	font-size: 9pt;
+	font-family: Tahoma;
+}
+
+.lb-mt
+{
+    color: #FFFFFF;
+}
+
+
+.font9Header
+{
+    color:#204621;
+	font-size: 9pt;
+	font-family: Tahoma;
+	text-align:right;
+	font:bold;
+    }
+
+.font9Tahoma {
+	font-size: 9pt;
+	font-family: Tahoma;
+ 
+}
+
+.font12Tahoma {
+	font-size: 10pt;
+	font-family: Tahoma;
+	font-weight:bold;
+ 
+}
+.FontUserName {
+	font-size: 9pt;
+	font-family: Tahoma;
+	color:DarkBlue;
+font-weight: bold;
+
+}
+
+.fontObject {
+	font-size: 9pt;
+	font-family: Tahoma;
+	background-color:White;	
+ 
+}
+
+
+.mr-h {
+	font-size:10pt;
+	font-family: Tahoma;
+	background-color:#CCCCCC;
+	
+}
+
+.mr-l{
+	font-size: 9pt;
+	font-family: Tahoma;
+	background-color:#FEFEFE;
+ 
+}
+
+.mr-r{
+	font-size: 9pt;
+	font-family: Tahoma;
+	background-color:#EEEEEE;
+ 
+}
+
+.navigationButton {
+	font-size: 12pt;
+	font-family: Tahoma;
+	color:black;
+border: 1px solid;
+
+}
+
+.navigatioLocation {
+	font-size: 11pt;
+	font-family:Arial Narrow;
+	color:black;
+	font-weight:bold;
+ 
+ 
+
+}
+
+hr {
+	width: 1368px;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+a {
+	text-decoration:none;
+    text-align: right;
+}
+a:hover {
+	text-decoration:none;
+}
+a:visited {
+	text-decoration:none;
+	color:inherit;
+}
+textarea {
+	resize: none;
+}
+img.button:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+img {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+	border-style: solid;
+	border-width: 0;
+    text-align: center;
+}
+.cell-center {
+	text-align: center;
+}
+.cell-left {
+	text-align: left;
+}
+.cell-right {
+}
+
+/* Backgrounds */
+.main-login {
+	background-color: #e5e5e5;
+	background-image: url('../../images/lgnformbg.png');
+}
+.main-bg {
+	text-align: left;
+	background-image: url('../../images/lgnrightbg.png');
+}
+.main-modul-bg {
+	background-color: #FFFFFF;
+	background-image: url('../../images/bgmainmenu.png');
+	background-repeat: no-repeat;
+} 
+ 
+ .main-modul-bg-app {
+	background-color:Black;
+	background-image: url('../../../../../images/bgmainmenu.png');
+	background-repeat: no-repeat;
+}
+.main-modul-bg-app-list-pu {
+	background-color:white;
+	background-image: url('../../../images/bgsubmenu.png');
+
+}
+Denu.png');
+}
+.main-header {
+	background-color: #FFFFFF;
+}
+.sub-Add{
+	background-color: RGBA(255, 255, 255, 0.5);
+	color: black;
+	padding: 10px 10px 10px 10px;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: normal;
+	width:99%;
+}
+.sub-bg {
+	background-color: #FFFFFF;
+	background-image: url('../../images/bgsubmenu.png');
+}
+.bg-white {
+	background-color: #FFFFFF;
+}
+.white-on-black50 {
+	background-color: RGBA(0, 0, 0, 0.5);
+	color: #FFFFFF;
+}
+
+/* Button for Main Page */
+.button-main {
+	border: thin;
+	text-align:center;
+	text-decoration:none;
+	padding: 9px 27px 9px 27px;
+	font-size: 16pt;
+	color: #FFFFFF;
+	background-color: #204621;
+}
+.button-main:hover {
+	color: #204621;
+	background-color: #FFFFFF;	
+	border: thin #204621 solid;
+}
+ 
+							
+/* Button for Form */
+.button-form {
+	border: thin #204621 solid;
+	text-align:center;
+	text-decoration:none;
+	padding: 5px 10px 5px 10px;
+	font-size: 8pt;
+	font-weight:bold;
+	color: #FFFFFF;
+	background-color: #204621;
+}
+.button-form:hover {
+	color: #204621;
+	background-color: #FFFFFF;
+	border: thin #204621 solid;
+}
+
+/* Button for Form */
+.button-small {
+	border: thin #204621 solid;
+	text-align:center;
+	text-decoration:none;
+	padding: 5px 10px 5px 10px;
+	font-size: 7pt;
+	font-weight:bold;
+	color: #FFFFFF;
+	background-color: #204621;
+}
+.button-small:hover {
+	color: #204621;
+	background-color: #FFFFFF;
+	border: thin #204621 solid;
+}
+
+/* Pop-up Form */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    top: -19px;
+    left: 0px;
+    height: 4px;
+}
+ve;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none; /* change to block when editing */
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: RGBA(255, 255, 255, 0.95);
+    border:1px #CCCCCC solid;
+    padding: 10px 10px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Accordion Menu */
+button.accordion {
+    background-color: #000000;
+    margin: 0 0 0px 0;
+    color: #FFCC00;
+    cursor: pointer;
+    padding: 5px 5px 5px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+    font-family: Tahoma;
+    font-weight: bold;
+}
+button.accordion.active, button.accordion:hover {
+    background-color: #000000;
+}
+div.panel {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    display:block; /* change to block when editing */
+    background-color: #FFFFFF;
+}
+div.panel.hide {
+    display: none !important;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+div.childmenu {	
+    background-color: #204621;
+	text-decoration: none;
+	color:#FFFFFF;
+	padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    font-family: Tahoma;
+    font-weight: normal;
+
+}
+div.childmenu:hover {
+	text-decoration: none;
+	background-color:#8cb371;
+	color:#FFFFFF;
+	padding: 10px 10px 10px 40px;
+}
+div.fathermenu {	
+    background-color: #0080CB;
+	text-decoration: none;
+	color:#FFFFFF;
+	padding: 2px 2px 2px 2px;
+    font-size: 11px;
+    font-family: Tahoma;
+    font-weight: normal;
+
+}
+div.fathermenu:hover {
+	text-decoration: none;
+	background-color:#2692D2;
+	color:#FFFFFF;
+	padding: 10px 10px 10px 20px;
+}
+div.konten {
+	background-color: RGBA(200, 200, 200, 0.5); 
+	color: black;
+	padding: 10px 10px 10px 10px;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: normal;
+	overflow: auto;
+	/* height: 100px; */
+
+	position: absolute; 
+	right: 14px;
+    top: 0px;
+    left: 13px;
+    width: 1502px;
+ 
+}
+
+div.kontenPanel {
+	background-color: RGBA(200, 200, 200, 0.5); 
+	color: white;
+	padding: 0px 0px 0px 0px;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: normal;
+	overflow: auto;
+	position: absolute; 
+	top: 0px; 
+	bottom: 0px;
+	left: 11px;
+	right: 14px;
+	
+	
+	/* height: 100px; */
+	/*
+	right: 14px;
+    top: 13px;
+    left: 13px;
+    width: 1542px;
+*/
+    /*width: 90%;*/
+ 
+}
+
+
+div.kontenlist {
+	background-color: RGBA(200, 200, 200, 0.5); 
+	color: white;
+	padding: 10px 10px 10px 10px;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: normal;
+	overflow: auto;
+	position: absolute; 
+	top: 0px; 
+	bottom: 0px;
+	left: 11px;
+	right: 14px;
+	
+	
+	/* height: 100px; */
+	/*
+	right: 14px;
+    top: 13px;
+    left: 13px;
+    width: 1542px;
+*/
+    /*width: 90%;*/
+ 
+}
+
+div.konten2 {
+	background-color: RGBA(255, 255, 255, 0.5);
+	color: black;
+	padding: 10px 10px 10px 10px;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+/* Tab Menu */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    margin: 0 0 0 0;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: normal;
+	border: 1px solid #CCCCCC;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    color: black;
+    background-color: #FFCC00;
+}	
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+	color: black;
+    background-color: #FFCC00;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display:none;
+	background-color: #FFCC00;
+	color: black;
+	padding: 2px 0 0 0;
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: normal;
+}
+
+/* Tab Menu 2 */
+ul.tab2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Float the list items side by side */
+ul.tab2 li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab2 li a {
+    display: inline-block;
+    color: black;
+    margin: 0 0 0 0;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: normal;
+	border: 1px solid #CCCCCC;
+}
+
+/* Change background color of links on hover */
+ul.tab2 li a:hover {
+	color: black;
+    background-color: #FFCC00;
+}
+
+/* Create an active/current tablink class */
+ul.tab2 li a:focus, .active {
+	color: black;
+    background-color: #FFCC00;
+}
+
+/* Style the tab content */
+.tabcontent2 {
+	display:none;
+	background-color: #FFCC00;
+	color: black;
+	padding: 2px 0 0 0;
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: normal;
+}

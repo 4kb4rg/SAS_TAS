@@ -1,0 +1,8159 @@
+Imports System
+Imports System.Data
+Imports System.IO
+Imports System.Web.UI
+Imports System.Web.UI.WebControls
+Imports System.Web.UI.HtmlControls
+Imports System.Web.UI.Page
+Imports System.Collections.Generic
+Imports Microsoft.VisualBasic.Information
+Imports Microsoft.VisualBasic.Strings
+Imports Microsoft.VisualBasic.Interaction
+Imports Infragistics.WebUI.UltraWebTab
+
+Public Class PR_BKMDet_New_Estate : Inherits Page
+
+#Region "Declare Var"
+
+    Protected WithEvents lblErrMessage As Label
+    Protected WithEvents isNew As HtmlInputHidden
+    Protected WithEvents hid_cat As HtmlInputHidden
+    Protected WithEvents hid_subcat As HtmlInputHidden
+    Protected WithEvents hid_div As HtmlInputHidden
+    Protected WithEvents txt_hid_emp As HtmlInputHidden
+	Protected WithEvents hid_status As HtmlInputHidden
+
+    Dim objOk As New agri.GL.ClsTrx()
+    Dim objPRSetup As New agri.PR.clsSetup()
+    Dim objHRTrx As New agri.HR.clsTrx()
+    Dim objLoc As New agri.Admin.clsLoc()
+    Dim strLocType As String
+
+    Protected objGlobal As New agri.GlobalHdl.clsGlobalHdl()
+    Dim objAR As New agri.GlobalHdl.clsAccessRights()
+    Dim objGLSetup As New agri.GL.clsSetup()
+    Dim objSysCfg As New agri.PWSystem.clsConfig()
+    Dim objAdmin As New agri.Admin.clsShare()
+    Dim objLangCap As New agri.PWSystem.clsLangCap()
+
+    Dim strCompany As String
+    Dim strLocation As String
+
+    Dim strUserId As String
+    Dim strAccMonth As String
+    Dim strAccYear As String
+    Dim strLangCode As String
+    Dim strDateFmt As String
+    Dim intPRAR As Long
+    Dim intConfig As Integer
+	Dim intlevel As Integer
+
+    Dim strBKMCode As String = ""
+    Dim intStatus As Integer
+    Dim strAcceptFormat As String
+	
+	Protected WithEvents TRCopyBKM as HtmlTableRow
+
+#Region "Var BK"
+    Protected WithEvents txtWPDate As TextBox
+    Protected WithEvents ddlbkcategory As DropDownList
+    Protected WithEvents ddlbksubcategory As DropDownList
+    Protected WithEvents LblidM As Label
+    Protected WithEvents ddldivisicode As DropDownList
+    Protected WithEvents ddlMandorCode As DropDownList
+    Protected WithEvents ddlKCSCode As DropDownList
+	Protected WithEvents ddltrncode As DropDownList
+    Protected WithEvents ddlmandor1 As DropDownList
+    Protected WithEvents ddlreg_bor As DropDownList
+    Protected WithEvents txtnotes As TextBox
+
+    Protected WithEvents ddlnopolisi As DropDownList
+    Protected WithEvents txtnopolisi As TextBox
+
+	Protected WithEvents ddlpremi As TextBox
+	Protected WithEvents txtpremi As DropDownList
+    
+    Protected WithEvents ddlsupir As DropDownList
+    Protected WithEvents ddlkenek1 As DropDownList
+    Protected WithEvents ddlkenek2 As DropDownList
+    Protected WithEvents lblWPDate As Label
+    Protected WithEvents btnSelDate As Image
+    Protected WithEvents lblbkcategory As Label
+    Protected WithEvents lblbksubcategory As Label
+    Protected WithEvents lbldivisicode As Label
+    Protected WithEvents lblMandorCode As Label
+	
+	
+    Protected WithEvents lblKCSCode As Label
+    Protected WithEvents lbltxtmandor As Label
+	Protected WithEvents lbltxtmandor1 As Label
+    Protected WithEvents lblregbor As Label
+
+    Protected WithEvents lblnopolisi As Label
+    Protected WithEvents lblsupir As Label
+
+
+    Protected WithEvents TABBK As UltraWebTab
+    Protected WithEvents TABBKTOT As UltraWebTab
+
+
+    Protected WithEvents lblPeriod As Label
+    Protected WithEvents lblStatus As Label
+    Protected WithEvents lblDateCreated As Label
+    Protected WithEvents lblLastUpdate As Label
+    Protected WithEvents lblupdatedby As Label
+
+
+	Protected WithEvents NewBtn As ImageButton
+    Protected WithEvents NewBtn2 As ImageButton
+	
+    Protected WithEvents SaveBtn As ImageButton
+    Protected WithEvents SaveBtn2 As ImageButton
+	
+	Protected WithEvents VerBtn As ImageButton
+    Protected WithEvents VerBtn2 As ImageButton
+	
+	Protected WithEvents ConfBtn As ImageButton
+    Protected WithEvents ConfBtn2 As ImageButton
+	
+	Protected WithEvents ReActBt As ImageButton
+	
+    Protected WithEvents Pn_btnclear As ImageButton
+    Protected WithEvents Bor_btnclear As ImageButton
+    Protected WithEvents RW_btnclear As ImageButton
+
+    Dim alert As Byte = 0
+    Dim strBKCategory As String
+    Dim strBKSubCategory As String
+    Dim strEmpMandorCode As String
+    Dim strEmpKCSCode As String
+    Dim strEmpDivCode As String
+    Dim strRegBor As String
+    Dim hastbl_jb As New System.Collections.Hashtable()
+    Dim hastbl_cb As New System.Collections.Hashtable()
+    Dim hastbl_jbbhn As New System.Collections.Hashtable()
+    Dim hastbl_bhn As New System.Collections.Hashtable()
+    Dim hastbl_cbbhn As New System.Collections.Hashtable()
+    Dim hastbl_jbbhnall As New System.Collections.Hashtable()
+    Dim hastbl_subsub As New System.Collections.Hashtable()
+
+#End Region
+
+#Region "Var HKJ"
+    Protected WithEvents dgHKJ_RWT As DataGrid
+    Protected WithEvents dgHKJ_BHN As DataGrid
+#End Region
+
+#Region "var BHN"
+    Protected WithEvents dgBHN As DataGrid
+#End Region
+
+#Region "Var RW"
+    Protected WithEvents dgRW As DataGrid
+    Protected WithEvents RW_src_ddl_divisi As DropDownList
+    Protected WithEvents RW_src_ddl_emp As DropDownList
+
+#End Region
+
+#Region "Var PN"
+    Protected WithEvents dgPN As DataGrid
+    Protected WithEvents dgPNSUM As DataGrid
+    Protected WithEvents PN_src_ddl_divisi As DropDownList
+    Protected WithEvents PN_src_ddl_emp As DropDownList
+    Protected WithEvents PN_add_txt As TextBox
+#End Region
+
+#Region "Var NRW"
+    Protected WithEvents dgNRW As DataGrid
+    Protected WithEvents NRW_src_ddl_divisi As DropDownList
+    Protected WithEvents NRW_src_ddl_emp As DropDownList
+#End Region
+
+#Region "Var BOR"
+    Protected WithEvents dgBOR As DataGrid
+    Protected WithEvents BOR_src_ddl_divisi As DropDownList
+    Protected WithEvents BOR_src_ddl_emp As DropDownList
+    Protected WithEvents BOR_add_txt As TextBox
+#End Region
+
+#Region "Var TR"
+    Protected WithEvents dgTRX As DataGrid
+    Protected WithEvents TRX_src_ddl_jb As DropDownList
+	
+	Protected WithEvents txtSCopy As TextBox
+	Protected WithEvents txtECopy As TextBox
+#End Region
+
+#Region "BHNALL"
+    Protected WithEvents dgBHNALL As DataGrid
+    Protected WithEvents dgBHNALL_idd As DropDownList
+
+#End Region
+    
+
+#End Region
+
+#Region "Page Load"
+    Sub Page_Load(ByVal Sender As Object, ByVal E As EventArgs)
+        strCompany = Session("SS_COMPANY")
+        strLocation = Session("SS_LOCATION")
+
+        strUserId = Session("SS_USERID")
+        strAccMonth = Session("SS_PRACCMONTH")
+        strAccYear = Session("SS_PRACCYEAR")
+        strLangCode = Session("SS_LANGCODE")
+        intPRAR = Session("SS_PRAR")
+        intConfig = Session("SS_CONFIGSETTING")
+        strLocType = Session("SS_LOCTYPE")
+        strDateFmt = Session("SS_DATEFMT")
+		intLevel = Session("SS_USRLEVEL")
+
+        If strUserId = "" Then
+            Response.Redirect("/SessionExpire.aspx")
+        ElseIf objAR.mtdHasAccessRights(objAR.mtdGetAccessRights(objAR.EnumPRAccessRights.PRTrxWorkPerformance), intPRAR) = False Then
+            Response.Redirect("/" & strLangCode & "/include/mesg/AccessRights.aspx")
+        Else
+            strBKMCode = Trim(IIf(Request.QueryString("BKMCode") <> "", Request.QueryString("BKMCode"), Request.Form("BKMCode")))
+            lblErrMessage.Visible = False
+			
+			SaveBtn.Attributes("onclick") = "javascript:return ConfirmAction('updateall');"
+			SaveBtn2.Attributes("onclick") = "javascript:return ConfirmAction('updateall');"
+			Pn_btnclear.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+			Bor_btnclear.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+			RW_btnclear.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+			SaveBtn.Attributes.Add("onclick", "this.disabled=true;" + GetPostBackEventReference(SaveBtn).ToString())
+			SaveBtn2.Attributes.Add("onclick", "this.disabled=true;" + GetPostBackEventReference(SaveBtn2).ToString())
+
+            If Not IsPostBack Then
+                txtWPDate.Text = objGlobal.GetShortDate(strDateFmt, Now())
+				
+				txtSCopy.Text = txtWPDate.Text
+				txtECopy.Text = txtWPDate.Text
+				
+				TRCopyBKM.Visible = False
+                BindPremiLain("","0")
+				If strBKMCode <> "" Then
+                    isNew.Value = "False"
+                    onLoad_Display()
+                Else
+                    isNew.Value = "True"
+					hid_status.value = "3" 'Active
+                    BindBkCategory()
+                End If
+				
+                onLoad_button()
+            End If
+        End If
+    End Sub
+
+#End Region
+
+#Region "Function & Procedure"
+
+    Public Sub UserMsgBox(ByVal F As Object, ByVal sMsg As String)
+        Dim sb As New StringBuilder()
+        Dim oFormObject As System.Web.UI.Control = Nothing
+        Try
+            sMsg = sMsg.Replace("'", "\'")
+            sMsg = sMsg.Replace(Chr(34), "\" & Chr(34))
+            sMsg = sMsg.Replace(vbCrLf, "\n")
+            sMsg = "<script language='javascript'>alert('" & sMsg & "');</script>"
+            sb = New StringBuilder()
+            sb.Append(sMsg)
+            For Each oFormObject In F.Controls
+                If TypeOf oFormObject Is HtmlForm Then
+                    Exit For
+                End If
+            Next
+            oFormObject.Controls.AddAt(oFormObject.Controls.Count, New LiteralControl(sb.ToString()))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Function Date_Validation(ByVal pv_strInputDate As String, ByVal pv_blnIsShortDate As Boolean) As String
+        Dim objSysCfgDs As New Object()
+        Dim objActualDate As New Object()
+        Dim strDateFormat As String
+        Dim strParam As String
+        Dim intErrNo As Integer
+
+        strParam = "PWSYSTEM_CLSCONFIG_CONFIG_DATEFMT_GET"
+
+        Try
+            intErrNo = objSysCfg.mtdGetConfigInfo(strParam, _
+                                                  strCompany, _
+                                                  strLocation, _
+                                                  strUserId, _
+                                                  objSysCfgDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PU_GR_GET_CONFIG&errmesg=" & Exp.Message & "&redirect=pu/trx/pu_GRList.aspx")
+        End Try
+
+        strDateFormat = objSysCfg.mtdGetDateFormat(Trim(objSysCfgDs.Tables(0).Rows(0).Item("Datefmt")))
+
+        If pv_blnIsShortDate Then
+            Date_Validation = objGlobal.GetShortDate(strDateFormat, pv_strInputDate)
+        Else
+            If objGlobal.mtdValidInputDate(strDateFormat, _
+                                           pv_strInputDate, _
+                                           strAcceptFormat, _
+                                           objActualDate) = True Then
+                Date_Validation = objActualDate
+            Else
+                Date_Validation = ""
+            End If
+        End If
+    End Function
+
+    Function toNumber(ByVal s As String) As String
+        If (s = "" Or s = "NULL") Then
+            Return objGlobal.GetIDDecimalSeparator_FreeDigit(FormatNumber("0", 2), 2)
+        Else
+            Return objGlobal.GetIDDecimalSeparator_FreeDigit(FormatNumber(s, 2), 2)
+        End If
+
+    End Function
+
+    Function getCode(ByVal cat As String, ByVal scat As String) As String
+        Dim strOpCd_GetID As String = "HR_PR_TRX_IDNUMBER"
+        Dim objNewID As New Object
+        Dim intErrNo As Integer
+        Dim tcode As String
+        Dim ParamName As String
+        Dim ParamValue As String
+
+        tcode = "BKM/" & strLocation & "/" & cat & "-" & scat & "/" & Mid(Trim(txtWPDate.Text), 4, 2) & Right(Trim(txtWPDate.Text), 2) & "/"
+        ParamName = "LOC|ID|HDR|DIGIT"
+        ParamValue = strLocation & "|17|" & tcode & "|4"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_GetID, ParamName, ParamValue, objNewID)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=HR_PR_TRX_IDNUMBER&errmesg=" & Exp.Message & "&redirect=hr/trx/HR_trx_EmployeeList.aspx")
+        End Try
+
+        Return Trim(objNewID.Tables(0).Rows(0).Item("N"))
+
+    End Function
+
+    Private Function BKM_Already_Exist() As SByte
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_MAIN_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "LOC|SEARCH|SORT"
+
+        strParamValue = strLocation & "| AND A.IDCat = '" & ddlbkcategory.SelectedItem.Value.Trim() & "' " & _
+                        " AND A.IDSubCat = '" & ddlbksubcategory.SelectedItem.Value.Trim() & "' " & _
+                        " AND A.BKMDate = '" & Date_Validation(Trim(txtWPDate.Text), False) & "' " & _
+                        " AND A.MandorCode = '" & ddlMandorCode.SelectedItem.Value.Trim() & "' " & _
+                        " AND A.LocCode ='" & strLocation & "' " & _
+                        " AND A.Status='1'|"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return objEmpCodeDs.Tables(0).Rows.Count
+
+    End Function
+
+    Private Function BKM_beforesave() As Boolean
+        Dim SIdCat As String = ddlbkcategory.SelectedItem.Value.Trim()
+        Dim SIdSubCat As String = ddlbksubcategory.SelectedItem.Value.Trim()
+        Dim SDivCode As String
+        Dim SDate As String = Date_Validation(Trim(txtWPDate.Text), False)
+        Dim SMdrCode As String
+        Dim SKCSCode As String
+		Dim STrnCode As String
+		Dim SMdr1Code As String
+		
+
+		Dim sreg_bor As String = ddlreg_bor.SelectedItem.Value.Trim()
+		'Dim spremi As String = iif(ddlpremi.Text.Trim()="",0,ddlpremi.Text.Trim()) 
+		Dim spremi As String = iif(txtpremi.SelectedItem.Text.Trim()="","0",txtpremi.SelectedItem.Text.Trim()) 
+
+        If ddldivisicode.SelectedItem.Value.Trim() <> "" Then
+            SDivCode = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            lblErrMessage.Text = "Silakan isi  divisi"
+            Return False
+        End If
+
+        If ddlMandorCode.SelectedItem.Value.Trim() <> "" Then
+            SMdrCode = ddlMandorCode.SelectedItem.Value.Trim()
+        Else
+		    SMdrCode = ""
+            'lblErrMessage.Text = "Silakan isi  mandor"
+            'Return False
+        End If
+
+        If ddlKCSCode.Text <> "" Then
+            SKCSCode = ddlKCSCode.SelectedItem.Value.Trim()
+        Else
+            SKCSCode = ""
+        End If
+		
+		If ddlTrnCode.Text <> "" Then
+            STrnCode = ddlKCSCode.SelectedItem.Value.Trim()
+        Else
+            STrnCode = ""
+        End If
+		
+		If ddlMandor1.Text <> "" Then
+            SMdr1Code = ddlMandor1.SelectedItem.Value.Trim()
+        Else
+            SMdr1Code = ""
+        End If
+
+        If (SIdCat = "") Then
+            lblErrMessage.Text = "Silakan pilih kategori..."
+            Return False
+        End If
+
+        If (SIdSubCat = "") Then
+            lblErrMessage.Text = "Silakan pilih sub kategori..."
+            Return False
+        End If
+
+        If (SDate = "") Then
+            lblErrMessage.Text = "Silakan input tanggal..."
+            Return False
+        End If
+
+        If (SDivCode = "") Then
+            lblErrMessage.Text = "Silakan pilih divisi... "
+            Return False
+        End If
+
+       ' If (SMdrCode = "") Then
+       '     lblErrMessage.Text = "Silakan pilih mandor... "
+       '     Return False
+       ' End If
+
+       ' If (ddlKCSCode.Visible And SKCSCode = "") Then
+       '     lblErrMessage.Text = "Silakan pilih KCS..."
+       '     Return False
+       ' End If
+		
+		' If (ddlTrnCode.Visible And STrnCode = "") Then
+        '    lblErrMessage.Text = "Silakan pilih Krani Transport..."
+        '    Return False
+        'End If
+
+		' If (ddlMandor1.Visible And STrnCode = "") Then
+        '    lblErrMessage.Text = "Silakan pilih Mandor 1..."
+        '    Return False
+        'End If
+		
+        'cek tgl,cat,subcat,mandor sudah ada blm...
+        'If (BKM_Already_Exist() >= 1) Then
+        '    lblErrMessage.Text = "BKM dengan tanggal,kategori,sub kategori,& mandor tersebut sudah ada ..."
+        '    Return False
+        'End If
+        If (SIdCat = "PN") And (SIdSubCat = "BMS") Then
+            If txtnopolisi.Text.Trim = "" Then
+                lblErrMessage.Text = "Silakan isi no.polisi ..."
+                Return False
+            End If
+        End If
+
+        If (SIdCat = "TR") Then
+            If (ddlnopolisi.Text = "") Or (ddlnopolisi.SelectedItem.Value.Trim = "") Then
+                lblErrMessage.Text = "Silakan pilih no.polisi ..."
+                Return False
+            End If
+
+            If (ddlsupir.Text = "") Or (ddlsupir.SelectedItem.Value.Trim = "") Then
+                lblErrMessage.Text = "Silakan pilih supir ..."
+                Return False
+            End If
+        End If
+		
+		if (sreg_bor = "P") and (SPremi ="") then
+			lblErrMessage.Text = "Silakan isi  upah premi lain"
+			Return False
+		end if 
+
+        Return True
+    End Function
+
+    Sub BKM_onSave()
+        Dim SIdCat As String = ddlbkcategory.SelectedItem.Value.Trim()
+        Dim SIdSubCat As String = ddlbksubcategory.SelectedItem.Value.Trim()
+		
+        Dim SDivCode As String
+        Dim SDate As String = Date_Validation(Trim(txtWPDate.Text), False)
+        Dim SMdrCode As String
+        Dim SKCSCode As String
+		Dim STrnCode As String
+		Dim SMdr1Code As String
+		
+        Dim sreg_bor As String = ddlreg_bor.SelectedItem.Value.Trim()
+        Dim strnopolisi As String
+        Dim strsupir As String
+        Dim strkenek1 As String
+        Dim strkenek2 As String
+        Dim strnotes As String
+		'Dim spremi As String = iif(ddlpremi.Text.Trim()="",0,ddlpremi.Text.Trim()) 
+		Dim spremi As String = iif(txtpremi.SelectedItem.Text.Trim()="","0",txtpremi.SelectedItem.Text.Trim()) 
+
+        Dim strOpCd_Up As String = "PR_PR_TRX_BKM_MAIN_ADD"
+        Dim dt As String = objGlobal.GetShortDate(strDateFmt, Now())
+        Dim SM As String = Mid(Trim(txtWPDate.Text), 4, 2)
+        Dim SY As String = Right(Trim(txtWPDate.Text), 4)
+        Dim ParamNama As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+		Dim strIDM As String 
+		
+		strIDM = getCode(SIdCat, SIdSubCat)
+		LblidM.Text = strIDM
+		
+        If ddldivisicode.SelectedItem.Value.Trim() <> "" Then
+            SDivCode = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            SDivCode = ""
+        End If
+
+        If ddlMandorCode.SelectedItem.Value.Trim() <> "" Then
+            SMdrCode = ddlMandorCode.SelectedItem.Value.Trim()
+        Else
+            SMdrCode = ""
+        End If
+
+        If ddlKCSCode.Text <> "" Then
+            SKCSCode = ddlKCSCode.SelectedItem.Value.Trim()
+        Else
+            SKCSCode = ""
+        End If
+
+		If ddlTrnCode.Text <> "" Then
+            STrnCode = ddlTrnCode.SelectedItem.Value.Trim()
+        Else
+            STrnCode = ""
+        End If
+		
+		If ddlmandor1.Text <> "" Then
+            SMdr1Code = ddlmandor1.SelectedItem.Value.Trim()
+        Else
+            SMdr1Code = ""
+        End If
+		
+        strnotes = txtnotes.Text.Trim()
+
+        If ddlnopolisi.Visible Then
+            If ddlnopolisi.Text <> "" Then
+                strnopolisi = ddlnopolisi.SelectedItem.Value.Trim()
+            Else
+                strnopolisi = ""
+            End If
+        End If
+
+        If txtnopolisi.Visible Then
+            strnopolisi = txtnopolisi.Text.Trim().ToUpper
+        End If
+
+        If ddlsupir.Text <> "" Then
+            strsupir = ddlsupir.SelectedItem.Value.Trim()
+        Else
+            strsupir = ""
+        End If
+
+        If ddlkenek1.Text <> "" Then
+            strkenek1 = ddlkenek1.SelectedItem.Value.Trim()
+        Else
+            strkenek1 = ""
+        End If
+
+        If ddlkenek2.Text <> "" Then
+            strkenek2 = ddlkenek2.SelectedItem.Value.Trim()
+        Else
+            strkenek2 = ""
+        End If
+		
+		
+		
+
+        ParamNama = "BKM|LOC|IC|IS|RB|MC|KC|AM|AY|BD|DC|NTS|POL|SP|K1|K2|ST|CD|UD|UI|TC|PM|MDR1"
+        ParamValue = strIDM & "|" & _
+                     strLocation & "|" & _
+                     SIdCat & "|" & _
+                     SIdSubCat & "|" & _
+                     sreg_bor & "|" & _
+                     SMdrCode & "|" & _
+                     SKCSCode & "|" & _
+                     SM & "|" & _
+                     SY & "|" & _
+                     SDate & "|" & _
+                     SDivCode & "|" & _
+                     strnotes & "|" & _
+                     strnopolisi & "|" & _
+                     strsupir & "|" & _
+                     strkenek1 & "|" & _
+                     strkenek2 & "|3|" & _ 
+                     DateTime.Now() & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId & "|" & _
+					 STrnCode & "|" & _ 
+					 SPremi & "|" & _ 
+                     SMdr1Code
+					 '-- aam 3/2015 active : 3 verified : 2 confirm : 1
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Up, ParamNama, ParamValue)
+        Catch ex As Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MAIN_ADD&errmesg=" & ex.ToString() & "&redirect=")
+        End Try
+
+    End Sub
+
+    Function BKM_onUpdate() as Boolean
+        Dim SDate As String = Date_Validation(Trim(txtWPDate.Text), False)
+        Dim SMdrCode As String
+		Dim SKCSCode As String
+		Dim STRNCode as String
+		Dim SMdr1Code As String
+        Dim strnotes As String
+        Dim strOpCd_Up As String = "PR_PR_TRX_BKM_MAIN_UPD"
+        Dim dt As String = objGlobal.GetShortDate(strDateFmt, Now())
+        Dim SM As String = Mid(Trim(txtWPDate.Text), 4, 2)
+        Dim SY As String = Right(Trim(txtWPDate.Text), 4)
+        Dim ParamNama As String
+        Dim strnopolisi As String = ""
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+		'Dim spremi As String = iif(ddlpremi.Text.Trim()="",0,ddlpremi.Text.Trim()) 
+		Dim spremi As String = iif(txtpremi.SelectedItem.Text.Trim()="","0",txtpremi.SelectedItem.Text.Trim()) 
+		Dim sreg_bor As String = ddlreg_bor.SelectedItem.Value.Trim() 
+
+		
+        If ddlMandorCode.Text <> "" Then
+            SMdrCode = ddlMandorCode.SelectedItem.Value.Trim()
+        Else
+            SMdrCode = ""
+        End If
+		
+		If ddlKCSCode.Visible Then
+			If ddlKCSCode.Text <> "" Then
+				SKCSCode = ddlKCSCode.SelectedItem.Value.Trim()
+			Else	
+				SKCSCode = ""
+			End If
+		else
+		SKCSCode = "" 
+		end if
+
+		If ddlTrnCode.Visible Then
+			If ddlTrnCode.Text <> "" Then
+				STRNCode = ddlTrnCode.SelectedItem.Value.Trim()
+			Else	
+				STRNCode = ""
+			End If
+		else
+		STRNCode = "" 
+		end if
+		
+		If ddlMandor1.Visible Then
+			If ddlMandor1.Text <> "" Then
+				SMdr1Code = ddlMandor1.SelectedItem.Value.Trim()
+			Else	
+				SMdr1Code = ""
+			End If
+		else
+		SMdr1Code = "" 
+		end if
+		
+        If ddlnopolisi.Visible Then
+            If ddlnopolisi.Text <> "" Then
+                strnopolisi = ddlnopolisi.SelectedItem.Value.Trim()
+            Else
+                strnopolisi = ""
+            End If
+        End If
+
+        If txtnopolisi.Visible Then
+            strnopolisi = txtnopolisi.Text.Trim().ToUpper
+        End If
+		
+		'if sMdrCode = "" then 
+		' lblErrMessage.Text = "Silakan isi  mandor"
+		' Return False
+		'end if
+		
+		if (sreg_bor = "P") and (SPremi ="") then
+			lblErrMessage.Text = "Silakan isi  upah premi lain"
+			Return False
+		end if 
+
+        strnotes = txtnotes.Text.Trim()
+
+        ParamNama = "BKM|LOC|MC|KC|BD|NP|NTS|UD|UI|TC|PM|TY|MDR1"
+        ParamValue = LblidM.Text.Trim & "|" & _
+                     strLocation & "|" & _
+                     SMdrCode & "|" & _
+					 SKCSCode & "|" & _
+                     SDate & "|" & _
+                     strnopolisi & "|" & _
+                     strnotes & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId & "|" & _
+					 STRNCode & "|" & _ 
+					 SPremi & "|" & _ 
+					 sreg_bor & "|" & _
+                     SMdr1Code
+					 
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Up, ParamNama, ParamValue)
+        Catch ex As Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MAIN_UPD&errmesg=" & ex.ToString() & "&redirect=")
+        End Try
+		
+		Return True
+      End Function
+	  
+#Region "Function & Procedure HJK"
+
+	Private Function Cek_Absensi(ByVal em As String) AS Boolean
+		Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_EMPLOYEE_LIST_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+		Dim dt As String
+		Dim bl AS Boolean = True
+       
+        If isNew.Value = "True" Then
+            dt = Date_Validation(txtWPDate.Text, False)
+        Else
+            dt = lblWPDate.Text.Trim
+        End If
+
+        strParamName = "DT|LOC|SEARCH|SORT"
+        strParamValue = dt & "|" & _
+                        strLocation & "|" & _
+                        "AND A.EmpCode like '" & trim(em) & "%'|"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_EMPLOYEE_LIST_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+		
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+           bl = False 
+		End if
+		
+		Return bl 
+        
+	End Function
+	
+    Private Function Cek_ALokasi(ByVal jb As String, ByVal cb As String) As Boolean
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKMLN_RW_CEK"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim objEmpCodeDs As New Object()
+
+		Dim PD As String = Right(Trim(txtWPDate.Text), 4) & Mid(Trim(txtWPDate.Text), 4, 2)
+        
+		strParamName = "JC|BC|LOC|PD"
+        strParamValue = jb & "|" & cb & "|" & strLocation & "|" & PD 
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_CEK&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return Trim(objEmpCodeDs.Tables(0).Rows(0).Item("status"))
+
+
+    End Function
+
+    Private Sub HJK_RW_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_MJOB_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MJOB_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_jb As HiddenField
+        Dim lbl_nr As Label
+        Dim hid_cb As HiddenField
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+		Dim txt_hasilha As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgHKJ_RWT.Items.Count - 1
+
+            hid_jb = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_hid_jb")
+            lbl_nr = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_lbl_nr")
+            hid_cb = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_hid_cb")
+            txt_hk = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hk")
+            txt_hs = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hs")
+            txt_rot = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_rot")
+            lbl_um = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_lbl_um")
+			txt_hasilha = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hasilha")
+
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_jb.Value.Trim <> "") And (hid_cb.Value.Trim <> "") And (txt_hk.Text <> "") And (txt_hs.Text <> "") Then
+                ParamName = "BC|JC|BKM|HK|HS|UM|ROT|LOC|ST|CD|UD|UI|HA"
+                ParamValue = hid_cb.Value.Trim & "|" & _
+                             hid_jb.Value.Trim() & "|" & _
+                             strIDM & "|" & _
+                             IIf(txt_hk.Text = "", "0", txt_hk.Text) & "|" & _
+                             IIf(txt_hs.Text = "", "0", txt_hs.Text) & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             IIf(txt_rot.Text = "", "0", txt_rot.Text) & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId & "|" & _
+							 IIf(txt_hasilha.Text = "", "0", txt_hasilha.Text) 
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub HJK_BHN_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_MBHN_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MBHN_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_jb As HiddenField
+        Dim hid_itm As HiddenField
+        Dim hid_cb As HiddenField
+        Dim txt_qty As TextBox
+        Dim lbl_um As Label
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MBHN_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgHKJ_BHN.Items.Count - 1
+
+            hid_jb = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_hid_jb")
+            hid_cb = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_hid_cb")
+            hid_itm = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_hid_itm")
+            txt_qty = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_txt_Qty")
+            lbl_um = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_lbl_um")
+
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_jb.Value.Trim <> "") And (hid_cb.Value.Trim <> "") And (hid_itm.Value <> "") And (txt_qty.Text <> "") Then
+                ParamName = "BC|JC|BKM|IC|QT|UM|LOC|ST|CD|UD|UI"
+                ParamValue = hid_cb.Value.Trim & "|" & _
+                             hid_jb.Value.Trim() & "|" & _
+                             strIDM & "|" & _
+                             hid_itm.Value.Trim & "|" & _
+                             IIf(txt_qty.Text = "", "0", txt_qty.Text) & "|" & _
+                             lbl_um.Text.Trim & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MBHN_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub HKJ_RW_Pekerjaan_onSave_by_RW()
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MJOB_UPD_BY_RW"
+        Dim strIDM As String = LblidM.Text
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ParamName = "BKM|LOC|CD|UD|UI"
+        ParamValue = strIDM & "|" & _
+                     strLocation & "|" & _
+                     DateTime.Now() & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_UPD_BY_RW&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+    End Sub
+
+    Private Sub HKJ_RW_Pekerjaan_onSave_by_BO()
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MJOB_UPD_BY_BO"
+        Dim strIDM As String = LblidM.Text
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ParamName = "BKM|LOC|CD|UD|UI"
+        ParamValue = strIDM & "|" & _
+                     strLocation & "|" & _
+                     DateTime.Now() & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_UPD_BY_BO&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+    End Sub
+
+    Private Sub HKJ_RW_Pekerjaan_onSave_by_PN()
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MJOB_UPD_BY_PN"
+        Dim strIDM As String = LblidM.Text
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ParamName = "BKM|LOC|CD|UD|UI"
+        ParamValue = strIDM & "|" & _
+                     strLocation & "|" & _
+                     DateTime.Now() & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_UPD_BY_PN&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+    End Sub
+
+    Private Sub HKJ_RW_Pekerjaan_onSave_by_TR()
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MJOB_UPD_BY_TR"
+        Dim strIDM As String = LblidM.Text
+        Dim nopol As String = ""
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ParamName = "BKM|NPOL|LOC|CD|UD|UI"
+        ParamValue = strIDM & "|" & _
+                     nopol & "|" & _
+                     strLocation & "|" & _
+                     DateTime.Now() & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_UPD_BY_TR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+    End Sub
+
+    Private Sub HKJ_BHN_Pekerjaan_onSave_by_BHNALL()
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_MBHN_UPD_BY_BHNALL"
+        Dim strIDM As String = LblidM.Text
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ParamName = "BKM|LOC|CD|UD|UI"
+        ParamValue = strIDM & "|" & _
+                     strLocation & "|" & _
+                     DateTime.Now() & "|" & _
+                     DateTime.Now() & "|" & _
+                     strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MBHN_UPD_BY_BHNALL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+    End Sub
+
+    Function HJK_RW_Footer() As String
+        Dim i As Integer
+        Dim txt_hk As TextBox
+        Dim txt_ha As TextBox
+        Dim cntHk As Single = 0
+        Dim cntHa As Single = 0
+
+        For i = 0 To dgHKJ_RWT.Items.Count - 1
+            txt_hk = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hk")
+            txt_ha = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hs")
+            If txt_hk.Text.Trim <> "" Then
+                cntHk = cntHk + CSng(txt_hk.Text)
+            End If
+            If txt_ha.Text.Trim <> "" Then
+                cntHa = cntHa + CSng(txt_ha.Text)
+            End If
+        Next
+        HJK_RW_Footer = objGlobal.GetIDDecimalSeparator_FreeDigit(cntHk, 2) & "|" & objGlobal.GetIDDecimalSeparator_FreeDigit(cntHa, 2)
+    End Function
+
+#End Region
+
+#Region "Function & Procedure RW"
+    Private Function RW_Pekerjaan_beforesave() As Boolean
+        Dim i As Integer
+        Dim row As Integer = dgRW.Items.Count
+        Dim noinput As Integer = 0
+        Dim hid_jb As HiddenField
+        Dim hid_cb As HiddenField
+		Dim hid_ec As HiddenField
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+		Dim txt_hasilha As TextBox
+        Dim lbl_jb As Label
+		Dim lbl_nm As Label
+		
+        Dim cb As String = ""
+		Dim pd As String = "" 
+		Dim tmphid_ec As String = ""
+		Dim tmphid_hk As Single = 0
+
+        ' jika semua kryawan pekerjaannya ga diisi return false
+        For i = 0 To row - 1
+            hid_jb = dgRW.Items.Item(i).FindControl("dgRW_hid_jb")
+            If hid_jb.Value.Trim = "" Then
+                noinput = noinput + 1
+            End If
+        Next
+
+        If noinput = row Then
+            lblErrMessage.Text = "Silakan isi pekerjaan ..."
+            Return False
+        End If
+
+		
+		
+        For i = 0 To row - 1
+            hid_jb = dgRW.Items.Item(i).FindControl("dgRW_hid_jb")
+            hid_cb = dgRW.Items.Item(i).FindControl("dgRW_hid_cb")
+            txt_hk = dgRW.Items.Item(i).FindControl("dgRW_txt_hk")
+            txt_hs = dgRW.Items.Item(i).FindControl("dgRW_txt_hs")
+            lbl_jb = dgRW.Items.Item(i).FindControl("dgRW_lbl_jb")
+			hid_ec = dgRW.Items.Item(i).FindControl("dgRW_hid_ec")
+			lbl_nm = dgRW.Items.Item(i).FindControl("dgRW_lbl_ed")
+			txt_hasilha = dgRW.Items.Item(i).FindControl("dgRW_txt_hasilha")
+			
+			'Aam Sep 2014
+			if ddlreg_bor.SelectedItem.Value.Trim() = "R" Then
+				if hid_ec.value.trim = trim(tmphid_ec) then
+				   tmphid_ec = hid_ec.value.trim
+				   if trim(txt_hk.Text) = "" then 
+					txt_hk.Text = "0" 
+				   end if
+				   tmphid_hk = tmphid_hk + csng(txt_hk.Text) 
+				else
+				   tmphid_ec = hid_ec.value.trim
+				   if trim(txt_hk.Text) = "" then 
+					txt_hk.Text = "0" 
+				   end if
+				   tmphid_hk = csng(txt_hk.Text)
+				end if
+					
+				if tmphid_hk > 1 then
+					lblErrMessage.Text = Trim(lbl_nm.Text) + " lebih dari 1 Hk (" + tmphid_hk.ToString + ")" 
+					Return False
+				End If
+				
+				pd = Cek_ECode(tmphid_ec)
+				if pd <> "" Then
+					lblErrMessage.Text = pd
+                    Return False
+				End if		
+				
+			end if
+
+            If (hid_jb.Value.Trim <> "") And ((hid_cb.Value = "") Or Trim(txt_hk.Text = "") Or Trim(txt_hs.Text = "")) Then
+                lblErrMessage.Text = "Silakan isi pekerjaan,blok,hk dan hasil kerja ..."
+                Return False
+            End If
+			
+		    If (hid_jb.Value.Trim <> "") And (hid_cb.Value <> "") Then
+                If Cek_ALokasi(hid_jb.Value.Trim, hid_cb.Value.Trim) Then
+                    lblErrMessage.Text = "Alokasi Aktiviti pekerjaan '" & lbl_jb.Text.Trim & "' dithn tnm '" & hid_cb.Value.Trim & "' belum terisi ..."
+                    Return False
+                End If
+			End If
+
+			if ddlreg_bor.SelectedItem.Value.Trim() = "R" Then
+				pd = Cek_ECode(hid_ec.Value.Trim)
+				if pd <> "" Then
+					lblErrMessage.Text = pd
+                    Return False
+				End if			
+			End if
+			
+			if  txt_hk.text < 0 
+				lblErrMessage.Text = "HK salah satu pekerja < 0, periksa kembali bkm anda ..."
+                Return False
+			end if
+        Next
+
+        Return True
+    End Function
+
+    Private Sub RW_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_RW_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_RW_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_ec As HiddenField
+        Dim hid_jb As HiddenField
+        Dim lbl_nr As Label
+        Dim hid_cb As HiddenField
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+		DIM txt_hasilha AS TextBox
+        Dim txt_rot As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgRW.Items.Count - 1
+
+            hid_ec = dgRW.Items.Item(i).FindControl("dgRW_hid_ec")
+            hid_jb = dgRW.Items.Item(i).FindControl("dgRW_hid_jb")
+            lbl_nr = dgRW.Items.Item(i).FindControl("dgRW_lbl_nr")
+            hid_cb = dgRW.Items.Item(i).FindControl("dgRW_hid_cb")
+            txt_hk = dgRW.Items.Item(i).FindControl("dgRW_txt_hk")
+            txt_hs = dgRW.Items.Item(i).FindControl("dgRW_txt_hs")
+            txt_rot = dgRW.Items.Item(i).FindControl("dgRW_txt_rot")
+            lbl_um = dgRW.Items.Item(i).FindControl("dgRW_lbl_um")
+			txt_hasilha = dgRW.Items.Item(i).FindControl("dgRW_txt_hasilha")
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_ec.Value <> "") And (hid_jb.Value.Trim <> "") And (hid_cb.Value.Trim <> "") And (txt_hk.Text <> "") And (txt_hs.Text <> "") Then
+                ParamName = "BC|JC|BKM|EC|SSC|HK|HS|UM|ROT|LOC|ST|CD|UD|UI|HA"
+                ParamValue = hid_cb.Value.Trim & "|" & _
+                             hid_jb.Value.Trim() & "|" & _
+                             strIDM & "|" & _
+                             Trim(hid_ec.Value) & "|" & _
+                             sIdSubCat & "|" & _
+                             IIf(txt_hk.Text = "", "0", txt_hk.Text) & "|" & _
+                             IIf(txt_hs.Text = "", "0", txt_hs.Text) & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             IIf(txt_rot.Text = "", "0", txt_rot.Text) & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId & "|" & _
+							 IIf(txt_hasilha.Text = "", "0", txt_hasilha.Text) 
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub RW_Bahan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_BHN_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_BHN_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim hid_ec As HiddenField
+        Dim hid_cb As HiddenField
+        Dim hid_jb As HiddenField
+        Dim hid_ic As HiddenField
+
+        Dim txt_qty As TextBox
+        Dim lbl_um As Label
+        Dim jc As String = ""
+        Dim ic As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RWBHN_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'Save
+        For i = 0 To dgBHN.Items.Count - 1
+
+            hid_ec = dgBHN.Items.Item(i).FindControl("dgBHN_hid_ec")
+            hid_jb = dgBHN.Items.Item(i).FindControl("dgBHN_hid_jb")
+            hid_cb = dgBHN.Items.Item(i).FindControl("dgBHN_hid_cb")
+            hid_ic = dgBHN.Items.Item(i).FindControl("dgBHN_hid_itm")
+            txt_qty = dgBHN.Items.Item(i).FindControl("dgBHN_txt_qty")
+            lbl_um = dgBHN.Items.Item(i).FindControl("dgBHN_lbl_um")
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_jb.Value.Trim <> "") And (hid_cb.Value.Trim <> "") And (hid_ic.Value.Trim <> "") And (txt_qty.Text.Trim <> "") Then
+                ParamName = "BC|LOC|JC|BKM|EC|IC|QT|UM|ST|CD|UD|UI"
+                ParamValue = hid_cb.Value.Trim & "|" & _
+                             strLocation & "|" & _
+                             hid_jb.Value.Trim & "|" & _
+                             strIDM & "|" & _
+                             hid_ec.Value.Trim & "|" & _
+                             hid_ic.Value.Trim & "|" & _
+                             txt_qty.Text.Trim() & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             "1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RWBHN_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub RW_Save()
+	 If isNew.Value = "True" Then
+            If (Not BKM_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+
+            If (Not RW_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+            BKM_onSave()
+        Else	
+            if (Not BKM_onUpdate()) Then
+			    UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+			end if
+			
+			If (Not RW_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+        End If
+        HJK_RW_Pekerjaan_onSave()
+        HJK_BHN_Pekerjaan_onSave()
+
+        RW_Pekerjaan_onSave()
+        RW_Bahan_onSave()
+		isNew.Value = "False"
+    End Sub
+
+    Function RW_Footer() As String
+        Dim i As Integer
+        Dim txt_hk As TextBox
+        Dim txt_ha As TextBox
+        Dim lbl_uom As Label
+        Dim cntHk As Single = 0
+        Dim cntHa As Single = 0
+
+        For i = 0 To dgRW.Items.Count - 1
+            txt_hk = dgRW.Items.Item(i).FindControl("dgRW_txt_hk")
+            txt_ha = dgRW.Items.Item(i).FindControl("dgRW_txt_hs")
+            lbl_uom = dgRW.Items.Item(i).FindControl("dgRW_lbl_um")
+            If txt_hk.Text.Trim <> "" Then
+                cntHk = cntHk + CSng(txt_hk.Text)
+            End If
+            'If txt_ha.Text.Trim <> "" And Trim(lbl_uom.Text.ToUpper) = "HA" Then
+			If txt_ha.Text.Trim <> ""  Then
+                cntHa = cntHa + CSng(txt_ha.Text)
+            End If
+        Next
+        RW_Footer = objGlobal.GetIDDecimalSeparator_FreeDigit(cntHk, 2) & "|" & objGlobal.GetIDDecimalSeparator_FreeDigit(cntHa, 2)
+    End Function
+
+#End Region
+
+#Region "Function & Procedure PN"
+    'Function Get_Bjr_Bss(ByVal str As String) As String
+    '    Dim strOpCd As String = "PR_PR_STP_BLOK_GET_BJR_BSS"
+    '    Dim strParamName As String
+    '    Dim strParamValue As String
+    '    Dim intErrNo As Integer
+    '    Dim objEmpAttDs As New Object()
+
+    '    Dim SM As String
+    '    Dim SY As String
+
+    '    If isNew.Value = "True" Then
+    '        SM = Mid(Trim(txtWPDate.Text), 4, 2)
+    '        SY = Right(Trim(txtWPDate.Text), 4)
+    '    Else
+    '        SM = Left(Trim(lblPeriod.Text), 2)
+    '        SY = Right(Trim(lblPeriod.Text), 4)
+    '    End If
+
+    '    strParamName = "AM|AY|BC|LOC"
+    '    strParamValue = SM & "|" & SY & "|" & str & "|" & strLocation
+
+    '    Try
+    '        intErrNo = objOk.mtdGetDataCommon(strOpCd, strParamName, strParamValue, objEmpAttDs)
+    '    Catch Exp As System.Exception
+    '        Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BLOK_GET_BJR_BSS&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+    '    End Try
+
+    '    Return Trim(objEmpAttDs.Tables(0).Rows(0).Item("BJR")) & "|" & Trim(objEmpAttDs.Tables(0).Rows(0).Item("BSS"))
+
+    'End Function
+
+    Private Function Cek_ALokasiPN(ByVal jb As String, ByVal cb As String) As Boolean
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKMLN_PN_CEK"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim objEmpCodeDs As New Object()
+
+	    Dim PD As String = Right(Trim(txtWPDate.Text), 4) & Mid(Trim(txtWPDate.Text), 4, 2)
+        
+		strParamName = "JC|BC|LOC|PD"
+        strParamValue = jb & "|" & cb & "|" & strLocation & "|" & PD 
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_PN_CEK&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return Trim(objEmpCodeDs.Tables(0).Rows(0).Item("status"))
+
+
+    End Function
+
+	Private Function Cek_ECode(ByVal ec As String) As String
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKMLN_ECODE_CEK"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim objEmpCodeDs As New Object()
+		Dim strIDM As String = LblidM.Text
+
+	    Dim PD As String = ""
+        
+		strParamName = "DT|LOC|EC|BKM"
+        strParamValue = Date_Validation(txtWPDate.Text, False) & "|" &  strLocation & "|" & ec & "|" & Trim(strIDM)
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_PN_CEK&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+		
+		If objEmpCodeDs.Tables(0).Rows.Count > 0 Then 
+			PD = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("empname"))+" sudah ada dibkm "+Trim(objEmpCodeDs.Tables(0).Rows(0).Item("bkmcode"))+" (hk:"+Trim(objEmpCodeDs.Tables(0).Rows(0).Item("hk"))+")"			
+		Else 
+		    PD = "" 
+		End if
+
+        Return PD
+
+
+    End Function
+	
+    Private Function PN_Pekerjaan_beforesave() As Boolean
+        Dim i As Integer
+        Dim row As Integer = dgPN.Items.Count
+        Dim noinput As Integer = 0
+        Dim hid_jb As HiddenField
+        Dim ddl_cb As DropDownList
+		Dim hid_ec As HiddenField
+		Dim lbl_nm As Label
+		
+		Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+		Dim txt_hasilha As TextBox
+        Dim cb As String = ""
+		Dim pd as String = ""
+		Dim tmphid_ec As String = ""
+		Dim tmphid_hk As Single = 0
+		Dim sIdSubCat As String
+		
+		If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()           
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+        End If
+
+     
+        For i = 0 To row - 1
+            hid_jb = dgPN.Items.Item(i).FindControl("dgPN_hid_jb")
+            ddl_cb = dgPN.Items.Item(i).FindControl("dgPN_ddl_cb")
+            txt_hs = dgPN.Items.Item(i).FindControl("dgPN_txt_hs")
+            hid_ec = dgPN.Items.Item(i).FindControl("dgPN_hid_ec")
+			txt_hk = dgPN.Items.Item(i).FindControl("dgPN_txt_hk")
+			lbl_nm = dgPN.Items.Item(i).FindControl("dgPN_lbl_ed")
+			txt_hasilha = dgPN.Items.Item(i).FindControl("dgPN_txt_hasilha")
+			
+            If (ddl_cb.SelectedItem.Value.Trim = "") Then
+                lblErrMessage.Text = "Silakan isi blok ..."
+                Return False
+            End If
+			
+			'Aam Sep 2014
+			if ddlreg_bor.SelectedItem.Value.Trim() = "R"  AND (sIdSubCat ="KBS" or sIdSubCat = "BMS") Then
+			if hid_ec.value.trim = trim(tmphid_ec) then
+			   tmphid_ec = hid_ec.value.trim
+			   if trim(txt_hk.Text) = "" then 
+				txt_hk.Text = "0" 
+			    end if
+			   tmphid_hk = tmphid_hk + csng(txt_hk.Text) 
+			else
+			   tmphid_ec = hid_ec.value.trim
+			   if trim(txt_hk.Text) = "" then 
+				txt_hk.Text = "0" 
+			   end if
+			   tmphid_hk = csng(txt_hk.Text)
+			end if
+			      
+			if tmphid_hk > 1 then
+				lblErrMessage.Text = Trim(lbl_nm.Text) + " lebih dari 1 Hk (" + tmphid_hk.ToString + ")" 
+                Return False
+            End If
+			end if
+
+            If (ddl_cb.SelectedItem.Value.Trim <> "") Then
+			    If Cek_ALokasiPN(hid_jb.Value.Trim, ddl_cb.SelectedItem.Value.Trim) Then
+                    lblErrMessage.Text = "Alokasi Aktiviti Panen di thn tnm '" & ddl_cb.SelectedItem.Text.Trim & "' belum terisi ..."
+                    Return False
+                End If
+            End If
+			
+			if ddlreg_bor.SelectedItem.Value.Trim() = "R" Then
+				pd = Cek_ECode(hid_ec.Value.Trim)
+				if pd <> "" Then
+					lblErrMessage.Text = pd
+                    Return False
+				End if
+			End if
+        Next
+
+
+
+        Return True
+    End Function
+
+    Private Sub PN_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_PN_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_PN_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_jb As HiddenField
+        Dim ddl_cb As DropDownList
+        Dim ddl_ssc As DropDownList
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim txt_hk As TextBox
+        Dim txt_jg As TextBox
+        Dim txt_bjr As TextBox
+        Dim txt_hs As TextBox
+		Dim txt_hasilha As TextBox
+
+        Dim txt_drc As TextBox
+        Dim txt_kkk As TextBox
+        Dim txt_slab As TextBox
+        Dim txt_lm As TextBox
+        Dim txt_gt As TextBox
+
+        Dim txt_tph As TextBox
+        Dim txt_karcis As TextBox
+
+        Dim txt_rot As TextBox
+        Dim lbl_um As Label
+
+        Dim txt_dnd As TextBox
+        Dim Pbs_txt_PB_Dbasis As TextBox
+        Dim Pbs_txt_PB_Dmentah As TextBox
+        Dim Pbs_txt_PB_Dtinggal As TextBox
+        Dim Pbs_txt_PB_Dtph As TextBox
+        Dim Pbs_txt_PB_Dpjg As TextBox
+        Dim Pbs_txt_PB_DSengkleh As TextBox
+
+        Dim Kbs_txt_KB_Dkk As TextBox
+        Dim Kbs_chk_KB_Dbk As TextBox
+        Dim Kbs_chk_KB_Dtph As TextBox
+
+        Dim ed As String = ""
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BO_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgPN.Items.Count - 1
+            hid_ec = dgPN.Items.Item(i).FindControl("dgPN_hid_ec")
+            lbl_ed = dgPN.Items.Item(i).FindControl("dgPN_lbl_ed")
+            hid_jb = dgPN.Items.Item(i).FindControl("dgPN_hid_jb")
+            ddl_ssc = dgPN.Items.Item(i).FindControl("dgPN_ddl_subsubcat")
+            ddl_cb = dgPN.Items.Item(i).FindControl("dgPN_ddl_cb")
+            txt_hk = dgPN.Items.Item(i).FindControl("dgPN_txt_hk")
+            txt_jg = dgPN.Items.Item(i).FindControl("dgPN_txt_jg")
+            txt_bjr = dgPN.Items.Item(i).FindControl("dgPN_txt_bjr")
+            txt_hs = dgPN.Items.Item(i).FindControl("dgPN_txt_hs")
+            txt_hasilha = dgPN.Items.Item(i).FindControl("dgPN_txt_hasilha")
+			
+            txt_drc = dgPN.Items.Item(i).FindControl("dgPN_txt_drc")
+            txt_kkk = dgPN.Items.Item(i).FindControl("dgPN_txt_kkk")
+            txt_kkk = dgPN.Items.Item(i).FindControl("dgPN_txt_kkk")
+            If (txt_hs.Text.Trim <> "" And txt_drc.Text.Trim <> "") Then
+                txt_kkk.Text = txt_hs.Text * (txt_drc.Text / 100)
+            Else
+                txt_kkk.Text = ""
+            End If
+			
+			if (txt_kkk.Text.Trim <> "") Then
+				if CSng(txt_kkk.text) < 9 then
+					txt_hk.Text = CSng(txt_kkk.text)/ 9 
+				else
+				     txt_hk.text = "1" 
+			    end if
+			End if
+			
+            txt_slab = dgPN.Items.Item(i).FindControl("dgPN_txt_slab")
+            txt_lm = dgPN.Items.Item(i).FindControl("dgPN_txt_lm")
+            txt_gt = dgPN.Items.Item(i).FindControl("dgPN_txt_gt")
+
+            txt_tph = dgPN.Items.Item(i).FindControl("dgPN_txt_tph")
+            txt_karcis = dgPN.Items.Item(i).FindControl("dgPN_txt_karcis")
+
+            txt_rot = dgPN.Items.Item(i).FindControl("dgPN_txt_rot")
+            lbl_um = dgPN.Items.Item(i).FindControl("dgPN_lbl_um")
+            txt_dnd = dgPN.Items.Item(i).FindControl("dgPN_txt_dnd")
+
+            Pbs_txt_PB_Dmentah = dgPN.Items.Item(i).FindControl("dgPN_PB_Dmentah")
+            Pbs_txt_PB_Dtinggal = dgPN.Items.Item(i).FindControl("dgPN_PB_Dtinggal")
+            Pbs_txt_PB_Dtph = dgPN.Items.Item(i).FindControl("dgPN_PB_Dtph")
+            Pbs_txt_PB_Dpjg = dgPN.Items.Item(i).FindControl("dgPN_PB_Dpjg")
+            Pbs_txt_PB_DSengkleh = dgPN.Items.Item(i).FindControl("dgPN_PB_DSengkleh")
+            Pbs_txt_PB_Dbasis = dgPN.Items.Item(i).FindControl("dgPN_PB_Dbasis")
+
+            Kbs_txt_KB_Dkk = dgPN.Items.Item(i).FindControl("dgPN_KB_Dkk")
+            Kbs_chk_KB_Dbk = dgPN.Items.Item(i).FindControl("dgPN_KB_Dbk")
+            Kbs_chk_KB_Dtph = dgPN.Items.Item(i).FindControl("dgPN_KB_Dtph")
+
+
+            If txt_jg.Text = "" Then txt_jg.Text = "0"
+            If txt_hs.Text = "" Then txt_hs.Text = "0"
+			if txt_hasilha.Text = "" Then txt_hasilha.Text = "0"
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_ec.Value <> "") And (ddl_cb.SelectedItem.Value.Trim <> "") And ((Trim(sIdSubCat) = "PBS" And CInt(txt_jg.Text) <> 0) or (Trim(sIdSubCat) <> "PBS")) Then
+                ParamName = "BC|JC|BKM|EC|SSC|HK|JJG|BJR|HS|" & _
+                            "DRC|KKK|SLAB|LM|GT|" & _
+                            "UM|ROT|DND|" & _
+                            "PB_D_MTH|PB_D_TGL|PB_D_TPH|PB_D_PJG|PB_D_SKL|PB_D_BSS|" & _
+                            "KB_D_KTR|KB_D_BKT|KB_D_TPH|" & _
+                            "TPH|KARCIS|" & _
+                            "LOC|ST|CD|UD|UI|HA"
+
+                ParamValue = ddl_cb.SelectedItem.Value.Trim & "|" & _
+                             hid_jb.Value.Trim() & "|" & _
+                             strIDM & "|" & _
+                             Trim(hid_ec.Value) & "|" & _
+                             ddl_ssc.SelectedItem.Value.Trim & "|" & _
+                             IIf(txt_hk.Text = "", "1", txt_hk.Text) & "|" & _
+                             IIf(txt_jg.Text = "", "0", txt_jg.Text) & "|" & _
+                             IIf(txt_bjr.Text = "", "0", txt_bjr.Text) & "|" & _
+                             IIf(txt_hs.Text = "", "0", txt_hs.Text) & "|" & _
+                             IIf(txt_drc.Text = "", "0", txt_drc.Text) & "|" & _
+                             IIf(txt_kkk.Text = "", "0", txt_kkk.Text) & "|" & _
+                             IIf(txt_slab.Text = "", "0", txt_slab.Text) & "|" & _
+                             IIf(txt_lm.Text = "", "0", txt_lm.Text) & "|" & _
+                             IIf(txt_gt.Text = "", "0", txt_gt.Text) & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             IIf(txt_rot.Text = "", "0", txt_rot.Text) & "|" & _
+                             IIf(txt_dnd.Text = "", "0", txt_dnd.Text) & "|" & _
+                             IIf(Pbs_txt_PB_Dmentah.Text.Trim = "", "0", Pbs_txt_PB_Dmentah.Text.Trim) & "|" & _
+                             IIf(Pbs_txt_PB_Dtinggal.Text.Trim = "", "0", Pbs_txt_PB_Dtinggal.Text.Trim) & "|" & _
+                             IIf(Pbs_txt_PB_Dtph.Text.Trim = "", "0", Pbs_txt_PB_Dtph.Text.Trim) & "|" & _
+                             IIf(Pbs_txt_PB_Dpjg.Text.Trim = "", "0", Pbs_txt_PB_Dpjg.Text.Trim) & "|" & _
+                             IIf(Pbs_txt_PB_DSengkleh.Text = "", "0", Pbs_txt_PB_DSengkleh.Text.Trim) & "|" & _
+                             IIf(Pbs_txt_PB_Dbasis.Text.Trim = "", "0", Pbs_txt_PB_Dbasis.Text) & "|" & _
+                             IIf(Kbs_txt_KB_Dkk.Text.Trim = "", "0", Kbs_txt_KB_Dkk.Text.Trim) & "|" & _
+                             IIf(Kbs_chk_KB_Dbk.Text.Trim = "", "0",Kbs_chk_KB_Dbk.Text.Trim) & "|" & _
+                             IIf(Kbs_chk_KB_Dtph.Text.Trim = "", "0",Kbs_chk_KB_Dtph.Text.Trim) & "|" & _
+                             IIf(txt_tph.Text.Trim = "", "", txt_tph.Text.Trim) & "|" & _
+                             IIf(txt_karcis.Text.Trim = "", "", txt_karcis.Text.Trim) & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId & "|" & _
+							 IIf(txt_hasilha.Text = "", "0", txt_hasilha.Text) 
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_PN_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub PNSUM_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_PNSUM_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_PNSUM_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+
+        Dim hid_jb As HiddenField
+        Dim lbl_cb As Label
+        Dim txt_ha As TextBox
+        Dim lbl_jg As Label
+        Dim hid_bjr As HiddenField
+        Dim hid_hs As HiddenField
+        Dim hid_hk As HiddenField
+		
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BO_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgPNSUM.Items.Count - 1
+            hid_jb = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_hid_jb")
+            lbl_cb = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_cb")
+            txt_ha = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_txt_ha")
+           
+            lbl_jg = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_jjg")
+            hid_bjr = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_bjr")
+            hid_hs = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_hs")
+            hid_hk = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_hk")
+
+            
+            If txt_ha.Text.Trim = "" Then txt_ha.Text = "0"
+
+            'Save only employee and job exists and blok  and hk and hasil
+            ParamName = "BKM|JC|BC|SSC|LOC|" & _
+                            "HA|JJG|BJR|HS|HK|" & _
+                            "ST|CD|UD|UI"
+
+            ParamValue = strIDM & "|" & _
+                         hid_jb.Value.Trim() & "|" & _
+                         lbl_cb.Text.Trim() & "|" & _
+                         sIdSubCat.Trim & "|" & _
+                         strLocation & "|" & _
+                         IIf(txt_ha.Text.Trim = "", "0", txt_ha.Text.Trim) & "|" & _
+                         IIf(lbl_jg.Text.Trim = "", "0", lbl_jg.Text.Trim) & "|" & _
+                         IIf(hid_bjr.Value.Trim = "", "0", hid_bjr.Value.Trim) & "|" & _
+                         IIf(hid_hs.Value.Trim = "", "0", hid_hs.Value.Trim) & "|" & _
+                         IIf(hid_hk.Value.Trim = "", "0", hid_hk.Value.Trim) & "|" & _
+                         "1" & "|" & _
+                         DateTime.Now() & "|" & _
+                         DateTime.Now() & "|" & _
+                         strUserId
+
+            Try
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Catch Exp As System.Exception
+                Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_PNSUM_UPD&errmesg=" & Exp.Message & "&redirect=")
+            End Try
+        Next
+    End Sub
+
+    Private Sub PN_Save()
+	
+		PN_update()
+        PN_BindPekerjaan_OnLoad()
+		
+        If isNew.Value = "True" Then
+            If (Not BKM_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+
+            If (Not PN_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+            BKM_onSave()
+        Else
+            if (Not BKM_onUpdate()) Then
+				UserMsgBox(Me, lblErrMessage.Text)
+			    alert = 1
+                Exit Sub
+			end if
+			
+			If (Not PN_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+        End If
+        PN_Pekerjaan_onSave()
+        HKJ_RW_Pekerjaan_onSave_by_PN()
+        BHNALL_Bahan_onSave()
+        HKJ_BHN_Pekerjaan_onSave_by_BHNALL()
+        PNSUM_Pekerjaan_onSave()
+		isNew.Value = "False"
+    End Sub
+
+    Function PN_Footer() As String
+        Dim i As Integer
+        Dim txt_kg As TextBox
+        Dim txt_jjg As TextBox
+        Dim txt_kkk As TextBox
+        Dim txt_slab As TextBox
+        Dim txt_lm As TextBox
+        Dim txt_gt As TextBox
+		Dim txt_hk as TextBox 
+		Dim txt_hasilha as TextBox
+
+        Dim cntKg As Single = 0
+        Dim cntJJG As Single = 0
+        Dim cntGt As Single = 0
+        Dim cntkkk As Single = 0
+        Dim cntslab As Single = 0
+        Dim cntlm As Single = 0
+		Dim cnthk as Single = 0
+		Dim cntHa as Single = 0
+
+        For i = 0 To dgPN.Items.Count - 1
+            txt_kg = dgPN.Items.Item(i).FindControl("dgPN_txt_hs")
+            txt_jjg = dgPN.Items.Item(i).FindControl("dgPN_txt_jg")
+            txt_kkk = dgPN.Items.Item(i).FindControl("dgPN_txt_kkk")
+            txt_slab = dgPN.Items.Item(i).FindControl("dgPN_txt_slab")
+            txt_lm = dgPN.Items.Item(i).FindControl("dgPN_txt_lm")
+            txt_gt = dgPN.Items.Item(i).FindControl("dgPN_txt_gt")
+			txt_hk = dgPN.Items.Item(i).FindControl("dgPN_txt_hk")
+			txt_hasilha = dgPN.Items.Item(i).FindControl("dgPN_txt_hasilha")
+
+            If txt_kg.Text.Trim <> "" Then
+                cntKg = cntKg + CSng(txt_kg.Text)
+            End If
+
+            If txt_jjg.Text.Trim <> "" Then
+                cntJJG = cntJJG + CSng(txt_jjg.Text)
+            End If
+
+            If txt_gt.Text.Trim <> "" Then
+                cntGt = cntGt + CSng(txt_gt.Text)
+            End If
+
+            If txt_kkk.Text.Trim <> "" Then
+                cntkkk = cntkkk + CSng(txt_kkk.Text)
+            End If
+
+            If txt_slab.Text.Trim <> "" Then
+                cntslab = cntslab + CSng(txt_slab.Text)
+            End If
+
+            If txt_lm.Text.Trim <> "" Then
+                cntlm = cntlm + CSng(txt_lm.Text)
+            End If
+
+			If txt_hk.Text.Trim <> "" Then
+                cnthk = cnthk + CSng(txt_hk.Text)
+            End If
+			
+			If txt_hasilha.Text.Trim <> "" Then
+                cntHa = cntHa + CSng(txt_hasilha.Text)
+            End If
+
+        Next
+        PN_Footer = objGlobal.GetIDDecimalSeparator_FreeDigit(cntJJG, 2) & "|" & _
+                    objGlobal.GetIDDecimalSeparator_FreeDigit(cntKg, 2) & "|" & _
+                    objGlobal.GetIDDecimalSeparator_FreeDigit(cntkkk, 2) & "|" & _
+                    objGlobal.GetIDDecimalSeparator_FreeDigit(cntslab, 2) & "|" & _
+                    objGlobal.GetIDDecimalSeparator_FreeDigit(cntlm, 2) & "|" & _
+                    objGlobal.GetIDDecimalSeparator_FreeDigit(cntGt, 2) & "|" & _
+					objGlobal.GetIDDecimalSeparator_FreeDigit(cnthk, 2) & "|" & _
+					objGlobal.GetIDDecimalSeparator_FreeDigit(cntHa, 2)
+					
+    End Function
+
+    Function PNSUM_Footer() As String
+        Dim i As Integer
+        Dim txt_ha As TextBox
+        Dim lbl_jjg As Label
+
+        Dim cntHa As Single = 0
+        Dim cntJJG As Single = 0
+        
+        For i = 0 To dgPNSUM.Items.Count - 1
+            txt_ha = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_txt_ha")
+            lbl_jjg = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_jjg")
+            
+            If txt_ha.Text.Trim <> "" Then
+                cntHa = cntHa + CSng(txt_ha.Text.Trim)
+            End If
+
+            If lbl_jjg.Text.Trim <> "" Then
+                cntJJG = cntJJG + CSng(lbl_jjg.Text.Trim)
+            End If
+        Next
+        PNSUM_Footer = objGlobal.GetIDDecimalSeparator_FreeDigit(cntHa, 2) & "|" & _
+                       objGlobal.GetIDDecimalSeparator_FreeDigit(cntJJG, 2) & "|"
+                 
+    End Function
+#End Region
+
+#Region "Function & Procedure NRW"
+    Private Function NRW_Pekerjaan_beforesave() As Boolean
+        Dim i As Integer
+        Dim row As Integer = dgNRW.Items.Count
+        Dim noinput As Integer = 0
+        Dim ddl_jb As DropDownList
+        Dim ddl_cb As DropDownList
+		Dim hid_ec As HiddenField
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+		Dim txt_hasilha As TextBox
+        Dim cb As String = ""
+		Dim pd as String = ""
+
+        ' jika semua kryawan pekerjaannya ga diisi return false
+        For i = 0 To row - 1
+            ddl_jb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_jb")
+            If ddl_jb.SelectedItem.Value.Trim = "" Then
+                noinput = noinput + 1
+            End If
+        Next
+
+        If noinput = row Then
+            lblErrMessage.Text = "Silakan isi pekerjaan ..."
+            Return False
+        End If
+
+        For i = 0 To row - 1
+            ddl_jb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_jb")
+            ddl_cb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_cb")
+            txt_hk = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hk")
+            txt_hs = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hs")
+			hid_ec = dgNRW.Items.Item(i).FindControl("dgNRW_hid_ec")
+			txt_hasilha = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hasilha")
+
+            If (ddl_jb.SelectedItem.Value.Trim <> "") And ((ddl_cb.SelectedItem.Value.Trim = "") Or Trim(txt_hk.Text = "") Or Trim(txt_hs.Text = "")) Then
+                lblErrMessage.Text = "Silakan isi pekerjaan,blok,hk dan hasil kerja ..."
+                Return False
+            End If
+
+            If (ddl_jb.SelectedItem.Value.Trim <> "") And (ddl_cb.SelectedItem.Value.Trim <> "") Then
+                If Cek_ALokasi(ddl_jb.SelectedItem.Value.Trim, ddl_cb.SelectedItem.Value.Trim) Then
+                    lblErrMessage.Text = "Alokasi Aktiviti '" & ddl_jb.SelectedItem.Text.Trim & "' dithn tnm '" & ddl_cb.SelectedItem.Text.Trim & "' belum terisi ..."
+                    Return False
+                End If
+            End If
+			
+			if ddlreg_bor.SelectedItem.Value.Trim() = "R" Then
+				pd = Cek_ECode(hid_ec.Value.Trim)
+				if pd <> "" Then
+					lblErrMessage.Text = pd
+                    Return False
+				End if
+			End if
+				
+        Next
+
+
+
+        Return True
+    End Function
+
+    Private Sub NRW_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_RW_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_RW_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_ec As HiddenField
+        Dim ddl_jb As DropDownList
+        Dim lbl_nr As Label
+        Dim ddl_cb As DropDownList
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+		DIm txt_hasilha As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgNRW.Items.Count - 1
+
+            hid_ec = dgNRW.Items.Item(i).FindControl("dgNRW_hid_ec")
+            ddl_jb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_jb")
+            lbl_nr = dgNRW.Items.Item(i).FindControl("dgNRW_lbl_nr")
+            ddl_cb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_cb")
+            txt_hk = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hk")
+            txt_hs = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hs")
+            txt_rot = dgNRW.Items.Item(i).FindControl("dgNRW_txt_rot")
+            lbl_um = dgNRW.Items.Item(i).FindControl("dgNRW_lbl_um")
+            txt_hasilha = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hasilha")
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_ec.Value <> "") And (ddl_jb.SelectedItem.Value.Trim <> "") And (ddl_cb.SelectedItem.Value.Trim <> "") And (txt_hk.Text <> "") And (txt_hs.Text <> "") Then
+                ParamName = "BC|JC|BKM|EC|SSC|HK|HS|UM|ROT|LOC|ST|CD|UD|UI|HA"
+                ParamValue = ddl_cb.SelectedItem.Value.Trim & "|" & _
+                             ddl_jb.SelectedItem.Value.Trim() & "|" & _
+                             strIDM & "|" & _
+                             Trim(hid_ec.Value) & "|" & _
+                             sIdSubCat & "|" & _
+                             IIf(txt_hk.Text = "", "0", txt_hk.Text) & "|" & _
+                             IIf(txt_hs.Text = "", "0", txt_hs.Text) & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             IIf(txt_rot.Text = "", "0", txt_rot.Text) & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId  & "|" & _ 
+							 IIf(txt_hasilha.Text = "", "0", txt_hasilha.Text)
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub NRW_Save()
+        If isNew.Value = "True" Then
+            If (Not BKM_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+
+            If (Not NRW_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+            BKM_onSave()
+        Else
+            if (Not BKM_onUpdate()) Then
+			    UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+			end if
+			
+			If (Not NRW_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+        End If
+        NRW_Pekerjaan_onSave()
+        HKJ_RW_Pekerjaan_onSave_by_RW()
+        BHNALL_Bahan_onSave()
+        HKJ_BHN_Pekerjaan_onSave_by_BHNALL()
+		isNew.Value = "False"
+    End Sub
+
+    Function NRW_Footer() As String
+        Dim i As Integer
+        Dim txt_hk As TextBox
+        Dim txt_ha As TextBox
+        Dim cntHk As Single = 0
+        Dim cntHa As Single = 0
+
+        For i = 0 To dgNRW.Items.Count - 1
+            txt_hk = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hk")
+            txt_ha = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hs")
+            If txt_hk.Text.Trim <> "" Then
+                cntHk = cntHk + CSng(txt_hk.Text)
+            End If
+            If txt_ha.Text.Trim <> "" Then
+                cntHa = cntHa + CSng(txt_ha.Text)
+            End If
+        Next
+        NRW_Footer = objGlobal.GetIDDecimalSeparator_FreeDigit(cntHk, 2) & "|" & objGlobal.GetIDDecimalSeparator_FreeDigit(cntHa, 2)
+    End Function
+#End Region
+
+#Region "Function & Procedure TR"
+    Private Function TR_Pekerjaan_beforesave() As Boolean
+        Dim i As Integer
+        Dim row As Integer = dgTRX.Items.Count
+        Dim noinput As Integer = 0
+        Dim hid_jb As HiddenField
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim cb As String = ""
+
+        ' jika semua kryawan pekerjaannya ga diisi return false
+        'If (row = 0) Then
+        '    lblErrMessage.Text = "Silakan isi pekerjaan ..."
+        '    Return False
+        'End If
+
+        For i = 0 To row - 1
+            hid_jb = dgTRX.Items.Item(i).FindControl("dgTRX_hid_jb")
+            txt_hk = dgTRX.Items.Item(i).FindControl("dgTRX_txt_hk")
+            txt_hs = dgTRX.Items.Item(i).FindControl("dgTRX_txt_hs")
+
+            If (hid_jb.Value.Trim <> "") And ((txt_hk.Text.Trim = "") Or (txt_hs.Text.Trim = "")) Then
+                lblErrMessage.Text = "Silakan isi pekerjaan,hk dan hasil kerja ..."
+                Return False
+            End If
+
+        Next
+
+
+
+        Return True
+    End Function
+
+    Private Sub TR_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_TR_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_TR_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_jb As HiddenField
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_TR_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgTRX.Items.Count - 1
+
+            hid_jb = dgTRX.Items.Item(i).FindControl("dgTRX_hid_jb")
+            txt_hk = dgTRX.Items.Item(i).FindControl("dgTRX_txt_hk")
+            txt_hs = dgTRX.Items.Item(i).FindControl("dgTRX_txt_hs")
+            lbl_um = dgTRX.Items.Item(i).FindControl("dgTRX_lbl_um")
+
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_jb.Value.Trim <> "") And (txt_hk.Text <> "") And (txt_hs.Text <> "") Then
+                ParamName = "BKM|JC|SSC|HK|HS|UM|LOC|ST|CD|UD|UI"
+                ParamValue = strIDM & "|" & _
+                             hid_jb.Value.Trim() & "|" & _
+                             sIdSubCat & "|" & _
+                             IIf(txt_hk.Text = "", "0", txt_hk.Text) & "|" & _
+                             IIf(txt_hs.Text = "", "0", txt_hs.Text) & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_TR_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub TR_Save()
+        If isNew.Value = "True" Then
+            If (Not BKM_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+
+            If (Not TR_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+            End If
+            BKM_onSave()
+        Else
+            if (Not BKM_onUpdate()) Then
+			    UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                Exit Sub
+			end if
+        End If
+        TR_Pekerjaan_onSave()
+        HKJ_RW_Pekerjaan_onSave_by_TR()
+
+        'BHNALL_Bahan_onSave()
+        'HKJ_BHN_Pekerjaan_onSave_by_BHNALL()
+		isNew.Value = "False"
+    End Sub
+
+#End Region
+
+#Region "Function & Procedure BO"
+    Private Function Cek_ALokasiBO(ByVal jb As String, ByVal cb As String) As Boolean
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKMLN_BO_CEK"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim objEmpCodeDs As New Object()
+
+		Dim PD As String = Right(Trim(txtWPDate.Text), 4) & Mid(Trim(txtWPDate.Text), 4, 2)
+        
+		strParamName = "JC|BC|LOC|PD"
+        strParamValue = jb & "|" & cb & "|" & strLocation & "|" & PD 
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BO_CEK&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return Trim(objEmpCodeDs.Tables(0).Rows(0).Item("status"))
+
+    End Function
+	
+	
+
+    Private Function BOR_Pekerjaan_beforesave() As Boolean
+        Dim i As Integer
+        Dim row As Integer = dgBOR.Items.Count
+        Dim noinput As Integer = 0
+        Dim ddl_jb As DropDownList
+        Dim ddl_cb As DropDownList
+        Dim txt_hs As TextBox
+		Dim txt_nm As Label 
+        Dim cb As String = ""
+		Dim em As HiddenField 
+		Dim dt As String
+       
+        If isNew.Value = "True" Then
+            dt = Date_Validation(txtWPDate.Text, False)
+        Else
+            dt = lblWPDate.Text.Trim
+        End If
+
+        ' jika semua kryawan pekerjaannya ga diisi return false
+        For i = 0 To row - 1
+            ddl_jb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_jb")
+            If ddl_jb.SelectedItem.Value.Trim = "" Then
+                noinput = noinput + 1
+            End If
+        Next
+
+        If noinput = row Then
+            lblErrMessage.Text = "Silakan isi pekerjaan ..."
+            Return False
+        End If
+
+        For i = 0 To row - 1
+            ddl_jb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_jb")
+            ddl_cb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_cb")
+            txt_hs = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hs")
+            em     = dgBOR.Items.Item(i).FindControl("dgBOR_hid_ec")
+			txt_nm = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_ed")
+
+            If (ddl_jb.SelectedItem.Value.Trim <> "") And ((ddl_cb.SelectedItem.Value.Trim = "") Or Trim(txt_hs.Text = "")) Then
+                lblErrMessage.Text = "Silakan isi pekerjaan,blok dan hasil kerja ..."
+                Return False
+            End If
+           
+		    If cek_Absensi(em.Value) Then 
+			   lblErrMessage.Text = txt_nm.Text.Trim & " tidak ada absensi di tanggal " & dt 
+			    Return False
+			End if 
+
+            If (ddl_jb.SelectedItem.Value.Trim <> "") And (ddl_cb.SelectedItem.Value.Trim <> "") Then
+                If Cek_ALokasiBO(ddl_jb.SelectedItem.Value.Trim, ddl_cb.SelectedItem.Value.Trim) Then
+                    lblErrMessage.Text = "Alokasi Aktiviti borongan '" & ddl_jb.SelectedItem.Text.Trim & "' di thn tnm '" & ddl_cb.SelectedItem.Text.Trim & "' belum terisi ..."
+                    Return False
+                End If
+            End If
+        Next
+
+
+
+        Return True
+    End Function
+
+    Private Sub BOR_Pekerjaan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_BO_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_BO_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim sIdSubCat As String
+        Dim sIdDIv As String
+        Dim hid_ec As HiddenField
+        Dim ddl_jb As DropDownList
+        Dim lbl_nr As Label
+        Dim ddl_cb As DropDownList
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+        Dim txt_dnd As TextBox
+        Dim lbl_um As Label
+		Dim txt_hasilha As TextBox
+        
+		Dim txt_jg As TextBox
+        Dim txt_bj As TextBox
+        Dim txt_tp As TextBox
+        Dim txt_kr As TextBox
+        
+		Dim ed As String = ""
+        Dim jc As String = ""
+        Dim cb As String = ""
+
+        Dim Kbs_txt_KB_Dkk As TextBox
+        Dim Kbs_chk_KB_Dbk As TextBox
+        Dim Kbs_chk_KB_Dtph As TextBox
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BO_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        If isNew.Value = "True" Then
+            sIdSubCat = ddlbksubcategory.SelectedItem.Value.Trim()
+            sIdDIv = ddldivisicode.SelectedItem.Value.Trim()
+        Else
+            sIdSubCat = Left(lblbksubcategory.Text.Trim(), InStr(lblbksubcategory.Text.Trim(), " (") - 1)
+            sIdDIv = Left(lbldivisicode.Text.Trim(), InStr(lbldivisicode.Text.Trim(), " (") - 1)
+        End If
+
+        For i = 0 To dgBOR.Items.Count - 1
+
+            hid_ec = dgBOR.Items.Item(i).FindControl("dgBOR_hid_ec")
+            ddl_jb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_jb")
+            lbl_nr = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_nr")
+            ddl_cb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_cb")
+			txt_jg = dgBOR.Items.Item(i).FindControl("dgBOR_txt_jjg")
+            txt_bj = dgBOR.Items.Item(i).FindControl("dgBOR_txt_bjr")
+            txt_hs = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hs")
+			txt_tp = dgBOR.Items.Item(i).FindControl("dgBOR_txt_tph")
+			txt_kr = dgBOR.Items.Item(i).FindControl("dgBOR_txt_karcis")
+			txt_rot = dgBOR.Items.Item(i).FindControl("dgBOR_txt_rot")
+            txt_dnd = dgBOR.Items.Item(i).FindControl("dgBOR_txt_dnd")
+            lbl_um = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_um")
+            Kbs_txt_KB_Dkk = dgBOR.Items.Item(i).FindControl("dgBOR_KB_Dkk")
+            Kbs_chk_KB_Dbk = dgBOR.Items.Item(i).FindControl("dgBOR_KB_Dbk")
+            Kbs_chk_KB_Dtph = dgBOR.Items.Item(i).FindControl("dgBOR_KB_Dtph")
+            txt_hasilha = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hasilha")
+			
+            sIdSubCat = Mid(ddl_jb.SelectedItem.Text.Trim(), InStr(ddl_jb.SelectedItem.Text.Trim(), "(") + 1, Len(ddl_jb.SelectedItem.Text.Trim()) - InStr(ddl_jb.SelectedItem.Text.Trim(), "(") - 1) 
+			
+            'Save only employee and job exists and blok  and hk and hasil
+            If (hid_ec.Value <> "") And (ddl_jb.SelectedItem.Value.Trim <> "") And (ddl_cb.SelectedItem.Value.Trim <> "") And (txt_hs.Text <> "") And (CSng(txt_hs.Text) > 0) Then
+                ParamName = "BC|JC|BKM|EC|SSC|HK|JJG|BJR|HS|UM|ROT|DND|TPH|KARCIS|KB_D_KTR|KB_D_BKT|KB_D_TPH|LOC|ST|CD|UD|UI|HA"
+                ParamValue = ddl_cb.SelectedItem.Value.Trim & "|" & _
+                             ddl_jb.SelectedItem.Value.Trim() & "|" & _
+                             strIDM & "|" & _
+                             Trim(hid_ec.Value) & "|" & _
+                             sIdSubCat & "|" & _
+                             "0" & "|" & _
+							 IIf(txt_jg.Text = "", "0", txt_jg.Text) & "|" & _
+							 IIf(txt_bj.Text = "", "0", txt_bj.Text) & "|" & _
+                             IIf(txt_hs.Text = "", "0", txt_hs.Text) & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             IIf(txt_rot.Text = "", "0", txt_rot.Text) & "|" & _
+                             IIf(txt_dnd.Text = "", "0", txt_dnd.Text) & "|" & _
+							 IIf(txt_tp.Text = "", "", txt_tp.Text) & "|" & _
+							 IIf(txt_kr.Text = "", "", txt_kr.Text) & "|" & _
+                             IIf(Kbs_txt_KB_Dkk.Text.Trim = "", "0", Kbs_txt_KB_Dkk.Text.Trim) & "|" & _
+                             IIf(Kbs_chk_KB_Dbk.Text.Trim = "", "0", Kbs_chk_KB_Dbk.Text.Trim) & "|" & _
+                             IIf(Kbs_chk_KB_Dtph.Text.Trim = "", "0", Kbs_chk_KB_Dtph.Text.Trim) & "|" & _
+                             strLocation & "|1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId  & "|" & _
+							 IIf(txt_hasilha.Text = "", "0", txt_hasilha.Text) 
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BO_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+
+    Private Sub BOR_Save()
+        If isNew.Value = "True" Then
+            If (Not BKM_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                SaveBtn.Enabled = True
+                SaveBtn2.Enabled = True
+                Exit Sub
+            End If
+
+            If (Not BOR_Pekerjaan_beforesave()) Then
+                UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                SaveBtn.Enabled = True
+                SaveBtn2.Enabled = True
+                Exit Sub
+            End If
+            BKM_onSave()
+        Else
+            if (Not BKM_onUpdate()) Then
+			    UserMsgBox(Me, lblErrMessage.Text)
+                alert = 1
+                SaveBtn.Enabled = True
+                SaveBtn2.Enabled = True
+                Exit Sub
+			end if
+        End If
+        BOR_Pekerjaan_onSave()
+        HKJ_RW_Pekerjaan_onSave_by_BO()
+		isNew.Value = "False"
+    End Sub
+
+
+    Function BO_Footer() As String
+        Dim i As Integer
+        Dim txt_ha As TextBox
+		Dim txt_hasilha As TextBox
+        Dim txt_jjg As TextBox
+        Dim cntHa As Single = 0
+        Dim cntJJG As Single = 0
+		Dim cntHasilha As Single = 0
+
+        For i = 0 To dgBOR.Items.Count - 1
+            txt_ha = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hs")
+            txt_jjg = dgBOR.Items.Item(i).FindControl("dgBOR_txt_jjg")
+			txt_hasilha = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hasilha")
+
+            If txt_jjg.Text.Trim <> "" Then
+                cntJJG = cntJJG + CSng(txt_jjg.Text)
+            End If
+
+            If txt_ha.Text.Trim <> "" Then
+                cntHa = cntHa + CSng(txt_ha.Text)
+            End If
+			
+			If txt_hasilha.Text.Trim <> "" Then 
+				cntHasilha = cntHasilha + CSng(txt_hasilha.Text)
+            End If
+			
+        Next
+        BO_Footer = objGlobal.GetIDDecimalSeparator_FreeDigit(cntHa, 2) & "|" & objGlobal.GetIDDecimalSeparator_FreeDigit(cntJJG, 2) & "|" & objGlobal.GetIDDecimalSeparator_FreeDigit(cntHasilha, 2)
+
+    End Function
+#End Region
+
+#Region "Function & Procedure BHNALL"
+    Private Sub BHNALL_Bahan_onSave()
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKMLN_BHN_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKMLN_BHN_UPD"
+        Dim strIDM As String = LblidM.Text
+        Dim hid_ec As HiddenField
+        Dim hid_cb As HiddenField
+        Dim hid_jb As HiddenField
+        Dim ddl_ic As DropDownList
+
+        Dim txt_qty As TextBox
+        Dim lbl_um As Label
+        Dim jc As String = ""
+        Dim ic As String = ""
+
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "BKM"
+        ParamValue = strIDM
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RWBHN_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'Save
+        For i = 0 To dgBHNALL.Items.Count - 1
+
+
+            hid_ec = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_hid_ec")
+            hid_jb = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_hid_jb")
+            hid_cb = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_hid_cb")
+            ddl_ic = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_ddl_itm")
+            txt_qty = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_txt_Qty")
+            lbl_um = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_lbl_um")
+
+            If ddl_ic.SelectedItem.Value.Trim <> "" Then
+                ic = Left(ddl_ic.SelectedItem.Value.Trim(), InStr(ddl_ic.SelectedItem.Value.Trim(), "|") - 1)
+            Else
+                ic = ""
+            End If
+
+            'Save only employee and job exists and blok  and hk and hasil
+            If (ddl_ic.SelectedItem.Value.Trim <> "") And (txt_qty.Text.Trim <> "") Then
+                ParamName = "BC|LOC|JC|BKM|EC|IC|QT|UM|ST|CD|UD|UI"
+                ParamValue = hid_cb.Value.Trim & "|" & _
+                             strLocation & "|" & _
+                             hid_jb.Value.Trim & "|" & _
+                             strIDM & "|" & _
+                             hid_ec.Value.Trim & "|" & _
+                             ic & "|" & _
+                             txt_qty.Text.Trim() & "|" & _
+                             Trim(lbl_um.Text) & "|" & _
+                             "1|" & _
+                             DateTime.Now() & "|" & _
+                             DateTime.Now() & "|" & _
+                             strUserId
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RWBHN_UPD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+
+    End Sub
+#End Region
+
+#End Region
+
+#Region "Binding"
+
+#Region "Binding BK"
+
+    Sub BindBkCategory()
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BK_CATEGORY_GET_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpDivDs As New Object()
+        Dim dr As DataRow
+
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE (CatID <> 'AD') |"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpDivDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BK_CATEGORY_GET_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpDivDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpDivDs.Tables(0).Rows.Count - 1
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("CatID") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("CatID"))
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("CatName") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("CatID")) & " (" & Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("CatName")) & ")"
+            Next
+        End If
+
+        dr = objEmpDivDs.Tables(0).NewRow()
+        dr("CatID") = ""
+        dr("CatName") = "Pilih Kategori"
+        objEmpDivDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddlbkcategory.DataSource = objEmpDivDs.Tables(0)
+        ddlbkcategory.DataTextField = "CatName"
+        ddlbkcategory.DataValueField = "CatID"
+        ddlbkcategory.DataBind()
+    End Sub
+
+    Sub BindBKSubKategory(ByVal id As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BK_SUBCATEGORY_GET_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpDivDs As New Object()
+        Dim dr As DataRow
+
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "AND idCat='" & id & "' |Order by SubCatID"
+
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpDivDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BK_SUBCATEGORY_GET_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpDivDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpDivDs.Tables(0).Rows.Count - 1
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("SubCatID") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("SubCatID"))
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("SubCatName") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("SubCatID")) & " (" & Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("SubCatName")) & ")"
+            Next
+        End If
+
+        dr = objEmpDivDs.Tables(0).NewRow()
+        dr("SubCatID") = ""
+        dr("SubCatName") = "Pilih Sub Kategori"
+        objEmpDivDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddlbksubcategory.DataSource = objEmpDivDs.Tables(0)
+        ddlbksubcategory.DataTextField = "SubCatName"
+        ddlbksubcategory.DataValueField = "SubCatID"
+        ddlbksubcategory.DataBind()
+
+    End Sub
+
+    Sub BindDivisi(ByVal id As String, ByVal sid As String, ByVal regbo As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_DIVISICODE_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim StrFilter As String = ""
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpDivDs As New Object()
+        Dim dr As DataRow
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "AND A.LocCode='" & strLocation & "' AND A.Status='1'|ORDER By BlkGrpCode"
+
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpDivDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=HR_HR_STP_DIVISI_LIST_GET&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+        If objEmpDivDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpDivDs.Tables(0).Rows.Count - 1
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("BlkGrpCode") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("BlkGrpCode"))
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("Description") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("BlkGrpCode")) & " (" & Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("Description")) & ")"
+            Next
+        End If
+
+        dr = objEmpDivDs.Tables(0).NewRow()
+        dr("BlkGrpCode") = ""
+        dr("Description") = "Pilih Divisi"
+        objEmpDivDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddldivisicode.DataSource = objEmpDivDs.Tables(0)
+        ddldivisicode.DataTextField = "Description"
+        ddldivisicode.DataValueField = "BlkGrpCode"
+        ddldivisicode.DataBind()
+        ddldivisicode.SelectedIndex = 0
+
+        If (regbo = "R" or regbo="P") Then
+            Select Case id
+                Case "RW", "BT","GS"
+                    RW_src_ddl_divisi.DataSource = objEmpDivDs.Tables(0)
+                    RW_src_ddl_divisi.DataTextField = "Description"
+                    RW_src_ddl_divisi.DataValueField = "BlkGrpCode"
+                    RW_src_ddl_divisi.DataBind()
+                Case "PN"
+                    PN_src_ddl_divisi.DataSource = objEmpDivDs.Tables(0)
+                    PN_src_ddl_divisi.DataTextField = "Description"
+                    PN_src_ddl_divisi.DataValueField = "BlkGrpCode"
+                    PN_src_ddl_divisi.DataBind()
+                    PN_add_txt.Text = "1"
+                Case Else
+                    NRW_src_ddl_divisi.DataSource = objEmpDivDs.Tables(0)
+                    NRW_src_ddl_divisi.DataTextField = "Description"
+                    NRW_src_ddl_divisi.DataValueField = "BlkGrpCode"
+                    NRW_src_ddl_divisi.DataBind()
+            End Select
+        Else
+            BOR_src_ddl_divisi.DataSource = objEmpDivDs.Tables(0)
+            BOR_src_ddl_divisi.DataTextField = "Description"
+            BOR_src_ddl_divisi.DataValueField = "BlkGrpCode"
+            BOR_src_ddl_divisi.DataBind()
+            BOR_add_txt.Text = "1"
+        End If
+
+
+    End Sub
+
+    Sub BindMandor(ByVal strDivCode As String, ByVal sfilter As String, ByVal mdr As String)
+         Dim strOpCd_EmpDiv As String = "HR_HR_TRX_EMPLOYEE_LIST_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim intSelectedIndex As Integer = 0
+		Dim intSelectedIndex2 As Integer = 0
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+		Dim SM As String = Mid(Trim(txtWPDate.Text), 4, 2)
+        Dim SY As String = Right(Trim(txtWPDate.Text), 4)
+
+        strParamName = "LOC|AM|AY|SEARCH|SORT"
+        strParamValue = strLocation & "|" & SM & "|" & SY & "|AND A.Status='1' AND A.LocCode = '" & strLocation & "' AND (isMandor<>'0')|ORDER BY A.EmpName"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=HR_HR_TRX_EMPLOYEE_LIST_GET&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("_Description") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("_Description")) 
+				 If Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode")) = Trim(mdr) Then
+                    intSelectedIndex = intCnt + 1
+                End If
+            Next
+        End If
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("EmpCode") = ""
+        dr("_Description") = "Pilih Mandor"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddlMandorCode.DataSource = objEmpCodeDs.Tables(0)
+        ddlMandorCode.DataTextField = "_Description"
+        ddlMandorCode.DataValueField = "EmpCode"
+        ddlMandorCode.DataBind()
+		
+		ddlmandor1.DataSource = objEmpCodeDs.Tables(0)
+        ddlmandor1.DataTextField = "_Description"
+        ddlmandor1.DataValueField = "EmpCode"
+        ddlmandor1.DataBind()
+    End Sub
+
+    Sub BindKCS(ByVal strDivCode As String,Byval kcs as String)
+        Dim strOpCd_EmpDiv As String = "HR_HR_TRX_EMPLOYEE_LIST_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim intSelectedIndex As Integer = 0
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+        Dim SM As String = Mid(Trim(txtWPDate.Text), 4, 2)
+        Dim SY As String = Right(Trim(txtWPDate.Text), 4)
+
+        strParamName = "LOC|AM|AY|SEARCH|SORT"
+        strParamValue = strLocation & "|" & SM & "|" & SY & "|AND A.Status='1' AND A.LocCode = '" & strLocation & "' AND (isMandor<>'0')|ORDER BY A.EmpName"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=HR_HR_TRX_EMPLOYEE_LIST_GET&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("_Description") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("_Description")) 
+				 If Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode")) = Trim(kcs) Then
+                    intSelectedIndex = intCnt + 1
+                End If
+            Next
+        End If
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("EmpCode") = ""
+        dr("_Description") = "Pilih KCS"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddlKCSCode.DataSource = objEmpCodeDs.Tables(0)
+        ddlKCSCode.DataTextField = "_Description"
+        ddlKCSCode.DataValueField = "EmpCode"
+        ddlKCSCode.DataBind()
+		ddlKCSCode.SelectedIndex = intSelectedIndex
+
+    End Sub
+
+	Sub BindTrn(ByVal strDivCode As String,Byval kcs as String)
+        Dim strOpCd_EmpDiv As String = "HR_HR_TRX_EMPLOYEE_LIST_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim intSelectedIndex As Integer = 0
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+		Dim SM As String = Mid(Trim(txtWPDate.Text), 4, 2)
+        Dim SY As String = Right(Trim(txtWPDate.Text), 4)
+
+        strParamName = "LOC|AM|AY|SEARCH|SORT"
+        strParamValue = strLocation & "|" & SM & "|" & SY & "|AND A.Status='1' AND A.LocCode = '" & strLocation & "' AND (isMandor<>'0')|ORDER BY A.EmpName"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=HR_HR_TRX_EMPLOYEE_LIST_GET&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("_Description") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("_Description")) 
+				 If Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode")) = Trim(kcs) Then
+                    intSelectedIndex = intCnt + 1
+                End If
+            Next
+        End If
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("EmpCode") = ""
+        dr("_Description") = "Pilih Krani Transport"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddltrncode.DataSource = objEmpCodeDs.Tables(0)
+        ddltrncode.DataTextField = "_Description"
+        ddltrncode.DataValueField = "EmpCode"
+        ddltrncode.DataBind()
+		ddltrncode.SelectedIndex = intSelectedIndex
+
+    End Sub
+	
+    Sub BindBahan()
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_BAHAN_LIST_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpBlkDs As New Object()
+        Dim filter As String = ""
+
+        If isNew.Value = "True" Then
+            strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+        Else
+            strBKCategory = Left(lblbkcategory.Text.Trim(), InStr(lblbkcategory.Text.Trim(), "(") - 1)
+        End If
+
+        'Select Case Trim(strBKCategory)
+        '    Case "AD"
+        '        filter = "AND (ProdTypeCode in ('005')) "
+        '    Case "RW"
+        '        filter = "AND (ProdTypeCode in ('001','002','003','004','005','101','201','202','316')) "
+        '    Case "UM"
+        '        filter = "AND (ProdTypeCode in ('003','005','201','202','101')) "
+        '    Case "CV"
+        '        filter = "AND (ProdTypeCode in ('101','102','103','201','202')) "
+        '    Case "TR"
+        '        filter = "AND (ProdTypeCode in ('201','102','103') or ProdTypeCode like '4%' or ProdTypeCode like '5%' or ProdTypeCode like '9%')"
+        '    Case "PN"
+        '        filter = "AND (ProdTypeCode in ('005','661','201','202')) "
+        'End Select
+
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE LocCode = '" & strLocation & "' And ProdTypeCOde IN('020') " & filter & "|ORDER BY Descr"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpBlkDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BAHAN_LIST_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_bhn.Clear()
+        If objEmpBlkDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpBlkDs.Tables(0).Rows.Count - 1
+                hastbl_bhn.Add(Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("ItemCode")) & "|" & Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("UOMCode")), Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("Descr")))
+            Next
+        End If
+
+        hastbl_bhn.Add("", "Pilih Bahan")
+    End Sub
+
+    Sub Bind_Blok(ByVal sdc As String, ByVal sjc As String, ByVal ssc As String, ByVal sku As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BLOK_BKM_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpBlkDs As New Object()
+
+        strParamName = "LOC|SC|DC|JC|DT"
+        strParamValue = strLocation & "|" & ssc & "|" & sdc & "|" & sjc & "|" & Date_Validation(Trim(txtWPDate.Text), False)
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpBlkDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BLOK_BKM_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_cb.Clear()
+        If objEmpBlkDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpBlkDs.Tables(0).Rows.Count - 1
+                hastbl_cb.Add(Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("BlokCode")), Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("blok")))
+            Next
+        End If
+        If objEmpBlkDs.Tables(0).Rows.Count > 1 Then
+            hastbl_cb.Add("", "Pilih Blok")
+        End If
+    End Sub
+
+    Sub Bind_BOR_Blok(ByVal sdc As String, ByVal sjc As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BLOK_BKM_BOR_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpBlkDs As New Object()
+
+        strParamName = "LOC|DC|JC|DT"
+        strParamValue = strLocation & "|" & sdc & "|" & sjc & "|" & Date_Validation(Trim(txtWPDate.Text), False)
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpBlkDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BLOK_BKM_BOR_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_cb.Clear()
+        If objEmpBlkDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpBlkDs.Tables(0).Rows.Count - 1
+                hastbl_cb.Add(Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("BlokCode")), Trim(objEmpBlkDs.Tables(0).Rows(intCnt).Item("blok")))
+            Next
+        End If
+        hastbl_cb.Add("", "Pilih Blok")
+    End Sub
+
+    Sub BindEmployee(ByVal id As String, ByVal ddl As DropDownList)
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_EMPLOYEE_LIST_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim intSelectedIndex As Integer = 0
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+        Dim dt As String
+
+        If isNew.Value = "True" Then
+            dt = Date_Validation(txtWPDate.Text, False)
+        Else
+            dt = lblWPDate.Text.Trim
+        End If
+
+        strParamName = "DT|LOC|SEARCH|SORT"
+        strParamValue = dt & "|" & _
+                        strLocation & "|" & _
+                        "AND B.IDDiv like '%" & id & "%'|ORDER BY EmpName"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_EMPLOYEE_LIST_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpName") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpName"))& " - "  & replace(Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode")),rtrim(strlocation),"")  
+            Next
+        End If
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("EmpCode") = ""
+        dr("EmpName") = "Pilih Karyawan"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddl.DataSource = objEmpCodeDs.Tables(0)
+        ddl.DataTextField = "EmpName"
+        ddl.DataValueField = "EmpCode"
+        ddl.DataBind()
+    End Sub
+	
+	Sub BindPremiLain(ByVal job As String,byval rp As String)
+		Dim strOpCd_EmpDiv As String = "PR_PR_STP_PREMI_LAIN_GET_JOB"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim intSelectedIndex As Integer = 0
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+        Dim dt As String
+		Dim dt2 as Double
+
+        
+		dt = Right(txtWPDate.Text.Trim,4) & mid(txtWPDate.Text.Trim,4,2)
+
+        strParamName = "SEARCH"
+        strParamValue = "WHERE A.LocCode='" & strlocation & "' AND JobCode like '" & job & "%' "  & _
+						"AND ('" & dt & "' >= right(rtrim(periodestart),4)+left(rtrim(periodestart),2)) AND " & _
+                         "('" & dt & "' <= right(rtrim(periodeend),4)+left(rtrim(periodeend),2)) " 
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_EMPLOYEE_LIST_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("Rate") = "0"
+        dr("Rate") = "0"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+        
+        txtpremi.DataSource = objEmpCodeDs.Tables(0)
+        txtpremi.DataTextField = "Rate"
+        txtpremi.DataValueField = "Rate"
+        txtpremi.DataBind()	
+		
+		if cdbl(rp)=0 then
+		txtpremi.selectedindex = 0
+		else
+		txtpremi.selectedvalue = trim(rp)
+		end if
+	
+	End Sub
+
+	 
+	
+#End Region
+
+#Region "Binding HKJ"
+
+    'PEKERJAAN
+    Protected Function dgHKJ_RW_Reload() As DataSet
+        'Binding Data
+        If ddlbksubcategory.Text <> "" Then
+            RW_Pekerjaan(Trim(ddlbkcategory.SelectedItem.Value), Trim(ddlbksubcategory.SelectedItem.Value))
+            Bind_Blok(Trim(ddldivisicode.SelectedItem.Value), "", Trim(ddlbksubcategory.SelectedItem.Value), "K")
+        Else
+            RW_Pekerjaan(hid_cat.Value, hid_subcat.Value)
+            Bind_Blok(Trim(hid_div.Value), "", Trim(hid_subcat.Value), "K")
+        End If
+
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_MJOB_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||ORDER BY id"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub HKJ_RW_EmpByMdr_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_MJOB_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgHKJ_RWT.DataSource = Nothing
+            dgHKJ_RWT.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BK_CATEGORY_GET_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub HKJ_RW_BindEmpByMdr()
+        Dim dt As String = Date_Validation(txtWPDate.Text, False)
+        dgHKJ_RWT.DataSource = RW_EmpByMdr(ddlMandorCode.SelectedItem.Value.Trim(), dt)
+        dgHKJ_RWT.DataBind()
+    End Sub
+
+    Sub HKJ_RW_BindEmpByMdr_edit(ByVal index As Integer)
+        Dim DDLabs As DropDownList
+        Dim ds As DataSet = RW_EmpByMdrAll()
+        Dim dr As DataRow
+
+        dr = ds.Tables(0).NewRow()
+        dr("codeemp") = ""
+        dr("empdet") = "Pilih Karyawan"
+        ds.Tables(0).Rows.InsertAt(dr, 0)
+
+        DDLabs = dgHKJ_RWT.Items.Item(index).FindControl("dgRW_ddl_ededit")
+        DDLabs.DataSource = ds
+        DDLabs.DataTextField = "empdet"
+        DDLabs.DataValueField = "codeemp"
+        DDLabs.DataBind()
+
+    End Sub
+
+    Sub HKJ_RW_BindPekerjaan_OnLoad()
+        dgHKJ_RWT.EditItemIndex = -1
+        dgHKJ_RWT.DataSource = dgHKJ_RW_Reload()
+        dgHKJ_RWT.DataBind()
+    End Sub
+
+    Sub HKJ_RW_Pekerjaan_edit(ByVal index As Integer)
+        Dim DDLabs As DropDownList
+
+        If ddlbksubcategory.Text <> "" Then
+            RW_Pekerjaan(Trim(ddlbkcategory.SelectedItem.Value), Trim(ddlbksubcategory.SelectedItem.Value))
+        Else
+            RW_Pekerjaan(hid_cat.Value, hid_subcat.Value)
+        End If
+
+        DDLabs = dgHKJ_RWT.Items.Item(index).FindControl("dgHKJ_RWT_ddl_jb")
+        Dim sorted_job = New SortedList(hastbl_jb)
+        DDLabs.DataSource = sorted_job
+        DDLabs.DataTextField = "value"
+        DDLabs.DataValueField = "key"
+        DDLabs.DataBind()
+    End Sub
+
+    Sub HKJ_RW_Blok_edit(ByVal index As Integer)
+        Dim DDLabs As DropDownList
+        DDLabs = dgHKJ_RWT.Items.Item(index).FindControl("dgHKJ_RWT_ddl_cb")
+        Dim sorted_blk = New SortedList(hastbl_cb)
+        DDLabs.DataSource = sorted_blk
+        DDLabs.DataTextField = "value"
+        DDLabs.DataValueField = "key"
+        DDLabs.DataBind()
+
+    End Sub
+
+    'BAHAN
+    Sub HKJ_BHN_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_MBHN_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgHKJ_BHN.DataSource = Nothing
+            dgHKJ_BHN.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Protected Function dgHKJ_BHN_Reload() As DataSet
+        'Bind Data
+        BindBahan()
+        BHN_JOBAll()
+        BHN_BLOKALL()
+
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_MBHN_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC|SEARCH|SORT"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "||ORDER BY codejob"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub HKJ_BHN_BindPekerjaan_OnLoad()
+        dgHKJ_BHN.EditItemIndex = -1
+        dgHKJ_BHN.DataSource = dgHKJ_BHN_Reload()
+        dgHKJ_BHN.DataBind()
+    End Sub
+
+    Sub BHN_BLOKALL()
+        Dim DDLjob As DropDownList
+        Dim i As Integer
+
+        hastbl_cbbhn.Clear()
+
+        For i = 0 To dgHKJ_RWT.Items.Count - 1
+            DDLjob = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_ddl_cb")
+            If DDLjob.SelectedItem.Value.Trim <> "" Then
+                If Not hastbl_cbbhn.Contains(DDLjob.SelectedItem.Value.Trim) Then
+                    hastbl_cbbhn.Add(DDLjob.SelectedItem.Value.Trim, DDLjob.SelectedItem.Text.Trim)
+                End If
+            End If
+        Next
+    End Sub
+
+    Sub BHN_JOBAll()
+        Dim DDLjob As DropDownList
+        Dim i As Integer
+
+        hastbl_jbbhn.Clear()
+
+        For i = 0 To dgHKJ_RWT.Items.Count - 1
+            DDLjob = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_ddl_jb")
+            If DDLjob.SelectedItem.Value <> "" Then
+                If Not hastbl_jbbhn.Contains(DDLjob.SelectedItem.Value.Trim) Then
+                    hastbl_jbbhn.Add(DDLjob.SelectedItem.Value.Trim, DDLjob.SelectedItem.Text.Trim)
+                End If
+            End If
+        Next
+    End Sub
+
+    Sub HKJ_BHN_Bahan_edit(ByVal index As Integer)
+        Dim DDLabs As DropDownList
+        DDLabs = dgHKJ_BHN.Items.Item(index).FindControl("dgHKJ_BHN_ddl_itm")
+        Dim sorted_job = New SortedList(hastbl_bhn)
+        DDLabs.DataSource = sorted_job
+        DDLabs.DataTextField = "value"
+        DDLabs.DataValueField = "key"
+        DDLabs.DataBind()
+    End Sub
+
+    Sub HKJ_BHN_Pekerjaan_edit(ByVal index As Integer)
+        Dim DDLjobBhn As DropDownList
+
+        BHN_JOBAll()
+
+        DDLjobBhn = dgHKJ_BHN.Items.Item(index).FindControl("dgHKJ_BHN_ddl_jb")
+        Dim sorted_job = New SortedList(hastbl_jbbhn)
+        DDLjobBhn.DataSource = sorted_job
+        DDLjobBhn.DataTextField = "value"
+        DDLjobBhn.DataValueField = "key"
+        DDLjobBhn.DataBind()
+    End Sub
+
+    Sub HKJ_BHN_Blok_edit(ByVal index As Integer)
+        Dim DDLjobBhn As DropDownList
+
+        BHN_BLOKALL()
+
+        DDLjobBhn = dgHKJ_BHN.Items.Item(index).FindControl("dgHKJ_BHN_ddl_cb")
+        Dim sorted_job = New SortedList(hastbl_cbbhn)
+        DDLjobBhn.DataSource = sorted_job
+        DDLjobBhn.DataTextField = "value"
+        DDLjobBhn.DataValueField = "key"
+        DDLjobBhn.DataBind()
+    End Sub
+
+
+#End Region
+
+#Region "Binding RW"
+
+    Protected Function dgRW_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_RW_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Protected Function dgRW_GetUOM_Norma(ByVal sjc As String) As String
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BK_JOB_GET_UOM_BY_JOB"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objCodeDs As New Object()
+        Dim intErrNo As Integer
+
+        strParamName = "JC"
+        strParamValue = sjc
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BK_JOBUOM_GET_BY_JOB&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objCodeDs.Tables(0).Rows.Count = 0 Then
+            dgRW_GetUOM_Norma = "|"
+        Else
+            dgRW_GetUOM_Norma = Trim(objCodeDs.Tables(0).Rows(0).Item("UOM")) & "| " & Trim(objCodeDs.Tables(0).Rows(0).Item("Norma1"))
+        End If
+    End Function
+
+    Protected Function RW_EmpByMdrAll() As DataSet
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_RW_TEMP_LISTEMP"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "IP|UI|LOC|SEARCH|SORT"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "||" & _
+                        "ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_LISTEMP&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("codeemp") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("codeemp"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("empdet") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("empdet"))
+            Next
+        End If
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Protected Function RW_EmpByMdr(ByVal mc As String, ByVal dt As String) As DataSet
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_RW_TEMP_UPDNEW"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "IP|UI|LOC|MC|DT|SC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        mc & "|" & _
+                        dt & "|" & _
+                        ddlbksubcategory.SelectedItem.Value.Trim
+
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDNEW&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("codeemp") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("codeemp"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("empdet") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("empdet"))
+            Next
+        End If
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub RW_EmpByMdr_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_RW_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgRW.DataSource = Nothing
+            dgRW.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub RW_BindEmpByMdr()
+        Dim dt As String = Date_Validation(txtWPDate.Text, False)
+        dgRW.DataSource = RW_EmpByMdr(ddlMandorCode.SelectedItem.Value.Trim(), dt)
+        dgRW.DataBind()
+    End Sub
+
+    Sub RW_BindEmpByMdr_edit(ByVal index As Integer)
+        Dim DDLabs As DropDownList
+        Dim ds As DataSet = RW_EmpByMdrAll()
+        Dim dr As DataRow
+
+        dr = ds.Tables(0).NewRow()
+        dr("codeemp") = ""
+        dr("empdet") = "Pilih Karyawan"
+        ds.Tables(0).Rows.InsertAt(dr, 0)
+
+        DDLabs = dgRW.Items.Item(index).FindControl("dgRW_ddl_ededit")
+        DDLabs.DataSource = ds
+        DDLabs.DataTextField = "empdet"
+        DDLabs.DataValueField = "codeemp"
+        DDLabs.DataBind()
+
+    End Sub
+
+    Sub RW_BindPekerjaan_OnLoad()
+        dgRW.EditItemIndex = -1
+        dgRW.DataSource = dgRW_Reload()
+        dgRW.DataBind()
+    End Sub
+
+    Sub RW_Pekerjaan(ByVal cat As String, ByVal subcat As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_JOB_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE CatID='" & cat & "' AND SubCatId='" & subcat & "' AND LocCode='" & strLocation & "' And Status='1'|Order by Description"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_JOB_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_jb.Clear()
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                hastbl_jb.Add(Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("jobcode")), Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("Description")))
+            Next
+        End If
+        hastbl_jb.Add("", "Pilih Pekerjaan")
+
+    End Sub
+
+#End Region
+
+#Region "Binding BHN"
+    Protected Function dgBHN_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_BHN_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||" & _
+                        "ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub BHN_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BHN_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgBHN.DataSource = Nothing
+            dgBHN.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub BHN_BindPekerjaan_OnLoad()
+        dgBHN.EditItemIndex = -1
+        dgBHN.DataSource = dgBHN_Reload()
+        dgBHN.DataBind()
+    End Sub
+#End Region
+
+#Region "Binding PN"
+    Sub Bind_sub_sub_categori(ByVal sc As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BK_JOBSUBSUBCAT_GET_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE SubCatId='" & sc & "' AND Status='1' AND LocCode = '" & Trim(strLocation) & "'|Order by SubSubCatName"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BK_JOBSUBSUBCAT_GET_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_subsub.Clear()
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                hastbl_subsub.Add(Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("SubSubCatID")), Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("SubSubCatName"))& " (" & Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("JobCode")) & ")" )
+            Next
+        End If
+    End Sub
+
+    Protected Function dgPN_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_PN_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PN_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Protected Function dgPNSUM_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_PNSUM_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim intErrNo As Integer
+
+        strParamName = "LOC|IP|UI"
+        strParamValue = strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PNSUM_TEMP_UPDNEW&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return objEmpCodeDs
+
+    End Function
+
+	Protected Function dgPNSUM_Refresh() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_PNSUM_TEMP_UPDNEW"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim intErrNo As Integer
+
+        strParamName = "LOC|IP|UI"
+        strParamValue = strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PNSUM_TEMP_UPDNEW&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Protected Function PN_EmpByMdr(ByVal mc As String, ByVal dt As String, ByVal flt As String) As DataTable
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_PN_TEMP_UPDNEW"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "IP|UI|LOC|MC|DT|IC|SC|FLT"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        mc & "|" & _
+                        dt & "|" & _
+                        ddlbkcategory.SelectedItem.Value.Trim & "|" & _
+                        ddlbksubcategory.SelectedItem.Value.Trim & "|" & _
+                        flt
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PN_TEMP_UPDNEW&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows(intCnt).Item("status") = 1 Then
+            UserMsgBox(Me, "Kode Aktiviti tidak di temukan !")
+        End If
+
+        If objEmpCodeDs.Tables(1).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(1).Rows.Count - 1
+                objEmpCodeDs.Tables(1).Rows(intCnt).Item("codeemp") = Trim(objEmpCodeDs.Tables(1).Rows(intCnt).Item("codeemp"))
+                objEmpCodeDs.Tables(1).Rows(intCnt).Item("empdet") = Trim(objEmpCodeDs.Tables(1).Rows(intCnt).Item("empdet"))
+            Next
+        End If
+
+
+        Return objEmpCodeDs.Tables(1)
+
+    End Function
+
+    Sub PN_EmpByMdr_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_PN_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgPN.DataSource = Nothing
+            dgPN.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub PNSUM_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_PNSUM_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgPNSUM.DataSource = Nothing
+            dgPNSUM.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PNSUM_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub PN_BindEmpByMdr()
+        Dim dt As String = Date_Validation(txtWPDate.Text, False)
+        Dim sfilter As String = ""
+        'Select Case ddlbksubcategory.SelectedItem.Value.Trim
+        '    Case "PBS"
+        '        sfilter = "P"
+        '    Case "KBS"
+        '        sfilter = "K"
+        '    Case "BMS"
+        '        sfilter = "M"
+        '    Case "DRK"
+        '        sfilter = "D"
+        '    Case "PKJ"
+        '        sfilter = "J"
+        'End Select
+        dgPN.DataSource = PN_EmpByMdr(ddlMandorCode.SelectedItem.Value.Trim(), dt, sfilter)
+        dgPN.DataBind()
+    End Sub
+
+    Sub PN_BindPekerjaan_OnLoad()
+
+        If ddlbksubcategory.Text <> "" Then
+            Bind_sub_sub_categori(Trim(ddlbksubcategory.SelectedItem.Value))
+            Bind_Blok(Trim(ddldivisicode.SelectedItem.Value), "", Trim(ddlbksubcategory.SelectedItem.Value), "K")
+        Else
+            Bind_sub_sub_categori(hid_subcat.Value)
+            Bind_Blok(Trim(hid_div.Value), "", Trim(hid_subcat.Value), "K")
+        End If
+
+        dgPN.EditItemIndex = -1
+        dgPN.DataSource = dgPN_Reload()
+        dgPN.DataBind()
+    End Sub
+
+    Sub PNSUM_BindPekerjaan_OnRefresh()
+        dgPNSUM.EditItemIndex = -1
+        dgPNSUM.DataSource = dgPNSUM_Refresh()
+        dgPNSUM.DataBind()
+    End Sub
+
+	 Sub PNSUM_BindPekerjaan_OnLoad()
+        dgPNSUM.EditItemIndex = -1
+        dgPNSUM.DataSource = dgPNSUM_Reload()
+        dgPNSUM.DataBind()
+    End Sub
+
+    Sub show_hide_col(ByVal subcat As String)
+	    '0 : No
+        '1 : karyawan
+        '2 : Pekerjaan
+        '3 : Sub Pekerjaan
+        '4 : Blok
+        '5 : HK
+        '6 : JJG
+        '7 : BJR
+        '8 : Hasil
+		'9 : HasilHa
+        '10: drc
+        '11': kkk
+        '12: slab
+        '13: lm
+        '14 : gt
+        '15: tph
+        '16: karcis
+        '17 : UOM
+        '18 : Rot
+        '19 : Denda
+        '20 : Buah Mentah
+        '21 : Buah Tinggal
+        '22 : B.Tdk TPH
+        '23 : Tngkai. Panjang
+        '24 : Plpah Sengkleh
+        '25 : Non Basis
+        '26 : Kutip Kotor
+        '27 : Brndl Kotor
+        '28 : B.Tdk TPH
+        dgPN.Columns(2).Visible = False
+        dgPN.Columns(3).Visible = False
+        dgPN.Columns(5).Visible = False
+        dgPN.Columns(6).Visible = False
+        dgPN.Columns(7).Visible = False
+        dgPN.Columns(8).Visible = False
+		dgPN.Columns(9).Visible = False
+        dgPN.Columns(9).Visible = False
+        dgPN.Columns(10).Visible = False
+        dgPN.Columns(11).Visible = False
+        dgPN.Columns(12).Visible = False
+        dgPN.Columns(13).Visible = False
+        dgPN.Columns(14).Visible = False
+        dgPN.Columns(15).Visible = False
+        dgPN.Columns(16).Visible = False
+        dgPN.Columns(17).Visible = False
+        dgPN.Columns(18).Visible = False
+        dgPN.Columns(19).Visible = False
+        dgPN.Columns(20).Visible = False
+        dgPN.Columns(21).Visible = False
+        dgPN.Columns(22).Visible = False
+        dgPN.Columns(23).Visible = False
+        dgPN.Columns(24).Visible = False
+        dgPN.Columns(25).Visible = False
+        dgPN.Columns(26).Visible = False
+        dgPN.Columns(27).Visible = False
+		dgPN.Columns(28).Visible = False
+		
+        Select Case subcat
+            Case "PBS"
+                dgPN.Columns(6).Visible = True
+				dgPN.Columns(9).Visible = True
+                dgPN.Columns(15).Visible = True
+				dgPN.Columns(16).Visible = True				
+                
+                dgPN.Columns(20).Visible = True
+                dgPN.Columns(21).Visible = True
+                dgPN.Columns(22).Visible = True
+                dgPN.Columns(23).Visible = True
+                dgPN.Columns(24).Visible = True
+				dgPN.Columns(25).Visible = True
+            Case "KBS"
+				dgPN.Columns(5).Visible = True
+                dgPN.Columns(8).Visible = True
+				dgPN.Columns(9).Visible = True
+				
+                dgPN.Columns(15).Visible = True
+                dgPN.Columns(16).Visible = True
+                dgPN.Columns(26).Visible = True
+                dgPN.Columns(27).Visible = True
+                dgPN.Columns(28).Visible = True
+            Case "BMS", "BMK"
+				dgPN.Columns(3).Visible = True			   
+			    dgPN.Columns(5).Visible = True               
+                dgPN.Columns(8).Visible = True
+				dgPN.Columns(9).Visible = True
+				
+                dgPN.Columns(15).Visible = True
+                dgPN.Columns(16).Visible = True
+            Case "DRK"
+			    dgPN.Columns(5).Visible = True
+				dgPN.Columns(8).Visible = True
+                dgPN.Columns(9).Visible = True
+                dgPN.Columns(10).Visible = True
+                dgPN.Columns(11).Visible = True
+                dgPN.Columns(12).Visible = True
+                dgPN.Columns(13).Visible = True
+				dgPN.Columns(14).Visible = True
+			Case "CPI"          'baru
+			    dgPN.Columns(5).Visible = True
+                dgPN.Columns(6).Visible = True
+            Case Else
+			    dgPN.Columns(5).Visible = True
+                dgPN.Columns(8).Visible = True
+				dgPN.Columns(9).Visible = True
+        End Select
+    End Sub
+
+#End Region
+
+#Region "Binding BOR"
+    Sub show_hide_col_Bo(ByVal subcat As String)
+	    '0 : No
+        '1 : karyawan
+        '2 : Pekerjaan
+        '3 : Blok
+		'4 : JJG
+		'5 : BJR
+        '6 : Hasil  
+		'7 : HasilHa
+		'8 : TPH
+		'9 : KARCIS
+        '10 : UOM
+        '11 : Rot
+        '12 : norma
+        '13 : denda
+        '14 : Kutip Kotor
+        '15 : Brndl Kotor
+        '16 : B.Tdk TPH
+		dgBOR.Columns(4).Visible = False 'jjg
+		dgBOR.Columns(5).Visible = False 'bjr
+		dgBOR.Columns(6).Visible = False 'Hasil
+		dgBOR.Columns(7).Visible = False 'hasilha
+		dgBOR.Columns(8).Visible = False 'tph
+        dgBOR.Columns(9).Visible = False 'karcis
+		dgBOR.Columns(10).Visible = False 'uon
+		dgBOR.Columns(11).Visible = False 'rot
+		dgBOR.Columns(12).Visible = False 'norma
+		dgBOR.Columns(13).Visible = False 'denda
+		dgBOR.Columns(14).Visible = False 'kutip kotor
+		dgBOR.Columns(15).Visible = False 'brdnl kotor
+		dgBOR.Columns(16).Visible = False 'tidak tph
+        Select Case subcat
+            Case "KBS"
+				dgBOR.Columns(6).Visible = True 'Hasil
+				dgBOR.Columns(7).Visible = True 'hasilha
+			    dgBOR.Columns(8).Visible = True 'tph
+		        dgBOR.Columns(9).Visible = True 'karcis
+                dgBOR.Columns(14).Visible = True 'denda ktp
+                dgBOR.Columns(15).Visible = True 'denda ktp
+                dgBOR.Columns(16).Visible = True 'denda ktp
+		    Case "BMS"
+		        dgBOR.Columns(4).Visible = True 'jjg
+		        dgBOR.Columns(5).Visible = True 'bjr
+				dgBOR.Columns(6).Visible = True 'hasil
+				dgBOR.Columns(8).Visible = True 'tph
+		        dgBOR.Columns(9).Visible = True 'karcis
+        	    dgBOR.Columns(13).Visible = False
+                dgBOR.Columns(14).Visible = False
+                dgBOR.Columns(15).Visible = False
+			Case "PBP"
+		        dgBOR.Columns(4).Visible = True 'jjg
+		        dgBOR.Columns(5).Visible = True 'bjr
+		        dgBOR.Columns(8).Visible = True 'tph
+		        dgBOR.Columns(9).Visible = True 'karcis
+            Case Else
+                dgBOR.Columns(6).Visible = True 'Hasil
+				dgBOR.Columns(7).Visible = True 'hasilha
+        End Select
+    End Sub
+
+    Protected Function dgBOR_GetUOM_Norma(ByVal sjc As String) As String
+        Dim strOpCd_EmpDiv As String = "PR_PR_STP_BK_JOB_BORONGAN_GET_UOM_BY_JOB"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objCodeDs As New Object()
+        Dim intErrNo As Integer
+
+        strParamName = "JC"
+        strParamValue = sjc
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_STP_BK_JOB_BORONGAN_GET_UOM_BY_JOB&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objCodeDs.Tables(0).Rows.Count = 0 Then
+            dgBOR_GetUOM_Norma = "|"
+        Else
+            dgBOR_GetUOM_Norma = Trim(objCodeDs.Tables(0).Rows(0).Item("UOM")) & "|" & Trim(objCodeDs.Tables(0).Rows(0).Item("Norma"))
+        End If
+    End Function
+
+    Protected Function dgBOR_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_BO_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Protected Function BOR_EmpByMdr(ByVal mc As String, ByVal dt As String) As DataSet
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_BO_TEMP_UPDNEW"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        Dim jb As String = ""
+
+
+        If hastbl_jb.Count = 1 Then
+            Dim ddl As New DropDownList
+            ddl.DataSource = hastbl_jb
+            ddl.DataTextField = "value"
+            ddl.DataValueField = "key"
+            ddl.DataBind()
+            ddl.SelectedIndex = 0
+            jb = ddl.SelectedItem.Value.Trim()
+        Else
+            jb = ""
+        End If
+
+
+        strParamName = "IP|UI|LOC|MC|DT|SC|JB"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        mc & "|" & _
+                        dt & "|" & _
+                        ddlbksubcategory.SelectedItem.Value.Trim & "|" & _
+                        jb
+
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_UPDNEW&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("codeemp") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("codeemp"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("empdet") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("empdet"))
+            Next
+        End If
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub BOR_EmpByMdr_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BO_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgBOR.DataSource = Nothing
+            dgBOR.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub BOR_Pekerjaan(ByVal cat As String, ByVal subcat As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_JOB_BOR_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE CatID='" & cat & "'" & _
+                        " AND SubCatId='" & subcat & "'" & _
+                        " AND LocCode='" & strLocation & "'" & _
+                        " AND JobCode in (SELECT distinct codejob FROM PR_STP_BKBORONGAN WHERE Status='1' AND LocCode='" & strLocation & "')" & _
+                        " AND Status='1'|Order by Description"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_JOB_BOR_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_jb.Clear()
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                hastbl_jb.Add(Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("jobcode")), Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("Description")))
+            Next
+        End If
+        'hastbl_jb.Add("", "Pilih Pekerjaan")
+    End Sub
+
+    Sub BOR_BindEmpByMdr()
+        Dim dt As String = Date_Validation(txtWPDate.Text, False)
+        dgBOR.DataSource = BOR_EmpByMdr(ddlMandorCode.SelectedItem.Value.Trim(), dt)
+        dgBOR.DataBind()
+    End Sub
+
+    Sub BOR_BindPekerjaan_OnLoad()
+        If ddlbksubcategory.Text <> "" Then
+            BOR_Pekerjaan(Trim(ddlbkcategory.SelectedItem.Value), Trim(ddlbksubcategory.SelectedItem.Value))
+			Bind_BOR_Blok(ddldivisicode.SelectedItem.Value.Trim(), "")
+            'Bind_Blok(Trim(ddldivisicode.SelectedItem.Value), "", Trim(ddlbksubcategory.SelectedItem.Value), "K")
+        Else
+            BOR_Pekerjaan(hid_cat.Value, hid_subcat.Value)
+			Bind_BOR_Blok(hid_div.Value, "")
+            'Bind_Blok(Trim(hid_div.Value), "", Trim(hid_subcat.Value), "K")
+        End If
+
+        dgBOR.EditItemIndex = -1
+        dgBOR.DataSource = dgBOR_Reload()
+        dgBOR.DataBind()
+    End Sub
+#End Region
+
+#Region "Binding NRW"
+    Protected Function dgNRW_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_RW_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub NRW_EmpByMdr_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_RW_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgNRW.DataSource = Nothing
+            dgNRW.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub NRW_Pekerjaan(ByVal cat As String, ByVal subcat As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_JOB_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE CatID='" & cat & "' AND SubCatId='" & subcat & "' AND LocCode='" & strLocation & "' And Status='1'|Order by Description"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_JOB_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        hastbl_jb.Clear()
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                hastbl_jb.Add(Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("jobcode")), Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("Description")))
+            Next
+        End If
+        hastbl_jb.Add("", "Pilih Pekerjaan")
+
+    End Sub
+
+    Sub NRW_BindEmpByMdr()
+        Dim dt As String = Date_Validation(txtWPDate.Text, False)
+        dgNRW.DataSource = RW_EmpByMdr(ddlMandorCode.SelectedItem.Value.Trim(), dt)
+        dgNRW.DataBind()
+    End Sub
+
+    Sub NRW_BindPekerjaan_OnLoad()
+
+        If ddlbksubcategory.Text <> "" Then
+            NRW_Pekerjaan(Trim(ddlbkcategory.SelectedItem.Value), Trim(ddlbksubcategory.SelectedItem.Value))
+            Bind_Blok(Trim(ddldivisicode.SelectedItem.Value), "", Trim(ddlbksubcategory.SelectedItem.Value), "K")
+        Else
+            NRW_Pekerjaan(hid_cat.Value, hid_subcat.Value)
+            Bind_Blok(Trim(hid_div.Value), "", Trim(hid_subcat.Value), "K")
+        End If
+
+        dgNRW.EditItemIndex = -1
+        dgNRW.DataSource = dgNRW_Reload()
+        dgNRW.DataBind()
+    End Sub
+
+#End Region
+
+#Region "Binding TR"
+    Sub Bind_NoPolisi(byval nop as String)
+        'Dim strOpCd_EmpDiv As String = "GL_CLSSETUP_VEHICLE_LIST_GET"
+		Dim strOpCd_EmpDiv As String = "PR_PR_STP_KENDARAAN_GET_BY_VEHCODE"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+		Dim intSelect as integer
+        Dim objEmpDivDs As New Object()
+        Dim dr As DataRow
+
+
+        'strParamName = "STRSEARCH"
+        'strParamValue = "AND veh.LocCode ='" & strLocation & "' AND veh.Status = '1' Order by veh.VehCode"
+
+    	strParamName = "VEHCODE|LOCCODE|ST"
+        strParamValue = "|" & strLocation  & "|1" 
+
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpDivDs)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=GL_CLSSETUP_VEHICLE_LIST_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpDivDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpDivDs.Tables(0).Rows.Count - 1
+                objEmpDivDs.Tables(0).Rows(intCnt).Item("VehCode") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("VehCode"))
+                If Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("VehCode")) = Trim(nop) Then
+                    intSelect = intCnt + 1
+                End If
+				objEmpDivDs.Tables(0).Rows(intCnt).Item("Description") = Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("Description")) & " (" & Trim(objEmpDivDs.Tables(0).Rows(intCnt).Item("VehCode")) & ")"
+				
+				
+            Next
+        End If
+
+        dr = objEmpDivDs.Tables(0).NewRow()
+        dr("VehCode") = ""
+        dr("Description") = "Pilih No.Polisi"
+        objEmpDivDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddlnopolisi.DataSource = objEmpDivDs.Tables(0)
+        ddlnopolisi.DataTextField = "Description"
+        ddlnopolisi.DataValueField = "VehCode"
+        ddlnopolisi.DataBind()
+		ddlnopolisi.SelectedIndex = intselect
+    End Sub
+
+    Protected Function dgTRX_Reload() As DataSet
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_TR_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||ORDER BY id"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_TR_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub TRX_EmpByMdr_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_TR_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgTRX.DataSource = Nothing
+            dgTRX.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_TR_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub TRX_Pekerjaan(ByVal cat As String, ByVal subcat As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_JOB_LIST"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+
+        strParamName = "SEARCH|SORT"
+        strParamValue = "WHERE CatID='" & cat & "' AND SubCatId='" & subcat & "' AND LocCode='" & strLocation & "' And Status='1'|Order by Description"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_JOB_LIST&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("jobcode") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("jobcode"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("Description") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("Description")) & " | " & Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("Uom"))
+            Next
+        End If
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("jobcode") = ""
+        dr("Description") = "Pilih Pekerjaan"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        TRX_src_ddl_jb.DataSource = objEmpCodeDs.Tables(0)
+        TRX_src_ddl_jb.DataTextField = "Description"
+        TRX_src_ddl_jb.DataValueField = "jobcode"
+        TRX_src_ddl_jb.DataBind()
+    End Sub
+
+    Sub TRX_EmpByMdr(ByVal mc As String, ByVal dt As String)
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_TR_TEMP_EMP"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim intCnt As Integer
+        Dim objEmpCodeDs As New Object()
+        Dim dr As DataRow
+
+        strParamName = "MC|LOC|DT"
+        strParamValue = mc & "|" & _
+                        strLocation & "|" & _
+                        dt
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_TR_TEMP_EMP&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            For intCnt = 0 To objEmpCodeDs.Tables(0).Rows.Count - 1
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpCode"))
+                objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpDet") = Trim(objEmpCodeDs.Tables(0).Rows(intCnt).Item("EmpDet"))
+            Next
+        End If
+
+        dr = objEmpCodeDs.Tables(0).NewRow()
+        dr("EmpCode") = ""
+        dr("EmpDet") = "Pilih Karyawan"
+        objEmpCodeDs.Tables(0).Rows.InsertAt(dr, 0)
+
+        ddlsupir.DataSource = objEmpCodeDs.Tables(0)
+        ddlsupir.DataTextField = "EmpDet"
+        ddlsupir.DataValueField = "EmpCode"
+        ddlsupir.DataBind()
+
+        ddlkenek1.DataSource = objEmpCodeDs.Tables(0)
+        ddlkenek1.DataTextField = "EmpDet"
+        ddlkenek1.DataValueField = "EmpCode"
+        ddlkenek1.DataBind()
+
+        ddlkenek2.DataSource = objEmpCodeDs.Tables(0)
+        ddlkenek2.DataTextField = "EmpDet"
+        ddlkenek2.DataValueField = "EmpCode"
+        ddlkenek2.DataBind()
+
+    End Sub
+
+    Sub TRX_BindEmpByMdr()
+        Dim dt As String = Date_Validation(txtWPDate.Text, False)
+        TRX_EmpByMdr(ddlMandorCode.SelectedItem.Value.Trim(), dt)
+    End Sub
+
+    Sub TRX_BindPekerjaan_OnLoad()
+        dgTRX.EditItemIndex = -1
+        dgTRX.DataSource = dgTRX_Reload()
+        dgTRX.DataBind()
+    End Sub
+
+#End Region
+
+#Region "Binding BHNALL"
+    Sub BHNALL_JOB_PN()
+        Dim hid_id As HiddenField
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim hid_jb As HiddenField
+        Dim hid_jbnm As HiddenField
+        Dim DDL_cb As DropDownList
+        Dim pvalue As String
+        Dim i As Integer
+
+        hastbl_jbbhnall.Clear()
+
+        For i = 0 To dgPN.Items.Count - 1
+            hid_id = dgPN.Items.Item(i).FindControl("dgPN_hid_id")
+            hid_ec = dgPN.Items.Item(i).FindControl("dgPN_hid_ec")
+            lbl_ed = dgPN.Items.Item(i).FindControl("dgPN_lbl_ed")
+            hid_jb = dgPN.Items.Item(i).FindControl("dgPN_hid_jb")
+            hid_jbnm = dgPN.Items.Item(i).FindControl("dgPN_hid_jbnm")
+            DDL_cb = dgPN.Items.Item(i).FindControl("dgPN_ddl_cb")
+
+            pvalue = hid_ec.Value.Trim & " ( " & lbl_ed.Text.Trim & ")|" & _
+                     hid_jb.Value.Trim & " ( " & hid_jbnm.Value.Trim & ")|" & _
+                     DDL_cb.SelectedItem.Value.Trim
+
+            If hid_ec.Value.Trim <> "" And hid_jb.Value.Trim <> "" And DDL_cb.SelectedItem.Value.Trim <> "" Then
+                hastbl_jbbhnall.Add(hid_id.Value.Trim, pvalue)
+            End If
+
+        Next
+
+        hastbl_jbbhnall.Add("", "Pilih Karyawan|Pekerjaan|Blok")
+    End Sub
+
+    Sub BHNALL_JOB_NRW()
+        Dim hid_id As HiddenField
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim ddl_jb As DropDownList
+        Dim DDL_cb As DropDownList
+        Dim pvalue As String
+        Dim i As Integer
+
+        hastbl_jbbhnall.Clear()
+
+        For i = 0 To dgNRW.Items.Count - 1
+            hid_id = dgNRW.Items.Item(i).FindControl("dgNRW_hid_id")
+            hid_ec = dgNRW.Items.Item(i).FindControl("dgNRW_hid_ec")
+            lbl_ed = dgNRW.Items.Item(i).FindControl("dgNRW_lbl_ed")
+            ddl_jb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_jb")
+            DDL_cb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_cb")
+
+            pvalue = hid_ec.Value.Trim & " ( " & lbl_ed.Text.Trim & ")|" & _
+                     ddl_jb.SelectedItem.Value.Trim & " ( " & ddl_jb.SelectedItem.Text.Trim & ")|" & _
+                     DDL_cb.SelectedItem.Value.Trim
+
+            If hid_ec.Value.Trim <> "" And ddl_jb.SelectedItem.Value.Trim <> "" And DDL_cb.SelectedItem.Value.Trim <> "" Then
+                hastbl_jbbhnall.Add(hid_id.Value.Trim, pvalue)
+            End If
+
+        Next
+
+        hastbl_jbbhnall.Add("", "Pilih Karyawan|Pekerjaan|Blok")
+    End Sub
+
+    Sub BHNALL_JOB_BO()
+        Dim hid_id As HiddenField
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim ddl_jb As DropDownList
+        Dim DDL_cb As DropDownList
+        Dim pvalue As String
+        Dim i As Integer
+
+        hastbl_jbbhnall.Clear()
+
+        For i = 0 To dgBOR.Items.Count - 1
+            hid_id = dgBOR.Items.Item(i).FindControl("dgBOR_hid_id")
+            hid_ec = dgBOR.Items.Item(i).FindControl("dgBOR_hid_ec")
+            lbl_ed = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_ed")
+            ddl_jb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_jb")
+            DDL_cb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_cb")
+
+            pvalue = hid_ec.Value.Trim & " ( " & lbl_ed.Text.Trim & ")|" & _
+                     ddl_jb.SelectedItem.Value.Trim & " ( " & ddl_jb.SelectedItem.Text.Trim & ")|" & _
+                     DDL_cb.SelectedItem.Value.Trim
+
+            If hid_ec.Value.Trim <> "" And ddl_jb.SelectedItem.Value.Trim <> "" And DDL_cb.SelectedItem.Value.Trim <> "" Then
+                hastbl_jbbhnall.Add(hid_id.Value.Trim, pvalue)
+            End If
+
+        Next
+
+        hastbl_jbbhnall.Add("", "Pilih Karyawan|Pekerjaan|Blok")
+    End Sub
+
+    Sub BHNALL_JOB_TR()
+        Dim hid_id As HiddenField
+        Dim hid_jb As HiddenField
+        Dim lbl_jb As Label
+        Dim pvalue As String
+        Dim i As Integer
+
+        hastbl_jbbhnall.Clear()
+
+        For i = 0 To dgTRX.Items.Count - 1
+            hid_id = dgTRX.Items.Item(i).FindControl("dgTRX_hid_id")
+            hid_jb = dgTRX.Items.Item(i).FindControl("dgTRX_hid_jb")
+            lbl_jb = dgTRX.Items.Item(i).FindControl("dgTRX_lbl_jb")
+            pvalue = ddlsupir.SelectedItem.Value.Trim & " ( " & ddlsupir.SelectedItem.Text.Trim & ")|" & _
+                     hid_jb.Value.Trim & " ( " & lbl_jb.Text.Trim & ")|OH"
+
+
+            hastbl_jbbhnall.Add(hid_id.Value.Trim, pvalue)
+        Next
+
+        hastbl_jbbhnall.Add("", "Pilih Pekerjaan")
+    End Sub
+
+    Protected Function dgBHNALL_Reload() As DataSet
+
+        'load data
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_BHN_TEMP_UPDGET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim objEmpCodeDs As New Object()
+        Dim sc As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            sc = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            sc = hid_subcat.Value.Trim
+        End If
+
+        strParamName = "SC|LOC|IP|UI|SEARCH|SORT"
+        strParamValue = sc & "|" & _
+                        strLocation & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "||" & _
+                        "ORDER BY empdet"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_UPDGET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count > 0 Then
+            If hastbl_bhn.Count = 0 Then BindBahan()
+        End If
+
+        Return objEmpCodeDs
+
+    End Function
+
+    Sub BHNALL_Clear()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BHN_TEMP_CLEAR"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|UI|LOC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+            dgBHNALL.DataSource = Nothing
+            dgBHNALL.DataBind()
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub BHNALL_BindPekerjaan_OnLoad()
+        dgBHNALL.EditItemIndex = -1
+        dgBHNALL.DataSource = dgBHNALL_Reload()
+        dgBHNALL.DataBind()
+    End Sub
+#End Region
+
+#End Region
+
+#Region "Event"
+
+    Sub onLoad_Display()
+        Dim strOpCd_EmpDiv As String = "PR_PR_TRX_BKM_MAIN_GET"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        Dim objEmpCodeDs As New Object()
+        Dim e As New System.EventArgs()
+		Dim strEmpMandor1 As String
+
+        strParamName = "LOC|SEARCH|SORT"
+        strParamValue = strLocation & "| AND BKMCode Like '%" & strBKMCode & "%' AND LocCode='" & strLocation & "'|"
+
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCd_EmpDiv, strParamName, strParamValue, objEmpCodeDs)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_GET&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objEmpCodeDs.Tables(0).Rows.Count = 1 Then
+            LblidM.Text = strBKMCode
+			lblWPDate.Text = objGlobal.GetLongDate(objEmpCodeDs.Tables(0).Rows(0).Item("BKMDate"))
+            txtWPDate.Text = Date_Validation(objEmpCodeDs.Tables(0).Rows(0).Item("BKMDate"), True)
+            strEmpMandorCode = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("MandorCode"))
+            strEmpMandor1 = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("Mandor1"))
+            strEmpDivCode = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("IDDiv"))
+
+            strBKCategory = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("IDCat"))
+            strBKSubCategory = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("IDSubCat"))
+            strRegBor = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("BKMType"))
+
+			
+			Select Case Trim(strRegBor) 
+				case "R" 
+					lblregbor.Text = "R (Regular)"
+				case "B" 
+					lblregbor.Text = "B (Borongan)"
+				case "P" 
+					lblregbor.Text = "P (Premi Lain)"
+			End Select 
+            
+			ddlreg_bor.SelectedValue = Trim(strRegBor) 
+            ddlpremi.Text = objEmpCodeDs.Tables(0).Rows(0).Item("PremiLain")
+			BindPremiLain("",ddlpremi.Text.trim())
+            BindDivisi(strBKCategory, strBKSubCategory, strRegBor)
+            BindMandor(strEmpDivCode, "", strEmpMandorCode)
+			ddlMandorCode.SelectedValue = strEmpMandorCode 
+			ddlmandor1.SelectedValue = strEmpMandor1 
+            lbldivisicode.Text = strEmpDivCode & " (" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("divisi")) & ")"
+            lblMandorCode.Text = strEmpMandorCode & " (" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("EmpName")) & ")"
+            If Trim(objEmpCodeDs.Tables(0).Rows(0).Item("KCSCode")) <> "" Then
+                lblKCSCode.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("KCSCode")) & " (" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("KCSName")) & ")"
+            Else
+                lblKCSCode.Text = ""
+            End If
+			
+			if strBKCategory="PN" and (strBKSubCategory="PBS" or strBKSubCategory="DRK" or strBKSubCategory="SPS" or strBKSubCategory="CPI" or strBKSubCategory="KBS" or strBKSubCategory="PBP") then
+			        ddlKCSCode.Visible = True
+					ddltrncode.Visible = False 
+					ddlmandor1.Visible = False
+					BindKCS(strEmpDivCode,Trim(objEmpCodeDs.Tables(0).Rows(0).Item("KCSCode")))
+					if (strBKSubCategory="PBS" or strBKSubCategory="KBS" or strBKSubCategory="PBP") Then
+					ddltrncode.Visible = True
+					ddlmandor1.Visible = True
+					BindTrn(strEmpDivCode,Trim(objEmpCodeDs.Tables(0).Rows(0).Item("TRNCode")))
+					end if
+			else
+			        ddlKCSCode.Visible = False
+					ddltrncode.Visible = False
+					ddlmandor1.Visible = False
+            End if
+			
+            
+			txtSCopy.Text = txtWPDate.Text
+			txtECopy.Text = txtWPDate.Text
+				
+            lblbkcategory.Text = strBKCategory & " (" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("CatName")) & ")"
+            lblbksubcategory.Text = strBKSubCategory & " (" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("SubcatName")) & ")"
+
+            lblnopolisi.Text = "No.Polisi : " & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("NoPolisi"))
+            lblsupir.Text = " Supir : " & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("Supir")) & " (" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("SupirName")) & ")"
+            txtnotes.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("notes")) 
+            
+			Dim found3 As Control = Me.FindControl("divpremi")
+			If Not found3 Is Nothing Then
+				Dim cast3 As HtmlGenericControl = CType(found3, HtmlGenericControl)
+            If Not cast3 Is Nothing AND Trim(StrRegBor) = "P"  Then
+                cast3.Visible = True
+            Else
+                cast3.Visible = False
+            End If
+			End If
+			
+						
+			 Dim found As Control = Me.FindControl("divnopol")
+             If Not found Is Nothing Then
+             Dim cast As HtmlGenericControl = CType(found, HtmlGenericControl)
+                If Not cast Is Nothing And (Trim(strBKCategory) = "PN" And Trim(strBKSubCategory) = "BMS") Or (Trim(strBKCategory) = "TR") Then
+                    cast.Visible = True
+                    If Trim(strBKCategory) = "PN" Then
+                        txtnopolisi.Visible = True
+                        ddlnopolisi.Visible = False
+                        txtnopolisi.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("NoPolisi"))
+                    Else
+                        txtnopolisi.Visible = False
+                        ddlnopolisi.Visible = True
+                        Bind_NoPolisi(Trim(objEmpCodeDs.Tables(0).Rows(0).Item("NoPolisi")))
+                    End If
+                    
+                Else
+                    cast.Visible = False
+                End If
+            End If
+
+            'Dim found2 As Control = Me.FindControl("divtrx")
+            'If Not found2 Is Nothing Then
+            '    Dim cast2 As HtmlGenericControl = CType(found2, HtmlGenericControl)
+            '    If Not cast2 Is Nothing And Trim(strBKCategory) = "TR" Then
+            '        cast2.Visible = True
+            '    Else
+            '        cast2.Visible = False
+            '    End If
+            'End If
+
+            lblPeriod.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("AccMonth")) & "/" & Trim(objEmpCodeDs.Tables(0).Rows(0).Item("AccYear"))
+            hid_status.value = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("Status"))
+			Select Case hid_status.value.Trim() 
+				Case "1" 
+					lblStatus.Text = "Confirm"
+				Case "2" 
+					lblStatus.Text = "Verified / Next approve by Manager"
+				Case "3" 
+					lblStatus.Text = "Active / Next approve by Asisten"
+				Case "4"
+					lblStatus.Text = "Delete"
+			End Select  
+            
+			lblDateCreated.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("CreateDate"))
+            lblLastUpdate.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("UpdateDate"))
+            lblupdatedby.Text = Trim(objEmpCodeDs.Tables(0).Rows(0).Item("UserName"))
+		
+            hid_cat.Value = strBKCategory
+            hid_subcat.Value = strBKSubCategory
+            hid_div.Value = strEmpDivCode
+            TABBK.Visible = True
+
+            lblnopolisi.Visible = False
+            lblsupir.Visible = False
+            lbltxtmandor1.Visible = False
+
+            'clear temp
+            HKJ_RW_EmpByMdr_Clear()
+            HKJ_BHN_Clear()
+            RW_EmpByMdr_Clear()
+            BHN_Clear()
+            NRW_EmpByMdr_Clear()
+            BOR_EmpByMdr_Clear()
+            PN_EmpByMdr_Clear()
+            PNSUM_Clear()
+
+            TRX_EmpByMdr_Clear()
+	
+
+            If (strRegBor = "R" or strRegBor = "P") Then 
+		        Select Case Trim(strBKCategory)
+                    Case "UM"
+                        lbltxtmandor.Text = "Krani Code:*"
+                        NRW_onLoad_Display(strBKMCode)
+                        NRW_BindPekerjaan_OnLoad()
+
+                        BHNALL_onLoad_Display(strBKMCode)
+                        BHNALL_BindPekerjaan_OnLoad()
+
+                        ShowHideTab("NRW|BHNALL")
+                        ShowHideMaster(False)
+                    Case "CV"
+                        lbltxtmandor.Text = "Mandor Code:*"
+                        NRW_onLoad_Display(strBKMCode)
+                        NRW_BindPekerjaan_OnLoad()
+
+                        BHNALL_onLoad_Display(strBKMCode)
+                        BHNALL_BindPekerjaan_OnLoad()
+
+                        ShowHideTab("NRW|BHNALL")
+                        ShowHideMaster(False)
+                    Case "KM"
+                        lbltxtmandor.Text = "Mandor Code:*"
+                        NRW_onLoad_Display(strBKMCode)
+                        NRW_BindPekerjaan_OnLoad()
+
+                        BHNALL_onLoad_Display(strBKMCode)
+                        BHNALL_BindPekerjaan_OnLoad()
+
+                        ShowHideTab("NRW|BHNALL")
+                        ShowHideMaster(False)
+                    Case "TR"
+                        lbltxtmandor.Text = "Krani Code:*"
+                        lblnopolisi.Visible = True
+                        lblsupir.Visible = True
+                        TRX_onLoad_Display(strBKMCode)
+                        TRX_BindPekerjaan_OnLoad()
+						TRX_Pekerjaan(strBKCategory, strBKSubCategory)
+                        'BHNALL_onLoad_Display(strBKMCode)
+                        'BHNALL_BindPekerjaan_OnLoad()
+
+                        'ShowHideTab("TRK|BHNALL|")
+                        ShowHideTab("TRK")
+                        ShowHideMaster(False)
+						TRCopyBKM.Visible = True
+                    Case "PN"
+                        lbltxtmandor.Text = "Mandor & KCS Code:*"
+                        show_hide_col(strBKSubCategory)
+                        PN_onLoad_Display(strBKMCode)
+                        PN_BindPekerjaan_OnLoad()
+
+                        BHNALL_onLoad_Display(strBKMCode)
+                        BHNALL_BindPekerjaan_OnLoad()
+
+                        If (Trim(strBKSubCategory) = "PBS" or Trim(strBKSubCategory) = "KBS") Then
+						    lbltxtmandor.Text = "Mandor,KCS & Kr.Trans Code:*"
+							lbltxtmandor1.Visible = True
+                            ShowHideTab("PN|PNSUM|BHNALL")
+                            PNSUM_onLoad_Display(strBKMCode)
+                            PNSUM_BindPekerjaan_OnLoad()
+                        Else
+                            ShowHideTab("PN|BHNALL")
+                        End If
+                        ShowHideMaster(False)
+
+                    Case "RW", "BT","GS"
+                        lbltxtmandor.Text = "Mandor Code:*"
+                        HKJ_RWT_onLoad_Display(strBKMCode)
+                        HKJ_BHN_onLoad_Display(strBKMCode)
+
+                        RW_onLoad_Display(strBKMCode)
+                        BHN_onLoad_Display(strBKMCode)
+
+                        HKJ_RW_BindPekerjaan_OnLoad()
+                        HKJ_BHN_BindPekerjaan_OnLoad()
+
+                        RW_BindPekerjaan_OnLoad()
+                        BHN_BindPekerjaan_OnLoad()
+
+                        ShowHideTab("RWT|BHN")
+                        ShowHideMaster(True)
+                End Select
+		    Else
+
+                lbltxtmandor.Text = "Mandor Code:*"
+                show_hide_col_Bo(strBKSubCategory)
+                BOR_onLoad_Display(strBKMCode)
+                BOR_BindPekerjaan_OnLoad()
+
+                BHNALL_onLoad_Display(strBKMCode)
+                BHNALL_BindPekerjaan_OnLoad()
+
+				If (Trim(strBKSubCategory) = "KBS" or Trim(strBKSubCategory) = "PBP") Then
+						    lbltxtmandor.Text = "Mandor,KCS & Kr.Trans Code:*"
+							lbltxtmandor1.Visible = True
+				END If
+                ShowHideTab("BOR|BHNALL")
+                ShowHideMaster(False)
+
+            End If
+
+        End If
+    End Sub
+
+    Sub onLoad_button()
+
+        SaveBtn.Attributes("onclick") = "javascript:return ConfirmAction('updateall');"
+        SaveBtn2.Attributes("onclick") = "javascript:return ConfirmAction('updateall');"
+
+        Pn_btnclear.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+        Bor_btnclear.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+        RW_btnclear.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+		
+		NewBtn2.visible = False
+		NewBtn.visible = False
+		ConfBtn2.visible = False
+		ConfBtn.visible = False
+		VerBtn2.visible = False
+		VerBtn.visible = False
+		SaveBtn2.visible = False
+		SaveBtn.visible = False
+		ReActBt.visible = False
+		
+
+        If isNew.Value = "False" Then
+            ddldivisicode.Visible = False
+            ddlMandorCode.Visible = True
+            txtWPDate.Visible = True
+            btnSelDate.Visible = True
+            ddlbkcategory.Visible = False
+            ddlbksubcategory.Visible = False
+            'ddlKCSCode.Visible = False
+            ddlreg_bor.Visible = True
+            lbldivisicode.Visible = True
+            lblMandorCode.Visible = False
+            'lblKCSCode.Visible = True
+            lblWPDate.Visible = False
+            lblbkcategory.Visible = True
+            lblbksubcategory.Visible = True
+            lblregbor.Visible = False
+			
+
+			Select Case hid_status.Value.Trim()
+				Case "3" 'Active
+					Select Case intlevel 
+						Case 0
+							NewBtn2.visible = True
+							NewBtn.visible = True
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = True
+							SaveBtn.visible = True
+						Case 1
+							NewBtn2.visible = False
+							NewBtn.visible = False
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = True
+							VerBtn.visible = True
+							SaveBtn2.visible = True
+							SaveBtn.visible = True
+						Case >= 2
+							NewBtn2.visible = False
+							NewBtn.visible = False
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = False
+							SaveBtn.visible = False
+					End Select
+				Case "2" 'Verified
+					Select Case intlevel 
+						Case 0
+							NewBtn2.visible = True
+							NewBtn.visible = True
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = False
+							SaveBtn.visible = False
+						Case 1
+							NewBtn2.visible = False
+							NewBtn.visible = False
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = False
+							SaveBtn.visible = False
+							ReActBt.visible = True
+						Case >= 2
+							NewBtn2.visible = False
+							NewBtn.visible = False
+							ConfBtn2.visible = True
+							ConfBtn.visible = True
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = True
+							SaveBtn.visible = True
+							ReActBt.visible = True
+					End Select
+				Case "1" 'Confirm
+					Select Case intlevel 
+						Case 0
+							NewBtn2.visible = True
+							NewBtn.visible = True
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = False
+							SaveBtn.visible = False
+						Case 1
+							NewBtn2.visible = False
+							NewBtn.visible = False
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = False
+							SaveBtn.visible = False
+						Case >= 2
+							NewBtn2.visible = False
+							NewBtn.visible = False
+							ConfBtn2.visible = False
+							ConfBtn.visible = False
+							VerBtn2.visible = False
+							VerBtn.visible = False
+							SaveBtn2.visible = False
+							SaveBtn.visible = False
+							ReActBt.visible = True
+					End Select
+				Case "4" 'Delete
+					NewBtn2.visible = True
+					NewBtn.visible = True
+					ConfBtn2.visible = False
+					ConfBtn.visible = False
+					VerBtn2.visible = False
+					VerBtn.visible = False
+					SaveBtn2.visible = False
+					SaveBtn.visible = False
+			End Select
+			
+        Else
+            ddldivisicode.Visible = True
+            ddlMandorCode.Visible = True
+            txtWPDate.Visible = True
+            btnSelDate.Visible = True
+            ddlbkcategory.Visible = True
+            ddlbksubcategory.Visible = True
+            ddlreg_bor.Visible = True
+            lbldivisicode.Visible = False
+            lblMandorCode.Visible = False
+            lblKCSCode.Visible = False
+            lblWPDate.Visible = False
+            lblbkcategory.Visible = False
+            lblbksubcategory.Visible = False
+            lblregbor.Visible = False
+
+			Select Case intlevel 
+				Case 0
+					NewBtn2.visible = True
+					NewBtn.visible = True
+					SaveBtn2.visible = True
+					SaveBtn.visible = True
+				Case 1
+					NewBtn2.visible = False
+					NewBtn.visible = False
+					SaveBtn2.visible = False
+					SaveBtn.visible = False
+				Case >=2
+					NewBtn2.visible = False
+					NewBtn.visible = False
+					SaveBtn2.visible = False
+					SaveBtn.visible = False
+			End Select
+        End If
+
+    End Sub
+
+#Region "Event BK"
+    Sub ShowHideTab(ByVal key As String)
+        Dim oTab As New Infragistics.WebUI.UltraWebTab.Tab
+        Dim i, j As Byte
+        Dim ary As Array
+        Dim arycnt As Byte
+        ary = Split(key, "|")
+        arycnt = UBound(ary)
+
+        'clear first
+        For i = 0 To TABBK.Tabs.Count - 1
+            If TypeOf TABBK.Tabs(i) Is Infragistics.WebUI.UltraWebTab.Tab Then
+                oTab = CType(TABBK.Tabs(i), Infragistics.WebUI.UltraWebTab.Tab)
+                oTab.Visible = False
+            End If
+        Next
+
+        'visible
+        For j = 0 To arycnt
+            For i = 0 To TABBK.Tabs.Count - 1
+                If TypeOf TABBK.Tabs(i) Is Infragistics.WebUI.UltraWebTab.Tab Then
+                    oTab = CType(TABBK.Tabs(i), Infragistics.WebUI.UltraWebTab.Tab)
+                    If oTab.Key = ary(j) Then
+                        oTab.Visible = True
+                        Exit For
+                    End If
+                End If
+            Next
+        Next
+    End Sub
+
+    Sub ShowHideMaster(ByVal tf As Boolean)
+        Dim found As Control = Me.FindControl("divmaster")
+        If Not found Is Nothing Then
+            Dim cast As HtmlGenericControl = CType(found, HtmlGenericControl)
+            If Not cast Is Nothing Then
+                cast.Visible = tf
+            End If
+        End If
+    End Sub
+
+    Sub ddlbkcategory_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+        BindBKSubKategory(strBKCategory)
+        ShowHideMaster(False)
+        ShowHideTab("")
+        lbltxtmandor.Text = ""
+        ddlMandorCode.Visible = False
+        ddlKCSCode.Visible = False
+		ddltrnCode.Visible = False
+
+        Dim found As Control = Me.FindControl("divtrx")
+		Dim found2 As Control = Me.FindControl("divnopol")
+        If Not found Is Nothing Then
+            Dim cast As HtmlGenericControl = CType(found, HtmlGenericControl)
+            If Not cast Is Nothing And Trim(strBKCategory) = "TR" Then
+                cast.Visible = True
+            Else
+                cast.Visible = False
+            End If
+        End If
+		
+		If Not found Is Nothing Then
+            Dim cast2 As HtmlGenericControl = CType(found2, HtmlGenericControl)
+            If Not cast2 Is Nothing And Trim(strBKCategory) = "TR" Then
+                cast2.Visible = True
+                ddlnopolisi.Visible = True
+                txtnopolisi.Visible = False
+            Else
+                cast2.Visible = False
+            End If
+        End If
+		
+    End Sub
+
+    Sub ddlbksubcategory_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+        strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim()
+
+        'If Trim(strBKCategory) = "PN" And (Trim(strBKSubCategory) = "BMS" Or Trim(strBKSubCategory) = "KBS") Then
+        '    ddlreg_bor.SelectedValue = "B"
+        'Else
+        '    ddlreg_bor.SelectedValue = "R"
+        'End If
+		
+        strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+        LblidM.Text = getCode(strBKCategory, strBKSubCategory)
+        BindDivisi(strBKCategory, strBKSubCategory, strRegBor)
+        TABBK.Visible = True
+        ddlMandorCode.Items.Clear()
+		ddlMandor1.Items.Clear()
+        ddlKCSCode.Items.Clear()
+		ddlTrnCode.Items.Clear()
+		
+		 Dim found As Control = Me.FindControl("divnopol")
+        If Not found Is Nothing Then
+            Dim cast As HtmlGenericControl = CType(found, HtmlGenericControl)
+            If Not cast Is Nothing And (Trim(strBKCategory) = "PN" AND Trim(strBKSubCategory) = "BMS") or (Trim(strBKCategory) = "TR") Then
+                cast.Visible = True
+                If Trim(strBKCategory) = "PN" Then
+                    txtnopolisi.Visible = True
+                    ddlnopolisi.Visible = False
+                Else
+                    txtnopolisi.Visible = False
+                    ddlnopolisi.Visible = True
+                End If
+            Else
+                cast.Visible = False
+            End If
+        End If
+
+        Dim found2 As Control = Me.FindControl("divtrx")
+        If Not found2 Is Nothing Then
+            Dim cast2 As HtmlGenericControl = CType(found2, HtmlGenericControl)
+            If Not cast2 Is Nothing And Trim(strBKCategory) = "TR" Then
+                cast2.Visible = True
+            Else
+                cast2.Visible = False
+            End If
+        End If
+
+        lbltxtmandor1.Visible = True ''False
+        If (strRegBor = "R" or strRegBor = "P") Then 
+	         Select Case Trim(strBKCategory)
+                Case "UM"
+                    lbltxtmandor.Text = "Krani Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    ShowHideTab("NRW|BHNALL")
+                    ShowHideMaster(False)
+                Case "KM"
+                    lbltxtmandor.Text = "Mandor Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    ShowHideTab("NRW|BHNALL")
+                    ShowHideMaster(False)
+                Case "CV"
+                    lbltxtmandor.Text = "Mandor Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    ShowHideTab("NRW|BHNALL")
+                    ShowHideMaster(False)
+                Case "TR"
+                    lbltxtmandor.Text = "Krani Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    'ShowHideTab("TRK|BHNALL|")
+                    ShowHideTab("TRK")
+                    ShowHideMaster(False)
+                Case "PN"
+                    lbltxtmandor.Text = "Mandor & KCS Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = True
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    If Trim(strBKSubCategory) = "PBS" or Trim(strBKSubCategory) ="KBS" Then
+					    ddlTrnCode.Visible = True 
+						ddlMandor1.Visible = True
+					    lbltxtmandor.Text = "Mandor,KCS & Kr.Trans Code:*"
+						lbltxtmandor1.Visible = True
+                        ShowHideTab("PN|PNSUM|BHNALL")
+                    Else
+                        ShowHideTab("PN|BHNALL")
+                    End If
+                    ShowHideMaster(False)
+                Case "RW", "BT" , "GS"
+                    lbltxtmandor.Text = "Mandor Code:*"
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+                    ddlMandorCode.Visible = True
+					ddlMandor1.Visible = False
+                    ShowHideMaster(True)
+                    ShowHideTab("RWT|BHN")
+            End Select
+        Else
+
+            lbltxtmandor.Text = "Mandor,KCS & Kr.Trans Code:*"
+            lbltxtmandor1.Visible = True
+            ddlKCSCode.Visible = True ''False
+            ddlTrnCode.Visible = True ''False
+            ddlMandor1.Visible = True ''False		
+            ddlMandorCode.Visible = True
+
+            ShowHideTab("BOR|BHNALL")
+            ShowHideMaster(False)
+
+        End If
+
+
+    End Sub
+
+    Sub ddlbkregbor_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) 
+
+		strRegBor = ddlreg_bor.SelectedItem.Value.Trim() 
+		Dim found2 As Control = Me.FindControl("divpremi")
+        If Not found2 Is Nothing Then
+            Dim cast2 As HtmlGenericControl = CType(found2, HtmlGenericControl)
+            If Not cast2 Is Nothing  AND Trim(StrRegBor) = "P" Then
+                cast2.Visible = True
+            Else
+                cast2.Visible = False
+            End If
+        End If
+		
+		If isNew.Value = "False" Then
+			exit Sub 
+		end if
+		
+		
+        strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+        
+		if trim(strBKCategory) = "" then 
+			exit sub 
+		end if
+		strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim()
+        
+        LblidM.Text = getCode(strBKCategory, strBKSubCategory)
+        BindDivisi(strBKCategory, strBKSubCategory, strRegBor)
+        TABBK.Visible = True
+        ddlMandorCode.Items.Clear()
+        ddlKCSCode.Items.Clear()
+		ddlTrnCode.Items.Clear()
+        lbltxtmandor1.Visible = False
+		If (strRegBor = "R" or strRegBor = "P") Then
+			Select Case Trim(strBKCategory)
+                Case "UM"
+                    lbltxtmandor.Text = "Krani Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    ShowHideTab("NRW|BHNALL")
+                    ShowHideMaster(False)
+                Case "KM"
+                    lbltxtmandor.Text = "Mandor Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    ShowHideTab("NRW|BHNALL")
+                    ShowHideMaster(False)
+                Case "CV"
+                    lbltxtmandor.Text = "Mandor Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    ShowHideTab("NRW|BHNALL")
+                    ShowHideMaster(False)
+                Case "TR"
+                    lbltxtmandor.Text = "Krani Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+					ddlMandor1.Visible = False
+                    'ShowHideTab("TRK|BHNALL|")
+                    ShowHideTab("TRK")
+                    ShowHideMaster(False)
+                Case "PN"
+                    lbltxtmandor.Text = "Mandor & KCS Code:*"
+                    ddlMandorCode.Visible = True
+                    ddlKCSCode.Visible = True
+                    ddlTrnCode.Visible = True ''False 
+                    ddlMandor1.Visible = True ''False
+                    If Trim(strBKSubCategory) = "PBS" or Trim(strBKSubCategory) ="KBS" Then
+					    ddlTrnCode.Visible = True
+						ddlMandor1.Visible = True
+					    lbltxtmandor.Text = "Mandor,KCS & Kr.Trans Code:*"
+						lbltxtmandor1.Visible = True
+                        ShowHideTab("PN|PNSUM|BHNALL")
+                    Else
+                        ShowHideTab("PN|BHNALL")
+                    End If
+                    ShowHideMaster(False)
+                Case "RW", "BT" , "GS"
+                    lbltxtmandor.Text = "Mandor Code:*"
+                    ddlKCSCode.Visible = False
+					ddlTrnCode.Visible = False
+                    ddlMandor1.Visible = False
+                    ddlMandorCode.Visible = True
+                    ShowHideMaster(True)
+                    ShowHideTab("RWT|BHN|")
+			End Select
+        Else
+            lbltxtmandor.Text = "Mandor,KCS & Kr.Trans Code:*"
+            lbltxtmandor1.Visible = True
+            ddlKCSCode.Visible = True ''False
+            ddlTrnCode.Visible = True ''False
+            ddlMandor1.Visible = True ''False		
+            ddlMandorCode.Visible = True
+
+            ShowHideTab("BOR|BHNALL")
+            ShowHideMaster(False)
+
+        End If
+    End Sub
+
+    Sub ddldivisicode_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        strEmpDivCode = ddldivisicode.SelectedItem.Value.Trim()
+        strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+        strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim()
+        strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+
+        Dim sfilter As String = ""
+
+        Select Case Trim(strBKCategory)
+            Case "PN"
+                Select Case Trim(strBKSubCategory)
+                    Case "PBS"
+                        sfilter = "P"
+                    Case "KBS"
+                        sfilter = "K"
+                    Case "BMS"
+                        sfilter = "M"
+						Bind_NoPolisi("")
+                    Case "DRK"
+                        sfilter = "D"
+                    Case "PKJ"
+                        sfilter = "J"
+                End Select
+            Case "RW", "UM", "BT" , "GS"
+                Select Case Trim(strBKSubCategory)
+                    Case "BKM", "LCK", "TBK", "TMK"
+                        sfilter = "D"
+                    Case "BJM", "LCJ", "TBJ", "TMJ"
+                        sfilter = "J"
+                    Case Else
+                        sfilter = "R"
+                End Select
+            Case "KM"
+                sfilter = "S"
+            Case "AD"
+                sfilter = "A"
+            Case "TR"
+                sfilter = "T"
+                Bind_NoPolisi("")
+        End Select
+
+        If (strRegBor = "R") Or (strRegBor = "P") Or (strRegBor = "B") Then
+            Select Case Trim(strBKCategory)
+                Case "PN"
+                    BindMandor(strEmpDivCode, sfilter, "")
+                    BindKCS(strEmpDivCode, "")
+                    BindTrn(strEmpDivCode, "")
+                Case Else
+                    BindMandor(strEmpDivCode, sfilter, "")
+            End Select
+        Else
+            BindMandor(strEmpDivCode, "", "")
+        End If
+    End Sub
+
+    Sub ddl_DgSorting(ByVal ddl As DropDownList, ByVal obj As Hashtable, ByVal slc As String)
+        Dim sorted = New SortedList(obj)
+        ddl.DataSource = sorted
+        ddl.DataTextField = "value"
+        ddl.DataValueField = "key"
+        ddl.DataBind()
+        ddl.SelectedValue = Trim(slc)
+    End Sub
+
+    Sub ddlMandorCode_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+	    if isNew.Value = "True" Then
+		
+        strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+        strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim()
+        strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+        Dim strBKDivisi = ddldivisicode.SelectedItem.Value.Trim()
+
+        HKJ_RW_EmpByMdr_Clear()
+        HKJ_BHN_Clear()
+        RW_EmpByMdr_Clear()
+        BHN_Clear()
+        NRW_EmpByMdr_Clear()
+        BOR_EmpByMdr_Clear()
+        PN_EmpByMdr_Clear()
+        PNSUM_Clear()
+        TRX_EmpByMdr_Clear()
+
+        If (strRegBor = "R" or strRegBor = "P") Then
+            Select Case strBKCategory
+                Case "UM", "CV", "KM"
+                    NRW_Pekerjaan(strBKCategory, strBKSubCategory)
+                    Bind_Blok(strBKDivisi, "", strBKSubCategory, "K")
+                    NRW_BindEmpByMdr()
+                    'BHNALL_BindPekerjaan_OnLoad()
+                Case "TR"
+                    TRX_BindEmpByMdr()
+                    TRX_Pekerjaan(strBKCategory, strBKSubCategory)
+                    'BHNALL_BindPekerjaan_OnLoad()
+                Case "PN"
+                    show_hide_col(strBKSubCategory)
+                    Bind_sub_sub_categori(strBKSubCategory)
+                    Bind_Blok(strBKDivisi, "", strBKSubCategory, "U")
+                    PN_BindEmpByMdr()
+                Case "RW", "BT" , "GS"
+                    RW_Pekerjaan(strBKCategory, strBKSubCategory)
+                    Bind_Blok(strBKDivisi, "", strBKSubCategory, "K")
+                    RW_BindEmpByMdr()
+            End Select
+        Else
+            show_hide_col_Bo(strBKSubCategory)
+            BOR_Pekerjaan(strBKCategory, strBKSubCategory)
+            Bind_BOR_Blok(strBKDivisi, "")
+            BOR_BindEmpByMdr()
+            'BHNALL_BindPekerjaan_OnLoad()
+        End If
+     End If
+	 
+    End Sub
+
+    Sub BtnNewBK_OnClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        HKJ_RW_EmpByMdr_Clear()
+        HKJ_BHN_Clear()
+        RW_EmpByMdr_Clear()
+        BHN_Clear()
+        NRW_EmpByMdr_Clear()
+        BOR_EmpByMdr_Clear()
+        PN_EmpByMdr_Clear()
+        PNSUM_Clear()
+        TRX_EmpByMdr_Clear()
+
+        Response.Redirect("PR_trx_BKMDet_New_Estate.aspx")
+    End Sub
+
+    Sub BtnSaveBK_OnClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        Try
+
+            SaveBtn2.Enabled = False
+            SaveBtn.Enabled = False
+
+            System.Threading.Thread.Sleep(1000)
+
+            Dim SDate As String = Date_Validation(Trim(txtWPDate.Text), False)
+            Dim SM As String = CInt(Mid(Trim(txtWPDate.Text), 4, 2))
+            Dim SY As String = Right(Trim(txtWPDate.Text), 4)
+
+            If (SDate = "") Then
+                UserMsgBox(Me, "Input tanggal BKM")
+                Exit Sub
+            End If
+
+
+            If StatusPayroll(SM, SY, strLocation) = "3" Then
+                SaveBtn2.Enabled = True
+                SaveBtn.Enabled = True
+                Exit Sub
+            End If
+
+            If isNew.Value = "True" Then
+                strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+                strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+            Else
+                strBKCategory = Left(lblbkcategory.Text.Trim(), InStr(lblbkcategory.Text.Trim(), "(") - 1)
+                'strRegBor = Left(lblregbor.Text.Trim(), InStr(lblregbor.Text.Trim(), "(") - 1)
+                strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+            End If
+
+
+            If (strRegBor = "R" Or strRegBor = "P") Then
+                Select Case Trim(strBKCategory)
+                    Case "UM", "CV", "KM", "AD"
+                        NRW_Save()
+                    Case "PN"
+                        PN_Save()
+                    Case "RW", "BT", "GS"
+                        RW_Save()
+                    Case "TR"
+                        TR_Save()
+                End Select
+            Else
+                BOR_Save()
+            End If
+
+            If (alert = 0) Then
+                strBKMCode = LblidM.Text.Trim()
+                isNew.Value = "False"
+                onLoad_Display()
+                onLoad_button()
+            End If
+
+        Catch ex As Exception
+        Finally
+            SaveBtn2.Enabled = True
+            SaveBtn.Enabled = True
+        End Try
+    End Sub
+
+    Sub BtnBackBK_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        HKJ_RW_EmpByMdr_Clear()
+        HKJ_BHN_Clear()
+        RW_EmpByMdr_Clear()
+        BHN_Clear()
+        NRW_EmpByMdr_Clear()
+        BOR_EmpByMdr_Clear()
+        PN_EmpByMdr_Clear()
+        PNSUM_Clear()
+        TRX_EmpByMdr_Clear()
+		Response.Clear()
+        Response.Redirect("PR_trx_BKMList_Estate.aspx")
+    End Sub
+	
+	Sub BtnVerBK_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+		Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MAIN_APPROVAL_UPD"
+		Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+		Dim strBKMCode As String = LblidM.Text.Trim()
+		
+		 ParamName = "CAT|BKM|UD|UI|ST|LOC"
+        	 ParamValue = lblbksubcategory.text & "|" & _
+					  strBKMCode & "|" & _
+				      DateTime.Now() & "|" & _
+					  strUserId & "|" & _
+					  "2" & "|" & _
+					  strlocation
+							 
+		Try
+                    intErrNo = Objok.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_ATTENDANCE_UPD&errmesg=" & Exp.Message & "&redirect=PR/trx/PR_trx_DailyAttd_ESTATE.aspx")
+                End Try
+		isNew.Value = "False"
+            onLoad_Display()
+            onLoad_button()
+	End Sub
+	
+	Sub BtnConfBK_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+		Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MAIN_APPROVAL_UPD"
+		Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+		Dim strBKMCode As String = LblidM.Text.Trim()
+		
+		 ParamName = "CAT|BKM|UD|UI|ST|LOC"
+         ParamValue = lblbksubcategory.text & "|" & _
+					  strBKMCode & "|" & _
+				      DateTime.Now() & "|" & _
+					  strUserId & "|" & _
+					  "1" & "|" & _
+					  strlocation
+							 
+				Try
+                    intErrNo = Objok.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_ATTENDANCE_UPD&errmesg=" & Exp.Message & "&redirect=PR/trx/PR_trx_DailyAttd_ESTATE.aspx")
+                End Try
+	    isNew.Value = "False"
+            onLoad_Display()
+            onLoad_button()
+	End Sub
+	
+	Sub BtnReActBK_onClick(ByVal sender As Object, ByVal e As ImageClickEventArgs)
+       Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MAIN_APPROVAL_UPD"
+		Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+		Dim strBKMCode As String = LblidM.Text.Trim()
+		
+		 ParamName = "CAT|BKM|UD|UI|ST|LOC"
+         ParamValue = lblbksubcategory.text & "|" & _
+					  strBKMCode & "|" & _
+				      DateTime.Now() & "|" & _
+					  strUserId & "|" & _
+					  "3" & "|" & _
+					  strlocation
+							 
+				Try
+                    intErrNo = Objok.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_ATTENDANCE_UPD&errmesg=" & Exp.Message & "&redirect=PR/trx/PR_trx_DailyAttd_ESTATE.aspx")
+                End Try
+	    isNew.Value = "False"
+            onLoad_Display()
+            onLoad_button()
+    End Sub
+
+#End Region
+
+#Region "Event HKJ"
+    'PEKERJAAN
+
+    Sub HKJ_RWT_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_MJOB_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MJOB_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgHKJ_RWT_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim hd As HiddenField
+            Dim DDLabs As DropDownList
+            Dim DDLabs_blk As DropDownList
+            Dim Updbutton As LinkButton
+
+
+            'e.Item.Cells(0).Text = e.Item.ItemIndex + 1
+
+            hd = CType(e.Item.FindControl("dgHKJ_RWT_hid_jb"), HiddenField)
+            DDLabs = CType(e.Item.FindControl("dgHKJ_RWT_ddl_jb"), DropDownList)
+            ddl_DgSorting(DDLabs, hastbl_jb, hd.Value.Trim())
+
+            hd = CType(e.Item.FindControl("dgHKJ_RWT_hid_cb"), HiddenField)
+            DDLabs_blk = CType(e.Item.FindControl("dgHKJ_RWT_ddl_cb"), DropDownList)
+            ddl_DgSorting(DDLabs_blk, hastbl_cb, hd.Value.Trim())
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+        If e.Item.ItemType = ListItemType.Footer Then
+            Dim ar As Array
+            ar = Split(HJK_RW_Footer, "|")
+            e.Item.Cells(2).Text = ar(0)
+            e.Item.Cells(3).Text = ar(1)
+        End If
+
+    End Sub
+
+    Sub dgHKJ_RWT_Cancel(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        HKJ_RW_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub dgHKJ_RWT_Delete(ByVal jb As String, ByVal cb As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_MJOB_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|JB|CB"
+        strParamValue = Request.UserHostAddress & "|" & strUserId & "|" & strLocation & "|" & jb & "|" & cb
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+    End Sub
+
+    Sub dgHKJ_RWT_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_jb As HiddenField = CType(E.Item.FindControl("dgHKJ_RWT_hid_jb"), HiddenField)
+        Dim hid_cb As HiddenField = CType(E.Item.FindControl("dgHKJ_RWT_hid_cb"), HiddenField)
+
+
+        dgHKJ_RWT_Delete(hid_jb.Value, hid_cb.Value)
+        HKJ_RW_BindPekerjaan_OnLoad()
+        RW_BindPekerjaan_OnLoad()
+
+    End Sub
+
+    Sub HKJ_RWT_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKM_MJOB_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MJOB_TEMP_UPDADD"
+        Dim hid_id As HiddenField
+        Dim ddl_jb As DropDownList
+        Dim lbl_nr As Label
+        Dim ddl_cb As DropDownList
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim cb As String = ""
+        Dim txt_hasilha As TextBox
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+
+        ' Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        ' Save
+        For i = 0 To dgHKJ_RWT.Items.Count - 1
+
+            ddl_jb = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_ddl_jb")
+            lbl_nr = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_lbl_nr")
+            ddl_cb = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_ddl_cb")
+            If ddl_cb.Visible Then
+                cb = ddl_cb.SelectedItem.Value.Trim()
+            Else
+                cb = ""
+            End If
+            txt_hk = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hk")
+            txt_hs = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hs")
+            lbl_um = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_lbl_um")
+            txt_rot = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_rot")
+            txt_hasilha = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hasilha")
+
+            ParamName = "IP|UI|LOC|JB|NR|CB|HK|HS|UM|ROT|HA"
+            ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                          strUserId & "|" & _
+                          strLocation & "|" & _
+                          ddl_jb.SelectedItem.Value.Trim() & "|" & _
+                          Trim(lbl_nr.Text) & "|" & _
+                          cb & "|" & _
+                          IIf(txt_hk.Text = "", "null", txt_hk.Text) & "|" & _
+                          IIf(txt_hs.Text = "", "null", txt_hs.Text) & "|" & _
+                          Trim(lbl_um.Text) & "|" & _
+                          IIf(txt_rot.Text = "", "null", txt_rot.Text) & "|" & _
+        IIf(txt_hasilha.Text = "", "null", txt_hasilha.Text)
+
+            Try
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Catch Exp As System.Exception
+                Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+            End Try
+
+
+        Next
+
+        Dim dr As DataRow
+        Dim dataSet As DataSet
+
+        dataSet = dgHKJ_RW_Reload()
+        dr = dataSet.Tables(0).NewRow()
+        dr("id") = 0
+        dr("ipuser") = Request.UserHostAddress
+        dr("job") = ""
+        dr("norma") = ""
+        dr("codeblok") = ""
+        dr("hkjob") = DBNull.Value
+        dr("hsljob") = DBNull.Value
+        dr("uom") = ""
+        dr("rotasi") = 1
+        dr("hasilha") = DBNull.Value
+        dataSet.Tables(0).Rows.Add(dr)
+
+        dgHKJ_RWT.DataSource = dataSet
+        dgHKJ_RWT.DataBind()
+        dgHKJ_RWT.EditItemIndex = dgHKJ_RWT.Items.Count - 1
+        dgHKJ_RWT.DataBind()
+
+        HKJ_RW_Pekerjaan_edit(dgHKJ_RWT.EditItemIndex)
+        HKJ_RW_Blok_edit(dgHKJ_RWT.EditItemIndex)
+
+    End Sub
+
+    Sub HKJ_RWT_gen_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        ' save dulu
+        Dim strOpCd_Del As String = "PR_PR_TRX_BKM_MJOB_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MJOB_TEMP_UPDADD"
+        Dim strOpCd_Gen As String = "PR_PR_TRX_BKM_MJOB_TEMP_GEN"
+
+        Dim hid_id As HiddenField
+        Dim ddl_jb As DropDownList
+        Dim lbl_nr As Label
+        Dim ddl_cb As DropDownList
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+        Dim txt_hasilha As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ' Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        ' Save
+        For i = 0 To dgHKJ_RWT.Items.Count - 1
+
+            ddl_jb = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_ddl_jb")
+            lbl_nr = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_lbl_nr")
+            ddl_cb = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_ddl_cb")
+            txt_hk = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hk")
+            txt_hs = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hs")
+            lbl_um = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_lbl_um")
+            txt_rot = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_rot")
+            txt_hasilha = dgHKJ_RWT.Items.Item(i).FindControl("dgHKJ_RWT_txt_hasilha")
+
+            If (ddl_jb.SelectedItem.Value.Trim <> "") And (ddl_cb.SelectedItem.Value.Trim <> "") Then
+
+                ParamName = "IP|UI|LOC|JB|NR|CB|HK|HS|UM|ROT|HA"
+                ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                              strUserId & "|" & _
+                              strLocation & "|" & _
+                              ddl_jb.SelectedItem.Value.Trim() & "|" & _
+                              Trim(lbl_nr.Text) & "|" & _
+                              ddl_cb.SelectedItem.Value.Trim() & "|" & _
+                              IIf(txt_hk.Text = "", "null", txt_hk.Text) & "|" & _
+                              IIf(txt_hs.Text = "", "null", txt_hs.Text) & "|" & _
+                              Trim(lbl_um.Text) & "|" & _
+                              IIf(txt_rot.Text = "", "null", txt_rot.Text) & "|" & _
+         IIf(txt_hasilha.Text = "", "null", txt_hasilha.Text)
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+
+        ' Generate 
+        ParamName = "IP|UI|LOC"
+        ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                     strUserId & "|" & _
+                     strLocation
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Gen, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MJOB_TEMP_GEN&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        HKJ_RW_BindPekerjaan_OnLoad()
+        RW_BindPekerjaan_OnLoad()
+
+    End Sub
+
+    Protected Sub dgHKJ_RWT_ddl_jb_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ddllist As DropDownList = CType(sender, DropDownList)
+        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+        Dim content As String = item.Cells(0).Text
+        Dim ddljob As DropDownList = CType(item.Cells(1).FindControl("dgHKJ_RWT_ddl_jb"), DropDownList)
+        Dim lbluom As Label = CType(item.Cells(7).FindControl("dgHKJ_RWT_lbl_um"), Label)
+        Dim lblnor As Label = CType(item.Cells(7).FindControl("dgHKJ_RWT_lbl_nr"), Label)
+        Dim sjc As String = ddljob.SelectedItem.Value.Trim()
+        Dim arr As Array
+        arr = Split(dgRW_GetUOM_Norma(sjc), "|")
+        lbluom.Text = arr(0)
+        lblnor.Text = arr(1)
+
+        'if ddlreg_bor.SelectedItem.Value.Trim() = "P" Then
+        BindPremiLain(sjc, "0")
+        'End If
+
+    End Sub
+
+    'BAHAN
+    Sub HKJ_BHN_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_MBHN_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_MBHN_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgHKJ_BHN_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim hd As HiddenField
+            Dim hd2 As HiddenField
+
+            Dim DDLabs As DropDownList
+            Dim DDLabs_itm As DropDownList
+            Dim Updbutton As LinkButton
+
+
+            hd = CType(e.Item.FindControl("dgHKJ_BHN_hid_jb"), HiddenField)
+            DDLabs = CType(e.Item.FindControl("dgHKJ_BHN_ddl_jb"), DropDownList)
+            ddl_DgSorting(DDLabs, hastbl_jbbhn, hd.Value.Trim())
+
+            hd2 = CType(e.Item.FindControl("dgHKJ_BHN_hid_uom"), HiddenField)
+
+            hd = CType(e.Item.FindControl("dgHKJ_BHN_hid_cb"), HiddenField)
+            DDLabs_itm = CType(e.Item.FindControl("dgHKJ_BHN_ddl_cb"), DropDownList)
+            ddl_DgSorting(DDLabs_itm, hastbl_cbbhn, hd.Value.Trim())
+
+            hd = CType(e.Item.FindControl("dgHKJ_BHN_hid_itm"), HiddenField)
+            DDLabs_itm = CType(e.Item.FindControl("dgHKJ_BHN_ddl_itm"), DropDownList)
+            ddl_DgSorting(DDLabs_itm, hastbl_bhn, hd.Value.Trim() & "|" & hd2.Value.Trim())
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+    End Sub
+
+    Sub dgHKJ_BHN_Cancel(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        HKJ_BHN_BindPekerjaan_OnLoad()
+    End Sub
+
+    Protected Sub dgHKJ_BHN_ddl_itm_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ddllist As DropDownList = CType(sender, DropDownList)
+        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+        Dim ddlType As DropDownList = CType(item.Cells(0).FindControl("dgHKJ_BHN_ddl_itm"), DropDownList)
+        Dim tum As Label = CType(item.Cells(1).FindControl("dgHKJ_BHN_lbl_um"), Label)
+        Dim arr As Array
+        arr = Split(ddlType.SelectedItem.Value.Trim(), "|")
+        tum.Text = RTrim(arr(1))
+    End Sub
+
+    Sub HKJ_BHN_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        ' save dulu
+        Dim strOpCd_del As String = "PR_PR_TRX_BKM_MBHN_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MBHN_TEMP_UPDADD"
+        Dim ddl_jb As DropDownList
+        Dim ddl_ci As DropDownList
+        Dim ddl_cb As DropDownList
+        Dim txt_qty As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String = ""
+
+        Dim intErrNo As Integer
+
+        ' Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'ADD
+        For i = 0 To dgHKJ_BHN.Items.Count - 1
+
+            ddl_jb = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_ddl_jb")
+            ddl_cb = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_ddl_cb")
+            ddl_ci = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_ddl_itm")
+            txt_qty = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_txt_Qty")
+            lbl_um = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_lbl_um")
+
+            If (ddl_jb.Text.Trim <> "") And (ddl_cb.Text.Trim <> "") And (ddl_ci.Text.Trim <> "") Then
+
+                ParamName = "IP|UI|LOC|JB|CB|CI|QT|UM"
+                ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                             strUserId & "|" & _
+                             strLocation & "|" & _
+                             ddl_jb.SelectedItem.Value.Trim() & "|" & _
+                             ddl_cb.SelectedItem.Value.Trim() & "|" & _
+                             Left(ddl_ci.SelectedItem.Value.Trim(), InStr(ddl_ci.SelectedItem.Value.Trim(), "|") - 1) & "|" & _
+                             IIf(txt_qty.Text = "", "null", txt_qty.Text) & "|" & _
+                             Trim(lbl_um.Text)
+
+                Try
+
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+
+        Next
+
+        Dim dr As DataRow
+        Dim dataSet As DataSet
+
+        dataSet = dgHKJ_BHN_Reload()
+        dr = dataSet.Tables(0).NewRow()
+        dr("id") = 0
+        dr("ipuser") = Request.UserHostAddress
+        dr("codejob") = ""
+        dr("codeblok") = ""
+        dr("codeitem") = ""
+        dr("qty") = DBNull.Value
+        dr("uom") = ""
+        dataSet.Tables(0).Rows.Add(dr)
+
+        dgHKJ_BHN.DataSource = dataSet
+        dgHKJ_BHN.DataBind()
+        dgHKJ_BHN.EditItemIndex = dgHKJ_BHN.Items.Count - 1
+        dgHKJ_BHN.DataBind()
+
+        HKJ_BHN_Bahan_edit(dgHKJ_BHN.EditItemIndex)
+        HKJ_BHN_Pekerjaan_edit(dgHKJ_BHN.EditItemIndex)
+        HKJ_BHN_Blok_edit(dgHKJ_BHN.EditItemIndex)
+    End Sub
+
+    Sub HKJ_BHN_gen_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+
+        Dim strOpCd_del As String = "PR_PR_TRX_BKM_MBHN_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_MBHN_TEMP_UPDADD"
+        Dim strOpCd_Gen As String = "PR_PR_TRX_BKM_MBHN_TEMP_GEN"
+
+        Dim hid_id As HiddenField
+        Dim ddl_jb As DropDownList
+        Dim ddl_cb As DropDownList
+        Dim ddl_ci As DropDownList
+        Dim txt_qty As TextBox
+        Dim lbl_um As Label
+        Dim ed As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ' Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_del, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        ' Save
+        For i = 0 To dgHKJ_BHN.Items.Count - 1
+
+
+            hid_id = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_hid_id")
+            ddl_jb = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_ddl_jb")
+            ddl_cb = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_ddl_cb")
+            ddl_ci = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_ddl_itm")
+            txt_qty = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_txt_Qty")
+            lbl_um = dgHKJ_BHN.Items.Item(i).FindControl("dgHKJ_BHN_lbl_um")
+
+            If (ddl_jb.Text.Trim <> "") And (ddl_cb.Text.Trim <> "") And (ddl_ci.Text.Trim <> "") Then
+
+                ParamName = "IP|UI|LOC|JB|CB|CI|QT|UM"
+                ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                             strUserId & "|" & _
+                             strLocation & "|" & _
+                             ddl_jb.SelectedItem.Value.Trim() & "|" & _
+                             ddl_cb.SelectedItem.Value.Trim() & "|" & _
+                             Left(ddl_ci.SelectedItem.Value.Trim(), InStr(ddl_ci.SelectedItem.Value.Trim(), "|") - 1) & "|" & _
+                             IIf(txt_qty.Text = "", "null", txt_qty.Text) & "|" & _
+                             Trim(lbl_um.Text)
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+
+            End If
+
+        Next
+
+        'generate 
+        ParamName = "IP|UI|LOC"
+        ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                     strUserId & "|" & _
+                     strLocation
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Gen, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_GEN&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+        HKJ_BHN_BindPekerjaan_OnLoad()
+        BHN_BindPekerjaan_OnLoad()
+
+    End Sub
+
+    Sub HKJ_BHN_Delete(ByVal id As String, ByVal jb As String, ByVal cb As String, ByVal ci As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_MBHN_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "JB|CB|CI|ID|IP|UI|LOC"
+        strParamValue = jb & "|" & _
+                        cb & "|" & _
+                        ci & "|" & _
+                        id & "|" & _
+                        Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MBHN_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgHKJ_BHN_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgHKJ_BHN_hid_id"), HiddenField)
+        Dim hid_jb As HiddenField = CType(E.Item.FindControl("dgHKJ_BHN_hid_jb"), HiddenField)
+        Dim hid_cb As HiddenField = CType(E.Item.FindControl("dgHKJ_BHN_hid_cb"), HiddenField)
+        Dim hid_ci As HiddenField = CType(E.Item.FindControl("dgHKJ_BHN_hid_itm"), HiddenField)
+
+
+        HKJ_BHN_Delete(hid_id.Value, hid_jb.Value, hid_cb.Value, hid_ci.Value)
+
+        HKJ_BHN_BindPekerjaan_OnLoad()
+        BHN_BindPekerjaan_OnLoad()
+    End Sub
+
+#End Region
+
+#Region "Event RWT"
+
+    Sub RW_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_RW_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgRW_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim Updbutton As LinkButton
+
+
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+        If e.Item.ItemType = ListItemType.Footer Then
+            Dim ar As Array
+            ar = Split(RW_Footer, "|")
+            e.Item.Cells(4).Text = ar(0)
+            e.Item.Cells(5).Text = ar(1)
+        End If
+    End Sub
+
+    Sub RW_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If RW_src_ddl_emp.Text.trim = "" Then
+            UserMsgBox(Me, "Silakan pilih divisi & karyawan untuk di tambah")
+            Exit Sub
+        End If
+        ' save dulu
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_RW_TEMP_UPDADD"
+        Dim ec As String = ""
+        Dim ed As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        If RW_src_ddl_emp.Text.trim = "" Then
+            UserMsgBox(Me, "Silakan pilih divisi & karyawan untuk di tambah")
+            Exit Sub
+        End If
+
+        ec = RW_src_ddl_emp.SelectedItem.Value.Trim
+        'ed = Left(RW_src_ddl_emp.SelectedItem.Text.Trim, InStr(RW_src_ddl_emp.SelectedItem.Text.Trim, "(") - 1)
+        ed = Left(RW_src_ddl_emp.SelectedItem.Text.Trim, 50)
+
+        ParamName = "ID|IP|UI|LOC|EC|ED|JB|NR|CB|HK|HS|UM|ROT|HA"
+        ParamValue = "0|" & _
+                     Trim(Request.UserHostAddress) & "|" & _
+                     strUserId & "|" & _
+                     strLocation & "|" & _
+                     ec & "|" & _
+                     ed & "||||null|null||null|null"
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'reload
+        RW_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub RW_update()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_RW_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_RW_TEMP_UPDADD"
+        Dim hid_jb As HiddenField
+        Dim hid_cb As HiddenField
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+        Dim txt_hasilha As TextBox
+        Dim lbl_nor As Label
+        Dim lbl_um As Label
+
+        Dim ed As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+
+        'Save
+        For i = 0 To dgRW.Items.Count - 1
+            hid_ec = dgRW.Items.Item(i).FindControl("dgRW_hid_ec")
+            lbl_ed = dgRW.Items.Item(i).FindControl("dgRW_lbl_ed")
+            hid_jb = dgRW.Items.Item(i).FindControl("dgRW_hid_jb")
+            hid_cb = dgRW.Items.Item(i).FindControl("dgRW_hid_cb")
+            txt_hk = dgRW.Items.Item(i).FindControl("dgRW_txt_hk")
+            txt_hs = dgRW.Items.Item(i).FindControl("dgRW_txt_hs")
+            txt_rot = dgRW.Items.Item(i).FindControl("dgRW_txt_rot")
+            lbl_nor = dgRW.Items.Item(i).FindControl("dgRW_lbl_nr")
+            lbl_um = dgRW.Items.Item(i).FindControl("dgRW_lbl_um")
+            txt_hasilha = dgRW.Items.Item(i).FindControl("dgRW_txt_hasilha")
+
+            ParamName = "ID|IP|UI|LOC|EC|ED|JB|NR|CB|HK|HS|UM|ROT|HA"
+            ParamValue = "0|" & _
+                         Trim(Request.UserHostAddress) & "|" & _
+                         strUserId & "|" & _
+                         strLocation & "|" & _
+                         hid_ec.Value.Trim & "|" & _
+                         lbl_ed.Text.Trim & "|" & _
+                         hid_jb.Value.Trim & "|" & _
+                         lbl_nor.Text.Trim & "|" & _
+                         hid_cb.Value.Trim & "|" & _
+                         IIf(txt_hk.Text.Trim = "", "null", txt_hk.Text.Trim) & "|" & _
+                         IIf(txt_hs.Text.Trim = "", "null", txt_hs.Text.Trim) & "|" & _
+                         lbl_um.Text.Trim & "|" & _
+                         IIf(txt_rot.Text.Trim = "", "null", txt_rot.Text.Trim) & "|" & _
+       IIf(txt_hasilha.Text.Trim = "", "null", txt_hasilha.Text.Trim)
+            Try
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Catch Exp As System.Exception
+                Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+            End Try
+        Next
+    End Sub
+
+    Sub RW_refresh_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        RW_update()
+        RW_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub RW_clear_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        RW_EmpByMdr_Clear()
+        BHN_Clear()
+    End Sub
+
+    Sub dgRW_Delete(ByVal id As String, ByVal ec As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_RW_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID|EC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        ID & "|" & ec
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgRW_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgRW_hid_id"), HiddenField)
+        Dim hid_ec As HiddenField = CType(E.Item.FindControl("dgRW_hid_ec"), HiddenField)
+
+        dgRW_Delete(hid_id.Value, hid_ec.Value)
+        RW_BindPekerjaan_OnLoad()
+    End Sub
+
+    Protected Sub RW_src_ddl_divisi_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        BindEmployee(RW_src_ddl_divisi.SelectedItem.Value.Trim(), RW_src_ddl_emp)
+    End Sub
+
+#End Region
+
+#Region "Event BHN"
+
+    Sub BHN_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_BHN_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BHN_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgBHN_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim Updbutton As LinkButton
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+    End Sub
+
+    Sub BHN_Delete(ByVal id As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BHN_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        id
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgBHN_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgBHN_hid_id"), HiddenField)
+        BHN_Delete(hid_id.Value)
+        BHN_BindPekerjaan_OnLoad()
+    End Sub
+
+
+#End Region
+
+#Region "Event PN"
+
+    Sub PN_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_PN_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_PN_LOAD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+    End Sub
+
+    Sub PNSUM_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_PNSUM_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_PNSUM_LOAD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+    End Sub
+
+    Sub dgPN_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim hd As HiddenField
+            Dim DDLabs As DropDownList
+            Dim DDLabs_blk As DropDownList
+            Dim Updbutton As LinkButton
+            Dim txt As TextBox
+
+            txt = CType(e.Item.FindControl("dgPN_txt_hk"), TextBox)
+            If Trim(strBKSubCategory) = "DRK" Then
+                txt.readonly = True
+            Else
+                txt.readonly = False
+            End If
+
+            hd = CType(e.Item.FindControl("dgPN_hid_subsubcat"), HiddenField)
+            DDLabs = CType(e.Item.FindControl("dgPN_ddl_subsubcat"), DropDownList)
+            ddl_DgSorting(DDLabs, hastbl_subsub, hd.Value.Trim())
+
+            hd = CType(e.Item.FindControl("dgPN_hid_cb"), HiddenField)
+            DDLabs_blk = CType(e.Item.FindControl("dgPN_ddl_cb"), DropDownList)
+            ddl_DgSorting(DDLabs_blk, hastbl_cb, hd.Value.Trim())
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+
+
+
+        End If
+        If e.Item.ItemType = ListItemType.Footer Then
+            Dim arr As Array
+            arr = Split(PN_Footer(), "|")
+            e.Item.Cells(6).Text = arr(0)
+            e.Item.Cells(8).Text = arr(1)
+            e.Item.Cells(10).Text = arr(2)
+            e.Item.Cells(11).Text = arr(3)
+            e.Item.Cells(12).Text = arr(4)
+            e.Item.Cells(13).Text = arr(5)
+            e.Item.Cells(5).Text = arr(6)
+        End If
+    End Sub
+
+    Sub dgPNSUM_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+
+        End If
+        If e.Item.ItemType = ListItemType.Footer Then
+            Dim arr As Array
+            arr = Split(PNSUM_Footer, "|")
+            e.Item.Cells(2).Text = arr(0)
+            e.Item.Cells(3).Text = arr(1)
+
+        End If
+    End Sub
+
+    'Protected Sub dgPN_ddl_cb_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+    '    If ddlbksubcategory.Text <> "" Then
+    '        strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim
+    '    Else
+    '        strBKSubCategory = hid_subcat.Value.Trim
+    '    End If
+
+    '    If strBKSubCategory = "PBS" Then
+    '        Dim ddllist As DropDownList = CType(sender, DropDownList)
+    '        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+    '        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+    '        Dim ddlcb As DropDownList = CType(item.Cells(3).FindControl("dgPN_ddl_cb"), DropDownList)
+
+    '        Dim txtjjg As TextBox = CType(item.Cells(5).FindControl("dgPN_txt_jg"), TextBox)
+    '        'Dim txtbjr As TextBox = CType(item.Cells(6).FindControl("dgPN_txt_bjr"), TextBox)
+    '        'Dim txtkg As TextBox = CType(item.Cells(7).FindControl("dgPN_txt_hs"), TextBox)
+    '        Dim txthk As TextBox = CType(item.Cells(4).FindControl("dgPN_txt_hk"), TextBox)
+
+    '        If ddlcb.SelectedItem.Value.Trim <> "" Then
+    '            Dim bb As Array
+    '            bb = Split(Get_Bjr_Bss(ddlcb.SelectedItem.Value.Trim()), "|")
+
+    '            'If bb(0) = "" Then bb(0) = "0"
+    '            'If bb(1) = "" Then bb(1) = "0"
+    '            'txtbjr.Text = bb(0)
+
+    '            'If txtjjg.Text.Trim <> "" Then
+    '            '    txtkg.Text = CSng(txtjjg.Text) * CSng(txtbjr.Text)
+    '            'Else
+    '            '    txtkg.Text = "0"
+    '            'End If
+
+    '            'If txtkg.Text = "0" Then
+    '            '    txthk.Text = "0"
+    '            'Else
+    '            '    If Math.Round(CSng(txtkg.Text) / CSng(bb(1))) > 1 Then
+    '            '        txthk.Text = "1"
+    '            '    Else
+    '            '        txthk.Text = Math.Round(CSng(txtkg.Text) / CSng(bb(1)), 2)
+    '            '    End If
+    '            'End If
+
+    '            If txtjjg.Text.Trim <> "" Then
+    '                If Math.Round(CSng(txtjjg.Text) / CSng(bb(1))) > 1 Then
+    '                    txthk.Text = "1"
+    '                Else
+    '                    txthk.Text = Math.Round(CSng(txtjjg.Text) / CSng(bb(1)), 2)
+    '                End If
+    '            Else
+    '                txthk.Text = "0"
+    '            End If
+    '        End If
+    '    End If
+    'End Sub
+
+    'Protected Sub dgPN_txt_jg_OnTextChanged(ByVal sender As Object, ByVal e As EventArgs)
+    '    If ddlbksubcategory.Text <> "" Then
+    '        strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim
+    '    Else
+    '        strBKSubCategory = hid_subcat.Value.Trim
+    '    End If
+
+    '    If strBKSubCategory = "PBS" Then
+    '        Dim txt As TextBox = CType(sender, TextBox)
+    '        Dim cell As TableCell = CType(txt.Parent, TableCell)
+    '        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+    '        Dim ddlcb As DropDownList = CType(item.Cells(3).FindControl("dgPN_ddl_cb"), DropDownList)
+
+    '        Dim txtjjg As TextBox = CType(item.Cells(5).FindControl("dgPN_txt_jg"), TextBox)
+    '        'Dim txtbjr As TextBox = CType(item.Cells(6).FindControl("dgPN_txt_bjr"), TextBox)
+    '        'Dim txtkg As TextBox = CType(item.Cells(7).FindControl("dgPN_txt_hs"), TextBox)
+    '        Dim txthk As TextBox = CType(item.Cells(4).FindControl("dgPN_txt_hk"), TextBox)
+
+
+    '        If ddlcb.SelectedItem.Value.Trim <> "" Then
+    '            Dim bb As Array
+    '            bb = Split(Get_Bjr_Bss(ddlcb.SelectedItem.Value.Trim()), "|")
+
+    '            'If bb(0) = "" Then bb(0) = "0"
+    '            'If bb(1) = "" Then bb(1) = "0"
+    '            'txtbjr.Text = bb(0)
+
+    '            'If txtjjg.Text.Trim <> "" Then
+    '            '    txtkg.Text = CSng(txtjjg.Text) * CSng(txtbjr.Text)
+    '            'Else
+    '            '    txtkg.Text = "0"
+    '            'End If
+
+    '            'If txtkg.Text = "0" Then
+    '            '    txthk.Text = "0"
+    '            'Else
+    '            '    If Math.Round(CSng(txtkg.Text) / CSng(bb(1))) > 1 Then
+    '            '        txthk.Text = "1"
+    '            '    Else
+    '            '        txthk.Text = Math.Round(CSng(txtkg.Text) / CSng(bb(1)), 2)
+    '            '    End If
+    '            'End If
+
+    '            If txtjjg.Text.Trim <> "" Then
+    '                If Math.Round(CSng(txtjjg.Text) / CSng(bb(1))) > 1 Then
+    '                    txthk.Text = "1"
+    '                Else
+    '                    txthk.Text = Math.Round(CSng(txtjjg.Text) / CSng(bb(1)), 2)
+    '                End If
+    '            Else
+    '                txthk.Text = "0"
+    '            End If
+    '        End If
+    '    End If
+    'End Sub
+
+
+    Protected Sub dgPN_ddl_subsubcat_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ddllist As DropDownList = CType(sender, DropDownList)
+        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+        Dim content As String = item.Cells(0).Text
+        Dim ddljob As DropDownList = CType(item.Cells(1).FindControl("dgPN_ddl_subsubcat"), DropDownList)
+        Dim sjc As String
+
+
+        sjc = Mid(ddljob.SelectedItem.Text.Trim(), InStr(ddljob.SelectedItem.Text.Trim(), "(") + 1, Len(ddljob.SelectedItem.Text.Trim()) - InStr(ddljob.SelectedItem.Text.Trim(), "(") - 1)
+
+        'if ddlreg_bor.SelectedItem.Value.Trim() = "P" Then
+        BindPremiLain(sjc, "0")
+        'End If
+    End Sub
+
+    Protected Sub PN_src_ddl_divisi_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        BindEmployee(PN_src_ddl_divisi.SelectedItem.Value.Trim(), PN_src_ddl_emp)
+    End Sub
+
+    Sub PN_update()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_PN_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_PN_TEMP_UPDADD"
+        Dim ddl_cb As DropDownList
+        Dim ddl_ssc As DropDownList
+        Dim hid_ec As HiddenField
+        Dim hid_ssc As HiddenField
+        Dim lbl_ed As Label
+        Dim txt_hk As TextBox
+        Dim txt_jg As TextBox
+        Dim txt_bjr As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_hasilha As TextBox
+
+        Dim txt_drc As TextBox
+        Dim txt_kkk As TextBox
+        Dim txt_slab As TextBox
+        Dim txt_lm As TextBox
+        Dim txt_gt As TextBox
+
+        Dim txt_rot As TextBox
+
+        Dim txt_dnd As TextBox
+        Dim Pbs_txt_PB_Dbasis As TextBox
+        Dim Pbs_txt_PB_Dmentah As TextBox
+        Dim Pbs_txt_PB_Dtinggal As TextBox
+        Dim Pbs_txt_PB_Dtph As TextBox
+        Dim Pbs_txt_PB_Dpjg As TextBox
+        Dim Pbs_txt_PB_DSengkleh As TextBox
+
+        Dim Kbs_txt_KB_Dkk As TextBox
+        Dim Kbs_chk_KB_Dbk As TextBox
+        Dim Kbs_chk_KB_Dtph As TextBox
+
+        Dim txt_tph As TextBox
+        Dim txt_karcis As TextBox
+
+
+        Dim ed As String = ""
+        Dim cb As String = ""
+        Dim ssc As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            strBKCategory = ddlbkcategory.SelectedItem.Value.Trim
+            strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            strBKCategory = hid_cat.Value.Trim
+            strBKSubCategory = hid_subcat.Value.Trim
+        End If
+
+        'Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+
+        'Save
+        For i = 0 To dgPN.Items.Count - 1
+            hid_ec = dgPN.Items.Item(i).FindControl("dgPN_hid_ec")
+            lbl_ed = dgPN.Items.Item(i).FindControl("dgPN_lbl_ed")
+
+            ddl_ssc = dgPN.Items.Item(i).FindControl("dgPN_ddl_subsubcat")
+            ddl_cb = dgPN.Items.Item(i).FindControl("dgPN_ddl_cb")
+            txt_hk = dgPN.Items.Item(i).FindControl("dgPN_txt_hk")
+            txt_jg = dgPN.Items.Item(i).FindControl("dgPN_txt_jg")
+            txt_bjr = dgPN.Items.Item(i).FindControl("dgPN_txt_bjr")
+            txt_hs = dgPN.Items.Item(i).FindControl("dgPN_txt_hs")
+            txt_hasilha = dgPN.Items.Item(i).FindControl("dgPN_txt_hasilha")
+
+            txt_drc = dgPN.Items.Item(i).FindControl("dgPN_txt_drc")
+            txt_kkk = dgPN.Items.Item(i).FindControl("dgPN_txt_kkk")
+            If (txt_hs.Text.Trim <> "" And txt_drc.Text.Trim <> "") Then
+                txt_kkk.Text = txt_hs.Text * (txt_drc.Text / 100)
+            Else
+                txt_kkk.Text = ""
+            End If
+
+
+            If (txt_kkk.Text.Trim <> "") Then
+                If CSng(txt_kkk.text) < 9 Then
+                    txt_hk.Text = CSng(txt_kkk.text) / 9
+
+                Else
+                    txt_hk.text = "1"
+                End If
+            End If
+
+
+            txt_slab = dgPN.Items.Item(i).FindControl("dgPN_txt_slab")
+            txt_lm = dgPN.Items.Item(i).FindControl("dgPN_txt_lm")
+            txt_gt = dgPN.Items.Item(i).FindControl("dgPN_txt_gt")
+
+            txt_rot = dgPN.Items.Item(i).FindControl("dgPN_txt_rot")
+            txt_dnd = dgPN.Items.Item(i).FindControl("dgPN_txt_dnd")
+
+            txt_tph = dgPN.Items.Item(i).FindControl("dgPN_txt_tph")
+            txt_karcis = dgPN.Items.Item(i).FindControl("dgPN_txt_karcis")
+
+
+            Pbs_txt_PB_Dmentah = dgPN.Items.Item(i).FindControl("dgPN_PB_Dmentah")
+            Pbs_txt_PB_Dtinggal = dgPN.Items.Item(i).FindControl("dgPN_PB_Dtinggal")
+            Pbs_txt_PB_Dtph = dgPN.Items.Item(i).FindControl("dgPN_PB_Dtph")
+            Pbs_txt_PB_Dpjg = dgPN.Items.Item(i).FindControl("dgPN_PB_Dpjg")
+            Pbs_txt_PB_DSengkleh = dgPN.Items.Item(i).FindControl("dgPN_PB_DSengkleh")
+            Pbs_txt_PB_Dbasis = dgPN.Items.Item(i).FindControl("dgPN_PB_Dbasis")
+
+            Kbs_txt_KB_Dkk = dgPN.Items.Item(i).FindControl("dgPN_KB_Dkk")
+            Kbs_chk_KB_Dbk = dgPN.Items.Item(i).FindControl("dgPN_KB_Dbk")
+            Kbs_chk_KB_Dtph = dgPN.Items.Item(i).FindControl("dgPN_KB_Dtph")
+
+
+
+            ParamName = "IC|SC|ID|IP|UI|LOC|EC|ED|CB|SSC|HK|JJG|BJR|HS|" & _
+                        "DRC|KKK|SLAB|LM|GT|" & _
+                        "ROT|DND|" & _
+                        "PB_D_MTH|PB_D_TGL|PB_D_TPH|PB_D_PJG|PB_D_SKL|PB_D_BSS|" & _
+                        "KB_D_KTR|KB_D_BKT|KB_D_TPH|" & _
+                        "TPH|KARCIS|HA"
+
+            ParamValue = strBKCategory & "|" & _
+                         strBKSubCategory & "|0|" & _
+                         Trim(Request.UserHostAddress) & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        hid_ec.Value.Trim & "|" & _
+                        lbl_ed.Text.Trim & "|" & _
+                        ddl_cb.SelectedItem.Value.Trim & "|" & _
+                        ddl_ssc.SelectedItem.Value.Trim() & "|" & _
+            IIf(txt_hk.Text.Trim = "", "null", txt_hk.Text.Trim) & "|" & _
+            IIf(txt_jg.Text.Trim = "", "null", txt_jg.Text.Trim) & "|" & _
+            IIf(txt_bjr.Text.Trim = "", "null", txt_bjr.Text.Trim) & "|" & _
+            IIf(txt_hs.Text.Trim = "", "null", txt_hs.Text.Trim) & "|" & _
+            IIf(txt_drc.Text.Trim = "", "null", txt_drc.Text.Trim) & "|" & _
+            IIf(txt_kkk.Text.Trim = "", "0", txt_kkk.Text.Trim) & "|" & _
+            IIf(txt_slab.Text.Trim = "", "null", txt_slab.Text.Trim) & "|" & _
+            IIf(txt_lm.Text.Trim = "", "null", txt_lm.Text.Trim) & "|" & _
+            IIf(txt_gt.Text.Trim = "", "null", txt_gt.Text.Trim) & "|" & _
+            IIf(txt_rot.Text.Trim = "", "null", txt_rot.Text.Trim) & "|" & _
+            IIf(txt_dnd.Text.Trim = "", "null", txt_dnd.Text.Trim) & "|" & _
+            IIf(Pbs_txt_PB_Dmentah.Text.Trim = "", "null", Pbs_txt_PB_Dmentah.Text.Trim) & "|" & _
+            IIf(Pbs_txt_PB_Dtinggal.Text.Trim = "", "null", Pbs_txt_PB_Dtinggal.Text.Trim) & "|" & _
+            IIf(Pbs_txt_PB_Dtph.Text.Trim = "", "null", Pbs_txt_PB_Dtph.Text.Trim) & "|" & _
+            IIf(Pbs_txt_PB_Dpjg.Text.Trim = "", "null", Pbs_txt_PB_Dpjg.Text.Trim) & "|" & _
+            IIf(Pbs_txt_PB_DSengkleh.Text.Trim = "", "null", Pbs_txt_PB_DSengkleh.Text.Trim) & "|" & _
+            IIf(Pbs_txt_PB_Dbasis.Text.Trim = "", "null", Pbs_txt_PB_Dbasis.Text.Trim) & "|" & _
+            IIf(Kbs_txt_KB_Dkk.Text.Trim = "", "null", Kbs_txt_KB_Dkk.Text.Trim) & "|" & _
+            IIf(Kbs_chk_KB_Dbk.Text.Trim = "", "null", Kbs_chk_KB_Dbk.Text.Trim) & "|" & _
+            IIf(Kbs_chk_KB_Dtph.Text.Trim = "", "null", Kbs_chk_KB_Dtph.Text.Trim) & "|" & _
+            IIf(txt_tph.Text.Trim = "", "", txt_tph.Text.Trim) & "|" & _
+            IIf(txt_karcis.Text.Trim = "", "", txt_karcis.Text.Trim) & "|" & _
+            IIf(txt_hasilha.Text.Trim = "", "null", txt_hasilha.Text.Trim)
+
+
+            Try
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Catch Exp As System.Exception
+                Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PN_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+            End Try
+        Next
+    End Sub
+
+    Sub PNSUM_update()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_PNSUM_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_PNSUM_TEMP_UPDADD"
+        Dim hid_cj As HiddenField
+        Dim hid_ssc As HiddenField
+        Dim lbl_cb As Label
+        Dim txt_ha As TextBox
+        Dim lbl_jjg As Label
+        Dim lbl_bjr As HiddenField
+        Dim lbl_hs As HiddenField
+        Dim lbl_hk As HiddenField
+
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PNSUM_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+
+        'Save
+        For i = 0 To dgPNSUM.Items.Count - 1
+
+            hid_cj = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_hid_jb")
+            hid_ssc = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_hid_subsubcat")
+            lbl_cb = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_cb")
+            txt_ha = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_txt_ha")
+            lbl_jjg = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_jjg")
+            lbl_bjr = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_bjr")
+            lbl_hs = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_hs")
+            lbl_hk = dgPNSUM.Items.Item(i).FindControl("dgPNSUM_lbl_hk")
+
+
+            If txt_ha.Text.Trim <> "" Then
+                ParamName = "IP|UI|LOC|CJ|CB|SSC|HA|JJG|BJR|HS|HK"
+                ParamValue = Trim(Request.UserHostAddress) & "|" & _
+                             strUserId & "|" & _
+                             strLocation & "|" & _
+                             hid_cj.Value.Trim & "|" & _
+                             lbl_cb.Text.Trim & "|" & _
+                             hid_ssc.Value.Trim & "|" & _
+                             txt_ha.Text.Trim() & "|" & _
+                             lbl_jjg.Text.Trim() & "|" & _
+                             lbl_bjr.Value.Trim() & "|" & _
+                             IIf(lbl_hs.Value.Trim = "", "0", lbl_hs.Value.Trim) & "|" & _
+                    IIf(lbl_hk.Value.Trim = "", "0", lbl_hk.Value.Trim)
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_PNSUM_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+            End If
+
+        Next
+    End Sub
+
+    Sub dgPN_Delete(ByVal id As String, ByVal ec As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_PN_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID|EC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        id & "|" & ec
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgPN_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        PN_update()
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgPN_hid_id"), HiddenField)
+        Dim hid_ec As HiddenField = CType(E.Item.FindControl("dgPN_hid_ec"), HiddenField)
+        Dim id = hid_id.Value + dgPN.Items.Count
+        dgPN_Delete(id, hid_ec.Value.Trim)
+        PN_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub PN_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If PN_src_ddl_emp.Text.trim = "" Then
+            UserMsgBox(Me, "Silakan pilih divisi & karyawan untuk di tambah")
+            Exit Sub
+        End If
+
+        ' save old input
+        PN_update()
+        ' save dulu
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_PN_TEMP_UPDADD"
+        Dim ec As String = ""
+        Dim ed As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        If ddlbksubcategory.Text <> "" Then
+            strBKCategory = ddlbkcategory.SelectedItem.Value.Trim
+            strBKSubCategory = ddlbksubcategory.SelectedItem.Value.Trim
+        Else
+            strBKCategory = hid_cat.Value.Trim
+            strBKSubCategory = hid_subcat.Value.Trim
+        End If
+
+        ec = PN_src_ddl_emp.SelectedItem.Value.Trim
+        'ed = Left(PN_src_ddl_emp.SelectedItem.Text.Trim, InStr(PN_src_ddl_emp.SelectedItem.Text.Trim, "(") - 1)
+        ed = Left(PN_src_ddl_emp.SelectedItem.Text.Trim, 50)
+
+        ParamName = "IC|SC|ID|IP|UI|LOC|EC|ED|CB|SSC|HK|JJG|BJR|HS|" & _
+                    "DRC|KKK|SLAB|LM|GT|" & _
+                    "ROT|DND|" & _
+                    "PB_D_MTH|PB_D_TGL|PB_D_TPH|PB_D_PJG|PB_D_SKL|PB_D_BSS|" & _
+                    "KB_D_KTR|KB_D_BKT|KB_D_TPH|TPH|KARCIS|HA"
+
+        ParamValue = strBKCategory & "|" & _
+                     strBKSubCategory & "|0|" & _
+                     Trim(Request.UserHostAddress) & "|" & _
+                     strUserId & "|" & _
+                     strLocation & "|" & _
+                     ec & "|" & _
+                     ed & "|||null|null|null|null|null|null|null|null|null|null|null|" & _
+                     "null|null|null|null|null|null|" & _
+                     "null|0|0|||null"
+
+        Try
+            If PN_add_txt.Text.Trim = "" Then PN_add_txt.Text = "1"
+
+            For i = 1 To PN_add_txt.Text.Trim
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Next
+
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'reload
+        PN_BindPekerjaan_OnLoad()
+
+        'PN_src_ddl_emp.Focus()
+    End Sub
+
+    Sub PN_refresh_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        PN_update()
+        PN_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub PN_clear_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        PN_EmpByMdr_Clear()
+        PNSUM_Clear()
+    End Sub
+
+    Sub PNSUM_refresh_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        'PNSUM_update()
+        PNSUM_BindPekerjaan_OnRefresh()
+        'PN_BindPekerjaan_OnLoad()
+    End Sub
+
+#End Region
+
+#Region "Event NRW"
+    Sub NRW_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_RW_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_RW_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgNRW_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim hd As HiddenField
+            Dim DDLabs As DropDownList
+            Dim DDLabs_blk As DropDownList
+            Dim Updbutton As LinkButton
+
+
+            hd = CType(e.Item.FindControl("dgNRW_hid_jb"), HiddenField)
+            DDLabs = CType(e.Item.FindControl("dgNRW_ddl_jb"), DropDownList)
+            ddl_DgSorting(DDLabs, hastbl_jb, hd.Value.Trim())
+
+            hd = CType(e.Item.FindControl("dgNRW_hid_cb"), HiddenField)
+            DDLabs_blk = CType(e.Item.FindControl("dgNRW_ddl_cb"), DropDownList)
+            ddl_DgSorting(DDLabs_blk, hastbl_cb, hd.Value.Trim())
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+        If e.Item.ItemType = ListItemType.Footer Then
+            Dim ar As Array
+            ar = Split(NRW_Footer, "|")
+            e.Item.Cells(4).Text = ar(0)
+            e.Item.Cells(5).Text = ar(1)
+        End If
+
+    End Sub
+
+    Protected Sub dgNRW_ddl_jb_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ddllist As DropDownList = CType(sender, DropDownList)
+        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+        Dim content As String = item.Cells(0).Text
+        Dim ddljob As DropDownList = CType(item.Cells(1).FindControl("dgNRW_ddl_jb"), DropDownList)
+        Dim lbluom As Label
+        Dim lblnor As Label
+
+        Dim sjc As String
+
+        sjc = ddljob.SelectedItem.Value.Trim()
+
+        lbluom = CType(item.Cells(7).FindControl("dgNRW_lbl_um"), Label)
+        lblnor = CType(item.Cells(6).FindControl("dgNRW_lbl_nr"), Label)
+
+        Dim arr As Array
+        arr = Split(dgRW_GetUOM_Norma(sjc), "|")
+        lbluom.Text = arr(0)
+        lblnor.Text = arr(1)
+
+        'if ddlreg_bor.SelectedItem.Value.Trim() = "P" Then
+        BindPremiLain(sjc, "0")
+        'End If
+
+    End Sub
+
+    Protected Sub NRW_src_ddl_divisi_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        BindEmployee(NRW_src_ddl_divisi.SelectedItem.Value.Trim(), NRW_src_ddl_emp)
+    End Sub
+
+    Sub NRW_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If NRW_src_ddl_emp.Text.trim = "" Then
+            UserMsgBox(Me, "Silakan pilih divisi & karyawan untuk di tambah")
+            Exit Sub
+        End If
+
+        ' save dulu
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_RW_TEMP_UPDADD"
+        Dim ec As String = ""
+        Dim ed As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        ec = NRW_src_ddl_emp.SelectedItem.Value.Trim
+        'ed = Left(NRW_src_ddl_emp.SelectedItem.Text.Trim, InStr(NRW_src_ddl_emp.SelectedItem.Text.Trim, "(") - 1)
+        ed = Left(NRW_src_ddl_emp.SelectedItem.Text.Trim, 50)
+
+        ParamName = "ID|IP|UI|LOC|EC|ED|JB|NR|CB|HK|HS|UM|ROT|HA"
+        ParamValue = "0|" & _
+                     Trim(Request.UserHostAddress) & "|" & _
+                     strUserId & "|" & _
+                     strLocation & "|" & _
+                     ec & "|" & _
+                     ed & "||||null|null||null|null"
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'reload
+        NRW_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub dgNRW_Delete(ByVal id As String, ByVal ec As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_RW_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID|EC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        id & "|" & ec
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgNRW_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgNRW_hid_id"), HiddenField)
+        Dim hid_ec As HiddenField = CType(E.Item.FindControl("dgNRW_hid_ec"), HiddenField)
+
+        dgNRW_Delete(hid_id.Value, hid_ec.Value)
+        NRW_BindPekerjaan_OnLoad()
+
+        'NRW_update()
+        'dgNRW_Delete(hid_id.Value, hid_ec.Value)
+        'NRW_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub NRW_update()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_RW_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_RW_TEMP_UPDADD"
+        Dim ddl_jb As DropDownList
+        Dim ddl_cb As DropDownList
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim txt_hk As TextBox
+        Dim txt_hs As TextBox
+        Dim txt_hasilha As TextBox
+        Dim txt_rot As TextBox
+        Dim lbl_nor As Label
+        Dim lbl_um As Label
+
+        Dim ed As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+
+        'Save
+        For i = 0 To dgNRW.Items.Count - 1
+            hid_ec = dgNRW.Items.Item(i).FindControl("dgNRW_hid_ec")
+            lbl_ed = dgNRW.Items.Item(i).FindControl("dgNRW_lbl_ed")
+            ddl_jb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_jb")
+            ddl_cb = dgNRW.Items.Item(i).FindControl("dgNRW_ddl_cb")
+            txt_hk = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hk")
+            txt_hs = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hs")
+            txt_rot = dgNRW.Items.Item(i).FindControl("dgNRW_txt_rot")
+            lbl_nor = dgNRW.Items.Item(i).FindControl("dgNRW_lbl_nr")
+            lbl_um = dgNRW.Items.Item(i).FindControl("dgNRW_lbl_um")
+            txt_hasilha = dgNRW.Items.Item(i).FindControl("dgNRW_txt_hasilha")
+
+            ParamName = "ID|IP|UI|LOC|EC|ED|JB|NR|CB|HK|HS|UM|ROT|HA"
+            ParamValue = "0|" & _
+            Trim(Request.UserHostAddress) & "|" & _
+            strUserId & "|" & _
+            strLocation & "|" & _
+            hid_ec.Value.Trim & "|" & _
+            lbl_ed.Text.Trim & "|" & _
+            ddl_jb.SelectedItem.Value.Trim & "|" & _
+            lbl_nor.Text.Trim & "|" & _
+            ddl_cb.SelectedItem.Value.Trim & "|" & _
+            IIf(txt_hk.Text.Trim = "", "null", txt_hk.Text.Trim) & "|" & _
+            IIf(txt_hs.Text.Trim = "", "null", txt_hs.Text.Trim) & "|" & _
+            lbl_um.Text.Trim & "|" & _
+            IIf(txt_rot.Text.Trim = "", "null", txt_rot.Text.Trim) & "|" & _
+   IIf(txt_hasilha.Text.Trim = "", "null", txt_hasilha.Text.Trim)
+
+            Try
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Catch Exp As System.Exception
+                Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+            End Try
+        Next
+    End Sub
+
+    Sub NRW_clear_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        NRW_EmpByMdr_Clear()
+        BHN_Clear()
+    End Sub
+
+    Sub NRW_refresh_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        NRW_update()
+        NRW_BindPekerjaan_OnLoad()
+    End Sub
+
+#End Region
+
+#Region "Event BOR"
+
+    Sub BOR_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_BO_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BO_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgBOR_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim hd As HiddenField
+            Dim DDLabs As DropDownList
+            Dim DDLabs_blk As DropDownList
+            Dim Updbutton As LinkButton
+
+
+            hd = CType(e.Item.FindControl("dgBOR_hid_jb"), HiddenField)
+            DDLabs = CType(e.Item.FindControl("dgBOR_ddl_jb"), DropDownList)
+            ddl_DgSorting(DDLabs, hastbl_jb, hd.Value.Trim())
+
+            hd = CType(e.Item.FindControl("dgBOR_hid_cb"), HiddenField)
+            DDLabs_blk = CType(e.Item.FindControl("dgBOR_ddl_cb"), DropDownList)
+            ddl_DgSorting(DDLabs_blk, hastbl_cb, hd.Value.Trim())
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+        If e.Item.ItemType = ListItemType.Footer Then
+            Dim ar As Array
+            ar = Split(BO_Footer, "|")
+            e.Item.Cells(6).Text = ar(0)
+            e.Item.Cells(4).Text = ar(1)
+        End If
+
+    End Sub
+
+    Sub BOR_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+
+        If BOR_src_ddl_emp.Text.trim = "" Then
+            UserMsgBox(Me, "Silakan pilih divisi & karyawan untuk di tambah")
+            Exit Sub
+        End If
+        ' save old input
+        BOR_update()
+        ' save dulu
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_BO_TEMP_UPDADD"
+        Dim ec As String = ""
+        Dim ed As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+        Dim jb As String = ""
+
+        ec = BOR_src_ddl_emp.SelectedItem.Value.Trim
+        'ed = Left(BOR_src_ddl_emp.SelectedItem.Text.Trim, InStr(BOR_src_ddl_emp.SelectedItem.Text.Trim, "-") - 1)
+        ed = Left(BOR_src_ddl_emp.SelectedItem.Text.Trim, 50)
+
+        If ddlbksubcategory.Text <> "" Then
+            BOR_Pekerjaan(Trim(ddlbkcategory.SelectedItem.Value), Trim(ddlbksubcategory.SelectedItem.Value))
+        Else
+            BOR_Pekerjaan(hid_cat.Value, hid_subcat.Value)
+        End If
+
+        If hastbl_jb.Count = 1 Then
+            Dim ddl As New DropDownList
+            ddl.DataSource = hastbl_jb
+            ddl.DataTextField = "value"
+            ddl.DataValueField = "key"
+            ddl.DataBind()
+            ddl.SelectedIndex = 0
+            jb = ddl.SelectedItem.Value.Trim()
+        Else
+            jb = ""
+        End If
+
+
+        ParamName = "ID|IP|UI|LOC|EC|ED|JB|NR|CB|HK|JJG|BJR|HS|UM|ROT|DND|KB_D_KTR|KB_D_BKT|KB_D_TPH|TPH|KARCIS|HA"
+        ParamValue = "0|" & _
+                     Trim(Request.UserHostAddress) & "|" & _
+                     strUserId & "|" & _
+                     strLocation & "|" & _
+                     ec & "|" & _
+                     ed & "|" & _
+                     jb & "|||1|null|null|null||1|null|null|0|0|||null"
+
+        Try
+            If BOR_add_txt.Text.Trim = "" Then BOR_add_txt.Text = "1"
+
+            For i = 1 To BOR_add_txt.Text.Trim
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Next
+
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        'reload
+        BOR_BindPekerjaan_OnLoad()
+
+        'BOR_src_ddl_emp.Focus()
+    End Sub
+
+    Sub dgBOR_Cancel(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        BOR_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub dgBOR_Delete(ByVal id As String, ByVal ec As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BO_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID|EC"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        id & "|" & ec
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgBOR_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        BOR_update()
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgBOR_hid_id"), HiddenField)
+        Dim hid_ec As HiddenField = CType(E.Item.FindControl("dgBOR_hid_ec"), HiddenField)
+        Dim id = hid_id.Value + dgBOR.Items.Count
+        dgBOR_Delete(id, hid_ec.Value.Trim)
+        BOR_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub BOR_update()
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BO_TEMP_CLEAR"
+        Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_BO_TEMP_UPDADD"
+        Dim ddl_jb As DropDownList
+        Dim ddl_cb As DropDownList
+        Dim hid_ec As HiddenField
+        Dim lbl_ed As Label
+        Dim txt_hs As TextBox
+        Dim txt_rot As TextBox
+        Dim txt_hasilha As TextBox
+
+        Dim txt_jg As TextBox
+        Dim txt_bj As TextBox
+        Dim txt_tp As TextBox
+        Dim txt_kr As TextBox
+
+        Dim lbl_nor As Label
+        Dim lbl_um As Label
+        Dim txt_dnd As TextBox
+
+        Dim Kbs_txt_KB_Dkk As TextBox
+        Dim Kbs_chk_KB_Dbk As TextBox
+        Dim Kbs_chk_KB_Dtph As TextBox
+
+        Dim ed As String = ""
+        Dim cb As String = ""
+
+        Dim i As Integer
+        Dim ParamName As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+        'Clear
+        ParamName = "IP|UI|LOC"
+        ParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+
+
+        'Save
+        For i = 0 To dgBOR.Items.Count - 1
+            hid_ec = dgBOR.Items.Item(i).FindControl("dgBOR_hid_ec")
+            lbl_ed = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_ed")
+            ddl_jb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_jb")
+            ddl_cb = dgBOR.Items.Item(i).FindControl("dgBOR_ddl_cb")
+            txt_jg = dgBOR.Items.Item(i).FindControl("dgBOR_txt_jjg")
+            txt_bj = dgBOR.Items.Item(i).FindControl("dgBOR_txt_bjr")
+            txt_hs = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hs")
+            txt_tp = dgBOR.Items.Item(i).FindControl("dgBOR_txt_tph")
+            txt_kr = dgBOR.Items.Item(i).FindControl("dgBOR_txt_karcis")
+            txt_rot = dgBOR.Items.Item(i).FindControl("dgBOR_txt_rot")
+            lbl_nor = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_nr")
+            txt_hasilha = dgBOR.Items.Item(i).FindControl("dgBOR_txt_hasilha")
+
+            lbl_um = dgBOR.Items.Item(i).FindControl("dgBOR_lbl_um")
+            txt_dnd = dgBOR.Items.Item(i).FindControl("dgBOR_txt_dnd")
+            Kbs_txt_KB_Dkk = dgBOR.Items.Item(i).FindControl("dgBOR_KB_Dkk")
+            Kbs_chk_KB_Dbk = dgBOR.Items.Item(i).FindControl("dgBOR_KB_Dbk")
+            Kbs_chk_KB_Dtph = dgBOR.Items.Item(i).FindControl("dgBOR_KB_Dtph")
+
+            'if ((txt_jg.text.trim <> "") and (txt_bj.text.trim <> "")) then
+            '	if ((cint(txt_jg.text.trim) <> 0) and (cint(txt_bj.text.trim) <> 0)) then
+            '       txt_hs.Text = txt_jg.text.trim * txt_bj.text.trim 
+            '	end if
+            'else 
+            If ((txt_jg.text.trim <> "") And (txt_hs.text.trim <> "")) Then
+                If ((CInt(txt_jg.text.trim) <> 0) And (CInt(txt_hs.text.trim) <> 0)) Then
+                    txt_bj.Text = txt_hs.text.trim / txt_jg.text.trim
+                End If
+            End If
+
+
+
+
+
+            ParamName = "ID|IP|UI|LOC|EC|ED|JB|NR|CB|HK|JJG|BJR|HS|UM|ROT|DND|KB_D_KTR|KB_D_BKT|KB_D_TPH|TPH|KARCIS|HA"
+            ParamValue = "0|" & _
+            Trim(Request.UserHostAddress) & "|" & _
+            strUserId & "|" & _
+            strLocation & "|" & _
+            hid_ec.Value.Trim & "|" & _
+            lbl_ed.Text.Trim & "|" & _
+            ddl_jb.SelectedItem.Value.Trim & "|" & _
+            lbl_nor.Text.Trim & "|" & _
+            ddl_cb.SelectedItem.Value.Trim & "|" & _
+            "1" & "|" & _
+   IIf(txt_jg.Text.Trim = "", "null", txt_jg.Text.Trim) & "|" & _
+   IIf(txt_bj.Text.Trim = "", "null", txt_bj.Text.Trim) & "|" & _
+            IIf(txt_hs.Text.Trim = "", "null", txt_hs.Text.Trim) & "|" & _
+            lbl_um.Text.Trim & "|" & _
+            IIf(txt_rot.Text.Trim = "", "null", txt_rot.Text.Trim) & "|" & _
+            IIf(txt_dnd.Text.Trim = "", "null", txt_dnd.Text.Trim) & "|" & _
+            IIf(Kbs_txt_KB_Dkk.Text.Trim = "", "null", Kbs_txt_KB_Dkk.Text.Trim) & "|" & _
+            IIf(Kbs_chk_KB_Dbk.Text.Trim = "", "null", Kbs_chk_KB_Dbk.Text.Trim) & "|" & _
+            IIf(Kbs_chk_KB_Dtph.Text.Trim = "", "null", Kbs_chk_KB_Dtph.Text.Trim) & "|" & _
+   IIf(txt_tp.Text.Trim = "", "", txt_tp.Text.Trim) & "|" & _
+            IIf(txt_kr.Text.Trim = "", "", txt_kr.Text.Trim) & "|" & _
+            IIf(txt_hasilha.Text.Trim = "", "null", txt_hasilha.Text.Trim)
+
+            Try
+                intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+            Catch Exp As System.Exception
+                Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BO_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+            End Try
+        Next
+    End Sub
+
+    Sub BOR_refresh_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        BOR_update()
+        BOR_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub BOR_clear_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        BOR_EmpByMdr_Clear()
+    End Sub
+
+    Protected Sub dgBOR_ddl_jb_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ddllist As DropDownList = CType(sender, DropDownList)
+        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+        Dim ddljob As DropDownList = CType(item.Cells(1).FindControl("dgBOR_ddl_jb"), DropDownList)
+        Dim lbluom As Label = CType(item.Cells(8).FindControl("dgBOR_lbl_um"), Label)
+        Dim lblnor As Label = CType(item.Cells(7).FindControl("dgBOR_lbl_nr"), Label)
+        Dim arr As Array
+        Dim sjc As String = ddljob.SelectedItem.Value.Trim()
+
+        arr = Split(dgBOR_GetUOM_Norma(sjc), "|")
+        lbluom.Text = Trim(arr(0))
+        lblnor.Text = Trim(arr(1))
+
+    End Sub
+
+    Protected Sub BOR_src_ddl_divisi_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        BindEmployee(BOR_src_ddl_divisi.SelectedItem.Value.Trim(), BOR_src_ddl_emp)
+    End Sub
+
+
+#End Region
+
+#Region "Event TR"
+    Sub TRX_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_TR_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_TR_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+    Sub dgTRX_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim Updbutton As LinkButton
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+    End Sub
+
+    Sub TRX_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If TRX_src_ddl_jb.Text <> "" Then
+
+            If TRX_src_ddl_jb.SelectedItem.Value.Trim <> "" Then
+
+                'if ddlreg_bor.SelectedItem.Value.Trim() = "P" Then
+                BindPremiLain(TRX_src_ddl_jb.SelectedItem.Value.Trim, "0")
+                'End If
+
+                Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_TR_TEMP_UPDADD"
+                Dim i As Integer
+                Dim ParamName As String
+                Dim ParamValue As String
+                Dim intErrNo As Integer
+                Dim arr As Array = Split(TRX_src_ddl_jb.SelectedItem.Text.Trim, "|")
+
+                ParamName = "ID|IP|UI|LOC|JB|HK|HS|UM"
+                ParamValue = "0|" & _
+                             Trim(Request.UserHostAddress) & "|" & _
+                             strUserId & "|" & _
+                             strLocation & "|" & _
+                             TRX_src_ddl_jb.SelectedItem.Value.Trim & "|" & _
+                             "null|null|" & _
+                             Trim(arr(1))
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_TR_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+
+            End If
+        End If
+
+        'reload
+        TRX_BindPekerjaan_OnLoad()
+    End Sub
+
+    Sub dgTRX_Delete(ByVal id As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_TR_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        id
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_TR_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgTRX_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgTRX_hid_id"), HiddenField)
+        dgTRX_Delete(hid_id.Value)
+        TRX_BindPekerjaan_OnLoad()
+    End Sub
+
+#End Region
+
+#Region "Event BHNALL"
+    Sub BHNALL_add_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If dgBHNALL_idd.Text.Trim <> "" Then
+            If dgBHNALL_idd.SelectedItem.Value.Trim <> "" Then
+                Dim strOpCd As String = "PR_PR_TRX_BKM_BHN_TEMP_CLEAR"
+                Dim strOpCd_Upd As String = "PR_PR_TRX_BKM_BHN_TEMP_UPDADD"
+                Dim i As Integer
+                Dim ParamName As String
+                Dim ParamValue As String
+                Dim intErrNo As Integer
+                Dim obj_ec As HiddenField
+                Dim obj_ed As Label
+                Dim obj_jb As HiddenField
+                Dim obj_cb As HiddenField
+                Dim obj_ci As DropDownList
+                Dim obj_qty As TextBox
+                Dim obj_um As Label
+
+                Dim ec As String
+                Dim ed As String
+                Dim jc As String
+                Dim cb As String
+                Dim ci As String
+
+                'Clear
+                ParamName = "IP|UI|LOC"
+                ParamValue = Request.UserHostAddress & "|" & _
+                                strUserId & "|" & _
+                                strLocation
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_CLEAR&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+
+
+                For i = 0 To dgBHNALL.Items.Count - 1
+                    obj_ec = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_hid_ec")
+                    obj_ed = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_lbl_ec")
+                    obj_jb = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_hid_jb")
+                    obj_cb = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_hid_cb")
+                    obj_ci = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_ddl_itm")
+                    obj_qty = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_txt_Qty")
+                    obj_um = dgBHNALL.Items.Item(i).FindControl("dgBHNALL_lbl_um")
+
+                    ec = obj_ec.Value.Trim
+                    ed = obj_ed.Text.Trim
+                    jc = obj_jb.Value.Trim
+                    cb = obj_cb.Value.Trim
+                    If obj_ci.SelectedItem.Value.Trim <> "" Then
+                        ci = Left(obj_ci.SelectedItem.Value.Trim(), InStr(obj_ci.SelectedItem.Value.Trim(), "|") - 1)
+                    Else
+                        ci = ""
+                    End If
+
+                    'Save 
+                    ParamName = "ID|IP|UI|LOC|EC|ED|JB|CB|CI|QT|UM"
+                    ParamValue = "0|" & _
+                                 Trim(Request.UserHostAddress) & "|" & _
+                                 strUserId & "|" & _
+                                 strLocation & "|" & _
+                                 ec & "|" & _
+                                 ed & "|" & _
+                                 jc & "|" & _
+                                 cb & "|" & _
+                                 ci & "|" & _
+                                 IIf(obj_qty.Text.Trim = "", "0", obj_qty.Text.Trim) & "|" & _
+                                 obj_um.Text.Trim
+
+                    Try
+                        intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                    Catch Exp As System.Exception
+                        Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                    End Try
+
+                Next
+
+                Dim arr As Array
+                Dim tmp As String
+                arr = Split(dgBHNALL_idd.SelectedItem.Text.Trim, "|")
+
+                tmp = Trim(arr(0))
+                ec = Left(tmp, InStr(tmp, "(") - 1)
+                ed = Mid(tmp, InStr(tmp, "(") + 1, Len(tmp) - InStr(tmp, "(") - 1)
+                tmp = Trim(arr(1))
+                jc = Left(tmp, InStr(tmp, "(") - 1)
+                cb = Trim(arr(2))
+
+
+                'Add new
+                ParamName = "ID|IP|UI|LOC|EC|ED|JB|CB|CI|QT|UM"
+                ParamValue = "0|" & _
+                             Trim(Request.UserHostAddress) & "|" & _
+                             strUserId & "|" & _
+                             strLocation & "|" & _
+                             ec & "|" & _
+                             ed & "|" & _
+                             jc & "|" & _
+                             cb & "||null|"
+
+                Try
+                    intErrNo = objOk.mtdInsertDataCommon(strOpCd_Upd, ParamName, ParamValue)
+                Catch Exp As System.Exception
+                    Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_RW_TEMP_UPDADD&errmesg=" & Exp.Message & "&redirect=")
+                End Try
+                BHNALL_BindPekerjaan_OnLoad()
+            End If
+        Else
+            UserMsgBox(Me, "Silakan klik refresh untuk menampilkan data dilist")
+        End If
+    End Sub
+
+    Sub BHNALL_refresh_onClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If isNew.Value = "True" Then
+            strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+            strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+        Else
+            strBKCategory = Left(lblbkcategory.Text.Trim(), InStr(lblbkcategory.Text.Trim(), "(") - 1)
+            'strRegBor = Left(lblregbor.Text.Trim(), InStr(lblregbor.Text.Trim(), "(") - 1)
+            strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+
+        End If
+
+        If Trim(strRegBor) = "R" Then
+            Select Case Trim(strBKCategory)
+                Case "UM", "CV", "KM"
+                    BHNALL_JOB_NRW()
+                Case "PN"
+                    BHNALL_JOB_PN()
+                Case "TR"
+                    If ddlsupir.Text.Trim <> "" Then
+                        If ddlsupir.SelectedItem.Value.Trim <> "" Then
+                            BHNALL_JOB_TR()
+                        Else
+                            UserMsgBox(Me, "Silakan input nama supir ")
+                        End If
+                    Else
+                        UserMsgBox(Me, "Silakan input nama supir ")
+                    End If
+            End Select
+        Else
+            BHNALL_JOB_BO()
+        End If
+
+
+        Dim sorted_job = New SortedList(hastbl_jbbhnall)
+        dgBHNALL_idd.DataSource = sorted_job
+        dgBHNALL_idd.DataTextField = "value"
+        dgBHNALL_idd.DataValueField = "key"
+        dgBHNALL_idd.DataBind()
+    End Sub
+
+    Sub BHNALL_onLoad_Display(ByVal bkmcode As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKMLN_BHN_LOAD"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+
+        strParamName = "IP|BKM|LOC|UI"
+        strParamValue = Request.UserHostAddress & "|" & bkmcode & "|" & strLocation & "|" & strUserId
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Write("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKMLN_BHN_LOAD&errmesg=" & Exp.Message & "&redirect=HR/trx/HR_trx_EmployeeList_Estate.aspx")
+        End Try
+
+    End Sub
+
+    Sub dgBHNALL_BindGrid(ByVal sender As Object, ByVal e As DataGridItemEventArgs)
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            Dim Updbutton As LinkButton
+            Dim hd As HiddenField
+            Dim hd2 As HiddenField
+
+
+            Dim DDLabs_itm As DropDownList
+            hd2 = CType(e.Item.FindControl("dgBHNALL_hid_uom"), HiddenField)
+
+            hd = CType(e.Item.FindControl("dgBHNALL_hid_itm"), HiddenField)
+            DDLabs_itm = CType(e.Item.FindControl("dgBHNALL_ddl_itm"), DropDownList)
+            ddl_DgSorting(DDLabs_itm, hastbl_bhn, hd.Value.Trim() & "|" & hd2.Value.Trim())
+
+            Updbutton = CType(e.Item.FindControl("Delete"), LinkButton)
+            Updbutton.Attributes("onclick") = "javascript:return ConfirmAction('delete');"
+
+            e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor='lightblue'")
+            If e.Item.ItemType = ListItemType.AlternatingItem Then
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='e9e9e9'")
+            Else
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor='f2f2f2'")
+
+            End If
+        End If
+
+    End Sub
+
+    Sub BHNALL_Delete(ByVal id As String)
+        Dim strOpCd As String = "PR_PR_TRX_BKM_BHN_TEMP_DEL"
+        Dim strParamName As String
+        Dim strParamValue As String
+        Dim intErrNo As Integer
+        strParamName = "IP|UI|LOC|ID"
+        strParamValue = Request.UserHostAddress & "|" & _
+                        strUserId & "|" & _
+                        strLocation & "|" & _
+                        id
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd, strParamName, strParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_BHN_TEMP_DEL&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+    End Sub
+
+    Sub dgBHNALL_Delete(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Dim hid_id As HiddenField = CType(E.Item.FindControl("dgBHNALL_hid_id"), HiddenField)
+        BHNALL_Delete(hid_id.Value)
+        BHNALL_BindPekerjaan_OnLoad()
+    End Sub
+
+    Protected Sub dgBHNALL_ddl_itm_OnSelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Dim ddllist As DropDownList = CType(sender, DropDownList)
+        Dim cell As TableCell = CType(ddllist.Parent, TableCell)
+        Dim item As DataGridItem = CType(cell.Parent, DataGridItem)
+        Dim ddlType As DropDownList = CType(item.Cells(0).FindControl("dgBHNALL_ddl_itm"), DropDownList)
+        Dim tum As Label = CType(item.Cells(1).FindControl("dgBHNALL_lbl_um"), Label)
+        Dim arr As Array
+        arr = Split(ddlType.SelectedItem.Value.Trim(), "|")
+        tum.Text = RTrim(arr(1))
+    End Sub
+#End Region
+
+#End Region
+
+    Sub CopyTR()
+		Dim strOpCd_Up As String = "PR_PR_TRX_BKM_MAIN_GEN_TR"
+
+		Dim SDate As String = Date_Validation(Trim(txtSCopy.Text), False)
+		Dim EDate As String = Date_Validation(Trim(txtECopy.Text), False)
+		
+        Dim SSupir As String = Left(lblsupir.Text.Trim(), InStr(lblsupir.Text.Trim(), "(") - 1)
+		Dim strnotes As String
+        Dim strnopolisi As String = ""
+
+        Dim ParamNama As String
+        Dim ParamValue As String
+        Dim intErrNo As Integer
+
+
+        strnopolisi = ddlnopolisi.SelectedItem.Value.Trim()
+
+        ParamNama = "EC|SD|ED|BKM|LOC"
+        ParamValue = SSupir & "|" & _
+		             SDate  & "|" & _
+                     EDate  & "|" & _  					 
+		             LblidM.Text.Trim & "|" & _
+                     strLocation 
+
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCd_Up, ParamNama, ParamValue)
+			UserMsgBox(Me, "Generate BKM sukses")
+        Catch ex As Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_BKM_MAIN_GEN_TR&errmesg=" & ex.ToString() & "&redirect=")
+        End Try
+		
+	End Sub
+	
+	Sub BtnCopy_OnClick(ByVal Sender As Object, ByVal E As ImageClickEventArgs)
+        If isNew.Value = "True" Then
+            strBKCategory = ddlbkcategory.SelectedItem.Value.Trim()
+            strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+        Else
+            strBKCategory = Left(lblbkcategory.Text.Trim(), InStr(lblbkcategory.Text.Trim(), "(") - 1)
+			strRegBor = ddlreg_bor.SelectedItem.Value.Trim()
+        End If
+
+        If (strRegBor = "R") Then 
+            If Trim(strBKCategory) = "TR" Then
+                    CopyTR()
+			Else
+				UserMsgBox(Me, "Copy BKM hanya berlaku untuk Kategori Traksi")
+            End IF
+        Else
+            UserMsgBox(Me, "Copy BKM hanya berlaku untuk Type Regular")
+        End If
+
+            strBKMCode = LblidM.Text.Trim()
+            isNew.Value = "False"
+            onLoad_Display()
+            onLoad_button()
+        
+    End Sub
+    
+    Function StatusPayroll(ByVal mn As String, ByVal yr As String, ByVal loc As String) As Integer
+        Dim strOpCdSP As String = "PR_PR_TRX_MTHEND_GET_STATUS"
+        Dim objDataSet As New Object()
+        Dim intErrNo As Integer
+        Dim ParamName As String = ""
+        Dim ParamValue As String = ""
+        Dim i As Integer
+
+
+        ParamName = "MN|YR|LOC"
+        ParamValue = mn & "|" & _
+                     yr & "|" & _
+                     loc
+        Try
+            intErrNo = objOk.mtdGetDataCommon(strOpCdSP, ParamName, ParamValue, objDataSet)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_MTHEND_GET_STATUS&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+        If objDataSet.Tables(0).Rows.Count > 0 Then
+            i = objDataSet.Tables(0).Rows(0).Item("Status")
+            If i = 3 Then
+                UserMsgBox(Me, "Proses ditutup, Periode " & mn & "/" & yr & " Sudah Confirm")
+            End If
+        Else
+            i = 0
+        End If
+
+        Return i
+
+    End Function
+	
+    Sub UpdateStatusPayroll(Byval mn as String,Byval yr as String,Byval loc as String)
+        Dim strOpCdSP As String = "PR_PR_TRX_MTHEND_UPD"
+        Dim objDataSet As New Object()
+        Dim intErrNo As Integer
+        Dim ParamName As String = ""
+        Dim ParamValue As String = ""
+      
+       
+        ParamName = "MN|YR|LOC|S1|S2|S3|S4"
+        ParamValue = mn & "|" & _
+                     yr & "|" & _
+                     loc & "|1|||" 
+        Try
+            intErrNo = objOk.mtdInsertDataCommon(strOpCdSP, ParamName, ParamValue)
+        Catch Exp As System.Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=PR_PR_TRX_MTHEND_UPD&errmesg=" & Exp.Message & "&redirect=")
+        End Try
+
+    End Sub
+
+End Class
+'            SEmpName = Mid(Trim(lblEmpCode.Text), InStr(lblEmpCode.Text, "(") + 1, Len(Trim(lblEmpCode.Text)) - InStr(Trim(lblEmpCode.Text), "(") - 1)

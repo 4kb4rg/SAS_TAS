@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_VehRunning" targetNamespace="http://tempuri.org/BD_StdRpt_DS_VehRunning.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_VehRunning.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_VehRunning.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_VEH_RUNNING">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="ItemDescription" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RunQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RunCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ItemDisplayType" type="xs:string"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_VEH_DET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehDesc" type="xs:string" />
+				<xs:element name="PurchaseDate" type="xs:dateTime" />
+				<xs:element name="HPCC" type="xs:string" />
+				<xs:element name="Model" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

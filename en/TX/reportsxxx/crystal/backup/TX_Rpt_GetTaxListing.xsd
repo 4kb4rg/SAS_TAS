@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="TX_Rpt_GetTaxListing" targetNamespace="http://tempuri.org/TX_Rpt_GetTaxListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/TX_Rpt_GetTaxListing.xsd" xmlns:mstns="http://tempuri.org/TX_Rpt_GetTaxListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="TaxReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="TaxInit" type="xs:string" />
+				<xs:element name="TaxDescr" type="xs:string" />
+				<xs:element name="KPPInit" type="xs:string" />
+				<xs:element name="KPPDescr" type="xs:string" />
+				<xs:element name="KPPCity" type="xs:string" />
+				<xs:element name="TaxID" type="xs:string" />
+				<xs:element name="TrxID" type="xs:string" />
+				<xs:element name="DocDate" type="xs:date" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="TaxLnID" type="xs:string" />
+				<xs:element name="TaxObject" type="xs:string" />
+				<xs:element name="SplCode" type="xs:string" />
+				<xs:element name="SplNPWP" type="xs:string" />
+				<xs:element name="SplName" type="xs:string" />
+				<xs:element name="SplAddress" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="DPPAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TaxAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TaxRate" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

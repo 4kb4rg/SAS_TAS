@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PD_StdRpt_DS_OilPalmYieldStatList" targetNamespace="http://tempuri.org/PD_StdRpt_DS_OilPalmYieldStatList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PD_StdRpt_DS_OilPalmYieldStatList.xsd" xmlns:mstns="http://tempuri.org/PD_StdRpt_DS_OilPalmYieldStatList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PD_StdRpt_DS_OilPalmYieldStatList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="PlantingDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="TotalArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="StdPerArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AreaUOM" type="xs:string" minOccurs="0" />
+				<xs:element name="PlantMaterial" type="xs:string" minOccurs="0" />
+				<xs:element name="HarvestStartDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="MthRoundNo" type="xs:decimal" />
+				<xs:element name="ToDateRoundNo" type="xs:decimal" />
+				<xs:element name="MthHarvestManDay" type="xs:decimal" />
+				<xs:element name="ToDateHarvestManDay" type="xs:decimal" />
+				<xs:element name="ActualMthTotalFFB" type="xs:decimal" />
+				<xs:element name="ActualToDateTotalFFB" type="xs:decimal" />
+				<xs:element name="MthBunchNo" type="xs:decimal" />
+				<xs:element name="ToDateBunchNo" type="xs:decimal" />
+				<!-- Comment by YWC on BFR 00027 item 7 -->
+				<!--xs:element name="MthAvgBunchWgt" type="xs:decimal" /-->
+				<!--xs:element name="ToDateAvgBunchWgt" type="xs:decimal" /-->
+				<!--xs:element name="MthYieldPerArea" type="xs:decimal" /-->
+				<!--xs:element name="ToDateYieldPerArea" type="xs:decimal" /-->
+				<!--xs:element name="MthYieldPerHarvestManday" type="xs:decimal" /-->
+				<!--xs:element name="ToDateYieldPerHarvestManDay" type="xs:decimal" /-->
+				<!-- End Comment -->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

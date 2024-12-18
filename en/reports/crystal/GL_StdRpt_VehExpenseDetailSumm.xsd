@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_VehExpenseDetailSumm" targetNamespace="http://tempuri.org/GL_StdRpt_VehExpenseDetailSumm.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_VehExpenseDetailSumm.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_VehExpenseDetailSumm.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_VEHICLEEXPENSEDET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehTypeCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehDesc" type="xs:string" />
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="ModuleCode" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="DocDate" type="xs:dateTime" />
+				<xs:element name="RefDesc" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="BalBD" type="xs:decimal" />
+				<xs:element name="Expenses" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+				<xs:element name="EstExpenditure" type="xs:decimal" />
+				<xs:element name="DocLnId" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

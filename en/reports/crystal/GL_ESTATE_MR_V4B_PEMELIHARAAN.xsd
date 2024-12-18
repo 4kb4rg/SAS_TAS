@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_V4B_PEMELIHARAAN" targetNamespace="http://tempuri.org/GL_ESTATE_MR_V4B_PEMELIHARAAN.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_V4B_PEMELIHARAAN.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_V4B_PEMELIHARAAN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="DIVISI" type="xs:string" />
+				<xs:element name="TBM" type="xs:string" />
+				<xs:element name="KD_PUPUK" type="xs:string" />
+				<xs:element name="NM_PUPUK" type="xs:string" />
+				<xs:element name="UOM" type="xs:string" />
+				<xs:element name="JML_PPK_BI" type="xs:decimal" />
+				<xs:element name="JML_PKK_BI" type="xs:decimal" />
+				<xs:element name="LUAS_BI" type="xs:decimal" />
+				<xs:element name="JML_PPK_SBI" type="xs:decimal" />
+				<xs:element name="JML_PKK_SBI" type="xs:decimal" />
+				<xs:element name="LUAS_SBI" type="xs:decimal" />
+				<xs:element name="reAL_LUAS_BI" type="xs:decimal" />
+				<xs:element name="REAL_LUAS_SBI" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

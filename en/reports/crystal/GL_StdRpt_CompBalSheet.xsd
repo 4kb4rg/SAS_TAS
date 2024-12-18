@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_CompBalSheet" targetNamespace="http://tempuri.org/GL_StdRpt_CompBalSheet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_CompBalSheet.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_CompBalSheet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_CompBalSheet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DispSeq" type="xs:integer"/>
+				<xs:element name="RowId" type="xs:string" />
+				<xs:element name="RowType" type="xs:string" />
+				<xs:element name="RowDesc" type="xs:string" />
+				<xs:element name="ActYTD" type="xs:decimal" />
+				<xs:element name="LastYearEnd" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

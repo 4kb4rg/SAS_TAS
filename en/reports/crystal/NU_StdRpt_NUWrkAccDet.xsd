@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="NU_StdRpt_NUWrkAccDet" targetNamespace="http://tempuri.org/NU_StdRpt_NUWrkAccDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NU_StdRpt_NUWrkAccDet.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_NUWrkAccDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="NU_StdRpt_NUWrkAccDet_main">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="NurseryStage" type="xs:string" />
+				<xs:element name="ActMonth" type="xs:decimal" />
+				<xs:element name="ActTodate" type="xs:decimal" />
+				<xs:element name="ActSeedling" type="xs:decimal" />
+				<xs:element name="ActAverage" type="xs:decimal" />
+				<xs:element name="BudMonth" type="xs:decimal" />
+				<xs:element name="BudTodate" type="xs:decimal" />
+				<xs:element name="BudSeedling" type="xs:decimal" />
+				<xs:element name="BudAverage" type="xs:decimal" />
+				<xs:element name="Variance" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_NUWrkAccDet_Sub1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="ReceivedQtyMonth" type="xs:decimal" />
+				<xs:element name="PlantedQtyMonth" type="xs:decimal" />
+				<xs:element name="TransplantedQtyMonth" type="xs:decimal" />
+				<xs:element name="DoubleTurnQtyMonth" type="xs:decimal" />
+				<xs:element name="CulledQtyMonth" type="xs:decimal" />
+				<xs:element name="TotalQtyMonth" type="xs:decimal" />
+				<xs:element name="DispatchedQtyMonth" type="xs:decimal" />
+				<xs:element name="BalanceQtyMonth" type="xs:decimal" />
+				<xs:element name="ReceivedQtyTodate" type="xs:decimal" />
+				<xs:element name="PlantedQtyTodate" type="xs:decimal" />
+				<xs:element name="TransplantedQtyTodate" type="xs:decimal" />
+				<xs:element name="DoubleTurnQtyTodate" type="xs:decimal" />
+				<xs:element name="CulledQtyTodate" type="xs:decimal" />
+				<xs:element name="TotalQtyTodate" type="xs:decimal" />
+				<xs:element name="DispatchedQtyTodate" type="xs:decimal" />
+				<xs:element name="BalanceQtyTodate" type="xs:decimal" />
+				<xs:element name="BudgettedSeedling" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_NUWrkAccDet_Sub2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="QtyMonth" type="xs:decimal" />
+				<xs:element name="QtyTodate" type="xs:decimal" />
+				<xs:element name="AmountMonth" type="xs:decimal" />
+				<xs:element name="AmountTodate" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

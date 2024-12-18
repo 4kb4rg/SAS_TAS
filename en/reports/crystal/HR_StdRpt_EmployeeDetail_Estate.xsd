@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HR_StdRpt_EmployeeDetail" targetNamespace="http://tempuri.org/HR_StdRpt_EmployeeDetail.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_EmployeeDetail.xsd" xmlns:mstns="http://tempuri.org/HR_StdRpt_EmployeeDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_EmployeeDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="Gender" type="xs:string" />
+				<xs:element name="MaritalStatus" type="xs:string" />
+				<xs:element name="CodeTg" type="xs:string" />
+				<xs:element name="POB" type="xs:string" />
+				<xs:element name="DOB" type="xs:dateTime" />
+				<xs:element name="Religion" type="xs:string" />
+				<xs:element name="BloodType" type="xs:string" />
+				<xs:element name="ICType" type="xs:string" />
+				<xs:element name="ICNo" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="Phone" type="xs:string" />
+				<xs:element name="RecType" type="xs:string" />
+				<xs:element name="DOJ" type="xs:dateTime" />
+				<xs:element name="IDDiv" type="xs:string" />
+				<xs:element name="CodeJbt" type="xs:string" />
+				<xs:element name="CodeSalary" type="xs:string" />
+				<xs:element name="CodeGol" type="xs:string" />
+				<xs:element name="BasicSalary" type="xs:double" />
+				<xs:element name="PremiSalary" type="xs:double" />
+				<xs:element name="TunjSalary" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AR_StdRpt_OfficialReceipt" targetNamespace="http://tempuri.org/AR_StdRpt_OfficialReceipt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AR_StdRpt_OfficialReceipt.xsd" xmlns:mstns="http://tempuri.org/AR_StdRpt_OfficialReceipt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_RECEIPT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReceiptId" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="PrintDate" type="xs:dateTime" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="BillPartyAccCode" type="xs:string" />
+				<xs:element name="TotalAmount" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="ChequeNo" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocName" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="PostCode" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="City" type="xs:string" />
+				<xs:element name="CountryCode" type="xs:string" />
+				<xs:element name="CountryName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

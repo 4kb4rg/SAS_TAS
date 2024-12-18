@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_PieceRatedAttdTrans" targetNamespace="http://tempuri.org/PR_StdRpt_PieceRatedAttdTrans.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_PieceRatedAttdTrans.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_PieceRatedAttdTrans.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_PIECERATEDATTDTRX">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="EmpDesc" type="xs:string" />
+				<xs:element name="AttDate" type="xs:dateTime" />
+				<xs:element name="AttCode" type="xs:string" />
+				<xs:element name="PayType" type="xs:string" />
+				<xs:element name="Manday" type="xs:decimal" />
+				<xs:element name="ADCode" type="xs:string" />
+				<xs:element name="ADDesc" type="xs:string" />
+				<xs:element name="ShiftCode" type="xs:string" />
+				<xs:element name="Shift" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="AvgSlop" type="xs:decimal" />
+				<xs:element name="HillyAreaDiffRate" type="xs:decimal" />
+				<xs:element name="AvgTreeHeight" type="xs:decimal" />
+				<xs:element name="TallPalmDiffRate" type="xs:decimal" />
+				<xs:element name="PayDivCode" type="xs:string" />
+				<xs:element name="PayDivRate" type="xs:decimal" />
+				<xs:element name="MACCode" type="xs:string" />
+				<xs:element name="MACRate" type="xs:decimal" />
+				<xs:element name="ActualHours" type="xs:decimal" />
+				<xs:element name="ShiftAmount" type="xs:decimal" />
+				<xs:element name="Allowance" type="xs:decimal" />
+				<xs:element name="MPOBRate" type="xs:decimal" />
+				<xs:element name="UnitWorked" type="xs:decimal" />
+				<xs:element name="FinalRate" type="xs:decimal" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

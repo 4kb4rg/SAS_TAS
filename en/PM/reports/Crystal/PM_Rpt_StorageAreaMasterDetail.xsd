@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PM_Rpt_StorageAreaMasterDetail" targetNamespace="http://tempuri.org/PM_Rpt_StorageAreaMasterDetail.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_Rpt_StorageAreaMasterDetail.xsd" xmlns:mstns="http://tempuri.org/PM_Rpt_StorageAreaMasterDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PM_Rpt_StorageAreaMasterDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StorageAreaCode" type="xs:string" />
+				<xs:element name="StorageNo" type="xs:string" minOccurs="0" />
+				<xs:element name="StorageTypeCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" minOccurs="0" />
+
+				<xs:element name="LnNo" type="xs:decimal" />
+				<xs:element name="FormulaType" type="xs:string" />
+				<xs:element name="TableCode" type="xs:string" />
+				<xs:element name="OperandType1" type="xs:string" />
+				<xs:element name="OperandValue1" type="xs:decimal" />
+				<xs:element name="OperandType2" type="xs:string" />
+				<xs:element name="OperandValue2" type="xs:decimal" />
+				<xs:element name="Flag1" type="xs:string" />
+				<xs:element name="Flag2" type="xs:string" />
+				<xs:element name="strOperandValue1" type="xs:string" />
+				<xs:element name="strOperandValue2" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

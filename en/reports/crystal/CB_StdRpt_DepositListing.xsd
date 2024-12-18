@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_DepositListing" targetNamespace="http://tempuri.org/CB_StdRpt_DepositListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_DepositListing.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_DepositListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_StdRpt_DepositListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DepositCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Bank" type="xs:string" minOccurs="0" />
+				<xs:element name="BankCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Type" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="BilyetNo" type="xs:string" minOccurs="0" />
+				<xs:element name="AccountNo" type="xs:string" minOccurs="0" />
+				<xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="EndDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="Amount" type="xs:double" minOccurs="0" />
+				<xs:element name="DepositRate" type="xs:double" minOccurs="0" />
+				<xs:element name="CurrencyRate" type="xs:double" minOccurs="0" />
+				<xs:element name="Currency" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="Remarks" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

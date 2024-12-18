@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_X1_STOCK" targetNamespace="http://tempuri.org/GL_ESTATE_MR_X1_STOCK.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_X1_STOCK.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_X1_STOCK.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_X1_STOCK">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="CatID" type="xs:string"  />
+				<xs:element name="Cat_Desc" type="xs:string"  />
+				<xs:element name="SubCatID" type="xs:string"  />
+				<xs:element name="SubCat_Desc" type="xs:string"  />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDesc" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="QtyAYEAR" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyINSBL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyBL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyINBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyINSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyAk" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FA_StdRpt_AssetList" targetNamespace="http://tempuri.org/FA_StdRpt_AssetList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_StdRpt_AssetList.xsd" xmlns:mstns="http://tempuri.org/FA_StdRpt_AssetList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_StdRpt_AssetList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AssetCategory" type="xs:string" />
+        <xs:element name="CategoryDesc" type="xs:string" />
+				<xs:element name="AssetGrpCode" type="xs:string" />
+				<xs:element name="AssetGrpDesc" type="xs:string" />
+        <xs:element name="AssetHeaderCode" type="xs:string" />
+        <xs:element name="HeaderDesc" type="xs:string" />
+				<xs:element name="AssetCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+        <xs:element name="PurchaseDate" type="xs:dateTime" />
+				<xs:element name="AcquisitionMode" type="xs:string" />
+				<xs:element name="AssetCondition" type="xs:string" />
+				<xs:element name="DeptCode" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="UOM" type="xs:string" />
+        <xs:element name="AssetValue" type="xs:decimal" />
+        <xs:element name="AssetDepr" type="xs:decimal" />
+        <xs:element name="NetValue" type="xs:decimal" />
+        <xs:element name="DeprYTD" type="xs:decimal" />
+        <xs:element name="AddNote" type="xs:string" />
+        <xs:element name="FiskalCategory" type="xs:string" />
+        <xs:element name="LifeTime" type="xs:decimal" />
+        <xs:element name="StartDepr" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

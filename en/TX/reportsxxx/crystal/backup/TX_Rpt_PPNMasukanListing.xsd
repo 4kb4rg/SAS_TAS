@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="TX_Rpt_PPNMasukanListing" targetNamespace="http://tempuri.org/TX_Rpt_PPNMasukanListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/TX_Rpt_PPNMasukanListing.xsd" xmlns:mstns="http://tempuri.org/TX_Rpt_PPNMasukanListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="TaxReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="SupplierName" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="DocDate" type="xs:date" />
+				<xs:element name="DocAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TrxID" type="xs:string" />
+				<xs:element name="TrxLnID" type="xs:string" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="FPNo" type="xs:string" />
+				<xs:element name="FPDate" type="xs:date" />
+				<xs:element name="FPAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FPDPPAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AdditionalNote" type="xs:string" />
+				<xs:element name="FPAmountCredited" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FPAmountCreditedNot" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FPAccYear" type="xs:string" />
+				<xs:element name="FPAccMonth" type="xs:string" />
+				<xs:element name="PostAccYear" type="xs:string" />
+				<xs:element name="PostAccMonth" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="IsCheck" type="xs:string" />
+				<xs:element name="Keterangan" type="xs:string" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

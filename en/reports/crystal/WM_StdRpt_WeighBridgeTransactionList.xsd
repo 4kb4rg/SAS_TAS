@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WM_StdRpt_WeighBridge_Ticket_Transacton_List" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_WeighBridge_Ticket_Transacton_List">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LOCCODE" type="xs:string" />
+				<xs:element name="TICKETNO" type="xs:string" minOccurs="0" />
+				<xs:element name="TRANSTYPE" type="xs:string" minOccurs="0" />
+				<xs:element name="PRODUCTCODE" type="xs:string" minOccurs="0" />
+				<xs:element name="CUSTOMERCODE" type="xs:string" minOccurs="0" />
+				<xs:element name="CUSTOMERDOCNO" type="xs:dateTime" />
+				<xs:element name="DELIVERYNOTENO" type="xs:dateTime" />
+				<xs:element name="PL3NO" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TRANSPORTERCODE" type="xs:string" />
+				<xs:element name="VEHICLECODE" type="xs:string" />
+				<xs:element name="DRIVERNAME" type="xs:string" />
+				<xs:element name="DRIVERIC" type="xs:string" />
+				<xs:element name="PLANTINGYEAR" type="xs:string" />
+				<xs:element name="BLKCODE" type="xs:string" />
+				<xs:element name="INDATE" type="xs:dateTime" />
+				<xs:element name="FIRSTWEIGHT" type="xs:decimal" />
+				<xs:element name="OUTDATE" type="xs:dateTime" />
+				<xs:element name="SECONDWEIGHT" type="xs:decimal" />
+				<xs:element name="NETWEIGHT" type="xs:decimal" />
+				<xs:element name="DATERECEIVED" type="xs:dateTime" />
+				<xs:element name="BUYERFIRSTWEIGHT" type="xs:decimal" />
+				<xs:element name="BUYERSECONDWEIGHT" type="xs:decimal" />
+				<xs:element name="BUYERNETWEIGHT" type="xs:decimal" />
+				<xs:element name="MATCHINGID" type="xs:string" />
+				<xs:element name="DOWNLOADBATCHNO" type="xs:string" />
+				<xs:element name="REMARKS" type="xs:string" />
+				<xs:element name="STATUS" type="xs:string" />
+				<xs:element name="UPDATEDATE" type="xs:dateTime" />
+				<xs:element name="UPDATEID" type="xs:string" />
+				<xs:element name="Username" type="xs:string" />
+				<xs:element name="Destination" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

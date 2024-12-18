@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_NotaDebetAntarUnit" targetNamespace="http://tempuri.org/GL_StdRpt_NotaDebetAntarUnit.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_NotaDebetAntarUnit.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_NotaDebetAntarUnit.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_NotaDebetAntarUnit">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="NoUrut" type="xs:int" />
+        <xs:element name="AccMonth" type="xs:int" />
+        <xs:element name="AccYear" type="xs:int" />
+        <xs:element name="LocFrom" type="xs:string" />
+        <xs:element name="DocIDFrom" type="xs:string" />
+        <xs:element name="DocLnIDFrom" type="xs:string" />
+        <xs:element name="DocDateFrom" type="xs:dateTime" />
+				<xs:element name="DescrFrom" type="xs:string" />
+				<xs:element name="AmountFrom" type="xs:decimal" />
+        <xs:element name="LocTo" type="xs:string" />
+        <xs:element name="DocIDTo" type="xs:string" />
+        <xs:element name="DocDateTo" type="xs:dateTime" />
+        <xs:element name="DescrTo" type="xs:string" />
+        <xs:element name="AmountTo" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

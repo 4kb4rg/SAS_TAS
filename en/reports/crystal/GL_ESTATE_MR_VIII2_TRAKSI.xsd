@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_VIII2_TRAKSI" targetNamespace="http://tempuri.org/GL_ESTATE_MR_VIII2_TRAKSI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_VIII2_TRAKSI.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_VIII2_TRAKSI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="VEH_CODE" type="xs:string" />
+				<xs:element name="VEH_NAME" type="xs:string" />
+				<xs:element name="VEH_TYPE" type="xs:string" />
+				<xs:element name="JNS_MERK" type="xs:string" />
+				<xs:element name="YEAR_MADE" type="xs:decimal" />
+				<xs:element name="YEAR_REPLACE" type="xs:decimal" />
+				<xs:element name="OPRASI_BI" type="xs:decimal" />
+				<xs:element name="BDOWN_BI" type="xs:decimal" />
+				<xs:element name="DAY_ACT_BI" type="xs:decimal" />
+				<xs:element name="PSN_ACT_BI" type="xs:decimal" />
+				<xs:element name="DAY_NOACT_BI" type="xs:decimal" />
+				<xs:element name="PSN_NOACT_BI" type="xs:decimal" />
+				<xs:element name="OPRASI_SBI" type="xs:decimal" />
+				<xs:element name="BDOWN_SBI" type="xs:decimal" />
+				<xs:element name="DAY_ACT_SBI" type="xs:decimal" />
+				<xs:element name="PSN_ACT_SBI" type="xs:decimal" />
+				<xs:element name="DAY_NOACT_SBI" type="xs:decimal" />
+				<xs:element name="PSN_NOACT_SBII" type="xs:decimal" />
+				<xs:element name="HariKerja_Bi" type="xs:decimal" />
+				<xs:element name="HariKerja_Sbi" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

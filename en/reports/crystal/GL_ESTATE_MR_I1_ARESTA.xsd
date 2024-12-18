@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_I1_ARESTA" targetNamespace="http://tempuri.org/GL_ESTATE_MR_I1_ARESTA.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_I1_ARESTA.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_I1_ARESTA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_I1_ARESTA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BlkDesc" type="xs:string" />
+				<xs:element name="TotalArea" type="xs:decimal" />
+				<xs:element name="D1" type="xs:decimal"  />
+				<xs:element name="D2" type="xs:decimal"  />
+				<xs:element name="D3" type="xs:decimal"  />
+				<xs:element name="D4" type="xs:decimal"  />
+				<xs:element name="D5" type="xs:decimal"  />
+				<xs:element name="D6" type="xs:decimal"  />
+				<xs:element name="D7" type="xs:decimal"  />
+				<xs:element name="D8" type="xs:decimal"  />
+				<xs:element name="D9" type="xs:decimal"  />
+				<xs:element name="D10" type="xs:decimal" />
+				<xs:element name="BBT" type="xs:decimal" />
+				<xs:element name="BlkType" type="xs:string" />
+				<xs:element name="GrpType" type="xs:string" />
+				<xs:element name="RptBlkType" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_DaftarAbsensi" targetNamespace="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_ListSalAndAllw.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd">
+	<xs:element name="PR_DaftarAbsensi_Estate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RptName" type="xs:string" minOccurs="0" />
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="Accyear" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="SupplierName" type="xs:string" />
+				<xs:element name="POCode" type="xs:string" />
+				<xs:element name="PORefCode" type="xs:string" />
+				<xs:element name="QtyPO" type="xs:decimal" />
+				<xs:element name="CostPO" type="xs:decimal" />
+				<xs:element name="Codejob" type="xs:string" />
+				<xs:element name="JobName" type="xs:string" />
+				<xs:element name="CoaJob" type="xs:string" />
+				<xs:element name="BlokCode" type="xs:string" />
+				<xs:element name="totalarea" type="xs:decimal" />
+				<xs:element name="_1" type="xs:decimal" />
+				<xs:element name="_2" type="xs:decimal" />
+				<xs:element name="_3" type="xs:decimal" />
+				<xs:element name="_4" type="xs:decimal" />
+				<xs:element name="_5" type="xs:decimal" />
+				<xs:element name="_6" type="xs:decimal" />
+				<xs:element name="_7" type="xs:decimal" />
+				<xs:element name="_8" type="xs:decimal" />
+				<xs:element name="_9" type="xs:decimal" />
+				<xs:element name="_10" type="xs:decimal" />
+				<xs:element name="_11" type="xs:decimal" />
+				<xs:element name="_12" type="xs:decimal" />
+				<xs:element name="_13" type="xs:decimal" />
+				<xs:element name="_14" type="xs:decimal" />
+				<xs:element name="_15" type="xs:decimal" />
+				<xs:element name="_16" type="xs:decimal" />
+				<xs:element name="_17" type="xs:decimal" />
+				<xs:element name="_18" type="xs:decimal" />
+				<xs:element name="_19" type="xs:decimal" />
+				<xs:element name="_20" type="xs:decimal" />
+				<xs:element name="_21" type="xs:decimal" />
+				<xs:element name="_22" type="xs:decimal" />
+				<xs:element name="_23" type="xs:decimal" />
+				<xs:element name="_24" type="xs:decimal" />
+				<xs:element name="_25" type="xs:decimal" />
+				<xs:element name="_26" type="xs:decimal" />
+				<xs:element name="_27" type="xs:decimal" />
+				<xs:element name="_28" type="xs:decimal" />
+				<xs:element name="_29" type="xs:decimal" />
+				<xs:element name="_30" type="xs:decimal" />
+				<xs:element name="_31" type="xs:decimal" />
+				<xs:element name="total" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

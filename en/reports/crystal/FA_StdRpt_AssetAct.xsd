@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FA_StdRpt_AssetAct" targetNamespace="http://tempuri.org/FA_StdRpt_AssetAct.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_StdRpt_AssetAct.xsd" xmlns:mstns="http://tempuri.org/FA_StdRpt_AssetAct.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_StdRpt_AssetAct">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AssetCategory" type="xs:string" />
+				<xs:element name="CategoryDesc" type="xs:string" />
+				<xs:element name="AssetHeaderCode" type="xs:string" />
+				<xs:element name="HeaderDesc" type="xs:string" />
+				<xs:element name="AssetCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RefDate" type="xs:dateTime" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="TxID" type="xs:string" />
+				<xs:element name="TxType" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="AssetValue" type="xs:decimal" />
+				<xs:element name="AccumDeprValue" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

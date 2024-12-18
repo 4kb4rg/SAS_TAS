@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_VehicleUsage_Detail" targetNamespace="http://tempuri.org/GL_StdRpt_VehicleUsage_Detail.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_VehicleUsage_Detail.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_VehicleUsage_Detail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_VEHUSAGE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="VehUsageID" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehDesc" type="xs:string" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="StatusDesc" type="xs:string" />
+				<xs:element name="VehUsageLnID" type="xs:string" />
+				<xs:element name="TransactDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="ChargeLocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehActCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehActDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="AdditionalNote" type="xs:string" minOccurs="0" />
+				<xs:element name="RunHourFrom" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RunHourTo" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UsageUnit" type="xs:decimal" minOccurs="0" />
+        <xs:element name="WPUnit" type="xs:decimal" minOccurs="0" />
+        <xs:element name="UOM" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

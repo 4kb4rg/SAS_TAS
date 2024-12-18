@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_II3_PERSONALIA" targetNamespace="http://tempuri.org/GL_ESTATE_MR_II3_PERSONALIA.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_II3_PERSONALIA.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_II3_PERSONALIA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_II3_PERSONALIA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				
+				<xs:element name="GID" type="xs:string"  />
+				<xs:element name="GName" type="xs:string"  />
+				<xs:element name="AID" type="xs:string"  />
+				<xs:element name="Name" type="xs:string"  />
+				
+				<xs:element name="DBBTL" type="xs:decimal"  />
+				<xs:element name="DBBTP" type="xs:decimal"  />
+								
+				<xs:element name="D1L" type="xs:decimal"  />
+				<xs:element name="D1P" type="xs:decimal"  />
+				
+				<xs:element name="D2L" type="xs:decimal"  />
+				<xs:element name="D2P" type="xs:decimal"  />
+				
+				<xs:element name="D3L" type="xs:decimal"  />
+				<xs:element name="D3P" type="xs:decimal"  />
+				
+				<xs:element name="D4L" type="xs:decimal"  />
+				<xs:element name="D4P" type="xs:decimal"  />
+				
+				<xs:element name="D5L" type="xs:decimal"  />
+				<xs:element name="D5P" type="xs:decimal"  />
+				
+				<xs:element name="D6L" type="xs:decimal"  />
+				<xs:element name="D6P" type="xs:decimal"  />
+				
+				<xs:element name="D7L" type="xs:decimal"  />
+				<xs:element name="D7P" type="xs:decimal"  />
+				
+				<xs:element name="D8L" type="xs:decimal"  />
+				<xs:element name="D8P" type="xs:decimal"  />
+				
+				<xs:element name="D9L" type="xs:decimal"  />
+				<xs:element name="D9P" type="xs:decimal"  />
+				
+				<xs:element name="D10L" type="xs:decimal" />
+				<xs:element name="D10P" type="xs:decimal" />
+				
+				<xs:element name="DTRKL" type="xs:decimal" />
+				<xs:element name="DTRKP" type="xs:decimal" />
+				
+				<xs:element name="DSECL" type="xs:decimal" />
+				<xs:element name="DSECP" type="xs:decimal" />
+				
+				<xs:element name="DKTRL" type="xs:decimal" />
+				<xs:element name="DKTRP" type="xs:decimal" />
+				
+				<xs:element name="TOTL" type="xs:decimal" />
+				<xs:element name="TOTP" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

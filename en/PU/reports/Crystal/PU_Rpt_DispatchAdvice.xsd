@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PU_Rpt_DispatchAdvice" targetNamespace="http://tempuri.org/PU_Rpt_DispatchAdvice.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_Rpt_DispatchAdvice.xsd" xmlns:mstns="http://tempuri.org/PU_Rpt_DispatchAdvice.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="DispAdv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DispAdvID" type="xs:string" />
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="ToLocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Remark" type="xs:string" minOccurs="0" />
+        <xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+        <xs:element name="AccYear" type="xs:string" minOccurs="0" />
+        <xs:element name="Status" type="xs:string" minOccurs="0" />
+        <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PrintStatus" type="xs:string" minOccurs="0" />
+        <xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+        <xs:element name="ToLocName" type="xs:string" minOccurs="0" />
+        <xs:element name="UserName" type="xs:string" />
+        <xs:element name="ToLocAccCode" type="xs:string" />
+        <xs:element name="DispAdvType" type="xs:string" />
+        <xs:element name="Transporter" type="xs:string" />
+        <xs:element name="AntarTerima1" type="xs:string" />
+        <xs:element name="AntarTerima2" type="xs:string" />
+        <xs:element name="AntarPeriksa1" type="xs:string" />
+        <xs:element name="AntarPeriksa2" type="xs:string" />
+        <xs:element name="AntarDiketahui1" type="xs:string" />
+        <xs:element name="AntarDiketahui2" type="xs:string" />
+        <xs:element name="PIC" type="xs:string" />
+        <xs:element name="Address" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="telno" type="xs:string" />
+        <xs:element name="DispCat" type="xs:string" />
+        <xs:element name="ETDLocDate" type="xs:dateTime" />
+        <xs:element name="ETAToLocToDate" type="xs:dateTime" />
+        <xs:element name="ETASecLocToDate" type="xs:dateTime" />
+        <xs:element name="ETASecLocDesc" type="xs:string" />
+        <xs:element name="FromLocDesc" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DispAdvLn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DispAdvID" type="xs:string" />
+        <xs:element name="GoodsRcvLnID" type="xs:string" />
+        <xs:element name="GoodsRcvID" type="xs:string" />
+        <xs:element name="ItemCode" type="xs:string" />
+        <xs:element name="QtyDisp" type="xs:decimal" />
+        <xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AccCode" type="xs:string" minOccurs="0" />
+        <xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+        <xs:element name="VehCode" type="xs:string" minOccurs="0" />
+        <xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+        <xs:element name="ItemDesc" type="xs:string" />
+        <xs:element name="UOMCode" type="xs:string" />
+        <xs:element name="POID" type="xs:string" />
+        <xs:element name="PRID" type="xs:string" minOccurs="0" />
+        <xs:element name="PRRefID" type="xs:string" minOccurs="0" />
+        <xs:element name="StockQty" type="xs:decimal" minOccurs="0" />
+        <xs:element name="SuppName" type="xs:string" minOccurs="0" />
+        <xs:element name="Catatan" type="xs:string" />
+        <xs:element name="AdditionalNote" type="xs:string" />
+        <xs:element name="Transporter" type="xs:string" />
+        <xs:element name="DispAdvLnID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

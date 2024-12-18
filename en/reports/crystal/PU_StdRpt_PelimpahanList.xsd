@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PU_StdRpt_PelimpahanList" targetNamespace="http://tempuri.org/PU_StdRpt_PelimpahanList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_StdRpt_PelimpahanList.xsd" xmlns:mstns="http://tempuri.org/PU_StdRpt_PelimpahanList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="PU_StdRpt_PelimpahanList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="compcode" type="xs:string" minOccurs="0" />
+        <xs:element name="compname" type="xs:string" minOccurs="0" />
+        <xs:element name="pelimpahanid" type="xs:string" minOccurs="0" />
+        <xs:element name="createdate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="status" type="xs:string" minOccurs="0" />
+        <xs:element name="prid" type="xs:string" minOccurs="0" />
+        <xs:element name="itemcode" type="xs:string" minOccurs="0" />
+        <xs:element name="UOMCode" type="xs:string" minOccurs="0" />
+        <xs:element name="qtyreq" type="xs:decimal" minOccurs="0" />
+        <xs:element name="cost" type="xs:decimal" minOccurs="0" />
+        <xs:element name="amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="description" type="xs:string" minOccurs="0" />
+        <xs:element name="loccode" type="xs:string" minOccurs="0" />
+        <xs:element name="locname" type="xs:string" minOccurs="0" />
+        <xs:element name="pelimpahantype" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

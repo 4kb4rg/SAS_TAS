@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_AreaStmt" targetNamespace="http://tempuri.org/BD_StdRpt_DS_AreaStmt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_AreaStmt.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_AreaStmt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_MATURE_AREA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AreaCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AreaSize" type="xs:decimal" />
+				<xs:element name="AreaPercentage" type="xs:decimal" />
+				<xs:element name="PlantMaterial" type="xs:string" />
+				<xs:element name="AgeGroup" type="xs:string" />
+				<xs:element name="PlantHeight" type="xs:string" />
+				<xs:element name="AreaTerrain" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_NEW_AREA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AreaCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AreaSize" type="xs:decimal" />
+				<xs:element name="AreaPercentage" type="xs:decimal" />
+				<xs:element name="PlantMaterial" type="xs:string" />
+				<xs:element name="AgeGroup" type="xs:string" />
+				<xs:element name="PlantHeight" type="xs:string" />
+				<xs:element name="AreaTerrain" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_UNPLANTED_AREA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AreaCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AreaSize" type="xs:decimal" />
+				<xs:element name="AreaPercentage" type="xs:decimal" />
+				<xs:element name="PlantMaterial" type="xs:string" />
+				<xs:element name="AgeGroup" type="xs:string" />
+				<xs:element name="PlantHeight" type="xs:string" />
+				<xs:element name="AreaTerrain" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_ADJUSTMENT_AREA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AreaCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AreaSize" type="xs:decimal" />
+				<xs:element name="AreaPercentage" type="xs:decimal" />
+				<xs:element name="PlantMaterial" type="xs:string" />
+				<xs:element name="AgeGroup" type="xs:string" />
+				<xs:element name="PlantHeight" type="xs:string" />
+				<xs:element name="AreaTerrain" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_TITLE_AREA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TitleArea" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

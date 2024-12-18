@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_ItemToMachineList" targetNamespace="http://tempuri.org/IN_StdRpt_ItemToMachineList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_ItemToMachineList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_ItemToMachineList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IN_StdRpt_ItemToMachineList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BlkDescr" type="xs:string" />
+				<xs:element name="SubBlkCode" type="xs:string" />
+				<xs:element name="SubBlkDescr" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDescr" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="LinesNo" type="xs:string" />
+				<xs:element name="LinesDesc" type="xs:string" />
+				<xs:element name="InstallDate" type="xs:date" />
+				<xs:element name="ReplaceDate" type="xs:date" />
+				<xs:element name="ReplaceHM" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

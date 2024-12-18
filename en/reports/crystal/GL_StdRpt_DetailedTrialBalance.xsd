@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_DetailedTrialBalance" targetNamespace="http://tempuri.org/GL_StdRpt_DetailedTrialBalance.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_DetailedTrialBalance.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_DetailedTrialBalance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_DET_TRIAL_BALANCE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="DocDate" type="xs:dateTime" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:int" />
+				<xs:element name="AccYear" type="xs:int" />
+				<xs:element name="PriceAmount" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+				<xs:element name="DispType" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

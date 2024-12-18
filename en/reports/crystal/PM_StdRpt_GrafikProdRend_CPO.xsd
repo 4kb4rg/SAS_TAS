@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PM_StdRpt_GrafikProdRend_CPO" targetNamespace="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:mstns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WM_STDRPT_PRODUCTION_GRAFIK_CPO_GET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="p_Tahun" type="xs:string" />
+        <xs:element name="p_Bulan" type="xs:string" />
+        <xs:element name="DateProd" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="CPO_ExtrakNetto" type="xs:decimal" minOccurs="0" />
+        <xs:element name="NamaPerusahaan" type="xs:string" />
+        <xs:element name="NamaUnit" type="xs:string" />
+        <xs:element name="Alamat" type="xs:string" />
+        <xs:element name="Kota" type="xs:string" />
+        <xs:element name="Kecamatan" type="xs:string" />
+        <xs:element name="Propinsi" type="xs:string" />
+        <xs:element name="Telp" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

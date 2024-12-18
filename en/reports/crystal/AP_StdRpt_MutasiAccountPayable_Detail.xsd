@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AP_StdRpt_MutasiAccountPayable" targetNamespace="http://tempuri.org/AP_StdRpt_MutasiAccountPayable.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_StdRpt_MutasiAccountPayable.xsd" xmlns:mstns="http://tempuri.org/AP_StdRpt_MutasiAccountPayable.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AP_StdRpt_MutasiAccountPayable">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="SaldoAwal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Penambahan1" type="xs:decimal" minOccurs="0" />
+ 				<xs:element name="Penambahan2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Pengurangan1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Pengurangan2" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AP_StdRpt_MutasiAccountPayable_Plus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="IDPlus1a" type="xs:string" minOccurs="0" />
+				<xs:element name="IDPlus1b" type="xs:string" minOccurs="0" />
+				<xs:element name="Penambahan1" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AP_StdRpt_MutasiAccountPayable_Plus2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="IDPlus2a" type="xs:string" minOccurs="0" />
+				<xs:element name="IDPlus2b" type="xs:string" minOccurs="0" />
+				<xs:element name="Penambahan2" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AP_StdRpt_MutasiAccountPayable_Min">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="IDMin1a" type="xs:string" minOccurs="0" />
+				<xs:element name="IDMin1b" type="xs:string" minOccurs="0" />
+				<xs:element name="Pengurangan1" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AP_StdRpt_MutasiAccountPayable_Min2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="IDMin2a" type="xs:string" minOccurs="0" />
+				<xs:element name="IDMin2b" type="xs:string" minOccurs="0" />
+				<xs:element name="Pengurangan2" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="AP_StdRpt_MutasiAccountPayable_SaldoAwalDet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DocID" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AP_StdRpt_MutasiAccountPayable_SaldoAkhirDet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DocID" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_LHPT_Divisi" targetNamespace="http://tempuri.org/PR_StdRpt_LHPT_Divisi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_LHPT_Divisi.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_LHPT_Divisi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="PR_StdRpt_LHPT_Divisi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CompCode" type="xs:string" />
+        <xs:element name="Company" type="xs:string" />
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="Location" type="xs:string" />
+        <xs:element name="IDDiv" type="xs:string" />
+        <xs:element name="Divisi" type="xs:string" />
+        <xs:element name="BKMDate" type="xs:dateTime" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="job" type="xs:string" />
+        <xs:element name="YearPlan" type="xs:string" />
+        <xs:element name="BlkCode" type="xs:string" />
+        <xs:element name="TotalArea" type="xs:decimal" />
+		<xs:element name="Ha" type="xs:decimal" />
+		<xs:element name="SHA" type="xs:decimal" />
+        <xs:element name="rotasi" type="xs:decimal" />
+        <xs:element name="UOM" type="xs:string" />
+        <xs:element name="Hasil" type="xs:decimal" />
+        <xs:element name="sHasil" type="xs:decimal" />
+        <xs:element name="HK" type="xs:decimal" />
+        <xs:element name="sHK" type="xs:decimal" />
+        <xs:element name="codeitem" type="xs:string" />
+        <xs:element name="item" type="xs:string" />
+        <xs:element name="qty" type="xs:decimal" />
+        <xs:element name="sqty" type="xs:decimal" />
+        <xs:element name="uomitem" type="xs:string" />
+        <xs:element name="SumHasil" type="xs:decimal" />
+        <xs:element name="SumSHasil" type="xs:decimal" />
+        <xs:element name="SumHk" type="xs:decimal" />
+        <xs:element name="SumSHk" type="xs:decimal" />
+        <xs:element name="Rp1" type="xs:decimal" />
+        <xs:element name="SRp1" type="xs:decimal" />
+        <xs:element name="Budget" type="xs:decimal" />
+        <xs:element name="Upah" type="xs:decimal" />
+        <xs:element name="SUpah" type="xs:decimal" />
+        <xs:element name="Lembur" type="xs:decimal" />
+        <xs:element name="SLembur" type="xs:decimal" />
+        <xs:element name="Premi" type="xs:decimal" />
+        <xs:element name="SPremi" type="xs:decimal" />
+        <xs:element name="KGPanen" type="xs:decimal" />
+        <xs:element name="SKGPanen" type="xs:decimal" />
+        <xs:element name="uom2" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PR_StdRpt_LHPT_BhnSumary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CodeItem" type="xs:string" />
+        <xs:element name="Item" type="xs:string" />
+        <xs:element name="Qty" type="xs:decimal" />
+        <xs:element name="sQty" type="xs:decimal" />
+        <xs:element name="UOM" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PR_StdRpt_LHPT_JobSumary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="job" type="xs:string" />
+        <xs:element name="hasil" type="xs:decimal" />
+        <xs:element name="shasil" type="xs:decimal" />
+        <xs:element name="hk" type="xs:decimal" />
+        <xs:element name="shk" type="xs:decimal" />
+        <xs:element name="UOM" type="xs:string" />
+        <xs:element name="Rp" type="xs:decimal" />
+        <xs:element name="SRp" type="xs:decimal" />
+        <xs:element name="Upah" type="xs:decimal" />
+        <xs:element name="SUpah" type="xs:decimal" />
+        <xs:element name="Lembur" type="xs:decimal" />
+        <xs:element name="SLembur" type="xs:decimal" />
+        <xs:element name="Premi" type="xs:decimal" />
+        <xs:element name="SPremi" type="xs:decimal" />
+        <xs:element name="KGPanen" type="xs:decimal" />
+        <xs:element name="SKGPanen" type="xs:decimal" />
+        <xs:element name="uom2" type="xs:string" />
+        <xs:element name="GroupKerja" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

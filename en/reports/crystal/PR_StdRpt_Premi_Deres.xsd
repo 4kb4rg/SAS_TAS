@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_Premi_Deres" targetNamespace="http://tempuri.org/PR_StdRpt_Premi_Deres.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_Premi_Deres.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_Premi_Deres.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_Premi_Deres.xsd">
+	<xs:element name="PR_StdRpt_Premi_Deres">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RptName" type="xs:string" minOccurs="0" />
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocName" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="MandorCode" type="xs:string" />
+				<xs:element name="KCSCode" type="xs:string" />
+				<xs:element name="BlokCode" type="xs:string" />
+				<xs:element name="TotalHK" type="xs:decimal" />
+				<xs:element name="TotalLatex" type="xs:decimal" />
+				<xs:element name="TotalGT" type="xs:decimal" />
+				<xs:element name="TotalHKK" type="xs:decimal" />
+				<xs:element name="TotalLM" type="xs:decimal" />
+				<xs:element name="KKK_Bss" type="xs:decimal" />
+				<xs:element name="LM_Bss" type="xs:decimal" />
+				<xs:element name="PremiKerajinan" type="xs:decimal" />
+				<xs:element name="KKK_Ov" type="xs:decimal" />
+				<xs:element name="KKK_Rp" type="xs:decimal" />
+				<xs:element name="LM_Ov" type="xs:decimal" />
+				<xs:element name="LM_Rp" type="xs:decimal" />
+				<xs:element name="GT_Ov" type="xs:decimal" />
+				<xs:element name="GT_Rp" type="xs:decimal" />
+				<xs:element name="Total" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_StdRpt_Premi_Mandor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="MandorCode" type="xs:string" />
+				<xs:element name="BlokCode" type="xs:string" />
+				<xs:element name="MandorName" type="xs:string" />
+				<xs:element name="TotPremi" type="xs:decimal" />
+				<xs:element name="TotEmp" type="xs:decimal" />
+				<xs:element name="TotPremiMDR" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_StdRpt_Premi_KCS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="KCSCode" type="xs:string" />
+				<xs:element name="BlokCode" type="xs:string" />
+				<xs:element name="KCSName" type="xs:string" />
+				<xs:element name="TotPremi" type="xs:decimal" />
+				<xs:element name="TotEmp" type="xs:decimal" />
+				<xs:element name="TotPremiKCS" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

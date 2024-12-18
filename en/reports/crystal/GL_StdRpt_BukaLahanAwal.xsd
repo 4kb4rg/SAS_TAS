@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_BukaLahanAwal" targetNamespace="http://tempuri.org/GL_StdRpt_BukaLahanAwal.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_BukaLahanAwal.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_BukaLahanAwal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BUKALAHANAWAL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LCArea" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BlkUOM" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="ActCode" type="xs:string" />
+				<xs:element name="SubActCode" type="xs:string" />
+				<xs:element name="ActDescr" type="xs:string" />
+				<xs:element name="Amount_OnMonth" type="xs:decimal" />
+				<xs:element name="WorkProd_OnMonth" type="xs:decimal" />
+				<xs:element name="Amount_ToMonth" type="xs:decimal" />
+				<xs:element name="WorkProd_ToMonth" type="xs:decimal" />
+				<xs:element name="AmtBudget_OnMonth" type="xs:decimal" />
+				<xs:element name="WPBudget_OnMonth" type="xs:decimal" />
+				<xs:element name="AmtBudget_ToMonth" type="xs:decimal" />
+				<xs:element name="WPBudget_ToMonth" type="xs:decimal" />
+				<xs:element name="AmtYrBudget" type="xs:decimal" />
+				<xs:element name="WPYrBudget" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

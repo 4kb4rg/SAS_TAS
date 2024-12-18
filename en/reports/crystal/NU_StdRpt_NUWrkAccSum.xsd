@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="NU_StdRpt_NuWrkAccSum" targetNamespace="http://tempuri.org/NU_StdRpt_NuWrkAccSum.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NU_StdRpt_NuWrkAccSum.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_NuWrkAccSum.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="NU_StdRpt_NUWrkAccSum_Sub1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="BatchNoDesc" type="xs:string" />
+				<xs:element name="RowId" type="xs:string" />
+				<xs:element name="RowName" type="xs:string" />
+				<xs:element name="ColName" type="xs:string" />
+				<xs:element name="CellData" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_NUWrkAccSum_Sub2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="BatchNoDesc" type="xs:string" />
+				<xs:element name="RowId" type="xs:string" />
+				<xs:element name="RowName" type="xs:string" />
+				<xs:element name="ColName" type="xs:string" />
+				<xs:element name="CellData" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_NUWrkAccSum_Sub3">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="BatchNoDesc" type="xs:string" />
+				<xs:element name="RowId" type="xs:string" />
+				<xs:element name="RowName" type="xs:string" />
+				<xs:element name="ColName" type="xs:string" />
+				<xs:element name="CellData" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_NUWrkAccSum_Sub4">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="BatchNoDesc" type="xs:string" />
+				<xs:element name="RowId" type="xs:string" />
+				<xs:element name="RowName" type="xs:string" />
+				<xs:element name="CellData" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_NUWrkAccSum">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

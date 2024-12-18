@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_GajiKecil_Estate" targetNamespace="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_ListSalAndAllw.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd">
+  <xs:element name="PR_TenagaBorongan_Estate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="IDDIv" type="xs:string" minOccurs="0" />
+        <xs:element name="CodeBkm" type="xs:string" />
+        <xs:element name="BKMDate" type="xs:date" />
+        <xs:element name="Mandor" type="xs:string" />
+        <xs:element name="EmpName" type="xs:string" />
+        <xs:element name="CodeAloJob" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Hasil" type="xs:decimal" />
+        <xs:element name="Rate" type="xs:decimal" />
+        <xs:element name="RpBorongan" type="xs:decimal" />
+        <xs:element name="CompCode" type="xs:string" />
+        <xs:element name="Company" type="xs:string" />
+        <xs:element name="Location" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

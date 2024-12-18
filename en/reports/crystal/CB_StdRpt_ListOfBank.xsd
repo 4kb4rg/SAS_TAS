@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_ListOfBank" targetNamespace="http://tempuri.org/CB_StdRpt_ListOfBank.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_DepositListing.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_ListOfBank.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_StdRpt_ListOfBank">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BankCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AccNo" type="xs:string" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BankTransCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="Saldo" type="xs:double" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

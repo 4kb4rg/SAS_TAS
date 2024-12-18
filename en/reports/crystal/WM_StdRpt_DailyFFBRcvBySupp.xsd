@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WM_StdRpt_Daily_FFBRcv_BySupp" targetNamespace="http://tempuri.org/WM_StdRpt_Daily_FFBRcv_BySupp.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_Daily_FFBRcv_BySupp.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_Daily_FFBRcv_BySupp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_DAILY_FFB_SUPPLIER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SuppType" type="xs:string" />
+				<xs:element name="OutDate" type="xs:dateTime" />
+				<xs:element name="CustomerCode" type="xs:string" />
+				<xs:element name="FigCol" type="xs:decimal" />
+				<xs:element name="ColName" type="xs:string" />
+				<xs:element name="ColInd" type="xs:string" />
+				<xs:element name="ind" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

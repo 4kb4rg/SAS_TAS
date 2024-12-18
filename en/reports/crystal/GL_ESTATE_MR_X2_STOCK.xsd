@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_X2_STOCK" targetNamespace="http://tempuri.org/GL_ESTATE_MR_X2_STOCK.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_X2_STOCK.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_X2_STOCK.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_X2_STOCK">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="CatID" type="xs:string"  />
+				<xs:element name="Cat_Desc" type="xs:string"  />
+				<xs:element name="SubCatID" type="xs:string"  />
+				<xs:element name="SubCat_Desc" type="xs:string"  />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDesc" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				
+				<xs:element name="QtyAwBL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBL7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBLL" type="xs:decimal" minOccurs="0" />
+				
+				<xs:element name="QtyAwBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBI7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTBIL" type="xs:decimal" minOccurs="0" />
+				
+				<xs:element name="QtyAwSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBI7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOUTSBIL" type="xs:decimal" minOccurs="0" />
+				
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_RINCIANPERSEDIAAN" targetNamespace="http://tempuri.org/GL_StdRpt_RincianPersediaan.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_RincianPersediaan.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_RincianPersediaan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_RINCIANPERSEDIAAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="rptname" type="xs:string" />
+				<xs:element name="nodec" type="xs:string" />
+				<xs:element name="compcode" type="xs:string" />
+				<xs:element name="company" type="xs:string" />
+				<xs:element name="loccode" type="xs:string" />
+				<xs:element name="location" type="xs:string" />
+				<xs:element name="accmonth" type="xs:string" />
+				<xs:element name="accyear" type="xs:string" />
+				<xs:element name="phymonth" type="xs:string" />
+				<xs:element name="phyyear" type="xs:string" />
+				<xs:element name="levelcode" type="xs:string" />
+				<xs:element name="levelname" type="xs:string" />
+				<xs:element name="prodmodelcode" type="xs:string" />
+				<xs:element name="prodmodel" type="xs:string" />
+				<xs:element name="prodtypecode" type="xs:string" />
+				<xs:element name="prodtype" type="xs:string" />
+				<xs:element name="inbegyearamt" type="xs:decimal" />
+				<xs:element name="outbegyearamt" type="xs:decimal" />
+				<xs:element name="inmonthamt" type="xs:decimal" />
+				<xs:element name="outmonthamt" type="xs:decimal" />
+				<xs:element name="inallmonthamt" type="xs:decimal" />
+				<xs:element name="outallmonthamt" type="xs:decimal" />
+				<xs:element name="remark" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

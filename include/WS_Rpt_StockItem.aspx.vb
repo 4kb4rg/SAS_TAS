@@ -1,0 +1,252 @@
+Imports System
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Web
+Imports System.Web.UI
+Imports System.Web.UI.WebControls
+Imports System.Web.UI.HtmlControls
+Imports System.Web.UI.Page
+Imports Microsoft.VisualBasic.Strings
+Imports Microsoft.VisualBasic
+Imports System.XML
+Imports System.Web.Services
+Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.CrystalReports
+Imports CrystalDecisions.ReportSource
+Imports CrystalDecisions.Shared
+Imports CrystalDecisions.Web
+
+Imports agri.IN.clsSetup
+Imports agri.Admin.clsShare
+Imports agri.Admin.clsComp
+Imports agri.Admin.clsLoc
+Imports agri.GlobalHdl.clsGlobalHdl
+
+Public Class WS_Rpt_StockItem : inherits page
+
+    Protected WithEvents crvView As CrystalDecisions.Web.CrystalReportViewer
+    Protected WithEvents tblCriteria As HtmlTable
+    Protected WithEvents tblCrystal As HtmlTable
+    Protected WithEvents txtInvoiceRcvID As TextBox
+    Protected WithEvents lblErrMesage As Label
+    Protected WithEvents dgResult As DataGrid
+
+    Dim objInventory As New agri.IN.clsSetup()
+    Dim objAdmin As New agri.Admin.clsShare()
+    Dim objComp As New agri.Admin.clsComp()
+    Dim objLoc As New agri.Admin.clsLoc()
+    Dim objGlobal As New agri.GlobalHdl.clsGlobalHdl()
+    Dim rdCrystalViewer As New ReportDocument()
+
+    Dim strCompany As String
+    Dim strLocation As String
+    Dim strUserId As String
+    Dim strLangCode As String
+
+    Dim strStatus As String
+    Dim strStockCode As String
+    Dim strDescription As String
+    Dim strUpdateBy As String
+    Dim strSortExp As String
+    Dim strSortCol As String
+
+    Dim strStockItemCodeTag AS String
+    Dim strDescTag As String
+    Dim strTitleTag As String
+
+    Public Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        strCompany = Session("SS_COMPANY")
+        strLocation = Session("SS_LOCATION")
+        strUserId = Session("SS_USERID")
+        strLangCode = Session("SS_LANGCODE")
+        
+        crvView.Visible = False  
+
+        strStatus = Trim(Request.QueryString("strStatus"))
+        strStockCode = Trim(Request.QueryString("strStockCode"))
+        strDescription = Trim(Request.QueryString("strDescription"))
+        strUpdateBy = Trim(Request.QueryString("strUpdateBy"))
+        strSortExp = Trim(Request.QueryString("strSortExp"))
+        strSortCol = Trim(Request.QueryString("strSortCol"))
+        strStockItemCodeTag = Trim(Request.QueryString("strStockItemCodeTag"))
+        strDescTag = Trim(Request.QueryString("strDescTag"))
+        strTitleTag = Trim(Request.QueryString("strTitleTag"))
+
+        Bind_ITEM(TRUE)
+
+    End Sub
+
+    Sub Bind_ITEM(ByVal blnIsPDFFormat As Boolean)
+        Dim crLogonInfo As CrystalDecisions.Shared.TableLogOnInfo
+        Dim objRptDs As New Dataset()
+        Dim objMapPath As New Object()
+        Dim objCompDs As New Dataset()
+        Dim objLocDs As New Dataset()
+        Dim strOpCd As String = "WS_CLSSETUP_INVITEM_LIST_GET_FOR_REPORT"
+        Dim strParam As String = ""
+        Dim intErrNo As Integer
+        Dim strSearch As String
+        Dim strSortItem As String
+        Dim intCnt As Integer
+        Dim strCompName As String
+        Dim strLocName As String
+        Dim dr As DataRow
+
+
+        strSearch =  "AND Loccode = '" & strLocation & "' AND ItemType = '" & objInventory.EnumInventoryItemType.WorkshopItem & "' AND itm.Status like  '" & IIF(Not strStatus = "", strStatus, "%" ) &"' "
+
+        If NOT strStockCode = "" Then
+            strSearch =  strSearch & " AND itm.ItemCode like '" & strStockCode & "%' "
+        End If
+        
+        If NOT strDescription = "" Then
+            strSearch = strSearch & " AND itm.Description like '" & _
+                        strDescription &"%' "
+        End If
+        
+        If NOT strUpdateBy = "" Then
+            strSearch = strSearch & " AND usr.Username like '" & _
+                        strUpdateBy &"%' "
+        End If
+
+        strSortItem = "ORDER BY " & strSortExp & " " & strSortCol
+        
+        strParam =  strSortItem & "|" & strSearch
+
+        Try
+            intErrNo = objInventory.mtdGetMasterList(strOpCd, _
+                                                     strParam, _
+                                                     EnumInventoryMasterType.StockItem, _
+                                                     objRptDs)
+        Catch Exp As Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=&errmesg=" & lblErrMesage.Text & "&redirect=")
+        End Try
+
+        Try
+            intErrNo = objAdmin.mtdGetBasePath(objMapPath)
+        Catch Exp As Exception
+            Response.Redirect("/include/mesg/ErrorMessage.aspx?errcode=&errmesg=" & lblErrMesage.Text & "&redirect=")
+        End Try
+
+
+        For intCnt=0 To objRptDs.Tables(0).Rows.Count - 1
+            objRptDs.Tables(0).Rows(intCnt).Item("ItemCode") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("ItemCode"))
+            objRptDs.Tables(0).Rows(intCnt).Item("Description") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("Description"))
+            objRptDs.Tables(0).Rows(intCnt).Item("Bin") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("Bin"))
+            objRptDs.Tables(0).Rows(intCnt).Item("PurchaseUOM") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("PurchaseUOM"))
+            objRptDs.Tables(0).Rows(intCnt).Item("UOMCode") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("UOMCode"))
+            objRptDs.Tables(0).Rows(intCnt).Item("QtyOnHand") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("QtyOnHand"))
+            objRptDs.Tables(0).Rows(intCnt).Item("QtyOnHold") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("QtyOnHold"))
+            objRptDs.Tables(0).Rows(intCnt).Item("QtyOnOrder") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("QtyOnOrder"))
+            objRptDs.Tables(0).Rows(intCnt).Item("ReOrderLevel") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("ReOrderLevel"))
+            objRptDs.Tables(0).Rows(intCnt).Item("QtyReOrder") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("QtyReOrder"))
+            objRptDs.Tables(0).Rows(intCnt).Item("FuelMeterReading") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("FuelMeterReading"))
+            objRptDs.Tables(0).Rows(intCnt).Item("InitialCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("InitialCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("HighCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("HighCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("LowCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("LowCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("AverageCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("AverageCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("LatestCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("LatestCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("PurchaseAccNo") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("PurchaseAccNo"))
+            objRptDs.Tables(0).Rows(intCnt).Item("IssueAccNo") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("IssueAccNo"))
+            objRptDs.Tables(0).Rows(intCnt).Item("SellFixedPrice") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("SellFixedPrice"))
+            objRptDs.Tables(0).Rows(intCnt).Item("SellLatestCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("SellLatestCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("SellAverageCost") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("SellAverageCost"))
+            objRptDs.Tables(0).Rows(intCnt).Item("Remark") = Trim(objRptDs.Tables(0).Rows(intCnt).Item("Remark"))
+        Next
+        
+        For intCnt=0 To objRptDs.Tables(0).Rows.Count - 1
+            objRptDs.Tables(0).Rows(intCnt).Item("Status") = objInventory.mtdGetStockItemStatus(objRptDs.Tables(0).Rows(intCnt).Item("Status"))
+            objRptDs.Tables(0).Rows(intCnt).Item("UpdateDate") = objGlobal.GetLongDate(objRptDs.Tables(0).Rows(intCnt).Item("UpdateDate"))
+        Next
+
+
+        rdCrystalViewer.Load(objMapPath & "Web\EN\WS\Reports\Crystal\WS_Rpt_StockItem.rpt", OpenReportMethod.OpenReportByTempCopy)
+        rdCrystalViewer.SetDataSource(objRptDs.Tables(0))
+
+        If Not blnIsPDFFormat Then
+            crvView.Visible = True     
+            crvView.ReportSource = rdCrystalViewer
+            crvView.DataBind()
+            PassParam()
+        Else
+            crvView.Visible = False 
+            crvView.ReportSource = rdCrystalViewer
+            crvView.DataBind()
+            PassParam()
+            Dim DiskOpts As CrystalDecisions.Shared.DiskFileDestinationOptions = New CrystalDecisions.Shared.DiskFileDestinationOptions()
+            rdCrystalViewer.ExportOptions.ExportDestinationType = CrystalDecisions.[Shared].ExportDestinationType.DiskFile
+            rdCrystalViewer.ExportOptions.ExportFormatType = CrystalDecisions.[Shared].ExportFormatType.PortableDocFormat
+            DiskOpts.DiskFileName = objMapPath & "web\ftp\WS_Rpt_StockItem.pdf"
+            rdCrystalViewer.ExportOptions.DestinationOptions = DiskOpts
+            rdCrystalViewer.Export()
+
+            Response.Write("<META HTTP-EQUIV=""refresh"" CONTENT=""0; URL=../../../ftp/WS_Rpt_StockItem.pdf"">")
+        End If
+
+    End Sub
+
+
+    Sub PassParam()
+        Dim paramFields As New ParameterFields()
+        Dim paramField1 As New ParameterField()
+        Dim paramField2 As New ParameterField()
+        Dim paramField3 As New ParameterField()
+        Dim paramField4 As New ParameterField()
+        Dim paramField5 As New ParameterField()
+
+        Dim ParamDiscreteValue1 As New ParameterDiscreteValue()
+        Dim ParamDiscreteValue2 As New ParameterDiscreteValue()
+        Dim ParamDiscreteValue3 As New ParameterDiscreteValue()
+        Dim ParamDiscreteValue4 As New ParameterDiscreteValue()
+        Dim ParamDiscreteValue5 As New ParameterDiscreteValue()
+
+        Dim crParameterValues1 As ParameterValues
+        Dim crParameterValues2 As ParameterValues
+        Dim crParameterValues3 As ParameterValues
+        Dim crParameterValues4 As ParameterValues
+        Dim crParameterValues5 As ParameterValues
+
+        Dim crDataDef As DataDefinition
+        Dim PFDefs As ParameterFieldDefinitions
+
+        crDataDef = rdCrystalViewer.DataDefinition
+        PFDefs = crDataDef.ParameterFields
+        ParamFields = crvView.ParameterFieldInfo
+     
+        paramField1 = ParamFields.Item("strCompName") 
+        paramField2 = ParamFields.Item("strLocName") 
+        paramField3 = ParamFields.Item("strStockItemCodeTag")
+        paramField4 = ParamFields.Item("strDescTag")
+        paramField5 = ParamFields.Item("strTitleTag")
+    
+        crParameterValues1 = paramField1.CurrentValues
+        crParameterValues2 = paramField2.CurrentValues
+        crParameterValues3 = paramField3.CurrentValues
+        crParameterValues4 = paramField4.CurrentValues
+        crParameterValues5 = paramField5.CurrentValues
+
+        ParamDiscreteValue1.value = Session("SS_COMPANYNAME")
+        ParamDiscreteValue2.value = Session("SS_LOCATIONNAME")
+        ParamDiscreteValue3.value = strStockItemCodeTag
+        ParamDiscreteValue4.value = strDescTag
+        ParamDiscreteValue5.value = UCase(strTitleTag)
+
+        crParameterValues1.Add(ParamDiscreteValue1)
+        crParameterValues2.Add(ParamDiscreteValue2)
+        crParameterValues3.Add(ParamDiscreteValue3)
+        crParameterValues4.Add(ParamDiscreteValue4)
+        crParameterValues5.Add(ParamDiscreteValue5)
+  
+        PFDefs(0).ApplyCurrentValues(crParameterValues1)
+        PFDefs(1).ApplyCurrentValues(crParameterValues2)
+        PFDefs(2).ApplyCurrentValues(crParameterValues3)
+        PFDefs(3).ApplyCurrentValues(crParameterValues4)
+        PFDefs(4).ApplyCurrentValues(crParameterValues5)
+   
+
+        crvView.ParameterFieldInfo = paramFields
+    End Sub
+
+End Class
+

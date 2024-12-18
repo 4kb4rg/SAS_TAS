@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IN_StdRpt_DS_LaporanPosisiStock" targetNamespace="http://tempuri.org/IN_StdRpt_DS_LaporanPosisiStock.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_LaporanPosisiStock.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_LaporanPosisiStock.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="SaldoAwal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Qty_Trx" type="xs:decimal" />
+				<xs:element name="Bin" type="xs:decimal" />
+				<xs:element name="UOM" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SaldoTrx">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="ID" type="xs:string" />
+				<xs:element name="Trx_Date" type="xs:string" />
+				<xs:element name="Trx_ID" type="xs:string" />
+				<xs:element name="Bin" type="xs:decimal" />
+				<xs:element name="BinTo" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

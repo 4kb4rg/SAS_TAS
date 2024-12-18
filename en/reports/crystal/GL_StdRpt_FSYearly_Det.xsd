@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_FSYearly_Det" targetNamespace="http://tempuri.org/GL_StdRpt_FSYearly_Det.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_FSYearly_Det.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_FSYearly_Det.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_FS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportCode" type="xs:string" />
+				<xs:element name="DispSeq" type="xs:integer" />
+				<xs:element name="RowType" type="xs:string" />
+				<xs:element name="RowId" type="xs:integer" />
+				<xs:element name="AccCode" type="xs:integer" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="Jml" type="xs:decimal" />
+				<xs:element name="FSpace" type="xs:integer" />
+				<xs:element name="FUnderline" type="xs:integer" />
+				<xs:element name="FBold" type="xs:integer" />
+				<xs:element name="FFont" type="xs:integer" />
+				<xs:element name="Jml1" type="xs:decimal" />
+				<xs:element name="Jml2" type="xs:decimal" />
+                                <xs:element name="FNegSign" type="xs:integer" />
+                                <xs:element name="Description2" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocDescr" type="xs:string" />
+                                <xs:element name="UrutRefNo" type="xs:integer" />
+				<xs:element name="LocLevel" type="xs:integer" />
+				<xs:element name="LocType" type="xs:integer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

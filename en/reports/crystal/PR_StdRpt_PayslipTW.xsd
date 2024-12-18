@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_PayslipTW" targetNamespace="http://tempuri.org/PR_StdRpt_PayslipTW.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_PayslipTW.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_PayslipTW.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_PAYSLIPTW_EMP">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="LocName" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="PostCode" type="xs:string" />
+				<xs:element name="City" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="CountryDesc" type="xs:string" />
+				<xs:element name="EPFRef" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="Gender" type="xs:string" />
+				<xs:element name="NewICNo" type="xs:string" />
+				<xs:element name="NewICType" type="xs:string" />
+				<xs:element name="PayType" type="xs:string" />
+				<xs:element name="EPFNo" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_PAYSLIPTW_PAY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="ADType" type="xs:string" />
+				<xs:element name="ADCode" type="xs:string" />
+				<xs:element name="ADDesc" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+				<xs:element name="EmployerAmt" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_PAYSLIPTW_ATTCODE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="AttCode" type="xs:string" />
+				<xs:element name="AttDesc" type="xs:string" />
+				<xs:element name="MTD" type="xs:decimal" />
+				<xs:element name="YTD" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_PAYSLIPTW_UNITWORKED">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

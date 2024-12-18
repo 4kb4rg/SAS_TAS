@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Mill_Managerial" targetNamespace="http://tempuri.org/GL_StdRpt_Mill_Managerial.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Mill_Managerial.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Mill_Managerial.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Periode" type="xs:string" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+				<xs:element name="AccDescr" type="xs:string" minOccurs="0" />
+				<xs:element name="GrpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="GrpDescr" type="xs:string" minOccurs="0" />				
+				<xs:element name="BiayaBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BiayaSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BudgetBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BudgetSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BudgetYear" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GL_PROD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Periode" type="xs:string" minOccurs="0" />
+				<xs:element name="GrpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="UOM" type="xs:string" minOccurs="0" />
+				<xs:element name="UBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="USBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BYear" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

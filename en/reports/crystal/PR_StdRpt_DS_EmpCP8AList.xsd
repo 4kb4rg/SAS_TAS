@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_DS_EmpCP8AList" targetNamespace="http://tempuri.org/PR_StdRpt_DS_EmpCP8AList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DS_EmpCP8AList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_DS_EmpCP8AList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="PassportNo" type="xs:string" minOccurs="0" />
+				<xs:element name="WorkPassNo" type="xs:string" minOccurs="0" />
+				<xs:element name="TaxBranchDescription" type="xs:string" minOccurs="0" />
+				<xs:element name="MaritalStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="AppJoinDate" type="xs:date" minOccurs="0" />
+				<xs:element name="TerminateDate" type="xs:date" minOccurs="0" />
+				<xs:element name="Serial" type="xs:string" minOccurs="0" />
+				<xs:element name="EAInd" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

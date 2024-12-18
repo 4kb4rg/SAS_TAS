@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_ReceiptListing" targetNamespace="http://tempuri.org/CB_StdRpt_ReceiptListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_ReceiptListing.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_ReceiptListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_StdRpt_ReceiptListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReceiptID" type="xs:string" />
+				<xs:element name="LocCode" type="xs:dateTime" />
+				<xs:element name="BillParty" type="xs:string" />
+				<xs:element name="BankCode" type="xs:string" />
+				<xs:element name="ChequeNo" type="xs:string" />
+				<xs:element name="OutstandingAmount" type="xs:decimal" />
+				<xs:element name="TotalAmount" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="PrintDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="ReceiptLnId" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="PPNAmount" type="xs:decimal" />
+				<xs:element name="PPHAmount" type="xs:decimal" />
+				<xs:element name="NetAmount" type="xs:decimal" />
+				<xs:element name="VehExpCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

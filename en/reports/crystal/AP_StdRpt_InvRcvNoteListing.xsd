@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AP_StdRpt_InvRcvNoteListing" targetNamespace="http://tempuri.org/AP_StdRpt_InvRcvNoteListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_StdRpt_InvRcvNoteListing.xsd" xmlns:mstns="http://tempuri.org/AP_StdRpt_InvRcvNoteListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AP_StdRpt_InvRcvNoteListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InvoiceRcvID" type="xs:string" />
+				<xs:element name="InvoiceDueDate" type="xs:dateTime" />
+				<xs:element name="InvoiceRcvRefNo" type="xs:string" />
+				<xs:element name="InvoiceRcvRefDate" type="xs:dateTime" />
+				<xs:element name="POID" type="xs:string" minOccurs="0" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CreditTerm" type="xs:string" minOccurs="0" />
+				<xs:element name="TermType" type="xs:string" />
+				<xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SupplierInvAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="InvoiceType" type="xs:string" />
+				<xs:element name="CreditedInvoiceRcvID" type="xs:string" />
+				<xs:element name="FakturPajakNo" type="xs:string" />
+				<xs:element name="FakturPajakDate" type="xs:dateTime" />
+				<xs:element name="CurrencyCode" type="xs:string" />
+				<xs:element name="ExchangeRate" type="xs:decimal" />
+				<xs:element name="AddNote" type="xs:string" />
+        <xs:element name="PRID" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AP_StdRpt_MutasiAccountPayable" targetNamespace="http://tempuri.org/AP_StdRpt_MutasiAccountPayable.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_StdRpt_MutasiAccountPayable.xsd" xmlns:mstns="http://tempuri.org/AP_StdRpt_MutasiAccountPayable.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AP_StdRpt_Supplier_AgeingList">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="AccYear" type="xs:string" minOccurs="0" />
+        <xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="CustCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CustName" type="xs:string" minOccurs="0" />
+				<xs:element name="Gr1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Gr2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Gr3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Gr4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="GrCurrent" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Total" type="xs:decimal" />
+				<xs:element name="Location" type="xs:integer" />
+				<xs:element name="pPeriodeFrom" type="xs:string" />
+				<xs:element name="pPeriodTo" type="xs:string" />
+				<xs:element name="pIntAggFrom1" type="xs:integer" />
+				<xs:element name="pIntAggTo1" type="xs:integer" />
+				<xs:element name="pIntAggFrom2" type="xs:integer" />
+				<xs:element name="pIntAggTo2" type="xs:integer" />
+				<xs:element name="pIntAggFrom3" type="xs:integer" />
+				<xs:element name="pIntAggTo3" type="xs:integer" />
+				<xs:element name="pIntAggFrom4" type="xs:integer" />
+				<xs:element name="pIntAggTo4" type="xs:integer" />
+				<xs:element name="pIntAgg5" type="xs:integer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

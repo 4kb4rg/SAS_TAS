@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="HR_StdRpt_MPOBPriceDetail" targetNamespace="http://tempuri.org/HR_StdRpt_MPOBPriceDetail.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_MPOBPriceDetail.xsd" xmlns:mstns="http://tempuri.org/HR_StdRpt_MPOBPriceDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_MPOBPriceDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BonusCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="FromPrice" type="xs:string" />
+				<xs:element name="ToPrice" type="xs:string" />
+				<xs:element name="FromYieldBracket" type="xs:string" />
+				<xs:element name="ToYieldBracket" type="xs:string" />
+				<xs:element name="BonusPrice" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

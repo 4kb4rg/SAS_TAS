@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WS_StdRpt_DS_CompletedJobList" targetNamespace="http://tempuri.org/WS_StdRpt_DS_CompletedJobList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WS_StdRpt_DS_CompletedJobList.xsd" xmlns:mstns="http://tempuri.org/WS_StdRpt_DS_CompletedJobList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WS_StdRpt_DS_CompletedJobList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="PartInd" type="xs:string" />
+				<xs:element name="FuelInd" type="xs:string" />
+				<xs:element name="LabourInd" type="xs:string" />
+				<xs:element name="CoPsVehCode" type="xs:string" />
+				<xs:element name="CoPsLocCode" type="xs:string" />
+				<xs:element name="PsEmpCode" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="RecNo" type="xs:integer" />
+				<xs:element name="Code" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="UnitPrice" type="xs:decimal" />
+				<xs:element name="MechID" type="xs:string" />
+				<xs:element name="WorkDate" type="xs:dateTime" />
+				<xs:element name="ChrgRate" type="xs:decimal" />
+				<xs:element name="HourSpent" type="xs:integer" />
+				<xs:element name="MinuteSpent" type="xs:integer" />
+				<xs:element name="BilledAmt" type="xs:decimal" />
+				<xs:element name="Type" type="xs:string" />
+				<xs:element name="PrintDate" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

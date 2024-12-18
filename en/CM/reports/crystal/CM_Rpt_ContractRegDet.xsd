@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CM_Rpt_ContractRegDet" targetNamespace="http://tempuri.org/CM_Rpt_ContractRegDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CM_Rpt_ContractRegDet.xsd" xmlns:mstns="http://tempuri.org/CM_Rpt_ContractRegDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CM_Rpt_ContractRegDet" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="CM_Rpt_ContractRegDet">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ContractNo" type="xs:string" minOccurs="0" />
+							<xs:element name="ContractQty" type="xs:decimal" minOccurs="0" />
+							<xs:element name="ContractDate" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="CurrencyCode" type="xs:string" minOccurs="0" />
+							<xs:element name="Price" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TermOfDelivery" type="xs:string" minOccurs="0" />
+							<xs:element name="DelivMonth" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="Remarks" type="xs:string" minOccurs="0" />
+							<xs:element name="ContCategory" type="xs:string" minOccurs="0" />
+							<xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+							<xs:element name="BankCode" type="xs:string" minOccurs="0" />
+							<xs:element name="BankCode2" type="xs:string" minOccurs="0" />
+							<xs:element name="BankAccNo" type="xs:string" minOccurs="0" />
+							<xs:element name="BankAccNo2" type="xs:string" minOccurs="0" />
+							<xs:element name="BillPartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="BillPartyAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="BankDesc1" type="xs:string" minOccurs="0" />
+							<xs:element name="BankDesc2" type="xs:string" minOccurs="0" />
+							<xs:element name="CurrencyDesc" type="xs:string" minOccurs="0" />
+							<xs:element name="Total" type="xs:decimal" minOccurs="0" />
+							<xs:element name="IDRContractQty" type="xs:string" minOccurs="0" />
+							<xs:element name="IDRPrice" type="xs:string" minOccurs="0" />
+							<xs:element name="IDRTotal" type="xs:string" minOccurs="0" />		
+							<xs:element name="ProductQuality" type="xs:string" minOccurs="0" />
+							<xs:element name="TermOfPayment" type="xs:string" minOccurs="0" />
+							<xs:element name="buyerrep" type="xs:string" minOccurs="0" />
+							<xs:element name="rep1" type="xs:string" minOccurs="0" />
+							<xs:element name="rep2" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_KaryawanStaff" targetNamespace="http://tempuri.org/GL_StdRpt_KaryawanStaff.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_KaryawanStaff.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_KaryawanStaff.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_KaryawanStaff">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CPID" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="NumOfChild" type="xs:integer" minOccurs="0" />
+				<xs:element name="Gender" type="xs:string" />
+				<xs:element name="PosCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PosDescr" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="DeptCode" type="xs:string" minOccurs="0" />
+				<xs:element name="DeptDescr" type="xs:string" minOccurs="0" />
+				<xs:element name="AppJoinDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="AppJoinGrpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="Descr" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

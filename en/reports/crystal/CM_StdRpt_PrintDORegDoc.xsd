@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CM_DOREG" targetNamespace="http://tempuri.org/CM_Rpt_DORegistrationDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CM_Rpt_DORegistrationDet.xsd" xmlns:mstns="http://tempuri.org/CM_Rpt_DORegistrationDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CM_DOREG">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dono" type="xs:string" />
+				<xs:element name="dodate" type="xs:string" />
+				<xs:element name="doqty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="npwp" type="xs:string" minOccurs="0" />
+				<xs:element name="address" type="xs:string" minOccurs="0" />
+				<xs:element name="contractno" type="xs:string" minOccurs="0" />
+				<xs:element name="billpartycode" type="xs:string" minOccurs="0" />
+				<xs:element name="termdelivery" type="xs:string" minOccurs="0" />
+				<xs:element name="contractqty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="remcontractqty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="accmonth" type="xs:string" minOccurs="0" />
+				<xs:element name="accyear" type="xs:string" />
+				<xs:element name="createdate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="updatedate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="updateid" type="xs:string" minOccurs="0" />
+				<xs:element name="status" type="xs:string" minOccurs="0" />
+				<xs:element name="loccode" type="xs:string" minOccurs="0" />
+				<xs:element name="ttd" type="xs:string" minOccurs="0" />
+				<xs:element name="jabatan" type="xs:string" minOccurs="0" />
+				<xs:element name="name" type="xs:string" minOccurs="0" />
+				<xs:element name="city" type="xs:string" minOccurs="0" />
+				<xs:element name="compname" type="xs:string" minOccurs="0" />
+				<xs:element name="offaddress" type="xs:string" minOccurs="0" />
+				<xs:element name="postcode" type="xs:string" minOccurs="0" />
+				<xs:element name="countrydesc" type="xs:string" minOccurs="0" />
+				<xs:element name="telno" type="xs:string" minOccurs="0" />
+				<xs:element name="faxno" type="xs:string" minOccurs="0" />
+				<xs:element name="terbilang" type="xs:string" minOccurs="0" />
+				<xs:element name="locname" type="xs:string" minOccurs="0" />
+				<xs:element name="EstimationDate" type="xs:string" />
+				<xs:element name="ShipName" type="xs:string" />
+				<xs:element name="LoadDest" type="xs:string" />
+				<xs:element name="FactoryManager" type="xs:string" />
+				<xs:element name="ProductQuality" type="xs:string" />
+				<xs:element name="Product" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

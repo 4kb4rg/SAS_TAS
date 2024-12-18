@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="TX_Rpt_GetDaftarPtg" targetNamespace="http://tempuri.org/TX_Rpt_GetDaftarPtg.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/TX_Rpt_GetDaftarPtg.xsd" xmlns:mstns="http://tempuri.org/TX_Rpt_GetDaftarPtg.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="TaxReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="TrxID" type="xs:string" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="DocLnID" type="xs:string" />
+				<xs:element name="DocDate" type="xs:date" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="TaxID" type="xs:string" />
+				<xs:element name="TaxLnID" type="xs:string" />
+				<xs:element name="TaxInit" type="xs:string" />
+				<xs:element name="KPPInit" type="xs:string" />
+				<xs:element name="NPWP" type="xs:string" />
+				<xs:element name="DPPAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TaxAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="SupplierName" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:date" />
+				<xs:element name="UpdaeDate" type="xs:date" />
+				<xs:element name="CreateID" type="xs:string" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="SplNPWP" type="xs:string" />
+				<xs:element name="SplName" type="xs:string" />
+				<xs:element name="SplAddress" type="xs:string" />
+				<xs:element name="cNo1" type="xs:string" />
+				<xs:element name="cNo2" type="xs:string" />
+				<xs:element name="cNo3" type="xs:string" />
+				<xs:element name="cNo4" type="xs:string" />
+				<xs:element name="cNo5" type="xs:string" />
+				<xs:element name="cNo6" type="xs:string" />
+				<xs:element name="cNo7" type="xs:string" />
+				<xs:element name="cNo8" type="xs:string" />
+				<xs:element name="cNo9" type="xs:string" />
+				<xs:element name="cNo10" type="xs:string" />
+				<xs:element name="cNo11" type="xs:string" />
+				<xs:element name="cNo12" type="xs:string" />
+				<xs:element name="cNo13" type="xs:string" />
+				<xs:element name="cNo14" type="xs:string" />
+				<xs:element name="cNo15" type="xs:string" />
+				<xs:element name="am1" type="xs:string" />
+				<xs:element name="am2" type="xs:string" />
+				<xs:element name="ay1" type="xs:string" />
+				<xs:element name="ay2" type="xs:string" />
+				<xs:element name="ay3" type="xs:string" />
+				<xs:element name="ay4" type="xs:string" />
+				<xs:element name="SPTMasa" type="xs:string" />
+				<xs:element name="DaftarPtg" type="xs:string" />
+				<xs:element name="BuktiPtg" type="xs:string" />				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

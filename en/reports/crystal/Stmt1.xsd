@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Stmt1" targetNamespace="http://tempuri.org/Stmt1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/Stmt1.xsd" xmlns:mstns="http://tempuri.org/Stmt1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="Stmt1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Month" type="xs:string" />
+				<xs:element name="EmployerTaxNo" type="xs:string" />
+				<xs:element name="TaxBranchDescription" type="xs:string" />
+				<xs:element name="TotalEarns" type="xs:decimal" />
+				<xs:element name="EarnsWithTax" type="xs:decimal" />
+				<xs:element name="TaxAmount" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

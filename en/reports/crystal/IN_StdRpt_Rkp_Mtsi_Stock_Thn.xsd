@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CT_StdRpt_DS_ItemRetAdvList" targetNamespace="http://tempuri.org/CT_StdRpt_DS_ItemRetAdvList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CT_StdRpt_DS_ItemRetAdvList.xsd" xmlns:mstns="http://tempuri.org/CT_StdRpt_DS_ItemRetAdvList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IN_StdRpt_Rkp_Mtsi_Stock_Thn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="Jml1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Hrg1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Jml2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Hrg2" type="xs:decimal" />
+				<xs:element name="Jml3" type="xs:decimal" />
+				<xs:element name="Hrg3" type="xs:decimal" />
+				<xs:element name="Jml4" type="xs:decimal" />
+				<xs:element name="Hrg4" type="xs:decimal" />
+				<xs:element name="Jml5" type="xs:decimal" />
+				<xs:element name="Hrg5" type="xs:decimal" />
+				<xs:element name="Jml6" type="xs:decimal" />
+				<xs:element name="Hrg6" type="xs:decimal" />
+				<xs:element name="Jml7" type="xs:decimal" />
+				<xs:element name="Hrg7" type="xs:decimal" />
+				<xs:element name="Jml8" type="xs:decimal" />
+				<xs:element name="Hrg8" type="xs:decimal" />
+				<xs:element name="Jml9" type="xs:decimal" />
+				<xs:element name="Hrg9" type="xs:decimal" />
+				<xs:element name="Jml10" type="xs:decimal" />
+				<xs:element name="Hrg10" type="xs:decimal" />
+				<xs:element name="Jml11" type="xs:decimal" />
+				<xs:element name="Hrg11" type="xs:decimal" />
+				<xs:element name="Jml12" type="xs:decimal" />
+				<xs:element name="Hrg12" type="xs:decimal">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

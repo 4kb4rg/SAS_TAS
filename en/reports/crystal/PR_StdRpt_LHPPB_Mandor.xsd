@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_LHPPB_Mandor" targetNamespace="http://tempuri.org/PR_StdRpt_LHPPB_Mandor.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_LHPPB_Mandor.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_LHPPB_Mandor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_LHPPB_Mandor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="IDDiv" type="xs:string" />
+				<xs:element name="Divisi" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="EmpType" type="xs:string" />
+				<xs:element name="MDRCode" type="xs:string" />
+				<xs:element name="MDRName" type="xs:string" />
+				<xs:element name="KCSCode" type="xs:string" />
+				<xs:element name="KCSName" type="xs:string" />
+				<xs:element name="PDate" type="xs:dateTime" />
+				<xs:element name="YearPlan" type="xs:string" />
+				<xs:element name="Hk" type="xs:decimal" />
+				<xs:element name="Hk_sdhi" type="xs:decimal" />
+				<xs:element name="Jjg" type="xs:decimal" />
+				<xs:element name="Jjg_sdhi" type="xs:decimal" />
+				<xs:element name="Bjr" type="xs:decimal" />
+				<xs:element name="Kg" type="xs:decimal" />
+				<xs:element name="Kg_sdhi" type="xs:decimal" />
+				<xs:element name="BTugas" type="xs:decimal" />
+				<xs:element name="BPremi" type="xs:decimal" />
+				<xs:element name="KgPremi" type="xs:decimal" />
+				<xs:element name="OB1" type="xs:decimal" />
+				<xs:element name="OB2" type="xs:decimal" />
+				<xs:element name="OB3" type="xs:decimal" />
+				<xs:element name="Rp1" type="xs:decimal" />
+				<xs:element name="Rp2" type="xs:decimal" />
+				<xs:element name="Rp3" type="xs:decimal" />
+				<xs:element name="SubPremi" type="xs:decimal" />
+				<xs:element name="SubPremi_sdhi" type="xs:decimal" />
+				<xs:element name="d_mentah" type="xs:decimal" />
+				<xs:element name="d_tgl" type="xs:decimal" />
+				<xs:element name="d_tph" type="xs:decimal" />
+				<xs:element name="d_pjg" type="xs:decimal" />
+				<xs:element name="d_skh" type="xs:decimal" />
+				<xs:element name="d_bss" type="xs:decimal" />
+				<xs:element name="Sub_Denda" type="xs:decimal" />
+				<xs:element name="Sub_Denda_sdhi" type="xs:decimal" />
+				<xs:element name="Pkerajinan" type="xs:decimal" />
+				<xs:element name="Pkerajinan_sdhi" type="xs:decimal" />
+				<xs:element name="Premi" type="xs:decimal" />
+				<xs:element name="Premi_sdhi" type="xs:decimal" />
+				<xs:element name="pTglParam" type="xs:date" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_StdRpt_LHPPB_PMandor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mdr" type="xs:string" />
+				<xs:element name="MandorCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="iddiv" type="xs:string" />
+				<xs:element name="Pdate" type="xs:dateTime" />
+				<xs:element name="Tpremi" type="xs:decimal" />
+				<xs:element name="Tpremi_sdhi" type="xs:decimal" />
+				<xs:element name="jjg" type="xs:decimal" />
+				<xs:element name="kary" type="xs:decimal" />
+				<xs:element name="subpremi" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

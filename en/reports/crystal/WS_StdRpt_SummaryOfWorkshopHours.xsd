@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WS_StdRpt_SummaryOfWorkshopHours" targetNamespace="http://tempuri.org/WS_StdRpt_SummaryOfWorkshopHours.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WS_StdRpt_SummaryOfWorkshopHours.xsd" xmlns:mstns="http://tempuri.org/WS_StdRpt_SummaryOfWorkshopHours.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="MAIN_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="BillEmpCode" type="xs:string" />
+				<xs:element name="BillEmpDesc" type="xs:string" />
+				<xs:element name="ServTypeCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="WorkingDate" type="xs:dateTime" />
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="DocRefNo" type="xs:string" />
+				<xs:element name="WorkCode" type="xs:string" />
+				<xs:element name="WorkDesc" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="Hours" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

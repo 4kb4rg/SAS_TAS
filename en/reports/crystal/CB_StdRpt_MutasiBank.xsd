@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_MutasiBank" targetNamespace="http://tempuri.org/CB_StdRpt_MutasiBank.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_MutasiBank.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_MutasiBank.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_StdRpt_MutasiBank">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TglBayar" type="xs:dateTime" />
+				<xs:element name="NoVoucher" type="xs:string" />
+				<xs:element name="Supplier" type="xs:string" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="Debit" type="xs:double" minOccurs="0" />
+				<xs:element name="Credit" type="xs:double" />
+				<xs:element name="ChequeNo" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="BankCode" type="xs:string" />
+				<xs:element name="PaymentType" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

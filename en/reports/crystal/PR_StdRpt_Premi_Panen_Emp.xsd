@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_Premi_Panen_Emp" targetNamespace="http://tempuri.org/PR_StdRpt_Premi_Panen_Emp.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_Premi_Panen_Emp.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_Premi_Panen_Emp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_Premi_Panen_Emp.xsd">
+	<xs:element name="PR_StdRpt_Premi_Panen_Emp">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Tanggal" type="xs:dateTime" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="CodeBlok" type="xs:string" />
+				<xs:element name="TTanam" type="xs:string" />
+				<xs:element name="Jjg" type="xs:decimal" />
+				<xs:element name="Bjr" type="xs:decimal" />
+				<xs:element name="KG" type="xs:decimal" />
+				<xs:element name="Btugas" type="xs:decimal" />
+				<xs:element name="KgPremi" type="xs:decimal" />
+				<xs:element name="BPremi" type="xs:decimal" />
+				<xs:element name="OB1" type="xs:decimal" />
+				<xs:element name="Rp1" type="xs:decimal" />
+				<xs:element name="Rp2" type="xs:decimal" />
+				<xs:element name="Rp3" type="xs:decimal" />
+				<xs:element name="SubPremi" type="xs:decimal" />
+				<xs:element name="PKerajinan" type="xs:decimal" />
+				<xs:element name="Denda" type="xs:decimal" />
+				<xs:element name="totpremi" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

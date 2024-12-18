@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WS_StdRpt_DS_InventoryValList" targetNamespace="http://tempuri.org/WS_StdRpt_DS_InventoryValList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WS_StdRpt_DS_InventoryValList.xsd" xmlns:mstns="http://tempuri.org/WS_StdRpt_DS_InventoryValList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WS_StdRpt_DS_InventoryValListx">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ProdTypeCode" type="xs:string" />
+				<xs:element name="ProdBrandCode" type="xs:string" />
+				<xs:element name="ProdModelCode" type="xs:string" />
+				<xs:element name="ProdCatCode" type="xs:string" />
+				<xs:element name="ProdMatCode" type="xs:string" />
+				<xs:element name="StockAnalysisCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="ItemDesc" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="Bin" type="xs:string" />
+				<xs:element name="QtyOnHand" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOnHold" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AverageCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DiffAvgCost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalCost" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

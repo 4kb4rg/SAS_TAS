@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_UsulNaikGajiListing" targetNamespace="http://tempuri.org/PR_StdRpt_UsulNaikGajiListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_UsulNaikGajiListing.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_UsulNaikGajiListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_UsulNaikGajiListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="Dept" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="LastLoc" type="xs:decimal" />
+				<xs:element name="Position" type="xs:string" />
+				<xs:element name="SalGrade" type="xs:string" />
+				<xs:element name="LastPost" type="xs:decimal" />
+				<xs:element name="WorkPeriod" type="xs:decimal" />
+				<xs:element name="Min2" type="xs:string" />
+				<xs:element name="MIn3" type="xs:string" />
+				<xs:element name="Min1" type="xs:string" />
+				<xs:element name="PayRate" type="xs:decimal" />
+				<xs:element name="Inc" type="xs:decimal" />
+				<xs:element name="Ket" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

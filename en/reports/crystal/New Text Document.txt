@@ -1,0 +1,113 @@
+USE [G2_STALive]
+GO
+/****** Object:  StoredProcedure [dbo].[GL_CLSSETUP_FSFIG_REPORT_GET]    Script Date: 06/11/2012 14:02:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+/*******************************************************************
+	Name : GL_CLSSETUP_FSFIG_REPORT_GET
+	Desc :
+*******************************************************************/
+ALTER    PROCEDURE [dbo].[GL_CLSSETUP_FSFIG_REPORT_GET]
+		@ReportCode			char(10),
+		@strAccMonth		varchar(2),
+		@strAccYear			varchar(4),
+		@strLocCode			varchar(200)
+
+AS
+Set  NoCount ON
+
+
+----Check If Report IS COGS
+--Declare @StatemenType  Char(2)
+--
+--SELECT @StatemenType = StmtType FROM GL_FSTEMPLATE
+--WHERE ReportCode = @ReportCode
+--
+--IF LTRIM(RTRIM(@StatemenType)) <> '3'
+--
+----non cogs report
+--	Begin
+DELETE FROM dbo.GL_FSTEMPLATEFIG 
+WHERE ReportCode=@ReportCode AND Amount=0 AND RowType='1'
+
+
+SELECT ReportCode, DispSeq, RowType, RowId, Description, RefNo, Sum(Amount) As Jml, Sum(Amount1) as Jml1, Sum(Amount2) as Jml2, '' As LocCode,
+FSpace, FUnderline, FBold, FFont, FNegSign, Description2,
+(SELECT Description FROM dbo.GL_FSTEMPLATE WHERE ReportCode = @ReportCode) As Title1,
+(SELECT Description2 FROM dbo.GL_FSTEMPLATE WHERE ReportCode = @ReportCode) As Title2
+FROM GL_FSTEMPLATEFIG 
+WHERE ReportCode = @ReportCode  AND RowType IN('1', '2', '3') 
+GROUP BY ReportCode, DispSeq, RowType, RowId, Description, RefNo, FSpace, FUnderline, FBold, FFont, FNegSign, Description2
+ORDER BY DispSeq
+
+	
+--	
+--	End
+--
+--ELSE
+--
+--
+----cogs report
+--	Begin
+--
+--		Create Table #ReportAcc(
+--			ReportCode		char(10),
+--			DispSeq			int,
+--			RowType			char(2),
+--			RowId			int,
+--			Description		varchar(50),
+--			RefNo			char(8),
+--			Jml				numeric(21, 2),
+--			LocCode			char(8),
+--			FSpace			int,
+--			FUnderline		int,
+--			FBold			int,
+--			FFont			int
+--		)
+--
+--
+--		set @strLocCode = SubString(@strLocCode, 2, 3)
+--		pRINT @strLocCode
+--		
+--		--SUBSTRING ( expression ,start , length )
+--
+--
+--		Declare @HPP  Numeric(21, 2)
+--
+--		INSERT INTO #ReportAcc
+--		SELECT ReportCode, DispSeq, RowType, RowId, Description, RefNo, Sum(Amount) As Jml, LocCode,  
+--		FSpace, FUnderline, FBold, FFont FROM 
+--		GL_FSTEMPLATEFIG WHERE ReportCode = @ReportCode  AND RowType IN('1', '2', '3')
+--		GROUP BY LocCode, ReportCode, DispSeq, RowType, RowId, Description, RefNo, FSpace, FUnderline, FBold, FFont
+--	
+--		SET @HPP = (SELECT Jml FROM #ReportAcc WHERE RefNo = 'HPP')
+--
+--		--update cogs on table prod
+--		UPDATE PM_MTHPROD SET COGS = @HPP WHERE AccMonth = @strAccMonth
+--		AND AccYear = @strAccYear AND LocCode = @strLocCode
+--
+--
+--		--Return Result, --
+--		SELECT * FROM #ReportAcc
+--
+--		SELECT @ReportCode, CPOProduced * 1000 As CPOProduced, PKProduced * 1000 As PKProduced, CPOPrice, PKPrice, @HPP As HPP FROM PM_MTHPROD
+--		WHERE Accmonth = @strAccMonth AND AccYear = @strAccYear
+--		AND LocCode = @strLocCode
+--
+--		DROP TABLE #ReportAcc
+--		
+--End
+
+	
+
+
+

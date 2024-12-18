@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Estate_Mutasi_TBM_TM" targetNamespace="http://tempuri.org/GL_StdRpt_Estate_Mutasi_TBM_TM.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Estate_Mutasi_TBM_TM.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Estate_Mutasi_TBM_TM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="blkgrpcode" type="xs:string"  />
+				<xs:element name="blkcode" type="xs:string"  />
+				<xs:element name="SubBlkCode" type="xs:string"  />
+				<xs:element name="blknama" type="xs:string"  />
+				<xs:element name="TotalArea" type="xs:decimal"  />
+				<xs:element name="StdPerArea" type="xs:decimal"  />
+				<xs:element name="TotalStand" type="xs:decimal"  />
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="coanama" type="xs:string" />
+				<xs:element name="SaldoAwal" type="xs:decimal"/>
+				<xs:element name="BI" type="xs:decimal" />
+				<xs:element name="SBI" type="xs:decimal" />
+				<xs:element name="STOT" type="xs:decimal" />
+				<xs:element name="TMSubblkCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

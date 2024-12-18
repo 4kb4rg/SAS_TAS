@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PM_StdRpt_OilQualityTransactionList" targetNamespace="http://tempuri.org/PM_StdRpt_OilQualityTransactionList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_StdRpt_OilQualityTransactionList.xsd" xmlns:mstns="http://tempuri.org/PM_StdRpt_OilQualityTransactionList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PM_StdRpt_OilQualityTransactionList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LOCCODE" type="xs:string" minOccurs="0" />
+				<xs:element name="TRANSDATE" type="xs:dateTime" />
+				<xs:element name="OW" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DW" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OD" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PureOilDirt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PureOilMoist" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierDirt1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierMoist1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierDirt2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierMoist2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierDirt3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierMoist3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierDirt4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PurifierMoist4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankFFA1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankDirt1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankMoist1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankFFA2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankDirt2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankMoist2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankFFA3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankDirt3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankMoist3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankFFA4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankDirt4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankMoist4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankFFA5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankDirt5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankMoist5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankFFA6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankDirt6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CPOTankMoist6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TransMonthYear" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

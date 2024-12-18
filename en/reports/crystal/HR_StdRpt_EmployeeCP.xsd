@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="HR_StdRpt_EmployeeCP" targetNamespace="http://tempuri.org/HR_StdRpt_EmployeeCP.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_EmployeeCP.xsd"
+	xmlns:mstns="http://tempuri.org/HR_StdRpt_EmployeeCP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_EmployeeCP">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="CPID" type="xs:string" />
+				<xs:element name="CPCode" type="xs:string" />
+				<xs:element name="DateFrom" type="xs:dateTime" />
+				<xs:element name="DateTo" type="xs:dateTime" />
+				<xs:element name="CeaseDate" type="xs:dateTime" />
+				<xs:element name="DeptCode" type="xs:string" />
+				<xs:element name="LevelCode" type="xs:string" />
+				<xs:element name="RptTo" type="xs:string" />
+				<xs:element name="SalScheme" type="xs:string" />
+				<xs:element name="SalGrade" type="xs:string" />
+				<xs:element name="Position" type="xs:string" />
+				<xs:element name="MPOBPriceBonus" type="xs:string" />
+				<xs:element name="AddDailyPay" type="xs:string" />
+				<xs:element name="Probation" type="xs:string" />
+				<xs:element name="PayType" type="xs:string" />
+				<xs:element name="CurrentRate" type="xs:decimal" />
+				<xs:element name="IncrementAmt" type="xs:decimal" />
+				<xs:element name="MinSalary" type="xs:decimal" />
+				<xs:element name="HarvesterPrice" type="xs:string" />
+				<xs:element name="LoaderPrice" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FA_Rpt_AssetGrp" targetNamespace="http://tempuri.org/FA_Rpt_AssetGrp.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_Rpt_AssetGrp.xsd" xmlns:mstns="http://tempuri.org/FA_Rpt_AssetGrp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_Rpt_AssetGrp">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AssetGrpCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

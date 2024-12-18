@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_Rpt_PurReqDet" targetNamespace="http://tempuri.org/IN_Rpt_PurReqDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_Rpt_PurReqDet.xsd" xmlns:mstns="http://tempuri.org/IN_Rpt_PurReqDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PurReq">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PRID" type="xs:string" />
+				<xs:element name="PRType" type="xs:string" />
+				<xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PurReqLn">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PRID" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="QtyReq" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyRcv" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyOutstanding" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="AdditionalNote" type="xs:string" />
+				<xs:element name="QtyOnHand" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Company">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="PostCode" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="City" type="xs:string" />
+				<xs:element name="CountryCode" type="xs:string" />
+				<xs:element name="TelNo" type="xs:string" />
+				<xs:element name="FaxNo" type="xs:string" />
+				<xs:element name="EPFRef" type="xs:string" minOccurs="0" />
+				<xs:element name="SocsoRef" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Location">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="CloseAutoDistInd" type="xs:string" minOccurs="0" />
+				<xs:element name="LocHead" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="AnaCtrlCost" type="xs:string" minOccurs="0" />
+				<xs:element name="AnaCtrlYield" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

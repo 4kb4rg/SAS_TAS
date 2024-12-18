@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_PRList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_WaterQualityTransactionList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TransDate" type="xs:dateTime" />
+				<xs:element name="TestSampleCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TestSampleDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="MachineCode" type="xs:string" minOccurs="0" />
+				<xs:element name="MachineDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="FieldHeader" type="xs:string" minOccurs="0" />
+				<xs:element name="FieldName" type="xs:string" minOccurs="0" />
+				<xs:element name="FieldPercent" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="StationDesc" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

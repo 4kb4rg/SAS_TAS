@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_RekapProdTahunTanam" targetNamespace="http://tempuri.org/GL_StdRpt_RekapProdTahunTanam.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_RekapProdTahunTanam.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_RekapProdTahunTanam.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="RekapProdTahunTanam">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="HarvStartDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="TotalStd" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalAreaBudget" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBThisMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBThisMonthBudget" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBToMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBToMonthBudget" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBAnnualBudget" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BunchesToMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BunchesToMonthBudget" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LastYearProd" type="xs:decimal" />
+				<xs:element name="GrpBy" type="xs:string" />
+				<xs:element name="GrpDesc" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

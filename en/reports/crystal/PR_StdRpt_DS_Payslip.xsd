@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_DS_Payslip" targetNamespace="http://tempuri.org/PR_StdRpt_DS_Payslip.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DS_Payslip.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_DS_Payslip.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_Payslip">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RecNo" type="xs:decimal" />
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="LocDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="DeptCode" type="xs:string" minOccurs="0" />
+				<xs:element name="DeptDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="PosCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PosDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="PayslipNote" type="xs:string" minOccurs="0" />
+				<xs:element name="AllowADCode" type="xs:string" minOccurs="0" />
+				<xs:element name="AllowDescription" type="xs:string" minOccurs="0" />
+				<xs:element name="AllowAmount" type="xs:decimal" />
+				<xs:element name="DeductADCode" type="xs:string" minOccurs="0" />
+				<xs:element name="DeductDescription" type="xs:string" minOccurs="0" />
+				<xs:element name="DeductAmount" type="xs:decimal" />
+				<xs:element name="MemoADCode" type="xs:string" minOccurs="0" />
+				<xs:element name="MemoDescription" type="xs:string" minOccurs="0" />
+				<xs:element name="MemoAmount" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

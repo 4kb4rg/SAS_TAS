@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_CashDenominationList" targetNamespace="http://tempuri.org/PR_StdRpt_CashDenominationList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_CashDenominationList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_CashDenominationList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_CashDenominationList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="DN1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN5" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN6" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN8" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN9" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN10" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN11" type="xs:decimal" minOccurs="0" />
+				<xs:element name="DN12" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Balance" type="xs:decimal" minOccurs="0" />
+				<xs:element name="NetPay" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

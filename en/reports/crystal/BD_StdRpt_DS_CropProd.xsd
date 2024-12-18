@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_CropProd" targetNamespace="http://tempuri.org/BD_StdRpt_DS_CropProd.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_CropProd.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_CropProd.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_StdRpt_DS_CropProd">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="YearPlanted" type="xs:string" />
+				<xs:element name="HarvestDate" type="xs:dateTime" />
+				<xs:element name="SPH" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PlantedArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YieldHist1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YieldHist2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YieldToMonth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ForecastYield" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YieldHist3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="YieldPerArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BudgetYield" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

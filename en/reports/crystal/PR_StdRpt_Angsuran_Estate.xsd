@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_ANGSURAN" targetNamespace="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_ListSalAndAllw.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd">
+	<xs:element name="PR_ANGSURAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodeEmp" type="xs:string" minOccurs="0" />
+				<xs:element name="NamaEmp" type="xs:string" />
+				<xs:element name="Tipe" type="xs:string" />
+				<xs:element name="IdDiv" type="xs:string" />
+				<xs:element name="EmpType" type="xs:string" />
+				<xs:element name="Jabatan" type="xs:string" />
+				<xs:element name="PrdMulai" type="xs:decimal" />
+				<xs:element name="TotPinjam" type="xs:decimal" />
+				<xs:element name="TotByrLalu" type="xs:decimal" />
+				<xs:element name="Angsuran" type="xs:decimal" />
+				<xs:element name="TotByrIni" type="xs:decimal" />
+				<xs:element name="TotSisa" type="xs:decimal" />
+				<xs:element name="RptName" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="Accyear" type="xs:string" />
+				<xs:element name="NamaKbn" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="Cetak" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

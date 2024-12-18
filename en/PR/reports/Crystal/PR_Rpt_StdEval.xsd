@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_Rpt_StdEval" targetNamespace="http://tempuri.org/PR_Rpt_StdEval.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_Rpt_StdEval.xsd" xmlns:mstns="http://tempuri.org/PR_Rpt_StdEval.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="StdEval">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Grade" type="xs:string" />
+				<xs:element name="ScoreMin" type="xs:decimal" />
+				<xs:element name="ScoreMax" type="xs:decimal" />
+				<xs:element name="Cont" type="xs:decimal" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:date" />
+				<xs:element name="UpdateDate" type="xs:date" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="LocName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_DS_ADList" targetNamespace="http://tempuri.org/PR_StdRpt_DS_ADList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DS_ADList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_DS_ADList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_ADLIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="TerminateDate" type="xs:date" minOccurs="0" />
+				<xs:element name="BasicPay" type="xs:decimal" />
+				<xs:element name="DailyPay" type="xs:decimal" />
+				<xs:element name="PiecePay" type="xs:decimal" />
+				<xs:element name="TotalSalary" type="xs:decimal" />
+				<xs:element name="Overtime" type="xs:decimal" />
+				<xs:element name="OutturnIncentive" type="xs:decimal" />
+				<xs:element name="TranInc" type="xs:decimal" />
+				<xs:element name="OtherAllowance" type="xs:decimal" />
+				<xs:element name="TotalAllowance" type="xs:decimal" />
+				<xs:element name="TotalEarning" type="xs:decimal" />
+				<xs:element name="Tax" type="xs:decimal" />
+				<xs:element name="EPF" type="xs:decimal" />
+				<xs:element name="Socso" type="xs:decimal" />
+				<xs:element name="Levy" type="xs:decimal" />
+				<xs:element name="Loan" type="xs:decimal" />
+				<xs:element name="Canteen" type="xs:decimal" />
+				<xs:element name="Inventory" type="xs:decimal" />
+				<xs:element name="Workshop" type="xs:decimal" />
+				<xs:element name="OtherDeduction" type="xs:decimal" />
+				<xs:element name="OutBalance" type="xs:decimal" />
+				<xs:element name="TotalDeduction" type="xs:decimal" />
+				<xs:element name="NetPayment" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

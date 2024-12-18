@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_BiayaUmum" targetNamespace="http://tempuri.org/GL_StdRpt_BiayaUmum.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_BiayaUmum.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_BiayaUmum.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYAUMUM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TotalArea" type="xs:decimal" />
+				<xs:element name="TotalAreaBudget" type="xs:decimal" />
+				<xs:element name="ProdReal" type="xs:decimal" />
+				<xs:element name="ProdBudget" type="xs:decimal" />
+				<xs:element name="ProdRealToDate" type="xs:decimal" />
+				<xs:element name="ProdBudgetToDate" type="xs:decimal" />
+				<xs:element name="YearBudget" type="xs:decimal" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="AmountReal" type="xs:decimal" />
+				<xs:element name="RpPerKg" type="xs:decimal" />
+				<xs:element name="RpPerHa" type="xs:decimal" />
+				<xs:element name="AmountBudget" type="xs:decimal" />
+				<xs:element name="RpPerKgBudget" type="xs:decimal" />
+				<xs:element name="RpPerHaBudget" type="xs:decimal" />
+				<xs:element name="AmountRealToDate" type="xs:decimal" />
+				<xs:element name="RpPerKgToDate" type="xs:decimal" />
+				<xs:element name="RpPerHaToDate" type="xs:decimal" />
+				<xs:element name="AmountBudgetToDate" type="xs:decimal" />
+				<xs:element name="RpPerKgBudgetToDate" type="xs:decimal" />
+				<xs:element name="RpPerHaBudgetToDate" type="xs:decimal" />
+				<xs:element name="AmountYearBudget" type="xs:decimal" />
+				<xs:element name="RpPerKgYearBudget" type="xs:decimal" />
+				<xs:element name="RpPerHaYearBudget" type="xs:decimal" />
+				<xs:element name="VarPercent" type="xs:decimal" />
+				<xs:element name="Notes" type="xs:string" />
+				<xs:element name="GrpBy" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

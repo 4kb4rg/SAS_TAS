@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_IV4_PRODUKSI" targetNamespace="http://tempuri.org/GL_ESTATE_MR_IV4_PRODUKSI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_IV4_PRODUKSI.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_IV4_PRODUKSI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_IV4_PRODUKSI">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="Tgl" type="xs:decimal"  />
+				
+				<xs:element name="KHi" type="xs:decimal"  />
+				<xs:element name="KsHi" type="xs:decimal"  />
+											
+				<xs:element name="BPHi" type="xs:decimal"  />
+				<xs:element name="BPsHi" type="xs:decimal"  />
+				
+				<xs:element name="STKgHi" type="xs:decimal"  />
+				<xs:element name="STKgsHI" type="xs:decimal"  />
+				<xs:element name="STPsHi" type="xs:decimal"  />
+				<xs:element name="STPssHi" type="xs:decimal"  />
+				
+				<xs:element name="GPKgHi" type="xs:decimal"  />
+				<xs:element name="GPKgsHI" type="xs:decimal"  />
+				<xs:element name="GPPsHi" type="xs:decimal"  />
+				<xs:element name="GPPssHi" type="xs:decimal"  />
+				
+				<xs:element name="NTKgHi" type="xs:decimal"  />
+				<xs:element name="NTKgsHI" type="xs:decimal"  />
+				<xs:element name="NTPsHi" type="xs:decimal"  />
+				<xs:element name="NTPssHi" type="xs:decimal"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

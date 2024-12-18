@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Estate_Statistik" targetNamespace="http://tempuri.org/GL_StdRpt_Estate_Statistik.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Estate_Statistik.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Estate_Statistik.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_STATISTIK">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Periode" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkgrpCode" type="xs:string" />
+				<xs:element name="GroupCoa" type="xs:string" minOccurs="0" />
+				<xs:element name="codesubblok" type="xs:string" minOccurs="0" />
+				<xs:element name="bibit" type="xs:string" minOccurs="0" />
+				<xs:element name="TotalArea" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TotalStand" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HaPanen" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HaPanenSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="jjgBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="jjgSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="kgBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="kgSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="bjrBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="bjrSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BudgetBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="BudgetSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="pmBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="pmSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HkBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HkSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="kghaBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="kghaSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="kghkBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="kghkSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="KgBrdBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="KgBrdSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HKBrdBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HKBrdSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="psnBI" type="xs:decimal" />
+				<xs:element name="psnSBI" type="xs:decimal" />
+				<xs:element name="psnBrdBI" type="xs:decimal" />
+				<xs:element name="psnBrdSBI1" type="xs:decimal" />
+				<xs:element name="rotasi" type="xs:decimal" />
+				<xs:element name="rotasiSBI" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

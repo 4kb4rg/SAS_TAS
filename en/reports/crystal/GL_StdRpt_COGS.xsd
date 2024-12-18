@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_COGS" targetNamespace="http://tempuri.org/GL_StdRpt_COGS.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_COGS.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_COGS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_COGS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Number" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ItemDescription" type="xs:string" />
+				<xs:element name="TotalAmount" type="xs:decimal" />
+				<xs:element name="Type" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GL_StdRpt_COGS_Group_Total">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Number" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ItemDescription" type="xs:string" />
+				<xs:element name="GroupTypeTotalAmount" type="xs:decimal" />
+				<xs:element name="Group" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GL_StdRpt_COGS_Location">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Number" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DummyItem" type="xs:decimal" />
+				<xs:element name="DummyTotal" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

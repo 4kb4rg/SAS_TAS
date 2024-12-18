@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="HR_StdRpt_EmployeeStatutory" targetNamespace="http://tempuri.org/HR_StdRpt_EmployeeStatutory.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_EmployeeStatutory.xsd"
+	xmlns:mstns="http://tempuri.org/HR_StdRpt_EmployeeStatutory.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_EmployeeStatutory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="SocsoScheme" type="xs:string" />
+				<xs:element name="SocsoNo" type="xs:string" />
+				<xs:element name="SocsoID" type="xs:string" />
+				<xs:element name="EPFScheme" type="xs:string" />
+				<xs:element name="EPFNo" type="xs:string" />
+				<xs:element name="EPFID" type="xs:string" />
+				<xs:element name="EPFInitial" type="xs:string" />
+				<xs:element name="TaxScheme" type="xs:string" />
+				<xs:element name="TaxNo" type="xs:string" />
+				<xs:element name="TaxBranch" type="xs:string" />
+				<xs:element name="LevyPort" type="xs:string" />
+				<xs:element name="LevyArriveDate" type="xs:dateTime" />
+				<xs:element name="LevyCardNo" type="xs:string" />
+				<xs:element name="LevyImgNo" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

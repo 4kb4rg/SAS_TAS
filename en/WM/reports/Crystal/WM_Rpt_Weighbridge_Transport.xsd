@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WM_Rpt_Weighbridge_Transport" targetNamespace="http://tempuri.org/WM_Rpt_Weighbridge_Transport.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_Rpt_Weighbridge_Transport.xsd" xmlns:mstns="http://tempuri.org/WM_Rpt_Weighbridge_Transport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="APWM_LIST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TicketNo" type="xs:string" />
+        <xs:element name="InDate" type="xs:date" />
+        <xs:element name="OutDate" type="xs:date" />
+        <xs:element name="ProductCode" type="xs:string" />
+        <xs:element name="ProductName" type="xs:string" />
+        <xs:element name="CustomerCode" type="xs:string" />
+        <xs:element name="Name" type="xs:string" />
+        <xs:element name="ContractNo" type="xs:string" />
+        <xs:element name="TransporterCode" type="xs:string" />
+        <xs:element name="TransporterName" type="xs:string" />
+        <xs:element name="VehicleCode" type="xs:string" />
+        <xs:element name="DeliveryNoteNo" type="xs:string" />
+        <xs:element name="FirstWeight" type="xs:decimal" />
+        <xs:element name="SecondWeight" type="xs:decimal" />
+        <xs:element name="Potongan" type="xs:decimal" />
+        <xs:element name="NetWeight" type="xs:decimal" />
+        <xs:element name="DateReceived" type="xs:date" />
+        <xs:element name="BuyerFirstWeight" type="xs:decimal" />
+        <xs:element name="BuyerSecondWeight" type="xs:decimal" />
+        <xs:element name="BuyerNetWeight" type="xs:decimal" />
+        <xs:element name="Selisih" type="xs:decimal" />
+        <xs:element name="ClaimMtd" type="xs:string" />
+        <xs:element name="ClaimDescr" type="xs:string" />
+        <xs:element name="MinLimit" type="xs:decimal" />
+        <xs:element name="MaxLimit" type="xs:decimal" />
+        <xs:element name="HourReceived" type="xs:date" />
+        <xs:element name="ClaimKGMin" type="xs:decimal" />
+        <xs:element name="ClaimKGMax" type="xs:decimal" />
+        <xs:element name="ClaimKG" type="xs:decimal" />
+        <xs:element name="ClaimKGTotal" type="xs:decimal" />
+        <xs:element name="Price" type="xs:decimal" />
+        <xs:element name="Amount" type="xs:decimal" />
+        <xs:element name="DPPAmount" type="xs:decimal" />
+        <xs:element name="PPNAmount" type="xs:decimal" />
+        <xs:element name="PPhAmount" type="xs:decimal" />
+        <xs:element name="PPhRate" type="xs:decimal" />
+        <xs:element name="ClaimAmount" type="xs:decimal" />
+        <xs:element name="ClaimPPNAmount" type="xs:decimal" />
+        <xs:element name="TotalDibayar" type="xs:decimal" />
+        <xs:element name="Terbilang" type="xs:string" />
+        <xs:element name="ContractPrice" type="xs:decimal" />
+        <xs:element name="TotClaimAmount" type="xs:decimal" />
+        <xs:element name="TotClaimPPNAmount" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FA_StdRpt_AssetDeprList" targetNamespace="http://tempuri.org/FA_StdRpt_AssetDeprList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_StdRpt_AssetDeprList.xsd" xmlns:mstns="http://tempuri.org/FA_StdRpt_AssetDeprList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_StdRpt_AssetDeprList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AssetDeprID" type="xs:string" />
+				<xs:element name="AssetCode" type="xs:string" />
+				<xs:element name="AssetDesc" type="xs:string" />
+				<xs:element name="AssetHeaderCode" type="xs:string" />
+				<xs:element name="AssetHeaderDesc" type="xs:string" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="RefDate" type="xs:dateTime" />
+				<xs:element name="DeprGLDeprAccCode" type="xs:string" />
+				<xs:element name="DeprGLAccumDeprAccCode" type="xs:string" />
+				<xs:element name="GenDeprInd" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="AssetGrpCode" type="xs:string" />
+				<xs:element name="AssetGroup" type="xs:string" />
+				<xs:element name="FiskalDeprAmount" type="xs:decimal" />
+				<xs:element name="AssetValue" type="xs:decimal" />
+				<xs:element name="AssetValueF" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

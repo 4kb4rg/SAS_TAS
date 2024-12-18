@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AR_StdRpt_DebtorJournal" targetNamespace="http://tempuri.org/AR_StdRpt_DebtorJournal.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AR_StdRpt_DebtorJournal.xsd" xmlns:mstns="http://tempuri.org/AR_StdRpt_DebtorJournal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_DEBTORJRN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DebtorJrnID" type="xs:string" />
+				<xs:element name="JrnType" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="DebtorJrnLnId" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Rekap_Biaya" targetNamespace="http://tempuri.org/GL_StdRpt_Rekap_Biaya.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Rekap_Biaya.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Rekap_Biaya.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkType" type="xs:string" minOccurs="0" />
+				<xs:element name="Divisi" type="xs:string" minOccurs="0" />
+				<xs:element name="TTanam" type="xs:string" minOccurs="0" />
+				<xs:element name="TotalArea" type="xs:decimal" minOccurs="0" />	
+				<xs:element name="Prod_BI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Prod_SBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostKg_BI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostKg_SBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Biaya_BI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Biaya_SBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Biaya_STI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Biaya_STL" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostHa_BI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostHa_SBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostHa_STI" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

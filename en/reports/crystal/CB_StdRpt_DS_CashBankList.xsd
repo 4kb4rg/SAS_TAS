@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CB_StdRpt_DS_CashBankList" targetNamespace="http://tempuri.org/CB_StdRpt_DS_CashBankList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_DS_CashBankList.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_DS_CashBankList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="CB_StdRpt_DS_CashBankList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="CashBankID" type="xs:string" />
+        <xs:element name="FromTo" type="xs:string" />
+        <xs:element name="CashBankType" type="xs:string" />
+        <xs:element name="SourceType" type="xs:string" minOccurs="0" />
+        <xs:element name="BankCode" type="xs:string" minOccurs="0" />
+        <xs:element name="ChequeNo" type="xs:string" minOccurs="0" />
+        <xs:element name="Status" type="xs:string" minOccurs="0" />
+        <xs:element name="UpdateName" type="xs:string" minOccurs="0" />
+        <xs:element name="LineDesc" type="xs:string" />
+        <xs:element name="Total" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+        <xs:element name="VehCode" type="xs:string" minOccurs="0" />
+        <xs:element name="VehExpCode" type="xs:string" minOccurs="0" />
+        <xs:element name="ChargeLocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="TransDate" type="xs:date" minOccurs="0" />
+        <xs:element name="AdditionalNote" type="xs:string" />
+        <xs:element name="TaxLnID" type="xs:string" />
+        <xs:element name="TaxRate" type="xs:decimal" />
+        <xs:element name="DPPAmount" type="xs:decimal" />
+        <xs:element name="PrintDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

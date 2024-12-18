@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_Rpt_ContractPayDet" targetNamespace="http://tempuri.org/PR_Rpt_ContractPayDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_Rpt_ContractPayDet.xsd" xmlns:mstns="http://tempuri.org/PR_Rpt_ContractPayDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BKM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BKMCode" type="xs:string" />
+				<xs:element name="SubCat" type="xs:string" />
+				<xs:element name="Divisi" type="xs:string" />
+				<xs:element name="Mandor" type="xs:string" minOccurs="0" />
+				<xs:element name="KCS" type="xs:string" minOccurs="0" />
+				<xs:element name="BKMDat" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="Notes" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BKM_RW_JOB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodeBKM" type="xs:string" />
+				<xs:element name="Karyawan" type="xs:string" />
+				<xs:element name="Job" type="xs:string" />
+				<xs:element name="Blok" type="xs:string" />
+				<xs:element name="YearPlan" type="xs:string" />
+				<xs:element name="Hk" type="xs:float" />
+				<xs:element name="Hasil" type="xs:float" />
+				<xs:element name="Uom" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BKM_BAHAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodeBKM" type="xs:string" />
+				<xs:element name="JobName" type="xs:string" />
+				<xs:element name="Bahan" type="xs:string" />
+				<xs:element name="Qty" type="xs:string" />
+				<xs:element name="Uom" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

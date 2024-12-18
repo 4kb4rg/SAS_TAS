@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_PlantationOHSum" targetNamespace="http://tempuri.org/BD_StdRpt_DS_PlantationOHSum.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_PlantationOHSum.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_PlantationOHSum.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_OH_SUMMARY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DispSeq" type="xs:int" />
+				<xs:element name="Item" type="xs:string" />
+				<xs:element name="ItemCalcFormula" type="xs:string" />
+				<xs:element name="AreaSize" type="xs:decimal" />
+				<xs:element name="Yield" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="CostPerArea" type="xs:decimal" />
+				<xs:element name="CostPerWeight" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="PeriodID" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

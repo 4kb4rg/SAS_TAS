@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FA_Rpt_AssetPermit" targetNamespace="http://tempuri.org/FA_Rpt_AssetPermit.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_Rpt_AssetPermit.xsd" xmlns:mstns="http://tempuri.org/FA_Rpt_AssetClass.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_Rpt_AssetPermit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AssetCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="HeaderDesc" type="xs:string" />
+				<xs:element name="AssetAddPerm" type="xs:string" />
+				<xs:element name="AssetGenDeprPerm" type="xs:string" />
+				<xs:element name="AssetManDeprPerm" type="xs:string" />
+				<xs:element name="AssetDispPerm" type="xs:string" />
+				<xs:element name="AssetWOPerm" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

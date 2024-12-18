@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PD_StdRpt_ProdStat" targetNamespace="http://tempuri.org/PD_StdRpt_ProdStat.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PD_StdRpt_ProdStat.xsd" xmlns:mstns="http://tempuri.org/PD_StdRpt_ProdStat.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PD_ProdStat">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Blk" type="xs:string" />
+				<xs:element name="TotBunch" type="xs:decimal" />
+				<xs:element name="Quota" type="xs:decimal" />
+				<xs:element name="AboveQuota" type="xs:decimal" />
+				<xs:element name="Delivered" type="xs:decimal" />
+				<xs:element name="Deduction" type="xs:decimal" />
+				<xs:element name="BackLog" type="xs:decimal"/>
+				<xs:element name="AvgBackLog" type="xs:decimal"/>
+				<xs:element name="Weight" type="xs:decimal" />
+				<xs:element name="ActWeight" type="xs:decimal" />
+				<xs:element name="EstBJR" type="xs:decimal" />
+				<xs:element name="ActABW" type="xs:decimal" />
+				<xs:element name="Harvester" type="xs:decimal" />
+				<xs:element name="HarvMandays" type="xs:decimal" />
+				<xs:element name="AboveQuotaMandays" type="xs:decimal" />
+				<xs:element name="HarvOutput" type="xs:decimal" />
+				<xs:element name="WP" type="xs:decimal" />
+				<xs:element name="HarvInt" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

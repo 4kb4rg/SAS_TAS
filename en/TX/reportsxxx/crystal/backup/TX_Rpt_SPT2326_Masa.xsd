@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="TX_Rpt_SPT2326_Masa" targetNamespace="http://tempuri.org/TX_Rpt_SPT2326_Masa.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/TX_Rpt_SPT2326_Masa.xsd" xmlns:mstns="http://tempuri.org/TX_Rpt_SPT2326_Masa.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="TaxReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TXDescr" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="NPWP" type="xs:string" />
+				<xs:element name="lno1" type="xs:string" />
+				<xs:element name="lno2" type="xs:string" />
+				<xs:element name="lno3" type="xs:string" />
+				<xs:element name="lno4" type="xs:string" />
+				<xs:element name="lno5" type="xs:string" />
+				<xs:element name="lno6" type="xs:string" />
+				<xs:element name="lno7" type="xs:string" />
+				<xs:element name="lno8" type="xs:string" />
+				<xs:element name="lno9" type="xs:string" />
+				<xs:element name="lno10" type="xs:string" />
+				<xs:element name="lno11" type="xs:string" />
+				<xs:element name="lno12" type="xs:string" />
+				<xs:element name="lno13" type="xs:string" />
+				<xs:element name="lno14" type="xs:string" />
+				<xs:element name="lno15" type="xs:string" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="am1" type="xs:string" />
+				<xs:element name="am2" type="xs:string" />
+				<xs:element name="ay1" type="xs:string" />
+				<xs:element name="ay2" type="xs:string" />
+				<xs:element name="ay3" type="xs:string" />
+				<xs:element name="ay4" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="NPWPNo" type="xs:string" />
+				<xs:element name="NPWPName" type="xs:string" />
+				<xs:element name="NPWPAddress" type="xs:string" />
+				<xs:element name="no1" type="xs:string" />
+				<xs:element name="no2" type="xs:string" />
+				<xs:element name="no3" type="xs:string" />
+				<xs:element name="no4" type="xs:string" />
+				<xs:element name="no5" type="xs:string" />
+				<xs:element name="no6" type="xs:string" />
+				<xs:element name="no7" type="xs:string" />
+				<xs:element name="no8" type="xs:string" />
+				<xs:element name="no9" type="xs:string" />
+				<xs:element name="no10" type="xs:string" />
+				<xs:element name="no11" type="xs:string" />
+				<xs:element name="no12" type="xs:string" />
+				<xs:element name="no13" type="xs:string" />
+				<xs:element name="no14" type="xs:string" />
+				<xs:element name="no15" type="xs:string" />
+				<xs:element name="RowNo" type="xs:string" />
+				<xs:element name="TaxObject" type="xs:string" />
+				<xs:element name="PPh23Row1DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row1Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row1TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row2DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row2Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row2TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row3DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row3Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row3TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row4DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row4Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row4TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row5DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row5Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row5TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row6DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row6Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row6TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row7DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row7Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row7TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row8DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row8Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row8TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row9DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row9Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row9TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row10DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row10Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23Row10TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row1DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row1Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row1TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row2DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row2Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row2TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row3DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row3Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row3TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row4DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row4Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row4TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row5DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row5Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row5TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row6DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row6Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row6TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row7DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row7Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row7TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row8DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row8Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row8TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row9DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row9Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row9TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row10DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row10Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row10TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row11DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row11Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row11TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row12DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row12Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row12TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row13DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row13Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26Row13TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh23TtlTaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PPh26TtlTaxAmt" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

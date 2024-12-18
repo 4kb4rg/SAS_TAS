@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="NU_StdRpt_SeedDispatchList" targetNamespace="http://tempuri.org/NU_StdRpt_SeedDispatchList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NU_StdRpt_SeedDispatchList.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_SeedDispatchList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="NU_StdRpt_SeedDispatchList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DispatchID" type="xs:string" />
+				<xs:element name="DocRefNo" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="PlantMaterial" type="xs:string" />
+				<xs:element name="DispatchDate" type="xs:dateTime" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="VehNo" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="COMP_INFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="PostCode" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="State" type="xs:string" minOccurs="0" />
+				<xs:element name="City" type="xs:string" />
+				<xs:element name="TelNo" type="xs:string" minOccurs="0" />
+				<xs:element name="FaxNo" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

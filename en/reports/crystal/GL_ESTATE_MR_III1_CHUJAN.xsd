@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_III1_CHUJAN" targetNamespace="http://tempuri.org/GL_ESTATE_MR_III1_CHUJAN.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_III1_CHUJAN.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_III1_CHUJAN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_III1_CHUJAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="Tgl" type="xs:string"  />
+				
+				<xs:element name="P1" type="xs:decimal"  />
+				<xs:element name="S1" type="xs:decimal"  />
+				<xs:element name="M1" type="xs:decimal"  />
+				<xs:element name="T1" type="xs:decimal"  />
+								
+				<xs:element name="P2" type="xs:decimal"  />
+				<xs:element name="S2" type="xs:decimal"  />
+				<xs:element name="M2" type="xs:decimal"  />
+				<xs:element name="T2" type="xs:decimal"  />
+				
+				<xs:element name="P3" type="xs:decimal"  />
+				<xs:element name="S3" type="xs:decimal"  />
+				<xs:element name="M3" type="xs:decimal"  />
+				<xs:element name="T3" type="xs:decimal"  />
+				
+				<xs:element name="P4" type="xs:decimal"  />
+				<xs:element name="S4" type="xs:decimal"  />
+				<xs:element name="M4" type="xs:decimal"  />
+				<xs:element name="T4" type="xs:decimal"  />
+				
+				<xs:element name="P5" type="xs:decimal"  />
+				<xs:element name="S5" type="xs:decimal"  />
+				<xs:element name="M5" type="xs:decimal"  />
+				<xs:element name="T5" type="xs:decimal"  />
+				
+				<xs:element name="P6" type="xs:decimal"  />
+				<xs:element name="S6" type="xs:decimal"  />
+				<xs:element name="M6" type="xs:decimal"  />
+				<xs:element name="T6" type="xs:decimal"  />
+				
+				<xs:element name="P7" type="xs:decimal"  />
+				<xs:element name="S7" type="xs:decimal"  />
+				<xs:element name="M7" type="xs:decimal"  />
+				<xs:element name="T7" type="xs:decimal"  />
+				
+				<xs:element name="P8" type="xs:decimal"  />
+				<xs:element name="S8" type="xs:decimal"  />
+				<xs:element name="M8" type="xs:decimal"  />
+				<xs:element name="T8" type="xs:decimal"  />
+				
+				<xs:element name="P9" type="xs:decimal"  />
+				<xs:element name="S9" type="xs:decimal"  />
+				<xs:element name="M9" type="xs:decimal"  />
+				<xs:element name="T9" type="xs:decimal"  />
+				
+				<xs:element name="P10" type="xs:decimal"  />
+				<xs:element name="S10" type="xs:decimal"  />
+				<xs:element name="M10" type="xs:decimal"  />
+				<xs:element name="T10" type="xs:decimal"  />
+				
+				<xs:element name="P11" type="xs:decimal"  />
+				<xs:element name="S11" type="xs:decimal"  />
+				<xs:element name="M11" type="xs:decimal"  />
+				<xs:element name="T11" type="xs:decimal"  />
+				
+				<xs:element name="P12" type="xs:decimal"  />
+				<xs:element name="S12" type="xs:decimal"  />
+				<xs:element name="M12" type="xs:decimal"  />
+				<xs:element name="T12" type="xs:decimal"  />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

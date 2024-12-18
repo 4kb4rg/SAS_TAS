@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_StokPupuk" targetNamespace="http://tempuri.org/GL_StdRpt_StokPupuk.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_StokPupuk.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_StokPupuk.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_STOKPUPUK">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ID" type="xs:string" />
+				<xs:element name="Activity" type="xs:string" />
+				<xs:element name="SubAct" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="ProdModelCode" type="xs:string" />
+				<xs:element name="ProdTypeCode" type="xs:string" />
+				<xs:element name="ProdModel" type="xs:string" />
+				<xs:element name="ProdCat" type="xs:string" />
+				<xs:element name="ProdType" type="xs:string" />
+				<xs:element name="ProdCatCode" type="xs:string" />
+				<xs:element name="BegYearUnit" type="xs:decimal" />
+				<xs:element name="BegYearAmount" type="xs:decimal" />
+				<xs:element name="BegMonthUnit" type="xs:decimal" />
+				<xs:element name="BegMonthAmount" type="xs:decimal" />
+				<xs:element name="CurrUnitIn" type="xs:decimal" />
+				<xs:element name="CurrAmountIn" type="xs:decimal" />
+				<xs:element name="CurrUnitOut" type="xs:decimal" />
+				<xs:element name="CurrAmountOut" type="xs:decimal" />
+				<xs:element name="ToDateUnitIn" type="xs:decimal" />
+				<xs:element name="ToDateAmountIn" type="xs:decimal" />
+				<xs:element name="ToDateUnitOut" type="xs:decimal" />
+				<xs:element name="ToDateAmountOut" type="xs:decimal" />
+				<xs:element name="CurrBudgetUnit" type="xs:decimal" />
+				<xs:element name="ToDateBudgetUnit" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

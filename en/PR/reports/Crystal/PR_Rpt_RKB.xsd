@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_Rpt_RKB" targetNamespace="http://tempuri.org/PR_Rpt_RKB.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_Rpt_RKB.xsd" xmlns:mstns="http://tempuri.org/PR_Rpt_RKB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="RKB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RKBCode" type="xs:string" />
+				<xs:element name="RKBType" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="IDDiv" type="xs:string"/>
+				<xs:element name="Notes" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="JobCode" type="xs:string" />
+				<xs:element name="BlockCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+			    <xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="POid" type="xs:string" />
+				<xs:element name="Ket" type="xs:string" />	
+				<xs:element name="PeriodeBl" type="xs:string" />
+				<xs:element name="HasilBl" type="xs:decimal" />
+				<xs:element name="Hasil" type="xs:decimal" />
+				<xs:element name="UOM" type="xs:string" />
+			    <xs:element name="HKUnit" type="xs:decimal" />
+				<xs:element name="HKSKUB" type="xs:decimal" />
+				<xs:element name="HKSKUH" type="xs:decimal" />
+				<xs:element name="HKPHL" type="xs:decimal" />
+				<xs:element name="HKKontr" type="xs:decimal" />
+				<xs:element name="HKTot" type="xs:decimal" />
+				<xs:element name="RpUnit" type="xs:decimal" />
+				<xs:element name="RpGajiSKUB" type="xs:decimal" />
+				<xs:element name="RpLemburSKUB" type="xs:decimal" />
+				<xs:element name="RpGajiSKUH" type="xs:decimal" />
+				<xs:element name="RpLemburSKUH" type="xs:decimal" />
+				<xs:element name="RpGajiPHL" type="xs:decimal" />
+				<xs:element name="RpLemburPHL" type="xs:decimal" />	
+				<xs:element name="RpKontraktor" type="xs:decimal" />
+				<xs:element name="RpRekanan" type="xs:decimal" />
+				<xs:element name="RpLain" type="xs:decimal" />
+				<xs:element name="RpTot" type="xs:decimal" />
+				<xs:element name="jobname" type="xs:string" />
+				<xs:element name="itemname" type="xs:string" />
+				<xs:element name="suppliername" type="xs:string" />
+				<xs:element name="SubCatID" type="xs:string" />	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RKBSUM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RKBCode" type="xs:string" />
+				<xs:element name="a_skub" type="xs:decimal" />
+				<xs:element name="a_skuh" type="xs:decimal" />
+				<xs:element name="a_phl" type="xs:decimal" />
+				<xs:element name="a_ktk" type="xs:decimal"/>
+				<xs:element name="a_rkn" type="xs:decimal" />
+				<xs:element name="a_lln" type="xs:decimal" />
+				<xs:element name="a_tot" type="xs:decimal" />
+				<xs:element name="b_skub" type="xs:decimal" />
+				<xs:element name="b_skuh" type="xs:decimal" />
+				<xs:element name="b_phl" type="xs:decimal" />
+				<xs:element name="b_ktk" type="xs:decimal"/>
+				<xs:element name="b_rkn" type="xs:decimal" />
+				<xs:element name="b_lln" type="xs:decimal" />
+				<xs:element name="b_tot" type="xs:decimal" />
+				<xs:element name="c_skub" type="xs:decimal" />
+				<xs:element name="c_skuh" type="xs:decimal" />
+				<xs:element name="c_phl" type="xs:decimal" />
+				<xs:element name="c_ktk" type="xs:decimal"/>
+				<xs:element name="c_rkn" type="xs:decimal" />
+				<xs:element name="c_lln" type="xs:decimal" />
+				<xs:element name="c_tot" type="xs:decimal" />
+				<xs:element name="d_skub" type="xs:decimal" />
+				<xs:element name="d_skuh" type="xs:decimal" />
+				<xs:element name="d_phl" type="xs:decimal" />
+				<xs:element name="d_ktk" type="xs:decimal"/>
+				<xs:element name="d_rkn" type="xs:decimal" />
+				<xs:element name="d_lln" type="xs:decimal" />
+				<xs:element name="d_tot" type="xs:decimal" />
+				<xs:element name="e_skub" type="xs:decimal" />
+				<xs:element name="e_skuh" type="xs:decimal" />
+				<xs:element name="e_phl" type="xs:decimal" />
+				<xs:element name="e_ktk" type="xs:decimal"/>
+				<xs:element name="e_rkn" type="xs:decimal" />
+				<xs:element name="e_lln" type="xs:decimal" />
+				<xs:element name="e_tot" type="xs:decimal" />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_CostLedgerSummary" targetNamespace="http://tempuri.org/GL_StdRpt_CostLedgerSummary.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_CostLedgerSummary.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_CostLedgerSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_COSTLEDGERSUMMARY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="DocLnId" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="DocDate" type="xs:dateTime" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ModuleCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="ActDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="ExpenseDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="ActCode" type="xs:string" />
+				<xs:element name="ExpenseCode" type="xs:string" />
+				<xs:element name="MTD" type="xs:decimal" />
+				<xs:element name="YTD" type="xs:decimal" />
+				<xs:element name="BgtMTD" type="xs:decimal" />
+				<xs:element name="BgtYTD" type="xs:decimal" />
+				<xs:element name="AddVote" type="xs:decimal" />
+				<xs:element name="VarMTD" type="xs:decimal" />
+				<xs:element name="VarYTD" type="xs:decimal" />
+				<xs:element name="GLBlock" type="xs:string" />
+				<xs:element name="GLBlockDesc" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SH_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportID" type="xs:string" />
+				<xs:element name="RptTitle" type="xs:string" minOccurs="0" />
+				<xs:element name="ReportType" type="xs:string" minOccurs="0" />
+				<xs:element name="RptStatus" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

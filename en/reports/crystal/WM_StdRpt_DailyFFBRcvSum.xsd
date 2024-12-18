@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WM_StdRpt_Daily_FFBRcv_Sum" targetNamespace="http://tempuri.org/WM_StdRpt_Daily_FFBRcv_Sum.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_Daily_FFBRcv_Sum.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_Daily_FFBRcv_Sum.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_Daily_FFBRcv_Sum">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="TransDate" type="xs:dateTime" />
+				<xs:element name="FFBReceivedInt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBReceivedAss" type="xs:decimal" minOccurs="0" />
+				<xs:element name="FFBReceivedExt" type="xs:decimal" />
+				<xs:element name="FFBReceivedCon" type="xs:decimal" />
+				<xs:element name="TodayTotal" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="NU_StdRpt_SeedlingsIssueListMi" targetNamespace="http://tempuri.org/NU_StdRpt_SeedlingsIssueListMi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NU_StdRpt_SeedlingsIssueListMi.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_SeedlingsIssueListMi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="NU_StdRpt_SeedlingsIssueListMi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="NUBlkCode" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="PlantMaterial" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="QtyToDate" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_SeedlingsIssueListMiDesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SeedlingsIssueDesc" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="NUBlkCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="QtyToDate" type="xs:decimal" />
+				<xs:element name="BlkGrpCode" type="xs:string" />
+				<xs:element name="ChargeLocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NU_StdRpt_SeedlingsIssueListMiDescOther">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SeedlingsIssueDesc" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="BatchNo" type="xs:decimal" />
+				<xs:element name="NUBlkCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="QtyToDate" type="xs:decimal" />
+				<xs:element name="BlkGrpCode" type="xs:string" />
+				<xs:element name="ChargeLocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

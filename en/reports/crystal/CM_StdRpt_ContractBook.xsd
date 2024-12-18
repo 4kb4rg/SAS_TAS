@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CM_CONTRACTBOOKDTL" targetNamespace="http://tempuri.org/CM_CONTRACTBOOKDTL.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CM_CONTRACTBOOKDTL.xsd" xmlns:mstns="http://tempuri.org/CM_CONTRACTBOOKDTL.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CM_CONTRACTBOOKDTL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TicketNo" type="xs:string" />
+				<xs:element name="VehicleCode" type="xs:string" />
+				<xs:element name="DriverName" type="xs:string" />
+				<xs:element name="InDate" type="xs:dateTime" />
+				<xs:element name="OutDate" type="xs:dateTime" />
+				<xs:element name="FirstWeight" type="xs:decimal" />
+				<xs:element name="SecondWeight" type="xs:decimal" />
+				<xs:element name="NetWeight" type="xs:decimal" />
+				<xs:element name="DateReceived" type="xs:dateTime" />
+				<xs:element name="BuyerFirstWeight" type="xs:decimal" />
+				<xs:element name="BuyerSecondWeight" type="xs:decimal" />
+				<xs:element name="BuyerNetWeight" type="xs:decimal" />
+				<xs:element name="TransporterCode" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CM_CONTRACTBOOKHDR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ContractNo" type="xs:string" />
+				<xs:element name="ContType" type="xs:string" />
+				<xs:element name="ContractType" type="xs:string" />
+				<xs:element name="ProductCode" type="xs:string"/>
+				<xs:element name="BuyerCode" type="xs:string" />
+				<xs:element name="Buyer" type="xs:string" />
+				<xs:element name="ContractQty" type="xs:decimal" />
+				<xs:element name="DONo" type="xs:string"/>
+				<xs:element name="DODestination" type="xs:string"/>
+				<xs:element name="DOQty" type="xs:decimal" />
+				<xs:element name="DODelivery" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

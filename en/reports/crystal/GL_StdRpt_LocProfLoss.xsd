@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_LocProfLoss" targetNamespace="http://tempuri.org/GL_StdRpt_LocProfLoss.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_LocProfLoss.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_CompProfLoss.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_LocProfLoss">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DispSeq" type="xs:integer" />
+				<xs:element name="RowId" type="xs:string" />
+				<xs:element name="RowType" type="xs:string" />
+				<xs:element name="RowDesc" type="xs:string" />
+				<xs:element name="ActMTD" type="xs:decimal" />
+				<xs:element name="ActYTD" type="xs:decimal" />
+				<xs:element name="BgtMTD" type="xs:decimal" />
+				<xs:element name="BgtYTD" type="xs:decimal" />
+				<xs:element name="BgtYear" type="xs:decimal" />
+				<xs:element name="VarMTD" type="xs:decimal" />
+				<xs:element name="VarYTD" type="xs:decimal" />
+				<xs:element name="LastYearEnd" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

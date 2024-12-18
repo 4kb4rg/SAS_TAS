@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_MthAccMoveList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_MthAccMoveList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_MthAccMoveList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_MthAccMoveList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IN_StdRpt_DS_MthAccMoveList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ProdCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="OpeningBal" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Receive" type="xs:decimal" />
+				<xs:element name="ReturnAdvice" type="xs:decimal" />
+				<xs:element name="Transfer" type="xs:decimal" />
+				<xs:element name="Adjustment" type="xs:decimal" />
+				<xs:element name="Ledger" type="xs:decimal" />
+				<xs:element name="BlockIssue" type="xs:decimal" />
+				<xs:element name="VehicleIssue" type="xs:decimal" />
+				<xs:element name="Total" type="xs:decimal" />
+				<xs:element name="Closing" type="xs:decimal" />
+				<xs:element name="GoodsReceive" type="xs:decimal" />
+				<xs:element name="GoodsReturn" type="xs:decimal" />
+				<xs:element name="DispatchAdvice" type="xs:decimal" />
+				<xs:element name="Ret" type="xs:decimal" />
+				<xs:element name="StkRtn" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="HR_StdRpt_EmployeeEmployment" targetNamespace="http://tempuri.org/HR_StdRpt_EmployeeEmployment.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_EmployeeEmployment.xsd"
+	xmlns:mstns="http://tempuri.org/HR_StdRpt_EmployeeEmployment.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_EmployeeEmployment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="AppJoinDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="AppJoinGrpDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="AppCPCode" type="xs:string" minOccurs="0" />
+				<xs:element name="LastCPDateFrom" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="LastCPDateTo" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="LastCPCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TerminateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="TerminateCPCode" type="xs:string" minOccurs="0" />
+				<xs:element name="HolSchedule" type="xs:string" minOccurs="0" />
+				<xs:element name="BFLeave" type="xs:string" minOccurs="0" />
+				<xs:element name="SickLeave" type="xs:string" minOccurs="0" />
+				<xs:element name="AnnualLeave" type="xs:string" minOccurs="0" />
+				<xs:element name="InsuranceInd" type="xs:string" minOccurs="0" />
+				<xs:element name="InsuranceNo" type="xs:string" minOccurs="0" />
+				<xs:element name="Shift" type="xs:string" minOccurs="0" />
+				<xs:element name="MechInd" type="xs:string" minOccurs="0" />
+				<xs:element name="IsGangLeader" type="xs:string" minOccurs="0" />
+				<xs:element name="FirstMthWorkDay" type="xs:short" minOccurs="0" />
+				<xs:element name="ProrateAttdIncInd" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

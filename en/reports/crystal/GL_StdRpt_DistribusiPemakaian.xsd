@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_DISTRIBUSIPEMAKAIAN" targetNamespace="http://tempuri.org/GL_StdRpt_DistribusiPemakaian.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_DistribusiPemakaian.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_DistribusiPemakaian.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_DISTRIBUSIPEMAKAIAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="rptname" type="xs:string" />
+				<xs:element name="nodec" type="xs:string" />
+				<xs:element name="compcode" type="xs:string" />
+				<xs:element name="loccode" type="xs:string" />
+				<xs:element name="locname" type="xs:string" />
+				<xs:element name="accmonth" type="xs:string" />
+				<xs:element name="accyear" type="xs:string" />
+				<xs:element name="periode" type="xs:string" />
+				<xs:element name="prodmodelcode" type="xs:string" />
+				<xs:element name="prodmodeldesc" type="xs:string" />
+				<xs:element name="prodtypecode" type="xs:string" />
+				<xs:element name="prodtypedesc" type="xs:string" />
+				<xs:element name="prodcatcode" type="xs:string" />
+				<xs:element name="prodcatdesc" type="xs:string" />
+				<xs:element name="itemcode" type="xs:string" />
+				<xs:element name="itemdesc" type="xs:string" />
+				<xs:element name="uom" type="xs:string" />
+				<xs:element name="divcode" type="xs:string" />
+				<xs:element name="unit" type="xs:decimal" />
+				<xs:element name="amount" type="xs:decimal" />
+				<xs:element name="afdeling" type="xs:string" />
+				<xs:element name="remark" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+

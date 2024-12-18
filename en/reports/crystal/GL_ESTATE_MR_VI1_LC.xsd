@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_V1_PEMELIHARAAN" targetNamespace="http://tempuri.org/GL_ESTATE_MR_V1_PEMELIHARAAN.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_V1_PEMELIHARAAN.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_V1_PEMELIHARAAN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_V1_PEMELIHARAAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				
+				<xs:element name="coagroup" type="xs:string"  />
+				<xs:element name="coagroup_desc" type="xs:string"  />
+				<xs:element name="coagen" type="xs:string"  />
+				<xs:element name="coagen_desc" type="xs:string"  />
+				<xs:element name="jobcode" type="xs:string"  />
+				<xs:element name="coasub_desc" type="xs:string"  />    
+	
+				
+				<xs:element name="D1BudgetBI" type="xs:decimal"  />
+				<xs:element name="D1ActualBI" type="xs:decimal"  />
+				<xs:element name="D1ActualSBI" type="xs:decimal"  />
+	
+				<xs:element name="D2BudgetBI" type="xs:decimal"  />
+				<xs:element name="D2ActualBI" type="xs:decimal"  />
+				<xs:element name="D2ActualSBI" type="xs:decimal"  />
+	
+	<xs:element name="D3BudgetBI" type="xs:decimal"  />
+	<xs:element name="D3ActualBI" type="xs:decimal"  />
+	<xs:element name="D3ActualSBI" type="xs:decimal"  />
+	
+	<xs:element name="D4BudgetBI" type="xs:decimal"  />
+	<xs:element name="D4ActualBI" type="xs:decimal"  />
+	<xs:element name="D4ActualSBI" type="xs:decimal"  />
+	
+	<xs:element name="D5BudgetBI" type="xs:decimal"  />
+	<xs:element name="D5ActualBI" type="xs:decimal"  />
+	<xs:element name="D5ActualSBI" type="xs:decimal"  />
+	
+	<xs:element name="D6BudgetBI" type="xs:decimal"  />
+	<xs:element name="D6ActualBI" type="xs:decimal"  />
+	<xs:element name="D6ActualSBI" type="xs:decimal"  />
+	
+	<xs:element name="D7BudgetBI" type="xs:decimal"  />
+	<xs:element name="D7ActualBI" type="xs:decimal"  />
+	<xs:element name="D7ActualSBI" type="xs:decimal"  />
+	
+	<xs:element name="DTBudgetBI" type="xs:decimal"  />
+	<xs:element name="DTActualBI" type="xs:decimal"  />
+	<xs:element name="DTActualSBI" type="xs:decimal"  />
+	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PM_StdRpt_Daily_Prod_Rpt" targetNamespace="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:mstns="http://tempuri.org/PM_StdRpt_Daily_Prod_Rpt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WM_STDRPT_DAILY_SALES_SUMMARY_PRODUCT_GET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ContractNo" type="xs:string" />
+        <xs:element name="DeliveryNoteNo" type="xs:string" />
+        <xs:element name="ContractQty" type="xs:decimal" />
+        <xs:element name="InDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="OutDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="TicketNo" type="xs:string" />
+        <xs:element name="TransType" type="xs:string" />
+        <xs:element name="CustCode" type="xs:string" />
+        <xs:element name="CustName" type="xs:string" />
+        <xs:element name="NetWeightDO" type="xs:decimal" />
+        <xs:element name="NetWeightDO_TD" type="xs:decimal" />
+        <xs:element name="Tot_NetWeightDO_TD" type="xs:decimal" />
+        <xs:element name="SisaKOntrak" type="xs:decimal" />
+        <xs:element name="FFA" type="xs:decimal" />
+        <xs:element name="Moisture" type="xs:decimal" />
+        <xs:element name="Kotoran" type="xs:decimal" />    
+        <xs:element name="Pecahan" type="xs:decimal" />
+        <xs:element name="pNoPolisi" type="xs:decimal" />
+        <xs:element name="JumlahSegel" type="xs:string" />
+        <xs:element name="NoSegel" type="xs:string" />
+        <xs:element name="p_Pengangkutan" type="xs:string" />
+        <xs:element name="NmPengangkutan" type="xs:string" />
+        <xs:element name="p_ProductCode" type="xs:string" />
+        <xs:element name="NmProduct" type="xs:string" />
+        <xs:element name="p_PeriodeDr" type="xs:dateTime" />
+        <xs:element name="p_PeriodeSd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

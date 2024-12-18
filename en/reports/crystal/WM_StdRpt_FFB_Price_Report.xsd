@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WM_StdRpt_FFB_Price_Report" targetNamespace="http://tempuri.org/WM_StdRpt_FFB_Price_Report.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_FFB_Price_Report.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_FFB_Price_Report.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_FFB_PRICE_REPORT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="SupplierName" type="xs:string" />
+				<xs:element name="IsPPN" type="xs:integer" />
+				<xs:element name="TRXID" type="xs:string" />
+				<xs:element name="TRXDate" type="xs:dateTime" />
+				<xs:element name="TRXAmount" type="xs:decimal" />
+				<xs:element name="TRXStatus" type="xs:string" />
+				<xs:element name="TicDate" type="xs:string" />
+				<xs:element name="TicPrice" type="xs:decimal" />
+				<xs:element name="TicWeight" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

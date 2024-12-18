@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NU_StdRpt_DS_BiayaBibit" targetNamespace="http://tempuri.org/NU_StdRpt_DS_BiayaBibit.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/NU_StdRpt_DS_BiayaBibit.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_DS_BiayaBibit.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="SaldoAwal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="BatchNo" type="xs:string" />
+        <xs:element name="NurseryStage" type="xs:decimal" />
+        <xs:element name="PlantMaterial" type="xs:string" />
+        <xs:element name="ItemCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Umur" type="xs:decimal" />
+        <xs:element name="QtyAwal" type="xs:decimal" />
+        <xs:element name="CostAwal" type="xs:decimal" />
+        <xs:element name="AmountAwal" type="xs:decimal" />
+        <xs:element name="QtyAkhir" type="xs:decimal" />
+        <xs:element name="CostAkhir" type="xs:decimal" />
+        <xs:element name="AmountAkhir" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaldoTrx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="BatchNo" type="xs:string" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="AmountBI" type="xs:decimal" />
+        <xs:element name="AmountSBI" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

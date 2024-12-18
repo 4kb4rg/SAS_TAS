@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HR_HR_STDRPT_EMP_PROFILE" targetNamespace="http://tempuri.org/HR_HR_STDRPT_EMP_PROFILE.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_HR_STDRPT_EMP_PROFILE.xsd" xmlns:mstns="http://tempuri.org/HR_HR_STDRPT_EMP_PROFILE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="HR_HR_STDRPT_EMP_PROFILE_DET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CompCode" type="xs:string" />
+        <xs:element name="Company" type="xs:string" />
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="Location" type="xs:string" />
+        <xs:element name="Empcode" type="xs:string" />
+        <xs:element name="Empname" type="xs:string" />
+        <xs:element name="EmpType" type="xs:string" />
+        <xs:element name="Npwp" type="xs:string" />
+        <xs:element name="CodeTg" type="xs:string" />
+        <xs:element name="Divisi" type="xs:string" />
+        <xs:element name="Jabatan" type="xs:string" />
+        <xs:element name="DOJ" type="xs:date" />
+        <xs:element name="DOB" type="xs:date" />
+        <xs:element name="Usia" type="xs:int" />
+        <xs:element name="Agama" type="xs:string" />
+        <xs:element name="Sex" type="xs:string" />
+        <xs:element name="Pendidikan" type="xs:string" />
+		<xs:element name="Upah" type="xs:decimal" />
+		<xs:element name="Gol" type="xs:string" />
+		<xs:element name="Alamat" type="xs:string" />
+        <xs:element name="NoKtp" type="xs:string" />
+        <xs:element name="StatusKawin" type="xs:string" />
+        <xs:element name="istri" type="xs:int" />
+        <xs:element name="anak" type="xs:int" />
+		<xs:element name="LamaKerja" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

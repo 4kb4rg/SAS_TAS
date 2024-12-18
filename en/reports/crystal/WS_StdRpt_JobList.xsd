@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WS_StdRpt_JobList" targetNamespace="http://tempuri.org/WS_StdRpt_JobList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WS_StdRpt_JobList.xsd" xmlns:mstns="http://tempuri.org/WS_StdRpt_JobList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WS_JOB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="JobType" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="BillPartyEmpCodeDesc" type="xs:string" />
+				<xs:element name="JobStatus" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="DocRefNo" type="xs:string" />
+				<xs:element name="DocRefDate" type="xs:dateTime" />
+				<xs:element name="JobStartDate" type="xs:dateTime" />
+				<xs:element name="JobEndDate" type="xs:dateTime" />
+				<xs:element name="ChrgRate" type="xs:decimal" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehLabExpCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WS_JOBSTOCK">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="JobStockID" type="xs:string" />
+				<xs:element name="TransDate" type="xs:dateTime" />
+				<xs:element name="TransType" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="ItemType" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="TotalAmount" type="xs:decimal" />
+				<xs:element name="Price" type="xs:decimal" />
+				<xs:element name="TotalPrice" type="xs:decimal" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="WorkCode" type="xs:string" />
+				<xs:element name="StockExpenseCode" type="xs:string" />
+				<xs:element name="DNID" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="JobStockIssueID" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WS_MECHINICHOUR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="JobID" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="WorkingDate" type="xs:dateTime" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="WorkCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="HourSpent" type="xs:integer" />
+				<xs:element name="MinuteSpent" type="xs:integer" />
+				<xs:element name="UpdatedAmount" type="xs:decimal" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="DNID" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

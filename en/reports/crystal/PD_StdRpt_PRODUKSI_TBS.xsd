@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PD_StdRpt_PRODUKSI_TBS" targetNamespace="http://tempuri.org/PD_StdRpt_PRODUKSI_TBS.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PD_StdRpt_PRODUKSI_TBS.xsd" xmlns:mstns="http://tempuri.org/PD_StdRpt_PRODUKSI_TBS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PD_StdRpt_PRODUKSI_TBS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dt" type="xs:string" />
+				<xs:element name="Blkgrpcode" type="xs:string" />
+				<xs:element name="blkcode" type="xs:string" />
+				<xs:element name="jjg" type="xs:decimal" />
+				<xs:element name="kg" type="xs:decimal" />
+				<xs:element name="brondolan" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

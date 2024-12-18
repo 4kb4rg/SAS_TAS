@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PU_Rpt_RPHDet" targetNamespace="http://tempuri.org/PU_Rpt_RPHDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_Rpt_RPHDet.xsd" xmlns:mstns="http://tempuri.org/PU_Rpt_RPHDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="RPHLN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RPHID" type="xs:string" />
+        <xs:element name="LocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Remark" type="xs:string" minOccurs="0" />
+        <xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+        <xs:element name="AccYear" type="xs:string" />
+        <xs:element name="Status" type="xs:string" minOccurs="0" />
+        <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+        <xs:element name="RPHType" type="xs:string" minOccurs="0" />
+        <xs:element name="POIssued" type="xs:string" minOccurs="0" />
+        <xs:element name="Centralized" type="xs:string" />
+        <xs:element name="CurrencyCode" type="xs:string" />
+        <xs:element name="ExchangeRate" type="xs:decimal" />
+        <xs:element name="TotalAmountCurrency" type="xs:decimal" />
+        <xs:element name="AddDiscount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="UserPO" type="xs:string" minOccurs="0" />
+        <xs:element name="RPHLnID" type="xs:string" minOccurs="0" />
+        <xs:element name="PRID" type="xs:string" minOccurs="0" />
+        <xs:element name="PRDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PRLNID" type="xs:string" minOccurs="0" />
+        <xs:element name="RfqID" type="xs:string" minOccurs="0" />
+        <xs:element name="RfqDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PRLocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="PRRefID" type="xs:string" minOccurs="0" />
+        <xs:element name="PRRefLocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Description" type="xs:string" minOccurs="0" />
+        <xs:element name="PurchaseUOM" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppCode1" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppName1" type="xs:string" minOccurs="0" />
+        <xs:element name="QtyOrder1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="QtyReceive1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="QtyCancel1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Cost1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="NetAmount1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Discount1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPN" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPN1_Psn" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNAmount1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Amount1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PBBKB1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PBBKBRate1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPN221" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPN221Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Transporter" type="xs:string" minOccurs="0" />
+        <xs:element name="TransName1" type="xs:string" minOccurs="0" />
+        <xs:element name="AmtTransportFee" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNTr1" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNTrAmount1" type="xs:decimal" />
+        <xs:element name="GrtAmount1" type="xs:decimal" />
+        <xs:element name="AmountCurrency1" type="xs:decimal" />
+        <xs:element name="FSupp1" type="xs:string" />
+        <xs:element name="SuppCode2" type="xs:string" />
+        <xs:element name="SuppName2" type="xs:string" />
+        <xs:element name="QtyOrder2" type="xs:decimal" />
+        <xs:element name="QtyReceive2" type="xs:decimal" />
+        <xs:element name="QtyCancel2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Cost2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="NetAmount2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Discount2" type="xs:decimal" />
+        <xs:element name="PPN2" type="xs:decimal" />
+        <xs:element name="PPN2_Psn" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNAmount2" type="xs:decimal" />
+        <xs:element name="Amount2" type="xs:decimal" />
+        <xs:element name="PBBKB2" type="xs:decimal" />
+        <xs:element name="PBBKBRate2" type="xs:decimal" />
+        <xs:element name="PPN222" type="xs:decimal" />
+        <xs:element name="PPN222Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Transporter2" type="xs:string" minOccurs="0" />
+        <xs:element name="TransName2" type="xs:string" minOccurs="0" />
+        <xs:element name="AmtTransportFee2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNTrAmount2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="GrtAmount2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="AmountCurrency2" type="xs:decimal" minOccurs="0" />
+        <xs:element name="FSupp2" type="xs:string" minOccurs="0" />
+        <xs:element name="SuppCode3" type="xs:string" />
+        <xs:element name="SuppName3" type="xs:string" />
+        <xs:element name="QtyOrder3" type="xs:decimal" />
+        <xs:element name="QtyReceive3" type="xs:decimal" />
+        <xs:element name="QtyCancel3" type="xs:decimal" />
+        <xs:element name="Cost3" type="xs:decimal" />
+        <xs:element name="NetAmount3" type="xs:decimal" />
+        <xs:element name="Discount3" type="xs:decimal" />
+        <xs:element name="PPN3" type="xs:decimal" />
+        <xs:element name="PPN3_Psn" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PPNAmount3" type="xs:decimal" />
+        <xs:element name="Amount3" type="xs:decimal" />
+        <xs:element name="PBBKB3" type="xs:decimal" />
+        <xs:element name="PBBKBRate3" type="xs:decimal" />
+        <xs:element name="PPN223" type="xs:decimal" />
+        <xs:element name="PPN223Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Transporter3" type="xs:string" />
+        <xs:element name="TransName3" type="xs:string" />
+        <xs:element name="AmtTransportFee3" type="xs:decimal" />
+        <xs:element name="PPNTr3" type="xs:decimal" />
+        <xs:element name="PPNTrAmount3" type="xs:decimal" />
+        <xs:element name="GrtAmount3" type="xs:decimal" />
+        <xs:element name="AmountCurrency3" type="xs:decimal" />
+        <xs:element name="FSupp3" type="xs:string" />
+        <xs:element name="Rph_Status" type="xs:string" />
+        <xs:element name="AdditionalNote" type="xs:string" />
+        <xs:element name="CompName" type="xs:string" />
+        <xs:element name="LocDescription" type="xs:string" />
+        <xs:element name="SupplierNote1" type="xs:string" />
+        <xs:element name="SupplierNote2" type="xs:string" />
+        <xs:element name="SupplierNote3" type="xs:string" />
+        <xs:element name="AntarPeriksa1" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

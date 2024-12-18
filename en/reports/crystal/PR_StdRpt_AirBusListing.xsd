@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_AirBusListing" targetNamespace="http://tempuri.org/PR_StdRpt_AirBusListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_AirBusListing.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_AirBusListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_AirBusListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="Dept" type="xs:string" />
+				<xs:element name="StaffDate" type="xs:date" />
+				<xs:element name="Stat" type="xs:string" />
+				<xs:element name="Child1" type="xs:string" />
+				<xs:element name="Child2" type="xs:string" />
+				<xs:element name="Child3" type="xs:string" />
+				<xs:element name="Loc" type="xs:string" />
+				<xs:element name="NearLoc" type="xs:string" />
+				<xs:element name="POH" type="xs:string" />
+				<xs:element name="PayRate" type="xs:decimal" />
+				<xs:element name="Leave" type="xs:decimal" />
+				<xs:element name="AirBus" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

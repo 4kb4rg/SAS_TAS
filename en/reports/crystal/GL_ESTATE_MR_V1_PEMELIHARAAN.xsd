@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_V1_PEMELIHARAAN" targetNamespace="http://tempuri.org/GL_ESTATE_MR_V1_PEMELIHARAAN.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_V1_PEMELIHARAAN.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_V1_PEMELIHARAAN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_V1_PEMELIHARAAN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="coagroup" type="xs:string"  />
+				<xs:element name="coagroup_desc" type="xs:string"  />
+				<xs:element name="coagen" type="xs:string"  />
+				<xs:element name="coagen_desc" type="xs:string"  />
+				<xs:element name="jobcode" type="xs:string"  />
+				<xs:element name="coasub_desc" type="xs:string"  />					<xs:element name="itemcode" type="xs:string"  />
+				<xs:element name="itemdesc" type="xs:string"  />
+				<xs:element name="uom" type="xs:string"  />
+				
+				<xs:element name="BudgetBI_1" type="xs:decimal"  />
+				<xs:element name="ActualBI_1" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_1" type="xs:decimal"  />  			    <xs:element name="ActualSBI_1" type="xs:decimal"  />
+				<xs:element name="BudgetY_1" type="xs:decimal"  />
+				<xs:element name="VarBI_1" type="xs:decimal"  />
+				<xs:element name="VarSBI_1" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_2" type="xs:decimal"  />
+				<xs:element name="ActualBI_2" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_2" type="xs:decimal"  />  			    <xs:element name="ActualSBI_2" type="xs:decimal"  />
+				<xs:element name="BudgetY_2" type="xs:decimal"  />
+				<xs:element name="VarBI_2" type="xs:decimal"  />
+				<xs:element name="VarSBI_2" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_3" type="xs:decimal"  />
+				<xs:element name="ActualBI_3" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_3" type="xs:decimal"  />  			    <xs:element name="ActualSBI_3" type="xs:decimal"  />
+				<xs:element name="BudgetY_3" type="xs:decimal"  />
+				<xs:element name="VarBI_3" type="xs:decimal"  />
+				<xs:element name="VarSBI_3" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_4" type="xs:decimal"  />
+				<xs:element name="ActualBI_4" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_4" type="xs:decimal"  />  			    <xs:element name="ActualSBI_4" type="xs:decimal"  />
+				<xs:element name="BudgetY_4" type="xs:decimal"  />
+				<xs:element name="VarBI_4" type="xs:decimal"  />
+				<xs:element name="VarSBI_4" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_5" type="xs:decimal"  />
+				<xs:element name="ActualBI_5" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_5" type="xs:decimal"  />  			    <xs:element name="ActualSBI_5" type="xs:decimal"  />
+				<xs:element name="BudgetY_5" type="xs:decimal"  />
+				<xs:element name="VarBI_5" type="xs:decimal"  />
+				<xs:element name="VarSBI_5" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_6" type="xs:decimal"  />
+				<xs:element name="ActualBI_6" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_6" type="xs:decimal"  />  			    <xs:element name="ActualSBI_6" type="xs:decimal"  />
+				<xs:element name="BudgetY_6" type="xs:decimal"  />
+				<xs:element name="VarBI_6" type="xs:decimal"  />
+				<xs:element name="VarSBI_6" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_7" type="xs:decimal"  />
+				<xs:element name="ActualBI_7" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_7" type="xs:decimal"  />  			    <xs:element name="ActualSBI_7" type="xs:decimal"  />
+				<xs:element name="BudgetY_7" type="xs:decimal"  />
+				<xs:element name="VarBI_7" type="xs:decimal"  />
+				<xs:element name="VarSBI_7" type="xs:decimal"  />
+				
+				<xs:element name="BudgetBI_T" type="xs:decimal"  />
+				<xs:element name="ActualBI_T" type="xs:decimal"  />
+				<xs:element name="BudgetSBI_T" type="xs:decimal"  />  			    <xs:element name="ActualSBI_T" type="xs:decimal"  />
+				<xs:element name="BudgetY_T" type="xs:decimal"  />
+				<xs:element name="VarBI_T" type="xs:decimal"  />
+				<xs:element name="VarSBI_T" type="xs:decimal"  />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

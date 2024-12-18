@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_MthBlkLedgerListEstEst" targetNamespace="http://tempuri.org/GL_StdRpt_MthBlkLedgerListEst.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_MthBlkLedgerListEst.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_MthBlkLedgerListEst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_MTHBLKLEDGERLIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="RefDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="ModuleCode" type="xs:string" />
+				<xs:element name="DocDate" type="xs:dateTime" />
+				<xs:element name="AccType" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="VehExpenseCode" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="Debit" type="xs:decimal" />
+				<xs:element name="Credit" type="xs:decimal" />
+				<xs:element name="BalBD" type="xs:decimal" />
+				<xs:element name="BalCF" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GL_ESTEXP">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MthDREstExp" type="xs:decimal" minOccurs="0" />
+				<xs:element name="MthCREstExp" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TDDREstExp" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TDCREstExp" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

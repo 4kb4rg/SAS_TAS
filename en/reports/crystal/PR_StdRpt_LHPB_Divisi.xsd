@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_LHPB_Divisi" targetNamespace="http://tempuri.org/PR_StdRpt_LHPB_Divisi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_LHPB_Divisi.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_LHPB_Divisi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_LHPB_Divisi">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="IDDiv" type="xs:string" />
+				<xs:element name="Divisi" type="xs:string" />
+				<xs:element name="BKMDate" type="xs:dateTime" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="job" type="xs:string" />
+				<xs:element name="CodeItem" type="xs:string" />
+				<xs:element name="Item" type="xs:string" />
+				<xs:element name="YearPlan" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="UOM" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="sQty" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PR_StdRpt_LHPB_Sumarry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodeItem" type="xs:string" />
+				<xs:element name="Item" type="xs:string" />
+				<xs:element name="Qty" type="xs:decimal" />
+				<xs:element name="sQty" type="xs:decimal" />
+				<xs:element name="UOM" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

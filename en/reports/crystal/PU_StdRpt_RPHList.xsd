@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PU_StdRpt_RPHList" targetNamespace="http://tempuri.org/PU_StdRpt_RPHList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_StdRpt_RPHList.xsd" xmlns:mstns="http://tempuri.org/PU_StdRpt_RPHList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PU_StdRpt_RPHList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="compcode" type="xs:string" minOccurs="0" />
+				<xs:element name="compname" type="xs:string" minOccurs="0" />
+				<xs:element name="rphid" type="xs:string" minOccurs="0" />
+				<xs:element name="createdate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="status" type="xs:string" minOccurs="0" />
+				<xs:element name="prid" type="xs:string" minOccurs="0" />
+				<xs:element name="poid" type="xs:string" minOccurs="0" />
+				<xs:element name="itemcode" type="xs:string" minOccurs="0" />
+				<xs:element name="UOMCode" type="xs:string" minOccurs="0" />
+				<xs:element name="suppcode1" type="xs:string" minOccurs="0" />
+				<xs:element name="qtyorder1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="cost1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="amount1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ppnAmount1" type="xs:decimal" minOccurs="0" />
+				<xs:element name="suppcode2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="qtyorder2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="cost2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="amount2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ppnAmount2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="suppcode3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="qtyorder3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="cost3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="amount3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ppnAmount3" type="xs:decimal" minOccurs="0" />
+				<xs:element name="loccode" type="xs:string" minOccurs="0" />
+				<xs:element name="description" type="xs:string" minOccurs="0" />
+				<xs:element name="itemname" type="xs:string" minOccurs="0" />
+				<xs:element name="suppname1" type="xs:string" minOccurs="0" />
+				<xs:element name="suppname2" type="xs:string" minOccurs="0" />
+				<xs:element name="suppname3" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

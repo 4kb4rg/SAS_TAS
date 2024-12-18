@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WM_StdRpt_FFBRcvSum_BySupplier" targetNamespace="http://tempuri.org/WM_StdRpt_FFBRcvSum_BySupplier.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_FFBRcvSum_BySupplier.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_FFBRcvSum_BySupplier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WM_STDRPT_DAILY_FFBGRADING_DETAIL_GET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TicketNo" type="xs:string" />
+        <xs:element name="OutDate" type="xs:dateTime" />
+        <xs:element name="ProductCode" type="xs:string" />
+        <xs:element name="CustomerCode" type="xs:string" />
+        <xs:element name="NoSuratPengantar" type="xs:string" minOccurs="0" />
+        <xs:element name="ContractNo" type="xs:string" />
+        <xs:element name="VehicleCode" type="xs:string" />
+        <xs:element name="Name" type="xs:string" />
+        <xs:element name="komidel" type="xs:string" />
+        <xs:element name="Grade" type="xs:string" />
+        <xs:element name="FirstWeight" type="xs:decimal" />
+        <xs:element name="SecondWeight" type="xs:decimal" />
+        <xs:element name="Gross" type="xs:decimal" />
+        <xs:element name="NetWeight" type="xs:decimal" />
+        <xs:element name="TBSPsn" type="xs:decimal" />
+        <xs:element name="Pot_BuahMentah" type="xs:decimal" />
+        <xs:element name="TbsMthKom" type="xs:decimal" />
+        <xs:element name="TbsMthKomx" type="xs:decimal" />
+        <xs:element name="TBsMthDenda" type="xs:decimal" />
+        <xs:element name="TbsMthKg" type="xs:decimal" />
+        <xs:element name="pot_BuahMatang" type="xs:decimal" />
+        <xs:element name="Pot_BuahOVerMatang" type="xs:decimal" />
+        <xs:element name="OvrMtgKom" type="xs:decimal" />
+        <xs:element name="OvrMtgKomX" type="xs:decimal" />
+        <xs:element name="OvrMtgDDenda" type="xs:decimal" />
+        <xs:element name="TbsOvrMtgKg" type="xs:decimal" />
+        <xs:element name="BrondolanPsn" type="xs:decimal" />
+        <xs:element name="Brondolan_Layu" type="xs:decimal" />
+        <xs:element name="BrdLayuKom" type="xs:decimal" />
+        <xs:element name="BrdLayuKomX" type="xs:decimal" />
+        <xs:element name="BrdLayuDenda" type="xs:decimal" />
+        <xs:element name="BrdLayuKG" type="xs:decimal" />
+        <xs:element name="Brondolan_Segar" type="xs:decimal" />
+        <xs:element name="BrdSegarKom" type="xs:decimal" />
+        <xs:element name="BrdSegarKomX" type="xs:decimal" />
+        <xs:element name="BrdSegarDenda" type="xs:decimal" />
+        <xs:element name="BrdSegarKg" type="xs:decimal" />
+        <xs:element name="Afkir" type="xs:decimal" />
+        <xs:element name="Afkir_Kg" type="xs:decimal" />
+        <xs:element name="SortaseWeight_Psn" type="xs:decimal" />
+        <xs:element name="Potongan" type="xs:decimal" />
+        <xs:element name="AdditionalNote" type="xs:string" />
+        <xs:element name="LocName" type="xs:string" />
+        <xs:element name="p_Periode" type="xs:dateTime" />
+        <xs:element name="p_Sampai" type="xs:dateTime" />
+        <xs:element name="p_User" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

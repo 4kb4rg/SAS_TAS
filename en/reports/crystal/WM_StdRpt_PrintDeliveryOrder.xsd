@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WM_StdRpt_PrintTicket" targetNamespace="http://tempuri.org/WM_StdRpt_PrintTicket.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_PrintTicket.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_PrintTicket.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_PrintDeliveryOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="TicketNo" type="xs:string" />
+				<xs:element name="OutDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="CustomerCode" type="xs:string" minOccurs="0" />
+				<xs:element name="CustName" type="xs:string" />
+				<xs:element name="CustomerDocNo" type="xs:string" />
+				<xs:element name="TransType" type="xs:string" minOccurs="0" />
+				<xs:element name="DeliveryNoteNo" type="xs:string" minOccurs="0" />
+				<xs:element name="VehicleCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TransporterCode" type="xs:string" minOccurs="0" />
+				<xs:element name="TransName" type="xs:string" minOccurs="0" />
+				<xs:element name="ProductCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PL3No" type="xs:string" minOccurs="0" />
+				<xs:element name="PlantingYear" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="FirstWeight" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SecondWeight" type="xs:decimal" minOccurs="0" />
+				<xs:element name="NetWeight" type="xs:decimal" />
+				<xs:element name="InDate" type="xs:dateTime" />
+				<xs:element name="Remarks" type="xs:string" minOccurs="0" />
+				<xs:element name="DriverName" type="xs:string" minOccurs="0" />
+				<xs:element name="DriverIC" type="xs:string" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="Destination" type="xs:string" />
+				<xs:element name="PurchaseType" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

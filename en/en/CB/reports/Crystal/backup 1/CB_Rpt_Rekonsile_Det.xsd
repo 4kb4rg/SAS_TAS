@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CB_Rpt_Rekonsile_Det" targetNamespace="http://tempuri.org/CB_Rpt_Rekonsile_Det.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_RPT_Rekonsile_Det.xsd" xmlns:mstns="http://tempuri.org/CB_Rpt_Rekonsile_Det.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="REKONSILE_HEADER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RekonsileID" type="xs:string" />
+				<xs:element name="BankCode" type="xs:string" />
+				<xs:element name="BankName" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="DateFrom" type="xs:date" />
+				<xs:element name="DateTo" type="xs:date" />
+				<xs:element name="Saldo" type="xs:decimal" />
+				<xs:element name="SaldoBalance" type="xs:decimal" />
+				<xs:element name="SaldoBank" type="xs:decimal" />
+				<xs:element name="UpdateDate" type="xs:date" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="LocName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="REKONSILE_DETAIL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RekonsileID" type="xs:string" />
+				<xs:element name="TrxID" type="xs:string" />
+				<xs:element name="TrxDate" type="xs:date" />
+				<xs:element name="Source" type="xs:string" />
+				<xs:element name="Descr" type="xs:string" />
+				<xs:element name="CheckNo" type="xs:string" />
+				<xs:element name="Amount" type="xs:decimal" />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

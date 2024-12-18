@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_DS_EmpList" targetNamespace="http://tempuri.org/PR_StdRpt_DS_EmpList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DS_EmpList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_DS_EmpList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_DS_EmpList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="PassportNo" type="xs:string" minOccurs="0" />				
+				<xs:element name="PosName" type="xs:string" minOccurs="0" />
+				<xs:element name="DOB" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="JamsostekNo" type="xs:string" minOccurs="0" />
+				<xs:element name="TaxNo" type="xs:string" minOccurs="0" />
+				<xs:element name="MaritalStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="NoOfChild" type="xs:int" minOccurs="0" />
+				<xs:element name="Nation" type="xs:string" minOccurs="0" />
+				<xs:element name="Race" type="xs:string" minOccurs="0" />
+				<xs:element name="State" type="xs:string" minOccurs="0" />
+				<xs:element name="Renumeration" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OTRate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AppJoinDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="TerminateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="OTInd" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

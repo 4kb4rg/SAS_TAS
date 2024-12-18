@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IN_Rpt_StockTransferDet" targetNamespace="http://tempuri.org/IN_Rpt_StockTransferDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_Rpt_StockTransferDet.xsd" xmlns:mstns="http://tempuri.org/IN_Rpt_StockTransferDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="StockTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StockTransferID" type="xs:string" />
+        <xs:element name="DNID" type="xs:string" />
+        <xs:element name="Description" type="xs:string" minOccurs="0" />
+        <xs:element name="LocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="ToLocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Address" type="xs:string" />
+        <xs:element name="State" type="xs:string" />
+        <xs:element name="City" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" minOccurs="0" />
+        <xs:element name="AccYear" type="xs:string" minOccurs="0" />
+        <xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Remark" type="xs:string" minOccurs="0" />
+        <xs:element name="PrintDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="Status" type="xs:string" minOccurs="0" />
+        <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+        <xs:element name="UserName" type="xs:string" />
+        <xs:element name="ToLocName" type="xs:string" minOccurs="0" />
+        <xs:element name="Transporter" type="xs:string" />
+        <xs:element name="VehicleCode" type="xs:string" />
+        <xs:element name="DriverIC" type="xs:string" />
+        <xs:element name="DriverName" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StockTransferLn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StockTransferID" type="xs:string" />
+        <xs:element name="ItemCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="Qty" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="Uomcode" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

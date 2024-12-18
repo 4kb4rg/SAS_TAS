@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_FSDetail_Loc5" targetNamespace="http://tempuri.org/GL_StdRpt_FSDetail_Loc5.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_FSDetail_Loc5.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_FSDetail_Loc5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_FS_Header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportCode" type="xs:string" />
+				<xs:element name="CntLoc" type="xs:string" minOccurs="0" />
+				<xs:element name="Loc1" type="xs:string" minOccurs="0" />
+				<xs:element name="Loc2" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Loc3" type="xs:decimal" minOccurs="0" />
+ 				<xs:element name="Loc4" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Loc5" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GL_StdRpt_FS_Detail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportCode" type="xs:string" />
+				<xs:element name="DispSeq" type="xs:integer" />
+				<xs:element name="RowType" type="xs:string" />
+				<xs:element name="RowId" type="xs:integer" />
+				<xs:element name="AccCode" type="xs:integer" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="FSpace" type="xs:integer" />
+				<xs:element name="FUnderline" type="xs:integer" />
+				<xs:element name="FBold" type="xs:integer" />
+				<xs:element name="FFont" type="xs:integer" />
+                                <xs:element name="FNegSign" type="xs:integer" />
+                                <xs:element name="Description2" type="xs:string" />
+				<xs:element name="Description3" type="xs:string" />		
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocDescr" type="xs:string" />
+                                <xs:element name="UrutRefNo" type="xs:integer" />
+				<xs:element name="LocLevel" type="xs:integer" />
+				<xs:element name="LocType" type="xs:integer" />
+				<xs:element name="Loc11" type="xs:decimal" />
+				<xs:element name="Loc12" type="xs:decimal" />
+				<xs:element name="Loc21" type="xs:decimal" />
+				<xs:element name="Loc22" type="xs:decimal" />
+				<xs:element name="Loc31" type="xs:decimal" />
+				<xs:element name="Loc32" type="xs:decimal" />
+				<xs:element name="Loc41" type="xs:decimal" />
+				<xs:element name="Loc42" type="xs:decimal" />
+				<xs:element name="Loc51" type="xs:decimal" />
+				<xs:element name="Loc52" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

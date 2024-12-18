@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IN_StdRpt_DS_PRList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRRealization.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRRealization.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRRealization.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="IN_StdRpt_DS_PRRealization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PRID" type="xs:string" />
+        <xs:element name="LocCode" type="xs:string" minOccurs="0" />
+        <xs:element name="DeptCode" type="xs:string" minOccurs="0" />
+        <xs:element name="PRType" type="xs:string" minOccurs="0" />
+        <xs:element name="PRDate" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="ItemCode" type="xs:string" />
+        <xs:element name="ItemDesc" type="xs:string" />
+        <xs:element name="ApprovedBy" type="xs:string" />
+        <xs:element name="PRQtyReq" type="xs:decimal" minOccurs="0" />
+        <xs:element name="PRQtyApp" type="xs:decimal" minOccurs="0" />
+        <xs:element name="POID" minOccurs="0" type="xs:string" />
+        <xs:element name="PODate" minOccurs="0" type="xs:dateTime" />
+        <xs:element name="POQty" type="xs:decimal" />
+        <xs:element name="GRID" type="xs:string" />
+        <xs:element name="GRDate" type="xs:dateTime" />
+        <xs:element name="GRQty" type="xs:decimal" />
+        <xs:element name="DAID" type="xs:string" />
+        <xs:element name="DADate" type="xs:dateTime" />
+        <xs:element name="DAQty" type="xs:decimal" />
+        <xs:element name="SRPWID" type="xs:string" />
+        <xs:element name="SRPWDate" type="xs:dateTime" />
+        <xs:element name="SRPWQty" type="xs:decimal" />
+        <xs:element name="STID" type="xs:string" />
+        <xs:element name="STDate" type="xs:dateTime" />
+        <xs:element name="STQTY" type="xs:decimal" />
+        <xs:element name="SRID" type="xs:string" />
+        <xs:element name="SRDate" type="xs:dateTime" />
+        <xs:element name="SRQty" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

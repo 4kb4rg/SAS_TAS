@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FA_Rpt_AssetRegln" targetNamespace="http://tempuri.org/FA_Rpt_AssetRegln.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_Rpt_AssetRegln.xsd" xmlns:mstns="http://tempuri.org/FA_Rpt_AssetRegln.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_Rpt_AssetRegln">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AssetClassCode" type="xs:string" />
+				<xs:element name="ClassDesc" type="xs:string" />
+				<xs:element name="AssetGrpCode" type="xs:string" />
+				<xs:element name="GrpDesc" type="xs:string" />
+				<xs:element name="AssetHeaderCode" type="xs:string" />
+				<xs:element name="AssetHeaderDesc" type="xs:string" />
+				<xs:element name="AssetCode" type="xs:string" />
+				<xs:element name="SerialNo" type="xs:string" />
+				<xs:element name="AssetDesc" type="xs:string" />
+				<xs:element name="AssetExtDesc" type="xs:string" />
+				<xs:element name="AcquisitionMode" type="xs:string" />
+				<xs:element name="PurchaseDate" type="xs:dateTime" />
+				<xs:element name="DeprMethod" type="xs:string" />
+				<xs:element name="YearDeprRate" type="xs:decimal" />
+				<xs:element name="StartDeprMonth" type="xs:string" />
+				<xs:element name="StartDeprYear" type="xs:string" />
+				<xs:element name="EndDeprMonth" type="xs:string" />
+				<xs:element name="EndDeprYear" type="xs:string" />
+				<xs:element name="LastDeprMonth" type="xs:string" />
+				<xs:element name="LastDeprYear" type="xs:string" />
+				<xs:element name="DeprInd" type="xs:string" />
+				<xs:element name="GMValue" type="xs:decimal" />
+				<xs:element name="AssetValue" type="xs:decimal" />
+				<xs:element name="AccumDeprVAlue" type="xs:decimal" />
+				<xs:element name="DispWOAssetValue" type="xs:decimal" />
+				<xs:element name="DispWOAccumDeprValue" type="xs:decimal" />
+				<xs:element name="NetValue" type="xs:decimal" />
+				<xs:element name="FinalValue" type="xs:decimal" />
+				<xs:element name="DeprGLDeprAccCode" type="xs:string" />
+				<xs:element name="DeprGLAccumDeprAccCode" type="xs:string" />
+				<xs:element name="DispGLAssetAccCode" type="xs:string" />
+				<xs:element name="DispGLAccumDeprAccCode" type="xs:string" />
+				<xs:element name="DispGLGainLossAccCode" type="xs:string" />
+				<xs:element name="WOGLAssetAccCode" type="xs:string" />
+				<xs:element name="WOGLAccumDeprAccCode" type="xs:string" />
+				<xs:element name="WOGLWOAccCode" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

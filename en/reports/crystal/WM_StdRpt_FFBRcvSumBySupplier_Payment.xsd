@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WM_StdRpt_FFBRcvSum_BySupplier" targetNamespace="http://tempuri.org/WM_StdRpt_FFBRcvSum_BySupplier.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/WM_StdRpt_FFBRcvSum_BySupplier.xsd" xmlns:mstns="http://tempuri.org/WM_StdRpt_FFBRcvSum_BySupplier.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="WM_STDRPT_FFB_PAYMENT_DAILY_DETAIL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="LocName" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" />
+        <xs:element name="AccYear" type="xs:string" minOccurs="0" />
+        <xs:element name="ProductCode" type="xs:string" />
+        <xs:element name="KodeSupplier" type="xs:string" />
+        <xs:element name="NamaSupplier" type="xs:string" />
+        <xs:element name="LokasiBayar" type="stringstring" />
+        <xs:element name="NmKapal" type="xs:decimal" />
+        <xs:element name="SupRefNo" type="xs:decimal" />
+        <xs:element name="StatusSupplier" type="xs:decimal" />
+        <xs:element name="Alamat" type="xs:decimal" />
+        <xs:element name="NPWP" type="xs:decimal" />
+        <xs:element name="TglMasuk" type="xs:decimal" />
+        <xs:element name="NoPolisi" type="xs:decimal" />
+        <xs:element name="DriverName" type="xs:decimal" />
+        <xs:element name="JamMasuk" type="xs:decimal" />
+        <xs:element name="Bruto" type="xs:decimal" />
+        <xs:element name="JamKeluar" type="xs:decimal" />
+        <xs:element name="Tarra" type="xs:decimal" />
+        <xs:element name="Potongan" type="xs:decimal" />
+        <xs:element name="potDiAkui" type="xs:decimal" />
+        <xs:element name="BuahKecil" type="xs:decimal" />
+        <xs:element name="BuahBesar" type="xs:decimal" />
+        <xs:element name="KodeSlipTimbangan" type="xs:decimal" />
+        <xs:element name="NoSuratPengantar" type="xs:decimal" />
+        <xs:element name="PotTotal" type="xs:decimal" />
+        <xs:element name="PotPsn" type="xs:decimal" />
+        <xs:element name="JanjangBuahBesar" type="xs:decimal" />
+        <xs:element name="JanjangBuahKecil" type="xs:decimal" />
+        <xs:element name="JanjangTotal" type="xs:decimal" />
+        <xs:element name="HargaBuahBesar" type="xs:decimal" />
+        <xs:element name="HargaBuahKecil" type="xs:decimal" />
+        <xs:element name="TH" type="xs:decimal" />
+        <xs:element name="Fee" type="xs:decimal" />
+        <xs:element name="KGBuahBesarSblmPot" type="xs:decimal" />
+        <xs:element name="KGBuahKecilSblmPot" type="xs:decimal" />
+        <xs:element name="KGBuahBesar" type="xs:decimal" />
+        <xs:element name="KGBuahKecil" type="xs:decimal" />
+        <xs:element name="KGBuahBesarDiBayar" type="xs:decimal" />
+        <xs:element name="KGBuahKecilDiBayar" type="xs:decimal" />
+        <xs:element name="PPH" type="xs:decimal" />
+        <xs:element name="NoPPH" type="xs:decimal" />
+        <xs:element name="TglPPH" type="xs:decimal" />
+        <xs:element name="RatePPH" type="xs:decimal" />
+        <xs:element name="KGOngkosBongkar" type="xs:decimal" />
+        <xs:element name="TripOngkosBongkar" type="xs:decimal" />
+        <xs:element name="TotalOngkosBongkar" type="xs:decimal" />
+        <xs:element name="KGOngkosLapangan" type="xs:decimal" />
+        <xs:element name="TripOngkosLapangan" type="xs:decimal" />
+        <xs:element name="TotalOngkosLapangan" type="xs:decimal" />
+        <xs:element name="KodeSliptTBS" type="xs:string" />
+        <xs:element name="TaxID" type="xs:string" />
+        <xs:element name="TaxLnID" type="xs:string" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="PaymentID" type="xs:string" />
+        <xs:element name="JournalID" type="xs:string" />
+        <xs:element name="Status" type="xs:string" />
+        <xs:element name="CreateDate" type="xs:string" />
+        <xs:element name="UpdateDate" type="xs:string" />
+        <xs:element name="UpdateID" type="xs:string" />
+        <xs:element name="NoUrut" type="xs:string" />
+        <xs:element name="TambahanHarga" type="xs:string" />
+        <xs:element name="NoKontrak" type="xs:string" />
+        <xs:element name="NoKontrakWB" type="xs:string" />
+        <xs:element name="PricingMtd" type="xs:string" />
+        <xs:element name="InvoicingMtd" type="xs:string" />
+        <xs:element name="PKSFirstWeight" type="xs:string" />
+        <xs:element name="PKSSecondWeight" type="xs:string" />
+        <xs:element name="PKSNetWeight" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

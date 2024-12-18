@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_PRList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WM_StdRpt_FFBAssess_List">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="TicketNo" type="xs:string" minOccurs="0" />
+				<xs:element name="InspectedDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="RipeBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="OverripeBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="UnderripeBunch" type="xs:decimal" />
+				<xs:element name="UnripeBunch" type="xs:decimal" />
+				<xs:element name="EmptyBunch" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RottenBunch" type="xs:decimal" />
+				<xs:element name="PoorBunch" type="xs:decimal" />
+				<xs:element name="SmallBunch" type="xs:decimal" />
+				<xs:element name="LongStalkBunch" type="xs:decimal" />
+				<xs:element name="GradedBunch" type="xs:decimal" />
+				<xs:element name="GradedPercent" type="xs:decimal" />
+				<xs:element name="UngradableBunch" type="xs:decimal" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="Username" type="xs:string" />
+				<xs:element name="Contamination" type="xs:decimal" />
+				<xs:element name="Others" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

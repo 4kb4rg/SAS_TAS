@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_MthGCDistribution" targetNamespace="http://tempuri.org/GL_StdRpt_MthGCDistribution.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_MthGCDistribution.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_MthGCDistribution.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_GCDISTRIBUTION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DocId" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="GCAmount" type="xs:decimal" />
+				<xs:element name="GCDistAmount" type="xs:decimal" />
+				<xs:element name="DocType" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

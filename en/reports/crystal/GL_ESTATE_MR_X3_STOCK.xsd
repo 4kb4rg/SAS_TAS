@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_X3_STOCK" targetNamespace="http://tempuri.org/GL_ESTATE_MR_X3_STOCK.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_X3_STOCK.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_X3_STOCK.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_X3_STOCK">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="QtySAw" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HrgaSAw" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyIN" type="xs:decimal" minOccurs="0" />
+				<xs:element name="HrgaIN" type="xs:decimal" />
+				<xs:element name="QtyOut" type="xs:decimal" />
+				<xs:element name="HrgaOut" type="xs:decimal" />
+				<xs:element name="QtyAk" type="xs:decimal" />
+				<xs:element name="HrgAk" type="xs:decimal" />
+				<xs:element name="AvgCost" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

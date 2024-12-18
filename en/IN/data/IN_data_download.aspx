@@ -1,0 +1,157 @@
+<%@ Page Language="vb" src="../../../include/IN_data_download.aspx.vb" Inherits="IN_data_download" %>
+<%@ Register TagPrefix="UserControl" Tagname="MenuINData" src="../../menu/menu_INData.ascx"%>
+<%@ Register TagPrefix="Preference" Tagname="PrefHdl" src="../../include/preference/preference_handler.ascx"%>
+<html>
+	<head>
+		<title>Download References File</title>
+		<Script language="JavaScript">
+		function CA() {
+			for (var i=0;i<document.frmDownload.elements.length;i++) {
+				var e = document.frmDownload.elements[i];
+				if ((e.name != 'cbAll') && (e.type=='checkbox'))
+					e.checked = document.frmDownload.cbAll.checked;
+			}
+		}
+
+		function CCA() {
+			var TotalBoxes = 0;
+			var TotalOn = 0;
+			for (var i=0;i<document.frmDownload.elements.length;i++) {
+				var e = document.frmDownload.elements[i];
+				if ((e.name != 'cbAll') && (e.type=='checkbox')) {
+					TotalBoxes++;
+					if (e.checked) {
+						TotalOn++;
+					}
+				}
+			}
+			if (TotalBoxes==TotalOn)
+				{document.frmDownload.cbAll.checked=true;}
+			else
+				{document.frmDownload.cbAll.checked=false;}
+		}
+		</Script>		
+	</head>
+	<Preference:PrefHdl id=PrefHdl runat="server" />
+	<body>
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td width="100%" align=center><UserControl:MenuINData id=MenuINData runat="server" /></td>
+			</tr>
+			<tr>
+				<td width="100%">
+					<form id=frmDownload runat=server>
+					<table id=tblDownload border="0" cellpadding="0" cellspacing="0" width="100%" runat=server>
+						<tr>
+							<td class="mt-h" width="100%" colspan="4">DOWNLOAD REFERENCE FILE</td>
+						</tr>
+						<tr>
+							<td colspan=4><hr size="1" noshade></td>
+						</tr>
+						<tr>
+							<td width="100%" colspan="4">Inventory Reference Data</td>
+						</tr>
+						<tr>
+							<td width="100%" colspan="4">&nbsp;</td>
+						</tr>
+						<TR>
+							<TD width="100%" colSpan="4">Steps:</TD>
+						</TR>
+						<TR>
+							<TD width="100%" colSpan="4">1.&nbsp; Check below checkbox to export the data.</TD>
+						</TR>
+						<TR>
+							<TD width="100%" colSpan="4">2.&nbsp; Click "Generate" button to generate the file.</TD>
+						</TR>
+						<TR>
+							<TD width="5%">&nbsp;</TD>
+							<TD width="5%">&nbsp;</TD>
+							<TD width="55%">&nbsp;</TD>
+							<TD width="35%">&nbsp;</TD>
+						</TR>
+						<tr>
+							<td>&nbsp;</td>
+							<td colspan=3><asp:CheckBox id=cbAll onclick="javascript:CA();" text="All Data" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbProdType onclick="javascript:CCA();" text="Product Type" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbProdBrand onclick="javascript:CCA();" text="Product Brand" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbProdModel onclick="javascript:CCA();" text="Product Model" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbProdCat onclick="javascript:CCA();" text="Product Category" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbProdMat onclick="javascript:CCA();" text="Product Material" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbStockAnalysis onclick="javascript:CCA();" text="Stock Analysis" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbStockItem onclick="javascript:CCA();" text="Stock Item Master" runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbDirectChargeItem onclick="javascript:CCA();" text="Direct Charge Item Master" runat=server /></td>
+						</tr>
+						<!-- Preventive Maintenance Minamas PRM 27102006 -->
+						<!-- start -->
+						<tr>
+							<td colspan=2>&nbsp;</td>
+							<td colspan=2><asp:CheckBox id=cbPrevMaintenance onclick="javascript:CCA();" text="Preventive Maintenance" runat=server /></td>
+						</tr>	
+						<!-- end -->
+						<tr>
+							<td colspan=4>&nbsp;<asp:Label id=lblErrGenerate visible=false forecolor=red text="Please tick at least one checkbox." runat=server /></td>
+						</tr>
+						<tr>
+							<td colspan="4"><asp:ImageButton id=btnGenerate onclick=btnGenerate_Click imageurl="../../images/butt_generate.gif" alternatetext="Generate" runat=server /></td>
+						</tr>
+					</table>
+					<table id=tblSave border="0" cellpadding="0" cellspacing="0" width="100%" runat=server>
+						<tr>
+							<td class="mt-h" width="100%" colspan="4">DOWNLOAD REFERENCE FILE</td>
+						</tr>
+						<tr>
+							<td colspan=4><hr size="1" noshade></td>
+						</tr>
+						<tr>
+							<td width="100%" colspan="4">Inventory Reference Data</td>
+						</tr>
+						<tr>
+							<td width="100%" colspan="4">&nbsp;</td>
+						</tr>
+						<TR>
+							<TD width="100%" colSpan="4">Steps:</TD>
+						</TR>
+						<TR>
+							<TD width="100%" colSpan="4">3.&nbsp; Click "Save the file" to save the reference files into your external device (ie Diskette, CD-R)</TD>
+						</TR>
+						<tr>
+							<td width="100%" colspan="4">&nbsp;</td>
+						</tr>
+						<TR>
+							<TD width="100%" colSpan="4">
+								<asp:Hyperlink id=lnkSaveTheFile text="Save the file" runat=server />
+							</TD>
+						</TR>
+					</table>
+					<asp:Label id=lblErrMesage visible=false Text="Error while initiating component." runat=server />
+					<asp:Label id=lblDownloadfile visible=true runat=server />
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

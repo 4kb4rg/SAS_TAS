@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CB_StdRpt_InvRcvListing" targetNamespace="http://tempuri.org/CB_StdRpt_InvRcvListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_InvRcvListing.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_InvRcvListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="CB_StdRpt_PaymentListing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PaymentID" type="xs:string" />
+        <xs:element name="Supplier" type="xs:string" />
+        <xs:element name="PaymentType" type="xs:string" minOccurs="0" />
+        <xs:element name="Bank" type="xs:string" minOccurs="0" />
+        <xs:element name="ChequeNo" type="xs:string" minOccurs="0" />
+        <xs:element name="TotalAmount" type="xs:decimal" />
+        <xs:element name="Remark" type="xs:string" minOccurs="0" />
+        <xs:element name="AccCode" type="xs:string" minOccurs="0" />
+        <xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+        <xs:element name="DocType" type="xs:string" minOccurs="0" />
+        <xs:element name="DocID" type="xs:string" minOccurs="0" />
+        <xs:element name="Status" type="xs:string" minOccurs="0" />
+        <xs:element name="Username" type="xs:string" minOccurs="0" />
+        <xs:element name="Loccode" type="xs:string" />
+        <xs:element name="POID" type="xs:string" minOccurs="0" />
+        <xs:element name="CreateDate" type="xs:date" minOccurs="0" />
+        <xs:element name="AdditionalNote" type="xs:string" />
+        <xs:element name="TaxLnID" type="xs:string" />
+        <xs:element name="TaxRate" type="xs:decimal" />
+        <xs:element name="DPPAmount" type="xs:decimal" />
+        <xs:element name="PrintDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

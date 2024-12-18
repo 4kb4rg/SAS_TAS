@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_StdRpt_Mill_Managerial_veh_veh" targetNamespace="http://tempuri.org/GL_StdRpt_Mill_Managerial_veh.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_Mill_Managerial_veh.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_Mill_Managerial_veh.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Periode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="VehTypeCode" type="xs:string" minOccurs="0" />
+				<xs:element name="f_relBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="f_relSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="f_BudBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="f_BudSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RP_relBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RP_relSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RP_BudBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RP_BudSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="fBudYear" type="xs:decimal" minOccurs="0" />
+				<xs:element name="RPBudYear" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostrelBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostrelSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostbudBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CostbudSBI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="varian" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

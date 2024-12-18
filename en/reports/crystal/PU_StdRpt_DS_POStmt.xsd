@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PU_StdRpt_DS_POStmt" targetNamespace="http://tempuri.org/PU_StdRpt_DS_POStmt.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_StdRpt_DS_POStmt.xsd" xmlns:mstns="http://tempuri.org/PU_StdRpt_DS_POStmt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PU_PO_STMT_DET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="POID" type="xs:string" minOccurs="0" />
+				<xs:element name="POType" type="xs:string" minOccurs="0" />
+				<xs:element name="POStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="TotalAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="PODate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="SupplierName" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PU_PO_LINE_STMT_DET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="POID" type="xs:string" minOccurs="0" />
+				<xs:element name="POLnID" type="xs:string" minOccurs="0" />
+				<xs:element name="PRID" type="xs:string" minOccurs="0" />
+				<xs:element name="PRLocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PRRefID" type="xs:string" minOccurs="0" />
+				<xs:element name="PRRefLocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="PurchaseUOM" type="xs:string" minOccurs="0" />
+				<xs:element name="QtyOrder" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyReceive" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyInvoice" type="xs:decimal" minOccurs="0" />
+				<xs:element name="QtyCancel" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="POLnStatus" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="PU_PO_STMT_GOODSRCV_DET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="POID" type="xs:string" minOccurs="0" />
+				<xs:element name="POLnID" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+				<xs:element name="GoodsRcvID" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="ReceiveQty" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="PU_PO_STMT_INVOICERCV_DET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="POID" type="xs:string" minOccurs="0" />
+				<xs:element name="POLnID" type="xs:string" minOccurs="0" />
+				<xs:element name="ItemCode" type="xs:string" minOccurs="0" />
+				<xs:element name="InvoiceRcvID" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="QtyInvoice" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AccCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>				
+</xs:schema>
+
+

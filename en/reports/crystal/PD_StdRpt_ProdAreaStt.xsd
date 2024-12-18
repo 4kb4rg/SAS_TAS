@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PD_STDRPT_TOTALAREA_GET" targetNamespace="http://tempuri.org/PD_STDRPT_TOTALAREA_GET.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PD_STDRPT_TOTALAREA_GET.xsd" xmlns:mstns="http://tempuri.org/PD_STDRPT_TOTALAREA_GET.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PD_STDRPT_TOTALAREA_GET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="blkgrpcode" type="xs:string" />
+				<xs:element name="blkcode" type="xs:string" />
+				<xs:element name="totalarea" type="xs:decimal" />
+				<xs:element name="weight1" type="xs:decimal" />
+				<xs:element name="weight2" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

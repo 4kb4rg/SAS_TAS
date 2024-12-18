@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_IV5A_PRODUKSI" targetNamespace="http://tempuri.org/GL_ESTATE_MR_IV5A_PRODUKSI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_IV5A_PRODUKSI.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_IV5A_PRODUKSI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_BIAYA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="IdDiv" type="xs:string"/>
+				<xs:element name="GID" type="xs:string"  />
+				<xs:element name="AID" type="xs:string" />
+				<xs:element name="ID" type="xs:string" />
+				<xs:element name="IDNama" type="xs:string" />
+				<xs:element name="UOM" type="xs:string"  />
+				<xs:element name="BudSBL" type="xs:decimal" />
+				<xs:element name="ActSBL" type="xs:decimal" />
+				<xs:element name="SelSBL" type="xs:decimal" />
+				<xs:element name="BudBI" type="xs:decimal" />
+				<xs:element name="ActBI" type="xs:decimal" />
+				<xs:element name="SelBI" type="xs:decimal" />
+				<xs:element name="BudSBI" type="xs:decimal" />
+				<xs:element name="ActSBI" type="xs:decimal" />
+				<xs:element name="SelSBI" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	
+</xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_DS_RetRemu" targetNamespace="http://tempuri.org/PR_StdRpt_DS_RetRemu.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DS_RetRemu.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_DS_RetRemu.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AccYear" type="xs:string" minOccurs="0" />
+				<xs:element name="Serial" type="xs:string" minOccurs="0" />
+				<xs:element name="TaxNo" type="xs:string" minOccurs="0" />
+				<xs:element name="EmployerTaxNo" type="xs:string" minOccurs="0" />
+				<xs:element name="TaxBranch" type="xs:string" minOccurs="0" />
+				<xs:element name="TaxBranchDescription" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="PosCode" type="xs:string" minOccurs="0" />
+				<xs:element name="PosDescription" type="xs:string" minOccurs="0" />
+				<xs:element name="NewICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="OldICNo" type="xs:string" minOccurs="0" />
+				<xs:element name="PassportNo" type="xs:string" minOccurs="0" />
+				<xs:element name="WorkPassNo" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EPFNo" type="xs:string" minOccurs="0" />
+				<xs:element name="MaritalStatus" type="xs:string" minOccurs="0" />
+				<xs:element name="ResAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="AppJoinDate" type="xs:date" minOccurs="0" />
+				<xs:element name="TerminateDate" type="xs:date" minOccurs="0" />
+				<xs:element name="SalaryADCode" type="xs:decimal" />
+				<xs:element name="DailyRateADCode" type="xs:decimal" />
+				<xs:element name="PieceRateADCode" type="xs:decimal" />
+				<xs:element name="TripADCode" type="xs:decimal" />
+				<xs:element name="ContractPayADCode" type="xs:decimal" />
+				<xs:element name="BonusADCode" type="xs:decimal" />
+				<xs:element name="IncAwardADCode" type="xs:decimal" />
+				<xs:element name="AttdIncADCode" type="xs:decimal" />
+				<xs:element name="HarvIncADCode" type="xs:decimal" />
+				<xs:element name="HouseADCode" type="xs:decimal" />
+				<xs:element name="HardShipADCode" type="xs:decimal" />
+				<xs:element name="TransADCode" type="xs:decimal" />
+				<xs:element name="OTADCode" type="xs:decimal" />
+				<xs:element name="BIKAccomADCode" type="xs:decimal" />
+				<xs:element name="BIKVehADCode" type="xs:decimal" />
+				<xs:element name="BIKHPADCode" type="xs:decimal" />
+				<xs:element name="GratuityADCode" type="xs:decimal" />
+				<xs:element name="RetrenchCompADCode" type="xs:decimal" />
+				<xs:element name="ESOSADCode" type="xs:decimal" />
+				<xs:element name="EPFADCode" type="xs:decimal" />
+				<xs:element name="TaxADCode" type="xs:decimal" />
+				<xs:element name="SocsoADCode" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="REMU">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WithSerial" type="xs:decimal" />
+				<xs:element name="WithOutSerial" type="xs:decimal" />
+				<xs:element name="EarnsWithSerial" type="xs:decimal" />
+				<xs:element name="EarnsWithOutSerial" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

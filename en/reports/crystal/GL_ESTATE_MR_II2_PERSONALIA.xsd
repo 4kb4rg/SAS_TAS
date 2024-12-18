@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GL_ESTATE_MR_II2_PERSONALIA" targetNamespace="http://tempuri.org/GL_ESTATE_MR_II2_PERSONALIA.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_ESTATE_MR_II2_PERSONALIA.xsd" xmlns:mstns="http://tempuri.org/GL_ESTATE_MR_II2_PERSONALIA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_ESTATE_MR_II2_PERSONALIA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string"  />
+				<xs:element name="AccMonth" type="xs:string"  />
+				<xs:element name="AccYear" type="xs:string"  />
+				<xs:element name="BlkGrpCode" type="xs:string"  />
+				<xs:element name="DivName" type="xs:string"  />
+				
+				<xs:element name="TotAY" type="xs:decimal"  />
+				<xs:element name="TotBL" type="xs:decimal"  />
+								
+				<xs:element name="ADDLBI" type="xs:decimal"  />
+				<xs:element name="ADDABI" type="xs:decimal"  />
+				<xs:element name="ADDMBI" type="xs:decimal"  />
+				<xs:element name="ADDTBI" type="xs:decimal"  />
+				<xs:element name="ADDTSBI" type="xs:decimal"  />
+				
+				<xs:element name="MIN9" type="xs:decimal"  />
+				<xs:element name="MIN10" type="xs:decimal"  />
+				<xs:element name="MIN11" type="xs:decimal"  />
+				<xs:element name="MIN12" type="xs:decimal"  />
+				<xs:element name="MIN13" type="xs:decimal"  />
+				<xs:element name="MINTBI" type="xs:decimal"  />
+				<xs:element name="MINTSBI" type="xs:decimal"  />
+				
+				<xs:element name="TOTBI" type="xs:decimal"  />
+				<xs:element name="TUBI" type="xs:decimal"  />
+				<xs:element name="TUSBI" type="xs:decimal"  />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

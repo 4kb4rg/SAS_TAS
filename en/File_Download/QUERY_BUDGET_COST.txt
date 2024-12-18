@@ -1,0 +1,16 @@
+--BUDGET TM 
+select A.LocCode,'2024','TMS',BlkGrpCode,BlkCode,'',B.AccCode,'' as itemcode,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 from GL_BLOCK A, GL_ACCOUNT B
+where A.BlkType='1' and B.AccCode like '780.%' and B.COALevel='2' and A.Status='1' and b.Status='1'
+UNION ALL
+--BUDGET PANEN
+select A.LocCode,'2024','PNS',BlkGrpCode,BlkCode,'',B.AccCode,'' as itemcode,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 from GL_BLOCK A, GL_ACCOUNT B
+where A.BlkType='1' and B.AccCode like '781.%' and B.COALevel='2' and A.Status='1' and b.Status='1'
+UNION ALL
+--BUDGET TBM
+select A.LocCode,'2024','TBS',BlkGrpCode,BlkCode,'',B.AccCode,'' as itemcode,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 from GL_BLOCK A, GL_ACCOUNT B
+where A.BlkType='2' and (B.AccCode like '19.%' ) and B.COALevel='2' and A.Status='1' and b.Status='1'
+UNION ALL
+--BUDGET UMM
+select A.LocCode,'2024','UMM','','','',B.AccCode,'' as itemcode,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 from GL_BLOCK A, GL_ACCOUNT B
+where A.BlkType='3' and (B.AccCode like '71.%' ) and B.COALevel='2' and BlkGrpCode='KNTR' and A.Status='1' and b.Status='1'
+

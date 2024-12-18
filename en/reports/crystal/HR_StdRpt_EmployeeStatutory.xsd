@@ -1,0 +1,30 @@
+<xs:schema id="HR_StdRpt_EmployeeStatutory" targetNamespace="http://tempuri.org/HR_StdRpt_EmployeeStatutory.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_StdRpt_EmployeeStatutory.xsd" xmlns:mstns="http://tempuri.org/HR_StdRpt_EmployeeStatutory.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_EmployeeStatutory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="JamsostekNo" type="xs:string" />
+				<xs:element name="JKKScheme" type="xs:string" />
+				<xs:element name="JKKID" type="xs:string" />
+				<xs:element name="JKKRefNo" type="xs:string" />
+				<xs:element name="JKScheme" type="xs:string" />
+				<xs:element name="JKID" type="xs:string" />
+				<xs:element name="JKRefNo" type="xs:string" />
+				<xs:element name="JHTScheme" type="xs:string" />
+				<xs:element name="JHTID" type="xs:string" />
+				<xs:element name="JHTRefNo" type="xs:string" />
+				<xs:element name="JPKScheme" type="xs:string" />
+				<xs:element name="JPKID" type="xs:string" />
+				<xs:element name="JPKRefNo" type="xs:string" />				
+				<xs:element name="TaxScheme" type="xs:string" />
+				<xs:element name="TaxRefNo" type="xs:string" />
+				<xs:element name="TaxBranch" type="xs:string" />
+				<xs:element name="LevyPort" type="xs:string" />
+				<xs:element name="LevyArriveDate" type="xs:dateTime" />
+				<xs:element name="LevyCardNo" type="xs:string" />
+				<xs:element name="LevyImgNo" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

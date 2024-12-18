@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AP_RPT_InvRcvDet" targetNamespace="http://tempuri.org/AP_RPT_InvRcvDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AP_RPT_InvRcvDet.xsd" xmlns:mstns="http://tempuri.org/AP_RPT_InvRcvDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="INVOICE_HEADER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InvoiceRcvID" type="xs:string" />
+				<xs:element name="InvoiceRcvRefNo" type="xs:string" />
+				<xs:element name="InvoiceRcvRefDate" type="xs:date" />
+				<xs:element name="FakturPajakNo" type="xs:string" />
+				<xs:element name="FakturPajakDate" type="xs:date" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="SupplierName" type="xs:string" />
+				<xs:element name="InvoiceDueDate" type="xs:date" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="TotalAmount" type="xs:decimal" />
+				<xs:element name="POID" type="xs:string" />
+				<xs:element name="PODueDate" type="xs:date" />
+				<xs:element name="DueDate" type="xs:date" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="CurrencyCode" type="xs:string" />
+				<xs:element name="ExchangeRate" type="xs:decimal" />
+				<xs:element name="AmountCurrency" type="xs:decimal" />
+				<xs:element name="SupplierInvAmount" type="xs:decimal" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:date" />
+				<xs:element name="ViaBankTransfer" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="INVOICE_DETAIL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InvoiceRcvID" type="xs:string" />
+				<xs:element name="ID" type="xs:string" />
+				<xs:element name="POID1" type="xs:string" />
+				<xs:element name="POID2" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

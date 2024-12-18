@@ -1,0 +1,226 @@
+<%@ Page Language="vb" src="../../../include/NU_setup_NUBatch.aspx.vb" Inherits="NU_setup_NUBatch" %>
+<%@ Register TagPrefix="UserControl" Tagname="MenuNUSetup" src="../../menu/menu_NUSetup.ascx"%>
+<%@ Register TagPrefix="Preference" Tagname="PrefHdl" src="../../include/preference/preference_handler.ascx"%>
+<html>
+	<head>
+		<title>Nursery Bacth List</title>
+        <link href="../../include/css/gopalms.css" rel="stylesheet" type="text/css" />
+	</head>
+<%--	<Preference:PrefHdl id=PrefHdl runat="server" />--%>
+		<body>
+		    <form runat="server" ID="Form1">
+			<asp:Label id=lblErrMessage visible=false Text="Error while initiating component." runat=server />
+			<asp:label id="SortExpression" Visible="False" Runat="server" />
+			<asp:Label id=lblCode visible=false text=" Code" runat=server />
+			<asp:label id=lblPleaseEnter visible=false text="Please enter " runat=server />
+			<asp:label id=lblList visible=false text=" LIST" runat=server />
+			<asp:label id="sortcol" Visible="False" Runat="server" />
+			<asp:label id="lblOper" Visible="False" Runat="server" />
+
+			<table cellpadding="0" cellspacing="0" style="width: 100%">
+				<tr>
+					<td colspan="6">
+					<UserControl:MenuNUSetup id=menuNU runat="server" />
+					</td>
+				</tr>
+
+				<tr>
+				<td style="width: 100%; height: 800px" valign="top">
+				<div class="kontenlist">
+					<table cellpadding="0" cellspacing="0" style="width: 100%" class="font9Tahoma">
+						<tr>
+							<td><strong>NURSERY BATCH LIST</strong><hr style="width :100%" />   
+                            </td> 
+						</tr>
+						<tr>
+							<td align="right" colspan="2" width=40%><asp:label id="lblTracker" runat="server"/></td>
+						</tr>
+						<tr>
+					       <%-- <td colspan=6><hr size="1" noshade></td>--%>
+				        </tr>
+						<tr>
+						<td style="background-color:#FFCC00" >
+						<table cellpadding="4" cellspacing="0" style="width: 100%">
+								<tr class="font9Tahoma">
+								<td width="45%" height="26" valign=bottom><asp:label id="lblBlkCode" runat="server" /> :<BR><asp:TextBox id=srchBlkCode width=100% maxlength="8" runat="server"/></td>
+								<td width="10%" height="26" valign=bottom><asp:label id="lblBatchNo" runat="server" /> :<BR><asp:TextBox id=srchBatchNo width=100% maxlength="8" runat="server"/></td>
+								<td width="15%" height="26" valign=bottom>Status :<BR><asp:DropDownList id="srchStatusList" width=100% runat=server /></td>
+								<td width="20%" height="26" valign=bottom>Last Updated By :<BR><asp:TextBox id=srchUpdateBy width=100% maxlength="128" runat="server"/></td>
+								<td width="8%" height="26" valign=bottom align=right><asp:Button ID="Button1" Text="Search" OnClick=srchBtn_Click runat="server" class="button-small"/></td>
+								</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<TD colspan="6" >					
+					<asp:DataGrid id="EventData"
+						AutoGenerateColumns="false" width="100%" runat="server"
+						GridLines = none
+						Cellpadding = "2"
+						OnEditCommand="DEDR_Edit"
+						OnUpdateCommand="DEDR_Update"
+						OnCancelCommand="DEDR_Cancel"
+						OnDeleteCommand="DEDR_Delete"
+						AllowPaging="True" 
+						Allowcustompaging="False"
+						Pagesize="15" 
+						OnPageIndexChanged="OnPageChanged"
+						Pagerstyle-Visible="False"
+						OnSortCommand="Sort_Grid" 
+						AllowSorting="True">
+						<HeaderStyle CssClass="mr-h" />							
+						<ItemStyle CssClass="mr-l" />
+						<AlternatingItemStyle CssClass="mr-r" />						
+					<Columns>
+						<asp:TemplateColumn SortExpression="BlkCode">
+							<ItemStyle Width="18%" />
+							<ItemTemplate>
+								<%# Container.DataItem("BlkCode") %>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:DropDownList id="BlkCode" size=1 width="90%" runat="server"/>
+								<asp:label id=lblBlkCode visible=false text='<%# Container.DataItem("BlkCode") %>' runat=server/>
+								<BR>
+								<asp:RequiredFieldValidator id=validateNB display=dynamic runat=server 
+										ControlToValidate=BlkCode />
+								<asp:label id="lblDupMsg"  Text="Code already exist" Visible = false forecolor=red Runat="server"/>
+							</EditItemTemplate>
+						</asp:TemplateColumn>
+						<asp:TemplateColumn SortExpression="BatchNo">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%# Container.DataItem("BatchNo") %>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:TextBox id="BatchNo" MaxLength="16" width=90%
+										Text='<%# trim(Container.DataItem("BatchNo")) %>'
+										runat="server"/>
+								<BR>
+								<asp:RequiredFieldValidator id=validateBN display=dynamic runat=server 
+										ControlToValidate=BatchNo />
+							</EditItemTemplate>
+						</asp:TemplateColumn>	
+						<asp:TemplateColumn SortExpression="PlantMaterial">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%# Container.DataItem("PlantMaterial") %>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:DropDownList ID="DLLPlantMaterial" width="90%" runat="server" >
+											<asp:ListItem Value="" Text=""></asp:ListItem>
+											<asp:ListItem Value="SOCFINDO" Text="SOCFINDO"></asp:ListItem>
+											<asp:ListItem Value="TOPAZ"    Text="TOPAZ"></asp:ListItem>
+											<asp:ListItem Value="DAMIMAS"  Text="DAMIMAS"></asp:ListItem>
+											<asp:ListItem Value="LONSUM"   Text="LONSUM"></asp:ListItem>
+											<asp:ListItem Value="PPKS"     Text="PPKS"></asp:ListItem>
+											<asp:ListItem Value="MARIHAT"  Text="MARIHAT"></asp:ListItem>
+											<asp:ListItem Value="SRIWIJAYA"     Text="SRIWIJAYA"></asp:ListItem>
+											</asp:DropDownList>		
+								<asp:TextBox id="PlantMaterial" MaxLength="16" width=90% visible = False
+										Text='<%# trim(Container.DataItem("PlantMaterial")) %>'
+										runat="server"/>
+								<BR>
+								
+								<asp:RequiredFieldValidator id=validatePM display=dynamic runat=server 	ControlToValidate=DLLPlantMaterial />
+							</EditItemTemplate>
+						</asp:TemplateColumn>							
+						<asp:TemplateColumn SortExpression="NurseryStage">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%# objNUSetup.mtdGetNurseryStage(Container.DataItem("NurseryStage")) %>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:DropDownList id="NurseryStage" width=98% runat=server>
+								</asp:DropDownList>							
+							</EditItemTemplate>
+						</asp:TemplateColumn>
+						<asp:TemplateColumn SortExpression="AccCode">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%#Container.DataItem("AccCode")%>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:DropDownList id="AccCode" width=98% runat=server>
+								</asp:DropDownList>
+								<asp:label id=lblAccCode visible=false text='<%# Container.DataItem("AccCode") %>' runat=server/>							
+							</EditItemTemplate>
+						</asp:TemplateColumn>
+						<asp:TemplateColumn SortExpression="ItemCode">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%#Container.DataItem("ItemCode")%>
+							</ItemTemplate>
+						</asp:TemplateColumn>
+						<asp:TemplateColumn HeaderText="Last Update" SortExpression="NB.UpdateDate">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%# objGlobal.GetLongDate(Container.DataItem("UpdateDate")) %>
+							</ItemTemplate>
+							<EditItemTemplate >
+								<asp:TextBox id="UpdateDate" Readonly=TRUE size=8 
+									Visible=False Text='<%# objGlobal.GetLongDate(Now()) %>'
+									runat="server"/>
+								<asp:TextBox id="CreateDate" Visible=False
+									Text='<%# Container.DataItem("CreateDate") %>'
+									runat="server"/>
+							</EditItemTemplate>
+						</asp:TemplateColumn>
+						<asp:TemplateColumn HeaderText="Status" SortExpression="NB.Status">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%# objNUSetup.mtdGetNurseryBatchStatus(Container.DataItem("Status")) %>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:DropDownList Visible=False id="StatusList" size=1 runat=server />
+								<asp:TextBox id="Status" Readonly=TRUE Visible = False
+									Text='<%# Container.DataItem("Status")%>'
+									runat="server"/>
+							</EditItemTemplate>
+						</asp:TemplateColumn>
+						<asp:TemplateColumn HeaderText="Updated By" SortExpression="UserName">
+							<ItemStyle Width="10%" />
+							<ItemTemplate>
+								<%# Container.DataItem("UserName") %>
+							</ItemTemplate>
+							<EditItemTemplate >
+								<asp:TextBox id="UserName" Readonly=TRUE size=8 
+									Text='<%# Session("SS_USERID") %>'
+									Visible=False runat="server"/>
+							</EditItemTemplate>
+						</asp:TemplateColumn>											
+						<asp:TemplateColumn ItemStyle-HorizontalAlign=center >					
+							<ItemStyle Width="14%" />
+							<ItemTemplate>
+								<asp:LinkButton id="Edit" CommandName="Edit" Text="Edit" runat="server"/>
+							</ItemTemplate>
+							<EditItemTemplate>
+								<asp:LinkButton id="Update" CommandName="Update" Text="Save" runat="server"/>
+								<asp:LinkButton id="Delete" CommandName="Delete" Text="Delete" runat="server"/>
+								<asp:LinkButton id="Cancel" CommandName="Cancel" Text="Cancel" CausesValidation=False runat="server"/>
+							</EditItemTemplate>
+						</asp:TemplateColumn>
+					</Columns>
+					</asp:DataGrid><BR>
+					</td>
+				</tr>					
+				<tr>
+				<td align=right colspan="6">
+					<asp:ImageButton id="btnPrev" runat="server" imageurl="../../images/icn_prev.gif" alternatetext="Previous" commandargument="prev" onClick="btnPrevNext_Click" />
+					<asp:DropDownList id="lstDropList" AutoPostBack="True" onSelectedIndexChanged="PagingIndexChanged" runat="server" />
+			        <asp:Imagebutton id="btnNext" runat="server"  imageurl="../../images/icn_next.gif" alternatetext="Next" commandargument="next" onClick="btnPrevNext_Click" />
+				</td>
+				</tr>
+				<tr>
+					<td align="left" width="80%" colspan="6">
+						<asp:ImageButton id=ibNew imageurl="../../images/butt_new.gif" OnClick="DEDR_Add" AlternateText="New" runat="server"/>
+						<asp:ImageButton id=ibPrint imageurl="../../images/butt_print.gif" AlternateText=Print onClick="btnPreview_Click" runat="server"/>
+					</td>
+				</tr>
+</div>
+				</td>
+		        <table cellpadding="0" cellspacing="0" style="width: 20px">
+
+			</table>
+		</FORM>
+	</body>
+</html>

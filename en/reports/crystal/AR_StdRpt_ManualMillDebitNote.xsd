@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AR_StdRpt_ManualMillDebit" targetNamespace="http://tempuri.org/AR_StdRpt_ManualMillDebit.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AR_StdRpt_ManualMillDebit.xsd" xmlns:mstns="http://tempuri.org/AR_StdRpt_ManualMillDebit.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_DEBIT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DebitNoteId" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="DebitNoteDate" type="xs:dateTime" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="Town" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="PostCode" type="xs:string" />
+				<xs:element name="CountryCode" type="xs:string" />
+				<xs:element name="CountryName" type="xs:string" />
+				<xs:element name="ContactPerson" type="xs:string" />
+				<xs:element name="CustRef" type="xs:string" />
+				<xs:element name="DeliveryRef" type="xs:string" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="DebitNoteLnId" type="xs:string" />
+				<xs:element name="ItemDescription" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Cost" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Amount" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

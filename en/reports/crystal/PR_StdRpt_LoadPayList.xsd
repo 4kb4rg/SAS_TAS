@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_LoadPayList" targetNamespace="http://tempuri.org/PR_StdRpt_LoadPayList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_LoadPayList.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_LoadPayList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_StdRpt_LoadPayList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LoaderPayID" type="xs:string" />
+				<xs:element name="LoaderPayLnID" type="xs:string" />
+				<xs:element name="EmpCode" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+				<xs:element name="ADCode" type="xs:string" />
+				<xs:element name="ADDesc" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehCode" type="xs:string" minOccurs="0" />
+				<xs:element name="VehExpenseCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="StatusDesc" type="xs:string" minOccurs="0" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="Weight" type="xs:decimal" />
+				<xs:element name="LoaderPriceCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Rate" type="xs:decimal" />
+				<xs:element name="Payment" type="xs:decimal" />
+				<xs:element name="ChargeLocCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AR_StdRpt_AutoStaffDebitNote" targetNamespace="http://tempuri.org/AR_StdRpt_AutoStaffDebitNote.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AR_StdRpt_AutoStaffDebitNote.xsd" xmlns:mstns="http://tempuri.org/AR_StdRpt_AutoStaffDebitNote.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_DEBIT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DebitNoteId" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="PrintDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="DebitNoteLnId" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="DocTypeDesc" type="xs:string" />
+				<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

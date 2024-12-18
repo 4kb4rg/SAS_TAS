@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_PaymentSchedPerBank" targetNamespace="http://tempuri.org/CB_StdRpt_PaymentSchedPerBank.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_PaymentSchedPerBank.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_PaymentSchedPerBank.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_BANK_ACCOUNT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BankCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="Currency" type="xs:string" minOccurs="0" />
+				<xs:element name="AccountNo" type="xs:string" minOccurs="0" />
+				<xs:element name="IDRBegBalance" type="xs:decimal" minOccurs="0" />
+				<xs:element name="USDBegBalance" type="xs:decimal" minOccurs="0" />
+				<xs:element name="IDRTranDr" type="xs:decimal" minOccurs="0" />
+				<xs:element name="USDTranDr" type="xs:decimal" />
+				<xs:element name="IDRTranCr" type="xs:decimal" />
+				<xs:element name="USDTranCr" type="xs:decimal" />
+				<xs:element name="AccCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CB_PAYMENT_SCHEDULE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Currency" type="xs:string" minOccurs="0" />
+				<xs:element name="L0" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L1_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L8_14" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L15_21" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L22_30" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L31_60" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L60" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CB_BANK_SUMMARY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Currency" type="xs:string" minOccurs="0" />
+				<xs:element name="L0" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L1_7" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L8_14" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L15_21" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L22_30" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L31_60" type="xs:decimal" minOccurs="0" />
+				<xs:element name="L60" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CB_LOCDET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="Address" type="xs:string" minOccurs="0" />
+				<xs:element name="PostCode" type="xs:string" minOccurs="0" />
+				<xs:element name="State" type="xs:string" minOccurs="0" />
+				<xs:element name="City" type="xs:string" minOccurs="0" />
+				<xs:element name="LocCountryName" type="xs:string" minOccurs="0" />
+				<xs:element name="TelNo" type="xs:string" minOccurs="0" />
+				<xs:element name="FaxNo" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

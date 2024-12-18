@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RPT_FLIGHT_MANIFEST" targetNamespace="http://tempuri.org/RPT_FLIGHT_MANIFEST.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/RPT_FLIGHT_MANIFEST.xsd" xmlns:mstns="http://tempuri.org/RPT_FLIGHT_MANIFEST.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="RPT_FLIGHT_MANIFEST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FLIGHTNO" type="xs:string" />
+				<xs:element name="AIRLINECODE" type="xs:string" />
+				<xs:element name="ORIGIN" type="xs:string" />
+				<xs:element name="ORIGIN_STATE" type="xs:string" />
+				<xs:element name="DESTINATION" type="xs:string" />
+				<xs:element name="DESTINATION_STATE" type="xs:string" />
+				<xs:element name="ESTDEPARTURETIME" type="xs:dateTime" />
+				<xs:element name="ESTARRIVALTIME" type="xs:dateTime" />
+				<xs:element name="REALDEPARTURETIME" type="xs:dateTime" />
+				<xs:element name="REALARRIVALTIME" type="xs:dateTime" />
+				<xs:element name="DIFFDEPARTURE" type="xs:string" />
+				<xs:element name="DIFFARRIVAL" type="xs:string" />
+				<xs:element name="QTY_PSGR" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RPT_AIRLINE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AIRLINECODE" type="xs:string" />
+				<xs:element name="AIRLINETYPE" type="xs:string" />
+				<xs:element name="AIRLINELOGO" type="xs:string" />
+				<xs:element name="NAME" type="xs:string" />
+				<xs:element name="CONTACTPERSON" type="xs:string" />
+				<xs:element name="ADDRESS" type="xs:string" />
+				<xs:element name="TOWN" type="xs:string" />
+				<xs:element name="STATE" type="xs:string" />
+				<xs:element name="POSTCODE" type="xs:string" />
+				<xs:element name="COUNTRYCODE" type="xs:string" />
+				<xs:element name="TELNO" type="xs:string" />
+				<xs:element name="MOBILENO" type="xs:string" />
+				<xs:element name="FAXNO" type="xs:string" />
+				<xs:element name="EMAIL" type="xs:string" />
+				<xs:element name="BANKCODE" type="xs:string" />
+				<xs:element name="BANKACCNAME" type="xs:string" />
+				<xs:element name="BANKACCNO" type="xs:string" />
+				<xs:element name="BANKADDRESS" type="xs:string" />
+				<xs:element name="BANKTOWN" type="xs:string" />
+				<xs:element name="BANKSTATE" type="xs:string" />
+				<xs:element name="BANKCOUNTRY" type="xs:string" />
+				<xs:element name="REMARK" type="xs:dateTime" />
+				<xs:element name="STATUS" type="xs:string" />
+				<xs:element name="CREATEDATE" type="xs:dateTime" />
+				<xs:element name="UPDATEDATE" type="xs:dateTime" />
+				<xs:element name="UPDATEID" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

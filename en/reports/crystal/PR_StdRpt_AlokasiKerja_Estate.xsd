@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PR_StdRpt_AlokasiKerja_Estate" targetNamespace="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_ListSalAndAllw.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:NS="http://tempuri.org/PR_StdRpt_DaftarAbsensi.xsd">
+	<xs:element name="PR_AlokasiKerja_Estate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RptName" type="xs:string" minOccurs="0" />
+				<xs:element name="NoDec" type="xs:string" minOccurs="0" />
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="Accyear" type="xs:string" />
+				<xs:element name="Phymonth" type="xs:string" />
+				<xs:element name="Phyyear" type="xs:string" />
+				<xs:element name="DivCode" type="xs:string" />
+				<xs:element name="DivName" type="xs:string" />
+				<xs:element name="MandorCode" type="xs:string" />
+				<xs:element name="MandorName" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="Empname" type="xs:string" />
+				<xs:element name="EmpType" type="xs:string" />
+				<xs:element name="Empcategory" type="xs:string" />
+				<xs:element name="CodeGrbJob" type="xs:string" />
+				<xs:element name="hkg" type="xs:decimal" />
+				<xs:element name="hkb" type="xs:decimal" />
+				<xs:element name="hkd" type="xs:decimal" />
+				<xs:element name="kgd" type="xs:decimal" />
+				<xs:element name="Kgb" type="xs:decimal" />
+				<xs:element name="GajiBor" type="xs:decimal" />
+				<xs:element name="gapok" type="xs:decimal" />
+				<xs:element name="subgaji" type="xs:decimal" />
+				<xs:element name="premi" type="xs:decimal" />
+				<xs:element name="tunjangan" type="xs:decimal" />
+				<xs:element name="astektg" type="xs:decimal" />
+				<xs:element name="jhttg" type="xs:decimal" />
+				<xs:element name="gajikotor" type="xs:decimal" />
+				<xs:element name="potgajikecil" type="xs:decimal" />
+				<xs:element name="potastek" type="xs:decimal" />
+				<xs:element name="potspsi" type="xs:decimal" />
+				<xs:element name="potlain" type="xs:decimal" />
+				<xs:element name="totpot" type="xs:decimal" />
+				<xs:element name="totgaji" type="xs:decimal" />
+				<xs:element name="terbilang" type="xs:string" />
+				<xs:element name="Krd_Sawal" type="xs:decimal" />
+				<xs:element name="krd_tambah" type="xs:decimal" />
+				<xs:element name="Krd_bayar" type="xs:decimal" />
+				<xs:element name="Krd_sisa" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="PR_AlokasiKerja_Estate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DivCode" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="EmpType" type="xs:string" />
+				<xs:element name="CodeGrbJob" type="xs:string" />
+				<xs:element name="IDCat" type="xs:string" />
+				<xs:element name="IDSubCat" type="xs:string" />
+				<xs:element name="IDSubSubCat" type="xs:string" />
+				<xs:element name="SubCatName" type="xs:string" />
+				<xs:element name="hkg" type="xs:decimal" />
+				<xs:element name="hkb" type="xs:decimal" />
+				<xs:element name="hkd" type="xs:decimal" />
+				<xs:element name="kkg" type="xs:decimal" />
+				<xs:element name="kkb" type="xs:decimal" />
+				<xs:element name="kkd" type="xs:decimal" />
+				<xs:element name="upaht3hk" type="xs:decimal" />
+				<xs:element name="upaht1hk" type="xs:decimal" />
+				<xs:element name="upaht3kg" type="xs:decimal" />
+				<xs:element name="upaht1kg" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

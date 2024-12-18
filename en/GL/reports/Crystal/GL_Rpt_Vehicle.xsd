@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_Rpt_Vehicle" targetNamespace="http://tempuri.org/GL_Rpt_Vehicle.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_Rpt_Vehicle.xsd" xmlns:mstns="http://tempuri.org/GL_Rpt_Vehicle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_VEHICLE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VehCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="VehTypeCode" type="xs:string" minOccurs="0" />
+				<xs:element name="Model" type="xs:string" minOccurs="0" />
+				<xs:element name="HPCC" type="xs:string" minOccurs="0" />
+				<xs:element name="UOMCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="CreateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UpdateID" type="xs:string" minOccurs="0" />
+				<xs:element name="PurchaseDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

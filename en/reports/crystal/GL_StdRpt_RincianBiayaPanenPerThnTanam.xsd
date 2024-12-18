@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_RincianBiayaPanenPerThnTanam" targetNamespace="http://tempuri.org/GL_StdRpt_RincianBiayaPanenPerThnTanam.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_RincianBiayaPanenPerThnTanam.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_RincianBiayaPanenPerThnTanam.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_RincianBiayaPanen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TotalArea" type="xs:decimal" />
+				<xs:element name="TotalAreaBudget" type="xs:decimal" />
+				<xs:element name="Weight" type="xs:decimal" />
+				<xs:element name="WeightBudget" type="xs:decimal" />
+				<xs:element name="WeightToDate" type="xs:decimal" />
+				<xs:element name="WeightBudgetToDate" type="xs:decimal" />
+				<xs:element name="NetWeight" type="xs:decimal" />
+				<xs:element name="NetWeightBudget" type="xs:decimal" />
+				<xs:element name="NetWeightToDate" type="xs:decimal" />
+				<xs:element name="NetWeightBudgetToDate" type="xs:decimal" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="AmountReal" type="xs:decimal" />
+				<xs:element name="AmountBudget" type="xs:decimal" />
+				<xs:element name="AmountRealToDate" type="xs:decimal" />
+				<xs:element name="AmountBudgetToDate" type="xs:decimal" />
+				<xs:element name="AmountYearBudget" type="xs:decimal" />
+				<xs:element name="CostPerKg" type="xs:decimal" />
+				<xs:element name="CostPerKgBudget" type="xs:decimal" />
+				<xs:element name="CostPerKgToDate" type="xs:decimal" />
+				<xs:element name="CostPerKgBudgetToDate" type="xs:decimal" />
+				<xs:element name="CostPerHa" type="xs:decimal" />
+				<xs:element name="CostPerHaBudget" type="xs:decimal" />
+				<xs:element name="CostPerHaToDate" type="xs:decimal" />
+				<xs:element name="CostPerHaBudgetToDate" type="xs:decimal" />
+				<xs:element name="GrpBy" type="xs:string" />
+				<xs:element name="GrpDesc" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

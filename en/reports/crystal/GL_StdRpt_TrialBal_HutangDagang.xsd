@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_TrialBal_HutangDagang" targetNamespace="http://tempuri.org/GL_StdRpt_TrialBal_HutangDagang.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_TrialBal_HutangDagang.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_TrialBal_HutangDagang.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_StdRpt_TrialBal_HutangDagang_Summary">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDescr" type="xs:string" />				
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="OpenBal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AmountPlus" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AmountMin" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Balance" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CloseBal" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GL_StdRpt_TrialBal_HutangDagang_SaldoAwal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="POID" type="xs:string" />
+				<xs:element name="OpenBal" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="GL_StdRpt_TrialBal_HutangDagang_Trx">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="POID" type="xs:string" />
+				<xs:element name="AmountPlus" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AmountMin" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GL_StdRpt_TrialBal_HutangDagang_SaldoAkhir">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" />
+				<xs:element name="POID" type="xs:string" />
+				<xs:element name="OpenBal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CloseBal" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GL_StdRpt_TrialBal_HutangDagang_SummarySaldo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDescr" type="xs:string" />	
+				<xs:element name="OpenBal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AmountPlus" type="xs:decimal" minOccurs="0" />
+				<xs:element name="AmountMin" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Balance" type="xs:decimal" minOccurs="0" />
+				<xs:element name="CloseBal" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

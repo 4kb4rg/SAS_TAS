@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NU_StdRpt_WorkAccDet" targetNamespace="http://tempuri.org/NU_StdRpt_WorkAccDet.xsd" xmlns="http://tempuri.org/NU_StdRpt_WorkAccDet.xsd" xmlns:mstns="http://tempuri.org/NU_StdRpt_WorkAccDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NU_StdRpt_WorkAccDet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" nillable="false" />
+        <xs:element name="BlkCode" type="xs:string" />
+        <xs:element name="BatchNo" type="xs:decimal" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" />
+        <xs:element name="OpenBal" type="xs:decimal" />
+        <xs:element name="MonthActual" type="xs:decimal" />
+        <xs:element name="MonthActualQty" type="xs:decimal" />
+        <xs:element name="MonthActualBatchQty" type="xs:decimal" />
+        <xs:element name="ToDateActual" type="xs:decimal" />
+        <xs:element name="ToDateActualQty" type="xs:decimal" />
+        <xs:element name="ToDateActualBatchQty" type="xs:decimal" />
+        <xs:element name="TotalToDateActual" type="xs:decimal" />
+        <xs:element name="NurseryStage" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NU_StdRpt_WorkAccDetSub" nillable="0">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="LocCode" type="xs:string" nillable="false" />
+        <xs:element name="BlkCode" type="xs:string" />
+        <xs:element name="BatchNo" type="xs:decimal" />
+        <xs:element name="AccCode" type="xs:string" />
+        <xs:element name="Description" type="xs:string" nillable="0" />
+        <xs:element name="OpenBal" type="xs:decimal" />
+        <xs:element name="MonthActual" type="xs:decimal" />
+        <xs:element name="ToDateActual" type="xs:decimal" />
+        <xs:element name="TotalToDateActual" type="xs:decimal" />
+        <xs:element name="NurseryStage" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

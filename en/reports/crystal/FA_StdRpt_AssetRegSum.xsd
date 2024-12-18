@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FA_StdRpt_AssetRegSum" targetNamespace="http://tempuri.org/FA_StdRpt_AssetRegSum.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/FA_StdRpt_AssetRegSum.xsd" xmlns:mstns="http://tempuri.org/FA_StdRpt_AssetRegSum.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FA_StdRpt_AssetRegSum">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AssetCategory" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="BDCost" type="xs:decimal" />
+				<xs:element name="AdditionCost" type="xs:decimal" />
+				<xs:element name="DisposalCost" type="xs:decimal" />
+				<xs:element name="WriteOffCost" type="xs:decimal" />
+				<xs:element name="CFCost" type="xs:decimal" />
+				<xs:element name="BDDepr" type="xs:decimal" />
+				<xs:element name="AccumDepr" type="xs:decimal" />
+				<xs:element name="DisposalDepr" type="xs:decimal" />
+				<xs:element name="WriteOffDepr" type="xs:decimal" />
+				<xs:element name="CFDepr" type="xs:decimal" />
+				<xs:element name="NetValue" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

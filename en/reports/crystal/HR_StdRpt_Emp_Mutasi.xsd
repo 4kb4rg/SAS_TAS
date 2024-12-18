@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HR_HR_STDRPT_EMP_MUTASI" targetNamespace="http://tempuri.org/HR_HR_STDRPT_EMP_MUTASI.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HR_HR_STDRPT_EMP_MUTASI.xsd" xmlns:mstns="http://tempuri.org/HR_HR_STDRPT_EMP_MUTASI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HR_HR_STDRPT_EMP_MUTASI_DET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="docno" type="xs:string" />
+				<xs:element name="Empcode" type="xs:string" />
+				<xs:element name="Empname" type="xs:string" />
+				<xs:element name="EmpType" type="xs:string" />
+				<xs:element name="DivA" type="xs:string" />
+				<xs:element name="JbtA" type="xs:string" />
+				<xs:element name="DivB" type="xs:string" />
+				<xs:element name="JbtB" type="xs:string" />
+				<xs:element name="Notes" type="xs:string" />
+				<xs:element name="MDate" type="xs:date" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="Accyear" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

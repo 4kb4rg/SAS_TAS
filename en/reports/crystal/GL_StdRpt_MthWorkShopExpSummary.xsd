@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_MthWorkShopExpSummary" targetNamespace="http://tempuri.org/GL_StdRpt_MthWorkShopExpSummary.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_MthWorkShopExpSummary.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_MthWorkShopExpSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_MTHWSEXPSUMM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DispType" type="xs:string" />
+				<xs:element name="ActGrpCode" type="xs:string" />
+				<xs:element name="ActGrpDesc" type="xs:string" />
+				<xs:element name="ActCode" type="xs:string" />
+				<xs:element name="ActDesc" type="xs:string" />
+				<xs:element name="LocTotalArea" type="xs:decimal" />
+				<xs:element name="TotalLabourHours" type="xs:decimal" />
+				<xs:element name="ActMTDWgt" type="xs:decimal" />
+				<xs:element name="ActYTDWgt" type="xs:decimal" />
+				<xs:element name="BgtMTDWgt" type="xs:decimal" />
+				<xs:element name="BgtYTDWgt" type="xs:decimal" />
+				<xs:element name="YrBudget" type="xs:decimal" />
+				<xs:element name="AddVote" type="xs:decimal" />
+				<xs:element name="ActMTD" type="xs:decimal" />
+				<xs:element name="ActYTD" type="xs:decimal" />
+				<xs:element name="BgtMTD" type="xs:decimal" />
+				<xs:element name="BgtYTD" type="xs:decimal" />
+				<xs:element name="VarYTD" type="xs:decimal" />
+				<xs:element name="ActMTDCW" type="xs:decimal" />
+				<xs:element name="ActYTDCW" type="xs:decimal" />
+				<xs:element name="BgtMTDCW" type="xs:decimal" />
+				<xs:element name="BgtYTDCW" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

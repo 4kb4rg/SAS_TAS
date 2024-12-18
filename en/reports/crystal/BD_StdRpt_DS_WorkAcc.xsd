@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_StdRpt_DS_WorkAcc" targetNamespace="http://tempuri.org/BD_StdRpt_DS_WorkAcc.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_StdRpt_DS_WorkAcc.xsd" xmlns:mstns="http://tempuri.org/BD_StdRpt_DS_WorkAcc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_WORKACC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WorkAccID" type="xs:string" />
+				<xs:element name="WorkAccName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_WORKACC_LINE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WorkAccID" type="xs:string" />
+				<xs:element name="Details" type="xs:string" />
+				<xs:element name="LabourCost" type="xs:decimal" />
+				<xs:element name="MaterialCost" type="xs:decimal" />
+				<xs:element name="VRACost" type="xs:decimal" />
+				<xs:element name="OverheadCost" type="xs:decimal" />
+				<xs:element name="Total" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BD_WORKACC_ALLOC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WorkAccID" type="xs:string" />
+				<xs:element name="WAAllocDesc" type="xs:string" />
+				<xs:element name="WAAllocPcnt" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

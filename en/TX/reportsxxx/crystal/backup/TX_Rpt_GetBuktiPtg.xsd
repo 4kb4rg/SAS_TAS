@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="TX_Rpt_GetBuktiPtg" targetNamespace="http://tempuri.org/TX_Rpt_GetBuktiPtg.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/TX_Rpt_GetBuktiPtg.xsd" xmlns:mstns="http://tempuri.org/TX_Rpt_GetBuktiPtg.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="TaxReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="TrxID" type="xs:string" />
+				<xs:element name="DocDate" type="xs:date" />
+				<xs:element name="DocID" type="xs:string" />
+				<xs:element name="DocLnID" type="xs:string" />
+				<xs:element name="TaxLnID" type="xs:string" />
+				<xs:element name="SplCode" type="xs:string" />
+				<xs:element name="SplNPWP" type="xs:string" />
+				<xs:element name="SplName" type="xs:string" />
+				<xs:element name="SplAddress" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="TaxInit" type="xs:string" />
+				<xs:element name="KPPInit" type="xs:string" />
+				<xs:element name="KPPDescr" type="xs:string" />
+				<xs:element name="KPPCity" type="xs:string" />
+				<xs:element name="CompNPWP" type="xs:string" />
+				<xs:element name="CompName" type="xs:string" />
+				<xs:element name="CompAddress" type="xs:string" />
+				<xs:element name="DPPAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="TaxAmount" type="xs:decimal" minOccurs="0" />
+				<xs:element name="cNo1" type="xs:string" />
+				<xs:element name="cNo2" type="xs:string" />
+				<xs:element name="cNo3" type="xs:string" />
+				<xs:element name="cNo4" type="xs:string" />
+				<xs:element name="cNo5" type="xs:string" />
+				<xs:element name="cNo6" type="xs:string" />
+				<xs:element name="cNo7" type="xs:string" />
+				<xs:element name="cNo8" type="xs:string" />
+				<xs:element name="cNo9" type="xs:string" />
+				<xs:element name="cNo10" type="xs:string" />
+				<xs:element name="cNo11" type="xs:string" />
+				<xs:element name="cNo12" type="xs:string" />
+				<xs:element name="cNo13" type="xs:string" />
+				<xs:element name="cNo14" type="xs:string" />
+				<xs:element name="cNo15" type="xs:string" />
+				<xs:element name="am1" type="xs:string" />
+				<xs:element name="am2" type="xs:string" />
+				<xs:element name="ay1" type="xs:string" />
+				<xs:element name="ay2" type="xs:string" />
+				<xs:element name="ay3" type="xs:string" />
+				<xs:element name="ay4" type="xs:string" />
+				<xs:element name="SPTMasa" type="xs:string" />
+				<xs:element name="DaftarPtg" type="xs:string" />
+				<xs:element name="BuktiPtg" type="xs:string" />	
+				<xs:element name="sNo1" type="xs:string" />
+				<xs:element name="sNo2" type="xs:string" />
+				<xs:element name="sNo3" type="xs:string" />
+				<xs:element name="sNo4" type="xs:string" />
+				<xs:element name="sNo5" type="xs:string" />
+				<xs:element name="sNo6" type="xs:string" />
+				<xs:element name="sNo7" type="xs:string" />
+				<xs:element name="sNo8" type="xs:string" />
+				<xs:element name="sNo9" type="xs:string" />
+				<xs:element name="sNo10" type="xs:string" />
+				<xs:element name="sNo11" type="xs:string" />
+				<xs:element name="sNo12" type="xs:string" />
+				<xs:element name="sNo13" type="xs:string" />
+				<xs:element name="sNo14" type="xs:string" />
+				<xs:element name="sNo15" type="xs:string" />
+				<xs:element name="Tbl1Row1TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row1DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row1Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row1TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row2TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row2DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row2Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row2TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row3TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row3DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row3Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row3TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row4TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row4DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row4Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row4TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row5TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row5DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row5Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row5TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row6TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row6DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row6Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row6TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row7TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row7DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row7Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row7TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row8TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row8DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row8Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row8TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row9TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row9DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row9Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row9TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row10TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row10DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row10Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row10TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row11TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row11DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row11Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row11TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row12TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row12DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row12Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row12TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row13TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row13DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row13Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row13TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row14TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row14DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row14Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row14TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row15TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row15DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row15Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row15TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row16TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row16DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row16Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row16TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row17TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row17DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row17Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row17TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row18TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row18DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row18Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row18TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row19TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row19DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row19Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row19TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row20TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row20DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row20Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row20TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row21TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row21DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row21Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row21TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row22TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row22DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row22Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row22TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row23TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row23DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row23Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row23TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row24TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row24DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row24Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row24TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row25TaxObj" type="xs:string" />
+				<xs:element name="Tbl1Row25DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row25Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Row25TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row1TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row1DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row1Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row1TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row2TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row2DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row2Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row2TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row3TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row3DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row3Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row3TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row4TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row4DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row4Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row4TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row5TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row5DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row5Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row5TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row6TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row6DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row6Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row6TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row7TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row7DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row7Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row7TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row8TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row8DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row8Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row8TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row9TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row9DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row9Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row9TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row10TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row10DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row10Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row10TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row11TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row11DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row11Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row11TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row12TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row12DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row12Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row12TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row13TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row13DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row13Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row13TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row14TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row14DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row14Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row14TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row15TaxObj" type="xs:string" />
+				<xs:element name="Tbl2Row15DPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row15Rate" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2Row15TaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1TtlDPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1TtlTaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2TtlDPPAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl2TtlTaxAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Tbl1Terbilang" type="xs:string" />
+				<xs:element name="Tbl2Terbilang" type="xs:string" />
+				<xs:element name="AdditionalNote" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CB_StdRpt_TreasuryCashFlow" targetNamespace="http://tempuri.org/CB_StdRpt_TreasuryCashFlow.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CB_StdRpt_TreasuryCashFlow.xsd" xmlns:mstns="http://tempuri.org/CB_StdRpt_TreasuryCashFlow.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CB_StdRpt_TreasuryCashFlow">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReportCode" type="xs:string" />
+				<xs:element name="DispSeq" type="xs:integer" />
+				<xs:element name="RowType" type="xs:string" />
+				<xs:element name="RowId" type="xs:integer" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="RefNo" type="xs:string" />
+				<xs:element name="Jml" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

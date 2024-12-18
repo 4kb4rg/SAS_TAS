@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_LabOverheadDist" targetNamespace="http://tempuri.org/PR_StdRpt_LabOverheadDist.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_LabOverheadDist.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_LabOverheadDist.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_LABOVERHEADDIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="AccCode" type="xs:string" />
+				<xs:element name="AccDesc" type="xs:string" />
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="Manday" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="MandayDist" type="xs:decimal" />
+				<xs:element name="DistAmount" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

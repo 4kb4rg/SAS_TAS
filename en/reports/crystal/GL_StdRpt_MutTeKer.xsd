@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_MutTeKer" targetNamespace="http://tempuri.org/GL_StdRpt_MutTeKer.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_MutTeKer.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_MutTeKer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_MUTTEKER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RptName" type="xs:string" />
+				<xs:element name="NoDec" type="xs:string" />
+				<xs:element name="CompCode" type="xs:string" />
+				<xs:element name="Company" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Location" type="xs:string" />
+				<xs:element name="MonthPeriod" type="xs:string" />
+				<xs:element name="YearPeriod" type="xs:string" />
+				<xs:element name="Remarks" type="xs:string" />
+				<xs:element name="Division" type="xs:string" minOccurs="0" />
+				<xs:element name="GrpDivision" type="xs:string" />
+				<xs:element name="SKUAmtBegYear" type="xs:decimal" minOccurs="0" />
+				<xs:element name="SKUAmtLastMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ASKUNewThisMthLokal" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ASKUNewThisMthAkad" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ASKUMutationThisMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="ASKUNewThisMthAll" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LSKUCeaseThisMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LSKUFiredThisMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LSKUInterThisMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LSKURetThisMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LSKUPAThisMth" type="xs:decimal" minOccurs="0" />
+				<xs:element name="LSKUThisMthAll" type="xs:decimal" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

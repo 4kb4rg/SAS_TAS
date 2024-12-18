@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PU_StdRpt_LastItemPrice_Report" targetNamespace="http://tempuri.org/PU_StdRpt_LastItemPrice_Report.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PU_StdRpt_LastItemPrice_Report.xsd" xmlns:mstns="http://tempuri.org/PU_StdRpt_LastItemPrice_Report.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PU_StdRpt_LastItemPrice_Report">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ItemCode" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:date" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="PPN" type="xs:integer" />
+				<xs:element name="PurchaseUOM" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

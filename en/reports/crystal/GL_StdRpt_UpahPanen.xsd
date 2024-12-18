@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="GL_StdRpt_UpahPanen" targetNamespace="http://tempuri.org/GL_StdRpt_UpahPanen.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/GL_StdRpt_UpahPanen.xsd" xmlns:mstns="http://tempuri.org/GL_StdRpt_UpahPanen.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="GL_UPAHPANEN">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BlkCode" type="xs:string" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="LocDesc" type="xs:string" />
+				<xs:element name="Jan" type="xs:decimal" />
+				<xs:element name="FFB_Jan" type="xs:decimal" />
+				<xs:element name="RpKg_Jan" type="xs:decimal" />
+				<xs:element name="Feb" type="xs:decimal" />
+				<xs:element name="FFB_Feb" type="xs:decimal" />
+				<xs:element name="RpKg_Feb" type="xs:decimal" />
+				<xs:element name="Mar" type="xs:decimal" />
+				<xs:element name="FFB_Mar" type="xs:decimal" />
+				<xs:element name="RpKg_Mar" type="xs:decimal" />
+				<xs:element name="Apr" type="xs:decimal" />
+				<xs:element name="FFB_Apr" type="xs:decimal" />
+				<xs:element name="RpKg_Apr" type="xs:decimal" />
+				<xs:element name="May" type="xs:decimal" />
+				<xs:element name="FFB_May" type="xs:decimal" />
+				<xs:element name="RpKg_May" type="xs:decimal" />
+				<xs:element name="Jun" type="xs:decimal" />
+				<xs:element name="FFB_Jun" type="xs:decimal" />
+				<xs:element name="RpKg_Jun" type="xs:decimal" />
+				<xs:element name="Jul" type="xs:decimal" />
+				<xs:element name="FFB_Jul" type="xs:decimal" />
+				<xs:element name="RpKg_Jul" type="xs:decimal" />
+				<xs:element name="Aug" type="xs:decimal" />
+				<xs:element name="FFB_Aug" type="xs:decimal" />
+				<xs:element name="RpKg_Aug" type="xs:decimal" />
+				<xs:element name="Sep" type="xs:decimal" />
+				<xs:element name="FFB_Sep" type="xs:decimal" />
+				<xs:element name="RpKg_Sep" type="xs:decimal" />
+				<xs:element name="Oct" type="xs:decimal" />
+				<xs:element name="FFB_Oct" type="xs:decimal" />
+				<xs:element name="RpKg_Oct" type="xs:decimal" />
+				<xs:element name="Nov" type="xs:decimal" />
+				<xs:element name="FFB_Nov" type="xs:decimal" />
+				<xs:element name="RpKg_Nov" type="xs:decimal" />
+				<xs:element name="Dec" type="xs:decimal" />
+				<xs:element name="FFB_Dec" type="xs:decimal" />
+				<xs:element name="RpKg_Dec" type="xs:decimal" />
+				<xs:element name="Budget" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

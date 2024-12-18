@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PR_StdRpt_ActualPaymentListing" targetNamespace="http://tempuri.org/PR_StdRpt_ActualPaymentListing.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/PR_StdRpt_ActualPaymentListing.xsd" xmlns:mstns="http://tempuri.org/PR_StdRpt_ActualPaymentListing.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PR_ActualPaymentListing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EmpCode" type="xs:string" minOccurs="0" />
+				<xs:element name="EmpName" type="xs:string" />
+				<xs:element name="GangCode" type="xs:string" />
+				<xs:element name="GangLeader" type="xs:string" />
+				<xs:element name="WifeInd" type="xs:string" />
+				<xs:element name="NoChild" type="xs:decimal" />
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="AccMonth" type="xs:string" />
+				<xs:element name="AccYear" type="xs:string" />
+				<xs:element name="PayRate" type="xs:decimal" />
+				<xs:element name="RiceRationKG" type="xs:decimal" />
+				<xs:element name="NoPayDays" type="xs:decimal" />
+				<xs:element name="NoAbsenceDays" type="xs:decimal" />
+				<xs:element name="decBasicPayAmount" type="xs:decimal" />
+				<xs:element name="decIncentiveAmount" type="xs:decimal" />
+				<xs:element name="decIncJamsostekAmount" type="xs:decimal" />
+				<xs:element name="decOTAmount" type="xs:decimal" />
+				<xs:element name="decRiceAmount" type="xs:decimal" />
+				<xs:element name="decOthAllowance" type="xs:decimal" />
+				<xs:element name="decTHRAmount" type="xs:decimal" />
+				<xs:element name="decGrossSalaryAmount" type="xs:decimal" />
+				<xs:element name="decTaxAmount" type="xs:decimal" />
+				<xs:element name="decAdvSalaryAmount" type="xs:decimal" />
+				<xs:element name="decLoanAmount" type="xs:decimal" />
+				<xs:element name="decDeductJamsostekAmount" type="xs:decimal" />
+				<xs:element name="decDeductRiceAmount" type="xs:decimal" />
+				<xs:element name="decDeductIncentiveAmount" type="xs:decimal" />
+				<xs:element name="decTotalDeductAmount" type="xs:decimal" />
+				<xs:element name="decNetSalaryAmount" type="xs:decimal" />
+				<xs:element name="decSPSIAmount" type="xs:decimal" />
+				<xs:element name="decKoperasiAmount" type="xs:decimal" />
+				<xs:element name="decNetPaidAmount" type="xs:decimal" />
+				<xs:element name="SalSchemeCode" type="xs:string" />
+				<xs:element name="Manager" type="xs:string" />
+				<xs:element name="Kasie" type="xs:string" />
+				<xs:element name="DeptHead" type="xs:string" />
+				<xs:element name="DeptCode" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

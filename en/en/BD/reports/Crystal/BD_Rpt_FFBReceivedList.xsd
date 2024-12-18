@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BD_Rpt_FFBReceivedList" targetNamespace="http://tempuri.org/BD_Rpt_FFBReceivedList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BD_Rpt_FFBReceivedList.xsd" xmlns:mstns="http://tempuri.org/BD_Rpt_FFBReceivedList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="BD_Rpt_FFBReceivedList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MonthYear" type="xs:string" />
+				<xs:element name="SupplierCode" type="xs:string" minOccurs="0" />
+				<xs:element name="FFBWeight" type="xs:decimal" minOccurs="0" />
+				<xs:element name="Status" type="xs:string" minOccurs="0" />
+				<xs:element name="UpdateDate" type="xs:dateTime" minOccurs="0" />
+				<xs:element name="UserName" type="xs:string" minOccurs="0" />
+				<xs:element name="CompName" type="xs:string" minOccurs="0" />
+				<xs:element name="LocName" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

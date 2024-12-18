@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="BI_Rpt_InvoiceDet" targetNamespace="http://tempuri.org/BI_Rpt_InvoiceDet.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/BI_Rpt_InvoiceDet.xsd" xmlns:mstns="http://tempuri.org/BI_Rpt_InvoiceDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_INVOICE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="InvoiceID" type="xs:string" />
+				<xs:element name="DocType" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" />
+				<xs:element name="BillPartyName" type="xs:string" />
+				<xs:element name="BillPartyAccCode" type="xs:string" />
+				<xs:element name="CustRef" type="xs:string" />
+				<xs:element name="DeliveryRef" type="xs:string" />
+				<xs:element name="Remark" type="xs:string" />
+				<xs:element name="Status" type="xs:string" />
+				<xs:element name="CreateDate" type="xs:dateTime" />
+				<xs:element name="UpdateID" type="xs:string" />
+				<xs:element name="UserName" type="xs:string" />
+				<xs:element name="InvoiceLnId" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Unit" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="PPNAmount" type="xs:decimal" />
+				<xs:element name="PPHAmount" type="xs:decimal" />
+				<xs:element name="NetAmount" type="xs:decimal" />
+				<xs:element name="DocTypeDesc" type="xs:string" />
+				<xs:element name="Terbilang" type="xs:string" />
+				<xs:element name="Address" type="xs:string" />
+				<xs:element name="Town" type="xs:string" />
+				<xs:element name="Postcode" type="xs:string" />
+				<xs:element name="State" type="xs:string" />
+				<xs:element name="CountryDesc" type="xs:string" />
+				<xs:element name="AdditionalNote" type="xs:string" />
+				<xs:element name="NPWP" type="xs:string" />
+        <xs:element name="ContractNo" type="xs:string" />
+        <xs:element name="BankCode" type="xs:string" />
+        <xs:element name="BankDescr" type="xs:string" />
+        <xs:element name="BankAccNo" type="xs:string" />
+        <xs:element name="AccOwner" type="xs:string" />
+        <xs:element name="UnderName" type="xs:string" />
+        <xs:element name="UnderPost" type="xs:string" />
+        <xs:element name="FakturPajakNo" type="xs:string" />
+        <xs:element name="FakturPajakDate" type="xs:dateTime" />
+        <xs:element name="compNPWP" type="xs:string" />
+        <xs:element name="compAddress1" type="xs:string" />
+        <xs:element name="compAddress2" type="xs:string" />
+        <xs:element name="ContractDate" type="xs:dateTime" />
+        <xs:element name="UsedAdvAmount" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

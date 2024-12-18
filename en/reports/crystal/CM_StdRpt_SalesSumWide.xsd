@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CM_SALESSUMWIDE" targetNamespace="http://tempuri.org/CM_SALESSUMWIDE.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CM_SALESSUMWIDE.xsd" xmlns:mstns="http://tempuri.org/CM_SALESSUMWIDE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CM_SALESSUMWIDE">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element name="LocCode" type="xs:string" />
+        <xs:element name="AccMonth" type="xs:string" />
+        <xs:element name="AccYear" type="xs:string" />
+        <xs:element name="ContractQty1" type="xs:decimal" />
+        <xs:element name="PriceOri1" type="xs:decimal" />
+        <xs:element name="PPN1" type="xs:decimal" />
+        <xs:element name="Amount1" type="xs:decimal" />
+        <xs:element name="AmountOA1" type="xs:decimal" />
+        <xs:element name="ContractQty2" type="xs:decimal" />
+        <xs:element name="PriceOri2" type="xs:decimal" />
+        <xs:element name="PPN2" type="xs:decimal" />
+        <xs:element name="Amount2" type="xs:decimal" />
+        <xs:element name="AmountOA2" type="xs:decimal" />
+        <xs:element name="ContractQty3" type="xs:decimal" />
+        <xs:element name="PriceOri3" type="xs:decimal" />
+        <xs:element name="PPN3" type="xs:decimal" />
+        <xs:element name="Amount3" type="xs:decimal" />
+        <xs:element name="AmountOA3" type="xs:decimal" />
+        <xs:element name="ContractQty4" type="xs:decimal" />
+        <xs:element name="PriceOri4" type="xs:decimal" />
+        <xs:element name="PPN4" type="xs:decimal" />
+        <xs:element name="Amount4" type="xs:decimal" />
+        <xs:element name="AmountOA4" type="xs:decimal" />
+        <xs:element name="ContractQty5" type="xs:decimal" />
+        <xs:element name="PriceOri5" type="xs:decimal" />
+        <xs:element name="PPN5" type="xs:decimal" />
+        <xs:element name="Amount5" type="xs:decimal" />
+        <xs:element name="AmountOA5" type="xs:decimal" />
+        <xs:element name="ContractQty6" type="xs:decimal" />
+        <xs:element name="PriceOri6" type="xs:decimal" />
+        <xs:element name="PPN6" type="xs:decimal" />
+        <xs:element name="Amount6" type="xs:decimal" />
+        <xs:element name="AmountOA6" type="xs:decimal" />
+        <xs:element name="ContractQty7" type="xs:decimal" />
+        <xs:element name="PriceOri7" type="xs:decimal" />
+        <xs:element name="PPN7" type="xs:decimal" />
+        <xs:element name="Amount7" type="xs:decimal" />
+        <xs:element name="AmountOA7" type="xs:decimal" />
+        <xs:element name="ContractQty8" type="xs:decimal" />
+        <xs:element name="PriceOri8" type="xs:decimal" />
+        <xs:element name="PPN8" type="xs:decimal" />
+        <xs:element name="Amount8" type="xs:decimal" />
+        <xs:element name="AmountOA8" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

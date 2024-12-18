@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IN_StdRpt_DS_PRList" targetNamespace="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:mstns="http://tempuri.org/IN_StdRpt_DS_PRList.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AR_StdRpt_LaporanPenjualan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LocCode" type="xs:string" />
+				<xs:element name="ContractNo" type="xs:string" minOccurs="0" />
+				<xs:element name="ContractDate" type="xs:dateTime" />
+				<xs:element name="ProductCode" type="xs:string" />
+				<xs:element name="BillPartyCode" type="xs:string" minOccurs="0" />
+				<xs:element name="BillPartyName" type="xs:string" minOccurs="0" />
+				<xs:element name="Seller" type="xs:string" minOccurs="0" />
+				<xs:element name="ContractQty" type="xs:decimal" />
+				<xs:element name="Cost" type="xs:decimal" />
+				<xs:element name="PPN" type="xs:decimal" />
+				<xs:element name="PPNAmount" type="xs:decimal" />
+				<xs:element name="NetAmount" type="xs:decimal" />
+				<xs:element name="Amount" type="xs:decimal" />
+				<xs:element name="DelMonth" type="xs:string" />
+				<xs:element name="DelYear" type="xs:string" />
+				<xs:element name="TotPayment" type="xs:decimal" />
+				<xs:element name="PayDate" type="xs:date" />
+				<xs:element name="PayID" type="xs:string" />
+				<xs:element name="CurrencyCode" type="xs:string" />
+				<xs:element name="ExchangeRate" type="xs:decimal" />
+				<xs:element name="InvoiceDate" type="xs:dateTime" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
